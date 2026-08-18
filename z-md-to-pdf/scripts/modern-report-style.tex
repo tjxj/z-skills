@@ -1,0 +1,78 @@
+% ============================================================
+% 现代报告风 LaTeX 样式注入（配合 pandoc -H 使用）
+% 品牌色系与 Obsidian 主题一致：#5BA2C8 / #2E6B8A
+% ============================================================
+\usepackage{xcolor}
+\definecolor{wpblue}{HTML}{5BA2C8}
+\definecolor{wpdeep}{HTML}{2E6B8A}
+\definecolor{wpink}{HTML}{212A36}
+\definecolor{wpsoft}{HTML}{EEF4F8}
+
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+
+% ---------- 章标题：左侧大号编号 + 标题 + 色带 ----------
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{wpink}}
+  {\fontsize{56}{56}\selectfont\color{wpblue}\thechapter}
+  {10pt}
+  {\fontsize{24}{30}\selectfont}
+  [{\vspace{6pt}{\color{wpblue}\titlerule[2.5pt]}}]
+\titlespacing*{\chapter}{0pt}{-24pt}{34pt}
+
+% ---------- 节标题：深蓝加粗 ----------
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{wpdeep}}{\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{wpdeep}}{\thesubsection}{0.8em}{}
+
+% ---------- 页眉页脚 ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{wpdeep}\nouppercase{\leftmark}}
+\fancyhead[R]{\small\color{wpdeep}\thepage}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\headrule}{{\color{wpblue}\hrule width\headwidth height 0.6pt}}
+
+% ---------- 引用块 → 报告式要点栏 ----------
+\newmdenv[leftline=true,rightline=false,topline=false,bottomline=false,
+  linecolor=wpblue,linewidth=3pt,backgroundcolor=wpsoft,
+  innerleftmargin=12pt,innertopmargin=8pt,innerbottommargin=8pt,
+  skipabove=14pt,skipbelow=14pt]{wpquote}
+\let\oldquote\quote
+\let\endoldquote\endquote
+\renewenvironment{quote}{\begin{wpquote}\rmfamily}{\end{wpquote}}
+
+% ---------- 代码块浅色底 ----------
+\definecolor{shadecolor}{HTML}{F4F7FA}
+
+% ---------- 链接配色（hyperref 由 pandoc 模板后置加载，须延迟到导言区结束） ----------
+\AtBeginDocument{\hypersetup{colorlinks=true, linkcolor=wpdeep, urlcolor=wpblue, citecolor=wpdeep}}
+
+% ---------- 标题页：上下色带夹住大标题 ----------
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \vspace*{2.6cm}
+    {\color{wpblue}\rule{\textwidth}{3.5pt}}\\[20pt]
+    {\fontsize{28}{38}\selectfont\bfseries\color{wpink}\@title\par}
+    \vspace{18pt}
+    {\color{wpblue}\rule{\textwidth}{3.5pt}}\\[26pt]
+    {\Large\color{wpdeep}\@author\par}
+    \vspace{10pt}
+    {\large\color{gray}\@date\par}
+    \vfill
+    {\small\color{gray} 现代报告风样张 · Pandoc + XeLaTeX\par}
+  \end{titlepage}}
+\makeatother
+
+% ---------- 目录页标题染色 ----------
+\makeatletter
+\renewcommand{\contentsname}{\textcolor{wpdeep}{目\quad 录}}
+\makeatother
+
+% ---------- 段落：首行缩进 + 舒展行距 ----------
+\setlength{\parindent}{2em}
+\linespread{1.32}\selectfont

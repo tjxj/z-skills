@@ -2,7 +2,7 @@
 # ============================================================
 # z-md-to-pdf 排版构建脚本（Pandoc + XeLaTeX）
 # 用法：bash build.sh <源md文件> <输出前缀> [标题]
-# 产出：<输出前缀>-学术朴素风.pdf / <输出前缀>-文楷书籍风.pdf
+# 产出：<输出前缀>-学术朴素风.pdf / <输出前缀>-文楷书籍风.pdf / <输出前缀>-现代报告风.pdf
 # 特性：wikilink 预处理、字体自动回退、图片下载失败自动重试一次
 # 前置：先跑 setup.sh 确认环境（pandoc + xelatex + 字体）
 # ============================================================
@@ -22,6 +22,15 @@ CJK_SERIF="$(pick 'Songti SC' 'Noto Serif CJK SC' 'Source Han Serif SC')"   # �
 CJK_BOOK="$(pick 'LXGW WenKai' 'Songti SC' 'Noto Serif CJK SC')"            # 书籍风正文
 MONO="$(pick 'Maple Mono CN' 'Maple Mono' 'Menlo' 'monospace')"             # 代码
 [ "$CJK_BOOK" != "LXGW WenKai" ] && echo ">> 提示：未装霞鹜文楷，书籍风回退为 $CJK_BOOK"
+
+# 报告风：无衬线 CJK（冬青黑体双字重）+ 无衬线西文
+if has_font "Hiragino Sans GB W3"; then
+  CJK_SANS="Hiragino Sans GB W3"; CJK_SANS_OPTS="BoldFont=Hiragino Sans GB W6"
+else
+  CJK_SANS="$(pick 'Noto Sans CJK SC' 'Source Han Sans SC')"; CJK_SANS_OPTS=""
+  echo ">> 提示：未装冬青黑体，报告风回退为 ${CJK_SANS}"
+fi
+SANS_MAIN="$(pick 'Helvetica Neue' 'Helvetica' 'Arial' 'Liberation Sans')"
 
 # ---------- 预处理：Obsidian wikilink 图片转标准语法 ----------
 TMP="$(mktemp -d)/book.md"
@@ -75,8 +84,18 @@ compile 文楷书籍风 -o "${OUT}-文楷书籍风.pdf" "${COMMON[@]}" \
   -V CJKmainfont="$CJK_BOOK" \
   -V mainfont="Palatino"
 
+echo ">> 编译 现代报告风 ..."
+STYLE_TEX="$(cd "$(dirname "$0")" && pwd)/modern-report-style.tex"
+compile 现代报告风 -o "${OUT}-现代报告风.pdf" "${COMMON[@]}" \
+  -M title="$TITLE" \
+  -V CJKmainfont="$CJK_SANS" -V CJKoptions="$CJK_SANS_OPTS" \
+  -V mainfont="$SANS_MAIN" \
+  -V documentclass=report \
+  -V geometry:margin=2.5cm \
+  -H "$STYLE_TEX"
+
 # ---------- 验收报告 ----------
-for f in "${OUT}-学术朴素风.pdf" "${OUT}-文楷书籍风.pdf"; do
+for f in "${OUT}-学术朴素风.pdf" "${OUT}-文楷书籍风.pdf" "${OUT}-现代报告风.pdf"; do
   if [ -f "$f" ]; then
     pages=""
     command -v mdls >/dev/null 2>&1 && pages="$(mdls -name kMDItemNumberOfPages -raw "$f" 2>/dev/null)"

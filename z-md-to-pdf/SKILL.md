@@ -1,16 +1,17 @@
 ---
 name: z-md-to-pdf
-description: "Convert a local Markdown file into typeset PDFs in multiple styles via Pandoc + XeLaTeX. Use this skill whenever the user provides a .md path and says 转成PDF, Markdown转PDF, md转pdf, 生成PDF, 排版成PDF, 出书, 出电子书, 白皮书PDF, 书籍风PDF, 学术风PDF, or asks for a PDF version of an article/whitepaper/book. Ships two built-in styles (学术朴素风: report + Songti/Times; 文楷书籍风: ctexbook + LXGW WenKai/Palatino) plus scripts/setup.sh for first-time environment bootstrap (pandoc, TinyTeX, tlmgr packages, CJK fonts) so it works on fresh machines."
+description: "Convert a local Markdown file into typeset PDFs in multiple styles via Pandoc + XeLaTeX. Use this skill whenever the user provides a .md path and says 转成PDF, Markdown转PDF, md转pdf, 生成PDF, 排版成PDF, 出书, 出电子书, 白皮书PDF, 书籍风PDF, 学术风PDF, 报告风PDF, or asks for a PDF version of an article/whitepaper/book. Ships three built-in styles (学术朴素风: report + Songti/Times; 文楷书籍风: ctexbook + LXGW WenKai/Palatino; 现代报告风: report + Hiragino/Helvetica + 品牌蓝色带章节样式) plus scripts/setup.sh for first-time environment bootstrap (pandoc, TinyTeX, tlmgr packages, CJK fonts) so it works on fresh machines."
 ---
 
 # Markdown → 多风格 PDF 排版
 
 ## Overview
 
-把用户写的 Markdown（含 Obsidian 方言）排成书籍级 PDF。管线：**sed 预处理 → Pandoc → XeLaTeX**。内置两种风格，参数集中在 `scripts/build.sh`，可照抄扩展新风格。
+把用户写的 Markdown（含 Obsidian 方言）排成书籍级 PDF。管线：**sed 预处理 → Pandoc → XeLaTeX**。内置三种风格，参数集中在 `scripts/build.sh`，可照抄扩展新风格。
 
 - **学术朴素风**：`report` 类，宋体 SC + Times New Roman，2.5cm 页边距，紧凑省纸
 - **文楷书籍风**：`ctexbook` 类 + `oneside`，霞鹜文楷 + Palatino，行距舒展
+- **现代报告风**：`report` 类 + `modern-report-style.tex` 注入，冬青黑体 + Helvetica Neue，品牌蓝色带封面、章首大编号、蓝色页眉线、引用变色块——大厂白皮书质感
 
 产出含自动目录；标题默认取正文第一个 H1；章节编号**沿用原文自带编号**（不加自动编号）。
 
@@ -42,7 +43,7 @@ bash <skill目录>/scripts/setup.sh --check
    ```bash
    bash <skill目录>/scripts/build.sh <源md路径> <输出前缀> [标题]
    ```
-   产出 `<前缀>-学术朴素风.pdf` 与 `<前缀>-文楷书籍风.pdf`
+   产出 `<前缀>-学术朴素风.pdf`、`<前缀>-文楷书籍风.pdf`、`<前缀>-现代报告风.pdf`
 3. **验收**：脚本自动报告页数与图片下载失败数；失败数 > 0 时自动重试一次，仍失败则提示（多为网络抖动，稍后重跑即可）
 
 ## 关键决策与坑表（改脚本前必读）
