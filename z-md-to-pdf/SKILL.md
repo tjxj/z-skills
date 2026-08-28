@@ -1,66 +1,138 @@
 ---
 name: z-md-to-pdf
-description: "Convert a local Markdown file into typeset PDFs in multiple styles via Pandoc + XeLaTeX. Use this skill whenever the user provides a .md path and says 转成PDF, Markdown转PDF, md转pdf, 生成PDF, 排版成PDF, 出书, 出电子书, 白皮书PDF, 书籍风PDF, 学术风PDF, 报告风PDF, or asks for a PDF version of an article/whitepaper/book. Ships three built-in styles (学术朴素风: report + Songti/Times; 文楷书籍风: ctexbook + LXGW WenKai/Palatino; 现代报告风: report + Hiragino/Helvetica + 品牌蓝色带章节样式) plus scripts/setup.sh for first-time environment bootstrap (pandoc, TinyTeX, tlmgr packages, CJK fonts) so it works on fresh machines."
+description: 将 Markdown、Obsidian 笔记、技术文章、白皮书或长文排成中文 PDF。用户说“转成 PDF”“Markdown 转 PDF”“md 转 pdf”“排版成电子书”“生成指定风格 PDF”“一次生成多种风格”“学术风/书籍风/报告风”，或要编译 my-girlfriend-jingtian-latex 项目时，都应使用本 Skill。内置学术朴素风、文楷书籍风、现代报告风，支持只生成一种或批量生成全部风格，并附带上游 XeLaTeX 项目原样复编工具。
+compatibility: macOS 或 Linux；需要 Bash、Pandoc、XeLaTeX。setup.sh 可自动补齐环境。
 ---
 
-# Markdown → 多风格 PDF 排版
+# Markdown → 多风格 PDF
 
-## Overview
+把 Markdown 交给 Pandoc，再由 XeLaTeX 完成中文字体、页面、目录、页眉页脚和 PDF 输出
 
-把用户写的 Markdown（含 Obsidian 方言）排成书籍级 PDF。管线：**sed 预处理 → Pandoc → XeLaTeX**。内置三种风格，参数集中在 `scripts/build.sh`，可照抄扩展新风格。
+## 完成标准
 
-- **学术朴素风**：`report` 类，宋体 SC + Times New Roman，2.5cm 页边距，紧凑省纸
-- **文楷书籍风**：`ctexbook` 类 + `oneside`，霞鹜文楷 + Palatino，行距舒展
-- **现代报告风**：`report` 类 + `modern-report-style.tex` 注入，冬青黑体 + Helvetica Neue，品牌蓝色带封面、章首大编号、蓝色页眉线、引用变色块——大厂白皮书质感
+一次任务只有同时满足以下条件才算完成：
 
-产出含自动目录；标题默认取正文第一个 H1；章节编号**沿用原文自带编号**（不加自动编号）。
+1. 环境检查通过
+2. 用户指定的每种风格均生成非空 PDF
+3. PDF 能被 `pdfinfo` 读取，页数合理
+4. `pdftotext` 能提取出中文正文，说明没有空白或乱码
+5. 批量模式缺少任一风格时，任务失败并修复
 
-## 首次使用：环境安装（新机器必读）
+## 风格选择
 
-依赖三件套：**pandoc**、**xelatex（TinyTeX/TeX Live）**、**中文字体**。先跑检测：
+| 风格参数 | 中文名 | 适用场景 |
+|---|---|---|
+| `academic` | 学术朴素风 | 论文笔记、研究报告、课程材料 |
+| `book` | 文楷书籍风 | 长文、随笔、电子书、个人作品集 |
+| `report` | 现代报告风 | 技术白皮书、方案、商业报告 |
+| `all` | 全部风格 | 同一内容一次生成三份 PDF 供比较 |
+
+用户没有指定风格时，使用 `all`
+
+## 第一次使用
+
+先检测：
 
 ```bash
 bash <skill目录>/scripts/setup.sh --check
 ```
 
-有缺失则跑 `bash <skill目录>/scripts/setup.sh` 自动安装（macOS 优先 Homebrew）。手动清单：
+检测失败时自动安装：
 
-| 组件 | 安装方式 | 说明 |
-|---|---|---|
-| pandoc ≥ 3 | mac: `brew install pandoc`；linux: `apt install pandoc` | 转换引擎 |
-| TinyTeX | 官网脚本（setup.sh 内确认后执行） | 提供 xelatex/tlmgr，约 100MB 起 |
-| LaTeX 包 | `tlmgr install ctex fontspec ...`（setup.sh 自动） | ctex 会带 xecjk 依赖 |
-| 宋体 SC / Times / Palatino | macOS 自带 | Linux 装 `fonts-noto-cjk` + `tex-gyre` 等，build.sh 会自动回退 |
-| 霞鹜文楷 | 可选，https://github.com/lxgw/LxgwWenKai 下载 ttf 双击安装 | 缺失时书籍风回退宋体 |
-| Maple Mono CN | 可选，等宽字体 | 缺失时回退 Menlo/monospace |
+```bash
+bash <skill目录>/scripts/setup.sh
+```
 
-**tlmgr 跨版本坑**：本地 TeX Live 年份比官方仓库旧时 `tlmgr install` 会直接拒绝。setup.sh 自动把仓库切到对应年份的归档镜像 `https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/<年份>/tlnet-final/` 并 `tlmgr update --self`。
+安装脚本会准备 Pandoc、轻量 TeX 环境、中文排版组件。构建脚本会自动发现 TinyTeX，无需修改终端配置
 
-## 工作流程
+## 生成 PDF
 
-1. **环境检测**：`setup.sh --check`，有缺失先 `setup.sh`
-2. **编译**：
-   ```bash
-   bash <skill目录>/scripts/build.sh <源md路径> <输出前缀> [标题]
-   ```
-   产出 `<前缀>-学术朴素风.pdf`、`<前缀>-文楷书籍风.pdf`、`<前缀>-现代报告风.pdf`
-3. **验收**：脚本自动报告页数与图片下载失败数；失败数 > 0 时自动重试一次，仍失败则提示（多为网络抖动，稍后重跑即可）
+指定一种风格：
 
-## 关键决策与坑表（改脚本前必读）
+```bash
+bash <skill目录>/scripts/build.sh \
+  -i /absolute/path/article.md \
+  -o /absolute/path/dist/article \
+  --style book \
+  --title "文章标题" \
+  --author "作者"
+```
 
-| 坑 | 现象 | 对策（已在 build.sh 中实现） |
-|---|---|---|
-| 自动编号叠加 | 原文自带「第 7 章 / 7.1」，LaTeX 再编出「3.4 第 7 章」 | **不加** `--number-sections` |
-| `→` 丢字 | Palatino/Times 无 U+2192，编译警告且 PDF 缺字 | `-V header-includes='\xeCJKDeclareCharClass{CJK}{"2192}'` 交给中文字体 |
-| PingFang 不可见 | macOS 的苹方对 XeTeX 隐藏，`fontspec` 报错 | 中文无衬线用冬青黑体 `Hiragino Sans GB`，衬线用宋体 SC |
-| 奇偶页不居中 | `ctexbook` 默认 `twoside` 装订边距 | 加 `-V classoption=oneside` |
-| 图片下载失败 | 外链图由 pandoc 编译时下载，网络抖动会替换成文字 | 统计 `Could not fetch`，自动重试一次 |
-| Obsidian wikilink 图 | `![[x]]` 离开 Obsidian 即裂 | sed 预处理转 `![](x)` |
+一次生成全部风格：
 
-## 扩展新风格
+```bash
+bash <skill目录>/scripts/build.sh \
+  -i /absolute/path/article.md \
+  -o /absolute/path/dist/article \
+  --style all
+```
 
-在 `build.sh` 里仿照现有两段 `pandoc` 调用加一段，核心变量就四个：`documentclass`、`classoption`、`CJKmainfont`、`mainfont`。想要页眉页脚/章节色带等定制，写一个样式 tex 用 `-H style.tex` 注入（注意 `\hypersetup` 须包在 `\AtBeginDocument` 里，pandoc 模板的 hyperref 加载在 header-includes 之后）。
+输出文件会自动带中文风格后缀：
 
-## 输出约定
+- `article-学术朴素风.pdf`
+- `article-文楷书籍风.pdf`
+- `article-现代报告风.pdf`
 
-PDF 输出到 `<输出前缀>` 指定位置；若任务要求发布（如 GitHub 白皮书仓库），md 原文保留外链图片直接上传，GitHub 可正常显示。
+正文第一个一级标题会作为默认 PDF 标题。使用 `--no-toc` 可关闭目录
+
+## 复编孙宇晨项目
+
+用户给出 `my-girlfriend-jingtian-latex` 本地目录并要求变成 PDF 时，使用：
+
+```bash
+bash <skill目录>/scripts/build-upstream.sh \
+  /absolute/path/my-girlfriend-jingtian-latex \
+  /absolute/path/output/我的女友景甜.pdf
+```
+
+这个入口直接使用上游仓库里的 `main.tex`、封面和字体，连续编译两次，保留原项目的 5×8 英寸版式
+
+上游当前的 `assets/cover.pdf` 在常见渲染器中会显示为空白页。仓库自带成品 PDF 时，脚本会临时提取成品第一页作为正常封面，整个过程不改动上游文件
+
+上游仓库当前没有声明开源许可证。不要把它的正文、封面、字体或 `main.tex` 复制进本 Skill，也不要把本 Skill 的 MIT 许可证解释成对上游文件的授权。精确复编时让用户自己提供已下载的上游项目目录
+
+## 输入兼容
+
+- 标准 Markdown 标题、列表、引用、代码块、表格和链接
+- Obsidian 图片语法 `![[image.png]]`，构建前会转成标准 Markdown 图片
+- 中文与英文混排
+- 图片相对路径，按源 Markdown 所在目录查找
+
+外链图片下载失败时，保留编译日志并明确提示。不要把缺图的 PDF 当成成功交付
+
+## 验收
+
+完成构建后运行：
+
+```bash
+pdfinfo /absolute/path/output.pdf
+pdftotext /absolute/path/output.pdf - | head
+```
+
+需要同时回归三套模板和上游项目时运行：
+
+```bash
+bash <skill目录>/scripts/smoke-test.sh \
+  --upstream /absolute/path/my-girlfriend-jingtian-latex
+```
+
+## 扩展模板
+
+三套风格分别由以下文件控制：
+
+- `scripts/academic-style.tex`
+- `scripts/book-style.tex`
+- `scripts/modern-report-style.tex`
+
+新增风格时复制其中最接近的一份样式，随后在 `build.sh` 增加明确的风格名、输出后缀和字体回退。新风格必须加入 `smoke-test.sh`，保证单独生成与批量生成都可验证
+
+## 常见问题
+
+| 现象 | 处理 |
+|---|---|
+| 找不到 `xelatex` | 运行 `setup.sh`，构建脚本也会自动查找 TinyTeX |
+| 中文字体报错 | macOS 启用宋体/冬青黑体，Linux 安装 Noto CJK 字体 |
+| 霞鹜文楷未安装 | 书籍风自动回退为宋体或 Noto Serif CJK |
+| 外链图片缺失 | 检查网络后重跑，或先把图片保存到 Markdown 同目录 |
+| 只想要一份 PDF | 传 `--style academic/book/report`，避免使用 `all` |
+| 原项目编译失败 | 先确认封面、两款字体和 `main.tex` 都在原仓库目录中 |

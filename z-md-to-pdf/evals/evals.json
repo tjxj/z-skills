@@ -1,0 +1,23 @@
+{
+  "skill_name": "z-md-to-pdf",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把 examples/sample.md 生成一份文楷书籍风 PDF，保留目录并检查中文正文能否提取",
+      "expected_output": "只生成文楷书籍风 PDF，文件非空、页数合理、中文可提取",
+      "files": ["examples/sample.md"]
+    },
+    {
+      "id": 2,
+      "prompt": "把同一份 Markdown 一次排成学术、书籍、现代报告三种 PDF，逐份验收",
+      "expected_output": "生成三份带清晰风格后缀的 PDF，全部通过页数和正文检查",
+      "files": ["examples/sample.md"]
+    },
+    {
+      "id": 3,
+      "prompt": "复编本地 my-girlfriend-jingtian-latex 项目，输出新的 PDF 并确认仍是 5×8 英寸、22 页",
+      "expected_output": "使用上游目录原样编译，生成 5×8 英寸且 22 页的 PDF",
+      "files": []
+    }
+  ]
+}

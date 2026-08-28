@@ -1,0 +1,47 @@
+% 学术朴素风：清晰、克制、适合论文笔记与研究报告
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\definecolor{AcademicNavy}{HTML}{24364B}
+\definecolor{AcademicGray}{HTML}{66717E}
+\definecolor{AcademicRule}{HTML}{CBD3DC}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{AcademicNavy}}
+  {\small\MakeUppercase{\chaptertitlename}\enspace\thechapter}
+  {8pt}
+  {\fontsize{24}{30}\selectfont}
+  [{\vspace{8pt}{\color{AcademicRule}\titlerule[0.8pt]}}]
+\titlespacing*{\chapter}{0pt}{-18pt}{30pt}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{AcademicNavy}}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{AcademicNavy}}
+  {\thesubsection}{0.8em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{AcademicGray}\nouppercase{\leftmark}}
+\fancyhead[R]{\small\color{AcademicGray}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{{\color{AcademicRule}\hrule width\headwidth height 0.4pt}}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \vspace*{3.2cm}
+    {\color{AcademicNavy}\rule{34mm}{1.2pt}\par}
+    \vspace{18pt}
+    {\fontsize{28}{38}\selectfont\bfseries\color{AcademicNavy}\@title\par}
+    \vspace{20pt}
+    {\large\color{AcademicGray}\@author\par}
+    \vfill
+    {\small\color{AcademicGray}\@date\par}
+  \end{titlepage}}
+\makeatother
+
+\AtBeginDocument{\hypersetup{colorlinks=true,linkcolor=AcademicNavy,urlcolor=AcademicNavy,citecolor=AcademicNavy}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.24}\selectfont

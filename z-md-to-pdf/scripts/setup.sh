@@ -1,105 +1,159 @@
 #!/usr/bin/env bash
-# ============================================================
-# z-md-to-pdf 环境安装脚本
-# 用法：
-#   bash setup.sh --check   仅检测，不安装
-#   bash setup.sh           检测 + 自动安装（大体积组件会先询问）
-# 覆盖：pandoc / TinyTeX(xelatex+tlmgr) / LaTeX 包 / 中文字体检测
-# ============================================================
-set -uo pipefail
+set -euo pipefail
 
-CHECK_ONLY="${1:-}"
-OS="$(uname -s)"
+MODE="install"
+if [ "${1:-}" = "--check" ]; then
+  MODE="check"
+elif [ -n "${1:-}" ]; then
+  echo "用法: setup.sh [--check]" >&2
+  exit 2
+fi
+
+OS_NAME="$(uname -s)"
+ARCH_NAME="$(uname -m)"
 MISSING=()
 
 note() { printf '\n== %s ==\n' "$*"; }
-ok()   { echo "  [OK] $*"; }
-warn() { echo "  [缺] $*"; }
+ok() { printf '  [OK] %s\n' "$*"; }
+warn() { printf '  [缺] %s\n' "$*"; }
 
-ask() { # ask "提示" 命令...：CHECK_ONLY 时跳过，否则询问后执行
-  if [ "$CHECK_ONLY" = "--check" ]; then return 0; fi
-  local msg="$1"; shift
-  read -r -p "  安装 ${msg}？[y/N] " yn
-  if [ "$yn" = "y" ] || [ "$yn" = "Y" ]; then "$@"; else echo "  已跳过 $msg"; fi
+add_tex_path() {
+  local candidate
+  for candidate in \
+    "$HOME/Library/TinyTeX/bin/universal-darwin" \
+    "$HOME/.TinyTeX/bin/x86_64-linux" \
+    "$HOME/.TinyTeX/bin/aarch64-linux" \
+    /Library/TeX/texbin; do
+    if [ -x "$candidate/xelatex" ]; then
+      export PATH="$candidate:$PATH"
+      return 0
+    fi
+  done
+  return 1
 }
 
-# ---------- 1. pandoc ----------
-note "pandoc"
+install_pandoc() {
+  if [ "$OS_NAME" = "Darwin" ] && command -v brew >/dev/null 2>&1; then
+    brew install pandoc
+  elif command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get update
+    sudo apt-get install -y pandoc
+  else
+    echo "无法自动安装 Pandoc，请访问 https://pandoc.org/installing.html" >&2
+    exit 1
+  fi
+}
+
+install_tinytex() {
+  local install_root archive_name archive_url temp_dir extracted_dir
+
+  if [ "$OS_NAME" = "Darwin" ]; then
+    install_root="$HOME/Library/TinyTeX"
+    archive_name="TinyTeX-1-darwin.tar.xz"
+  elif [ "$OS_NAME" = "Linux" ] && [ "$ARCH_NAME" = "x86_64" ]; then
+    install_root="$HOME/.TinyTeX"
+    archive_name="TinyTeX-1-linux-x86_64.tar.xz"
+  elif [ "$OS_NAME" = "Linux" ] && { [ "$ARCH_NAME" = "aarch64" ] || [ "$ARCH_NAME" = "arm64" ]; }; then
+    install_root="$HOME/.TinyTeX"
+    archive_name="TinyTeX-1-linux-arm64.tar.xz"
+  else
+    echo "当前系统没有预编译 TinyTeX 安装包，请参考 https://github.com/rstudio/tinytex" >&2
+    exit 1
+  fi
+
+  if [ -d "$install_root" ]; then
+    echo "检测到不完整的 TinyTeX 目录：$install_root" >&2
+    echo "为避免覆盖现有文件，请先确认并移走该目录后重试" >&2
+    exit 1
+  fi
+
+  temp_dir="$(mktemp -d)"
+  archive_url="https://github.com/rstudio/tinytex-releases/releases/download/daily/${archive_name}"
+  echo "  下载 TinyTeX：$archive_url"
+  curl -fL --retry 5 --retry-delay 5 "$archive_url" -o "$temp_dir/$archive_name"
+  tar xf "$temp_dir/$archive_name" -C "$temp_dir"
+  extracted_dir="$temp_dir/TinyTeX"
+  if [ ! -d "$extracted_dir" ]; then
+    echo "TinyTeX 解压结果异常" >&2
+    exit 1
+  fi
+  mkdir -p "$(dirname "$install_root")"
+  mv "$extracted_dir" "$install_root"
+  rm -rf "$temp_dir"
+  add_tex_path
+  tlmgr postaction install script xetex
+}
+
+note "Pandoc"
 if command -v pandoc >/dev/null 2>&1; then
-  ok "pandoc $(pandoc --version | head -1 | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?')"
+  ok "$(pandoc --version | head -1)"
 else
-  warn "pandoc"
+  warn "Pandoc"
   MISSING+=("pandoc")
-  if [ "$OS" = "Darwin" ]; then ask "pandoc (brew)" brew install pandoc
-  else ask "pandoc (apt)" sudo apt-get install -y pandoc; fi
+  [ "$MODE" = "install" ] && install_pandoc
 fi
 
-# ---------- 2. xelatex / TinyTeX ----------
-note "xelatex (TinyTeX/TeX Live)"
-if command -v xelatex >/dev/null 2>&1; then
+note "XeLaTeX"
+if command -v xelatex >/dev/null 2>&1 || add_tex_path; then
   ok "$(xelatex --version | head -1)"
 else
-  warn "xelatex"
+  warn "XeLaTeX"
   MISSING+=("xelatex")
-  cat <<'EOF'
-  将安装 TinyTeX（约 100MB+，含 xelatex 与 tlmgr）。
-  官方安装命令：curl -sL https://yihm.github.io/tinytex/install-bin-unix.sh | sh
-EOF
-  ask "TinyTeX" bash -c 'curl -sL https://yihm.github.io/tinytex/install-bin-unix.sh | sh'
-  # 安装后本 shell 找不到新命令时提示重开终端
-  export PATH="$HOME/Library/TinyTeX/bin/universal-darwin:$HOME/.TinyTeX/bin/x86_64-darwin:$HOME/.TinyTeX/bin/universal-darwin:$PATH"
+  if [ "$MODE" = "install" ]; then
+    install_tinytex
+    ok "$(xelatex --version | head -1)"
+  fi
 fi
 
-# ---------- 3. tlmgr 仓库跨版本处理 + LaTeX 包 ----------
+TEX_PACKAGES=(
+  ctex fontspec xecjk geometry setspace fancyhdr xcolor pdfpages hyperref
+  titlesec mdframed zref needspace
+)
+TEX_FILES=(
+  ctexbook.cls fontspec.sty xeCJK.sty geometry.sty setspace.sty fancyhdr.sty
+  xcolor.sty pdfpages.sty hyperref.sty titlesec.sty mdframed.sty
+  zref-abspage.sty needspace.sty
+)
+
 if command -v tlmgr >/dev/null 2>&1; then
-  note "tlmgr 仓库与 LaTeX 包"
-  if tlmgr install --dry-run ctex 2>&1 | grep -q "older than remote"; then
-    YEAR="$(tlmgr --version 2>/dev/null | grep -oE 'TeX Live [0-9]{4}' | grep -oE '[0-9]{4}')"
-    warn "本地 TeX Live ${YEAR} 比远程仓库旧，切换到 ${YEAR} 归档镜像"
-    tlmgr option repository "https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/${YEAR}/tlnet-final/" >/dev/null 2>&1
-    tlmgr update --self >/dev/null 2>&1
+  note "排版组件"
+  if [ "$MODE" = "install" ]; then
+    tlmgr install "${TEX_PACKAGES[@]}"
   fi
-  if [ "$CHECK_ONLY" = "--check" ]; then
-    for p in ctex.sty fontspec.sty xeCJK.sty; do
-      kpsewhich "$p" >/dev/null 2>&1 && ok "$p" || { warn "$p"; MISSING+=("$p"); }
-    done
+  for tex_file in "${TEX_FILES[@]}"; do
+    if kpsewhich "$tex_file" >/dev/null 2>&1; then
+      ok "$tex_file"
+    else
+      warn "$tex_file"
+      MISSING+=("$tex_file")
+    fi
+  done
+fi
+
+note "中文字体"
+if command -v fc-list >/dev/null 2>&1; then
+  if fc-list : family | grep -Ei 'Songti SC|Noto Serif CJK SC|Source Han Serif' >/dev/null; then
+    ok "中文衬线字体"
   else
-    tlmgr install ctex fontspec 2>&1 | tail -1
-    ok "ctex / fontspec 已安装（xeCJK 随依赖带入）"
+    warn "中文衬线字体，macOS 可启用宋体，Linux 可安装 fonts-noto-cjk"
+    MISSING+=("中文衬线字体")
+  fi
+  if fc-list : family | grep -Ei 'Hiragino Sans GB|Noto Sans CJK SC|Source Han Sans' >/dev/null; then
+    ok "中文无衬线字体"
+  else
+    warn "中文无衬线字体，Linux 可安装 fonts-noto-cjk"
+    MISSING+=("中文无衬线字体")
   fi
 else
-  warn "tlmgr（随 TinyTeX 提供，重开终端后再跑一次本脚本）"
-  MISSING+=("tlmgr")
+  warn "fontconfig，无法自动检查字体"
 fi
 
-# ---------- 4. 字体检测 ----------
-note "字体"
-has_font() { fc-list 2>/dev/null | grep -i "$1" >/dev/null; }  # 不用 grep -q：pipefail 下 SIGPIPE 会误判
-check_font() { # 名称 是否必需 回退/获取方式
-  if has_font "$1"; then ok "$1"; else
-    warn "$1（$3）"; [ "$2" = req ] && MISSING+=("font:$1")
-  fi
-}
-if [ "$OS" = "Darwin" ]; then
-  check_font "Songti SC"        req "macOS 应自带，若缺请在系统设置恢复中文字体"
-  check_font "Times New Roman"  req "macOS 自带"
-  check_font "Palatino"         req "macOS 自带"
-  check_font "Hiragino Sans GB" opt "可选，无衬线场景用"
-  check_font "LXGW WenKai"      opt "可选；书籍风会回退宋体。获取：https://github.com/lxgw/LxgwWenKai"
-  check_font "Maple Mono"       opt "可选；代码会回退 Menlo。获取：https://github.com/subframe7536/maple-font"
-else
-  check_font "Noto Serif CJK SC" req "Linux 安装：sudo apt install fonts-noto-cjk"
-  check_font "LXGW WenKai"       opt "可选；获取：https://github.com/lxgw/LxgwWenKai"
-  check_font "Maple Mono"        opt "可选；代码回退 monospace"
+note "结果"
+if [ ${#MISSING[@]} -eq 0 ] || [ "$MODE" = "install" ]; then
+  echo "  环境已就绪"
+  exit 0
 fi
 
-# ---------- 汇总 ----------
-note "汇总"
-if [ ${#MISSING[@]} -eq 0 ]; then
-  echo "  环境就绪，可以运行 build.sh"
-else
-  echo "  仍有缺失：${MISSING[*]}"
-  echo "  按上方提示处理后重跑本脚本"
-  [ "$CHECK_ONLY" = "--check" ] && exit 1
-fi
-exit 0
+echo "  仍缺少：${MISSING[*]}"
+echo "  运行 bash $(dirname "$0")/setup.sh 自动安装"
+exit 1

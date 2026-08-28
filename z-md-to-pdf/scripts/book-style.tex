@@ -1,0 +1,54 @@
+% 文楷书籍风：温暖、舒展、适合长文、随笔与电子书
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\definecolor{BookInk}{HTML}{2F2924}
+\definecolor{BookRust}{HTML}{9A563A}
+\definecolor{BookSand}{HTML}{D8C7B2}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{BookInk}\centering}
+  {\color{BookRust}\fontsize{13}{16}\selectfont 第\,\thechapter\,章}
+  {12pt}
+  {\fontsize{25}{34}\selectfont}
+  [{\vspace{12pt}{\color{BookSand}\rule{42mm}{0.8pt}}}]
+\titlespacing*{\chapter}{0pt}{-8pt}{38pt}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{BookRust}}
+  {\thesection}{0.7em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{BookInk}}
+  {\thesubsection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\small\color{BookRust}\thepage}
+\fancyhead[LO]{\small\color{BookInk}\nouppercase{\rightmark}}
+\fancyhead[RE]{\small\color{BookInk}\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0pt}
+
+\renewenvironment{quote}
+  {\list{}{\leftmargin=2em\rightmargin=2em}\item\relax\color{BookRust}}
+  {\endlist}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \centering
+    \vspace*{3.6cm}
+    {\color{BookSand}\rule{18mm}{0.8pt}\par}
+    \vspace{22pt}
+    {\fontsize{29}{42}\selectfont\bfseries\color{BookInk}\@title\par}
+    \vspace{26pt}
+    {\color{BookSand}\rule{18mm}{0.8pt}\par}
+    \vfill
+    {\large\color{BookRust}\@author\par}
+    \vspace{12pt}
+    {\small\color{BookInk}\@date\par}
+  \end{titlepage}}
+\makeatother
+
+\AtBeginDocument{\hypersetup{colorlinks=true,linkcolor=BookRust,urlcolor=BookRust,citecolor=BookRust}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.3em}
+\linespread{1.42}\selectfont
