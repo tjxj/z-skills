@@ -1,0 +1,91 @@
+\usepackage[paperwidth=185mm,paperheight=260mm,top=20mm,bottom=22mm,left=20mm,right=20mm]{geometry}
+\usepackage[match]{luatexja-fontspec}
+\setmainfont{Source Han Serif SC VF}
+\setmainjfont{Source Han Serif SC VF}
+\setsansjfont{LXGW WenKai}
+\newjfontfamily\kaijfont{LXGW WenKai}
+\newjfontfamily\displayjfont{Early Summer Serif}
+\newjfontfamily\babeljfont[Path=%FONT_DIR%, Extension=.ttf]{BabelStoneHan}
+\newjfontfamily\imingjfont[Path=%FONT_DIR%, Extension=.ttf]{I.Ming-8.10}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+%THEME_DEFINITIONS%
+\usepackage{needspace}
+\usepackage{mdframed}
+\usepackage[hidelinks,unicode]{hyperref}
+\hypersetup{pdftitle={%PDF_TITLE%},pdfauthor={%PDF_AUTHOR%},pdfsubject={%PDF_SUBJECT%},pdfkeywords={%PDF_KEYWORDS%}}
+\usepackage{bookmark}
+\makeatletter
+\renewcommand{\@pnumwidth}{5em}
+\renewcommand{\@tocrmarg}{6em}
+\renewcommand{\@dotsep}{6}
+\makeatother
+\renewcommand{\contentsname}{目录}
+\newcommand{\BookTitle}{%BOOK_TITLE%}
+\newcommand{\BookSubtitle}{%BOOK_SUBTITLE%}
+\newcommand{\BookAuthor}{%BOOK_AUTHOR%}
+\newcommand{\BookSeries}{%BOOK_SERIES%}
+\newcommand{\BookEdition}{%BOOK_EDITION%}
+\newcommand{\BookSeal}{%BOOK_SEAL%}
+\pagecolor{paper}
+\color{ink}
+\pagestyle{empty}
+\linespread{1.35}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt plus 1pt}
+\emergencystretch=2em
+\newwrite\workpages
+\AtBeginDocument{\immediate\openout\workpages=\jobname.works}
+\AtEndDocument{\immediate\closeout\workpages}
+\newcommand{\BookFrame}{%
+\ifnum\value{page}=1\relax
+\begin{tikzpicture}[remember picture,overlay]
+\draw[frame!35,line width=0.35pt] ($(current page.north west)+(11mm,-11mm)$) rectangle ($(current page.south east)+(-11mm,11mm)$);
+\ThemeCover
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[remember picture,overlay]
+\draw[frame!38,line width=0.4pt] ($(current page.north west)+(12mm,-12mm)$) rectangle ($(current page.south east)+(-12mm,12mm)$);
+\draw[cinnabar!22,line width=0.25pt] ($(current page.north west)+(14mm,-14mm)$) rectangle ($(current page.south east)+(-14mm,14mm)$);
+\node[text=faded,font=\small] at ($(current page.south)+(0,9mm)$) {\thepage};
+\end{tikzpicture}
+\fi}
+\AddToHook{shipout/background}{\BookFrame}
+\newcommand{\Seal}[1]{\tikz[baseline]{\node[draw=cinnabar,line width=0.8pt,inner sep=5pt,text=cinnabar]{\kaijfont\large #1};}}
+\newcommand{\CoverPage}{%
+\clearpage\thispagestyle{empty}
+\vspace*{22mm}
+\begin{center}
+{\kaijfont\large\color{faded} \BookSeries\par}
+\vspace{16mm}
+{\displayjfont\Huge\color{ink} \BookTitle\par}
+\vspace{8mm}
+{\displayjfont\LARGE\color{cinnabar} \BookSubtitle\par}
+\vspace{14mm}
+\Seal{\BookSeal}\par
+\vspace{18mm}
+{\kaijfont\large \BookAuthor　著\par}
+{\kaijfont\small\color{faded} \BookEdition\par}
+\end{center}
+\clearpage}
+\newcommand{\FrontHeading}[1]{\clearpage\phantomsection\addcontentsline{toc}{chapter}{#1}\begin{center}{\displayjfont\Huge\color{cinnabar}#1\par}\end{center}\vspace{5mm}}
+\newcommand{\BookChapter}[3]{\clearpage\phantomsection\addcontentsline{toc}{chapter}{#1}\begin{center}{\kaijfont\large\color{faded}#2\par}\vspace{4mm}{\displayjfont\Huge\color{cinnabar}#1\par}\vspace{5mm}\color{songblue!60}\rule{0.3\linewidth}{0.4pt}\end{center}\vspace{6mm}\begin{minipage}{0.9\linewidth}{\kaijfont\color{ink}#3\par}\end{minipage}\vspace{6mm}}
+\newcommand{\YearHeading}[1]{\clearpage\phantomsection\addcontentsline{toc}{section}{#1}\begin{center}{\displayjfont\LARGE\color{cinnabar}#1\par}\end{center}\vspace{4mm}}
+\newcommand{\WorkStart}[3]{\par\Needspace{6\baselineskip}\write\workpages{#1\space\thepage}\label{work:#1}{\color{cinnabar}\large#2\par}{\kaijfont\scriptsize\color{faded}#3\par}\nobreak}
+\newcommand{\WorkLine}[1]{\noindent#1\par}
+\newcommand{\WorkNote}[1]{\par\begin{mdframed}[linecolor=cinnabar!45,linewidth=0.6pt,leftline=true,topline=false,bottomline=false,rightline=false,leftmargin=8pt,rightmargin=4pt,innertopmargin=4pt,innerbottommargin=4pt,skipabove=6pt,skipbelow=6pt]\kaijfont\small\color{cinnabar}【\NoteLabel】#1\par\end{mdframed}}
+\newcommand{\WorkGloss}[1]{\par{\kaijfont\small\color{ink}【笺注】#1\par}}
+\newcommand{\WorkSource}[1]{\par{\kaijfont\scriptsize\color{faded}【出处】#1\par}}
+\newcommand{\WorkEnd}{\vspace{8pt}}
+\RequirePackage{fancyvrb}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\newcommand{\ArticleWorkStart}[3]{\phantomsection\addcontentsline{toc}{section}{#2}\WorkStart{#1}{#2}{#3}}
+\newcommand{\ArticleHeading}[2]{\par\Needspace{4\baselineskip}\ifnum#1>3\relax{\color{songblue}\normalsize#2\par}\else{\color{cinnabar}\large#2\par}\fi\nobreak}
+\newcommand{\ArticleImage}[3]{\par\begin{center}\includegraphics[width=\linewidth,height=0.55\textheight,keepaspectratio]{#1}\par\vspace{2pt}{\kaijfont\scriptsize\color{faded}#2\par}#3\par\end{center}}
+\newcommand{\ArticleQuote}[1]{\par\begin{mdframed}[linecolor=frame!45,linewidth=0.6pt,leftline=true,topline=false,bottomline=false,rightline=false,leftmargin=8pt,innertopmargin=4pt,innerbottommargin=4pt]\kaijfont\small\color{faded}【引文】#1\par\end{mdframed}}
+\newcommand{\ArticleRule}{\par\vspace{4pt}\color{frame!35}\rule{0.25\linewidth}{0.3pt}\vspace{4pt}}
+\newcommand{\CodeHeading}[1]{\par{\kaijfont\scriptsize\color{faded}#1\par}}
+\DefineVerbatimEnvironment{PoetryCode}{Verbatim}{fontsize=\scriptsize,baselinestretch=1.05,frame=single,rulecolor=\color{frame},framesep=2mm}
+\newcommand{\IndexEntry}[2]{#1\quad\pageref{work:#2}\par}

@@ -1,0 +1,18 @@
+\definecolor{ink}{RGB}{36,36,33}
+\definecolor{cinnabar}{RGB}{72,70,64}
+\definecolor{faded}{RGB}{111,109,101}
+\definecolor{paper}{RGB}{242,241,235}
+\definecolor{songblue}{RGB}{117,118,111}
+\definecolor{mist}{RGB}{193,193,183}
+\definecolor{river}{RGB}{222,221,211}
+\definecolor{frame}{RGB}{102,102,95}
+\newcommand{\NoteLabel}{墨评}
+\newcommand{\ThemeCover}{%
+\begin{scope}[shift={($(current page.south west)+(11mm,11mm)$)},x=1mm,y=1mm]
+\draw[ink!25,line width=1.1pt] (143,66) arc (68:326:22);
+\draw[ink!12,line width=0.4pt] (144,67) arc (67:326:20);
+\path[fill=ink!10] (0,29) .. controls (20,32) and (34,51) .. (48,40) .. controls (65,27) and (81,42) .. (102,32) .. controls (122,23) and (143,34) .. (163,25) -- (163,18) -- (0,18) -- cycle;
+\draw[ink!50,line width=0.55pt] (0,29) .. controls (20,32) and (34,51) .. (48,40) .. controls (65,27) and (81,42) .. (102,32) .. controls (122,23) and (143,34) .. (163,25);
+\draw[ink!15,line width=0.3pt] (18,12) -- (146,12);
+\fill[ink!35] (48,40) circle (0.6pt);
+\end{scope}}

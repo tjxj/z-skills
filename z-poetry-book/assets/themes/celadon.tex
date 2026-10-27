@@ -1,0 +1,19 @@
+\definecolor{ink}{RGB}{38,52,49}
+\definecolor{cinnabar}{RGB}{139,65,49}
+\definecolor{faded}{RGB}{91,111,103}
+\definecolor{paper}{RGB}{235,241,231}
+\definecolor{songblue}{RGB}{91,132,123}
+\definecolor{mist}{RGB}{167,195,181}
+\definecolor{river}{RGB}{202,219,205}
+\definecolor{frame}{RGB}{91,132,123}
+\newcommand{\NoteLabel}{朱批}
+\newcommand{\ThemeCover}{%
+\begin{scope}[shift={($(current page.south west)+(11mm,11mm)$)},x=1mm,y=1mm]
+\draw[songblue!24,line width=0.65pt] (122,49) circle (23);
+\draw[songblue!15,line width=0.35pt] (122,49) circle (20);
+\path[fill=mist!35] (0,43) .. controls (21,57) and (33,79) .. (51,61) .. controls (70,43) and (87,70) .. (108,53) .. controls (126,38) and (145,56) .. (163,45) -- (163,29) -- (0,29) -- cycle;
+\path[fill=songblue!23] (0,35) .. controls (20,43) and (36,56) .. (56,40) .. controls (76,25) and (99,51) .. (121,37) .. controls (137,27) and (150,35) .. (163,31) -- (163,21) -- (0,21) -- cycle;
+\draw[songblue!50,line width=0.4pt] (8,17) .. controls (46,12) and (104,23) .. (155,15);
+\draw[songblue!25,line width=0.3pt] (21,11) .. controls (66,7) and (113,15) .. (144,10);
+\draw[songblue!25,line width=0.35pt] (101,70) -- (110,61) -- (108,51) -- (118,43);
+\end{scope}}

@@ -1,0 +1,20 @@
+\definecolor{ink}{RGB}{55,37,28}
+\definecolor{cinnabar}{RGB}{163,47,33}
+\definecolor{faded}{RGB}{124,93,72}
+\definecolor{paper}{RGB}{247,237,216}
+\definecolor{songblue}{RGB}{146,103,75}
+\definecolor{mist}{RGB}{213,188,155}
+\definecolor{river}{RGB}{228,209,179}
+\definecolor{frame}{RGB}{163,47,33}
+\newcommand{\NoteLabel}{朱批}
+\newcommand{\ThemeCover}{%
+\begin{scope}[shift={($(current page.south west)+(11mm,11mm)$)},x=1mm,y=1mm]
+\draw[cinnabar!35,line width=0.45pt] (0,21) .. controls (42,18) and (104,25) .. (163,20);
+\draw[cinnabar!17,line width=0.3pt] (0,16) .. controls (42,13) and (104,20) .. (163,15);
+\node[draw=cinnabar!75,line width=1pt,inner sep=7pt,text=cinnabar!85] at (34,48) {\kaijfont\huge 诗};
+\node[draw=cinnabar!60,line width=0.7pt,inner sep=5pt,text=cinnabar!70] at (57,38) {\kaijfont\Large 心};
+\node[draw=cinnabar!50,line width=0.6pt,inner sep=4pt,text=cinnabar!65] at (76,53) {\kaijfont\large 藏};
+\draw[cinnabar!45,line width=0.4pt] (108,29) -- (108,70) -- (143,70) -- (143,29);
+\draw[cinnabar!28,line width=0.3pt] (112,33) -- (112,66) -- (139,66) -- (139,33);
+\draw[cinnabar!45,line width=0.45pt] (115,60) -- (136,60) (115,52) -- (136,52) (115,44) -- (136,44);
+\end{scope}}

@@ -16,6 +16,7 @@
 | `z-mail-reader` | 通过 IMAP 读取邮件、下载附件、摘要邮件内容、监听新邮件 | 读邮件、查收邮件、邮件摘要、监听邮件 |
 | `z-md-to-word` | 把本地 Markdown 文章转换成 Word 文档，生成 `.docx` 和 `.doc` 并做打开检查 | 转成doc、Markdown转Word、md转doc、导出Word |
 | `z-md-to-pdf` | 把 Markdown 排成学术、书籍、现代报告三种中文 PDF，支持指定风格、批量生成和 XeLaTeX 项目复编 | Markdown转PDF、排版成PDF、一次生成多种风格PDF |
+| `z-poetry-book` | 把诗词、古籍资料和技术文章做成有出处、可重建、逐页校验的图文书，内置六套宋式审美主题 | 编年诗传、诗词成书、技术文章样张、青瓷/墨禅/月夜/竹影模板 |
 | `z-md-excel` | 把 Markdown 里的表格提取成 Excel 文件 | Markdown 表格转 Excel、导出 MD 表格 |
 | `z-excel-editor` | 读取、编辑、清洗、格式化电子表格文件 | 修改 xlsx、清洗 csv、补公式、做表格 |
 | `z-xkcd-panda-comic` | 把文章、主题或观点改写成黑白手绘四格熊猫梗图 | 四格漫画、金馆长熊猫表情、金教授熊猫脸、熊猫梗图、文章转四格漫画 |

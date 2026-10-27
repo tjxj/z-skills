@@ -1,0 +1,11 @@
+{
+  "default": "song-mist",
+  "themes": [
+    {"id": "song-mist", "name": "烟雨留白", "description": "米白、淡墨、远山、江面、小舟与朱印，保留宋代文人的清远留白。", "file": "themes/song-mist.tex"},
+    {"id": "celadon", "name": "青瓷天青", "description": "浅青灰纸色与天青层山，如青瓷般温润清透。", "file": "themes/celadon.tex"},
+    {"id": "ink-zen", "name": "墨禅寂照", "description": "灰白纸色、浓淡墨山与空灵圆相，以墨色呈现批注。", "file": "themes/ink-zen.tex"},
+    {"id": "cinnabar-seal", "name": "朱砂印谱", "description": "米纸、朱砂印文与暖色装帧线，借鉴宋人鉴藏印谱。", "file": "themes/cinnabar-seal.tex"},
+    {"id": "moon-river", "name": "月夜赤壁", "description": "蓝灰纸色、明月、江面水纹与小舟，营造清朗夜游意境。", "file": "themes/moon-river.tex"},
+    {"id": "bamboo", "name": "竹影清风", "description": "淡青绿纸色与疏竹构图，清雅含蓄而不遮挡正文。", "file": "themes/bamboo.tex"}
+  ]
+}

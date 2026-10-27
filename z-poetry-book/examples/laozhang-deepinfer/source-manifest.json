@@ -1,0 +1,98 @@
+{
+  "original_markdown": "examples/laozhang-deepinfer/source.md",
+  "source_sha256": "fcaeaa2f47216efc57d64127fa4adbd1882fa724c57832cfdf59b684dba6ec6c",
+  "original_metadata": {
+    "title": ".md",
+    "author": [
+      "老章 mlpy"
+    ],
+    "date": "2026-10-25",
+    "categories": [
+      "AIGC"
+    ],
+    "tags": [
+      "aigc"
+    ],
+    "render_with_liquid": false
+  },
+  "effective_metadata": {
+    "title": "打平 DeepInfer",
+    "subtitle": "SGLang 与 vLLM 联袂反攻",
+    "author": "AI学习的老章",
+    "series": "AI技术专题",
+    "edition": "大模型推理观察 · 2026年10月",
+    "seal": "老章",
+    "subject": "技术文章专题排版",
+    "keywords": [
+      "技术文章",
+      "图文排版",
+      "横排"
+    ]
+  },
+  "date_label": "2026-10-25",
+  "images": [
+    {
+      "url": "https://r2.zhanglearning.com/blog/2026/10/ebdb66981dfbb490366c5651ba64c7e1.png",
+      "path": "images/image-01-82d2675643b9.png",
+      "sha256": "82d2675643b97ebfc9c4d954ecb51629b166b4cf1c03f39bf01adfa04f36ad3f",
+      "bytes": 976534,
+      "width": 1508,
+      "height": 1428,
+      "format": "PNG"
+    },
+    {
+      "url": "https://r2.zhanglearning.com/blog/2026/10/e7834cc0d19e7d8eb35223ed875ac5be.png",
+      "path": "images/image-02-7ee750883f98.png",
+      "sha256": "7ee750883f986adf932a8e96b92b11a4db9258f5156f3814f7eccee874365e7f",
+      "bytes": 146609,
+      "width": 1600,
+      "height": 481,
+      "format": "PNG"
+    },
+    {
+      "url": "https://r2.zhanglearning.com/blog/2026/10/0da88adecb97b51696edaf55093aa298.png",
+      "path": "images/image-03-8b09c4750465.png",
+      "sha256": "8b09c4750465c8811ddc84ae923f437954fcf2638d16e8d192748787cbcdabe8",
+      "bytes": 78888,
+      "width": 1600,
+      "height": 638,
+      "format": "PNG"
+    },
+    {
+      "url": "https://r2.zhanglearning.com/blog/2026/10/f202cd072b3fa3d0dafe156d04f07156.png",
+      "path": "images/image-04-ad2793641cee.png",
+      "sha256": "ad2793641cee08cd8f323b285bf9f51a8d428940e0089b11098f88081551f35a",
+      "bytes": 102979,
+      "width": 1600,
+      "height": 888,
+      "format": "PNG"
+    },
+    {
+      "url": "https://r2.zhanglearning.com/blog/2026/10/8a0560054893dc7720ddb919e64aaf69.png",
+      "path": "images/image-05-b3ff82e4088b.png",
+      "sha256": "b3ff82e4088b4a079440dc3612ca8afda83b4fdafacf9d2d60d35d5d02ffd456",
+      "bytes": 72851,
+      "width": 1600,
+      "height": 753,
+      "format": "PNG"
+    },
+    {
+      "url": "https://r2.zhanglearning.com/blog/2026/10/4bc4a8f83fdb2cd5397d8509df66b5e9.png",
+      "path": "images/image-06-5f2852592031.png",
+      "sha256": "5f2852592031d7218b4de6bf8f88405b45d9efa7657a63c13930600edbe2264b",
+      "bytes": 79110,
+      "width": 1600,
+      "height": 795,
+      "format": "PNG"
+    },
+    {
+      "url": "https://r2.zhanglearning.com/blog/2026/10/9193650d91f4184edd2b770693965a96.png",
+      "path": "images/image-07-babc92e2b1d6.png",
+      "sha256": "babc92e2b1d6283be1361a163d22c5a0a04f64b865ba40b2c08b2335937616b8",
+      "bytes": 97652,
+      "width": 1600,
+      "height": 794,
+      "format": "PNG"
+    }
+  ]
+}
