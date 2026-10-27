@@ -256,7 +256,7 @@ z-xkcd-panda-comic/assets/reference-codex-computer-housekeeper-panda-comic.png
 
 ## z-life-hub 家庭生活管理后台
 
-[`z-life-hub/`](z-life-hub/README.md) 是一组生活类 Skill，在 WorkBuddy 上实测：`personal-diary`（日记）、`reading-notes`（读书笔记）、`family-health-archive`（健康档案）、`voucher-vault`（各种凭证）、`mac-butler`（电脑管理）。记账配合 [`tjxj/ai-bookkeeping-skills`](https://github.com/tjxj/ai-bookkeeping-skills) 使用
+[`z-life-hub/`](z-life-hub/README.md) 是一组生活类 Skill，在 WorkBuddy 上实测，数据全部存进腾讯文档「生活后台」文件夹，手机上随时能看能记：`personal-diary`（日记）、`family-ledger`（记账）、`reading-notes`（读书笔记）、`family-health-archive`（健康档案）、`voucher-vault`（各种凭证）、`mac-butler`（电脑管理）
 
 ```bash
 npx skills add tjxj/z-skills --skill personal-diary
