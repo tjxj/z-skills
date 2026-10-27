@@ -2,7 +2,7 @@
 
 `z-skills` 是一组可复用的本地 Agent Skills，用来把常见工作流沉淀成稳定能力：网页素材采集、视频下载、视频学习网页、全景音频生成、文档解析、邮件读取、表格处理、Markdown 转 Word/PDF、诗词与技术文章成书、互动科普网页、证据型资料问答、docx 模板格式刷、手写幻灯片、手写 HTML 动画，以及文章四格漫画配图
 
-这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **19 个 Skill**，具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
+这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **19 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
 
 [快速安装](#快速安装) · [Skills 一览](#skills-一览) · [诗词与技术文章成书](#诗词与技术文章成书) · [使用建议](#使用建议)
 
@@ -252,6 +252,14 @@ python3 z-docx-format-brush/scripts/verify_format.py 目标.docx
 
 ```text
 z-xkcd-panda-comic/assets/reference-codex-computer-housekeeper-panda-comic.png
+```
+
+## z-life-hub 家庭生活管理后台
+
+[`z-life-hub/`](z-life-hub/README.md) 是一组生活类 Skill，在 WorkBuddy 上实测：`personal-diary`（日记）、`reading-notes`（读书笔记）、`family-health-archive`（健康档案）、`voucher-vault`（各种凭证）、`mac-butler`（电脑管理）。记账配合 [`tjxj/ai-bookkeeping-skills`](https://github.com/tjxj/ai-bookkeeping-skills) 使用
+
+```bash
+npx skills add tjxj/z-skills --skill personal-diary
 ```
 
 ## 使用建议
