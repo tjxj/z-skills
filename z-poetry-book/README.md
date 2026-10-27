@@ -138,11 +138,10 @@ make check             # 上述全部测试
 - 简单表格要求列数一致；图片仅支持 PNG/JPEG，网络图片仅允许 HTTPS，单张上限 25MB。
 - 新输出目录是默认安全策略；重建时请选择新目录，或由用户明确处理旧产物。
 
-## 文档与文章
+## 文档
 
 - [Skill 完整说明](SKILL.md)
 - [从苏轼书到 Poetry Book 的工作记录](docs/poetry-book-worklog.md)
-- [我花了 10 小时 35 分，用 AI 编了一套装裱精美的诗集](docs/ai-poetry-book-story.md)
 
 ## 目录
 
