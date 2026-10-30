@@ -253,8 +253,6 @@ z-grounded-source-qa/
     └── fixtures/
 ```
 
-## 与人物专用 Skill 的关系
+## 定位与复用
 
-`z-liang-wenfeng-grounded-voice` 继续承担梁文锋资料、专用主题索引、表达习惯和第一人称边界
-
-`z-grounded-source-qa` 提供可复用的底层方法，适合任何新语料、人物或项目
+`z-grounded-source-qa` 提供可复用的底层方法，适合任何新语料、人物或项目。

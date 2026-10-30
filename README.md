@@ -2,7 +2,7 @@
 
 `z-skills` 是一组可复用的本地 Agent Skills，用来把常见工作流沉淀成稳定能力：网页素材采集、视频下载、视频学习网页、全景音频生成、文档解析、邮件读取、表格处理、Markdown 转 Word/PDF、诗词与技术文章成书、互动科普网页、证据型资料问答、docx 模板格式刷、手写幻灯片、手写 HTML 动画，以及文章四格漫画配图
 
-这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **19 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
+这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **18 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
 
 [快速安装](#快速安装) · [Skills 一览](#skills-一览) · [诗词与技术文章成书](#诗词与技术文章成书) · [使用建议](#使用建议)
 
@@ -59,7 +59,6 @@ cp -R z-* "/path/to/your/.agent/skills/"
 | [`z-wanghong-handwritten-video`](z-wanghong-handwritten-video/SKILL.md) | 直接驱动王虹手写 PPT 的原 HTML DOM，锁定预览封面字形和原布局，输出无音轨动画 MP4 | 动画版王虹PPT、王虹手写动画、Notability手写视频、手写PPT转MP4 |
 | [`z-grounded-source-qa`](z-grounded-source-qa/SKILL.md) | 对任意本地 Markdown/TXT 资料做多表达式检索、证据型问答、核对和写作 | 只根据这些资料回答、按原文核对、给出出处、从访谈里找依据 |
 | [`z-expense-policy-qa`](z-expense-policy-qa/SKILL.md) | 把报销与差旅制度变成可核对金额、材料、时限、例外和条款出处的问答助手，内置虚构演示制度 | 报销制度、差旅标准、这笔钱能不能报、缺什么材料 |
-| [`z-liang-wenfeng-grounded-voice`](z-liang-wenfeng-grounded-voice/SKILL.md) | 基于梁文锋交流会材料做第一人称模拟回答、观点推演和来源核对 | 梁文锋交流会材料、现在你是梁文锋、记者追问、按原文核对 |
 | [`z-sci-viz-lab`](z-sci-viz-lab/SKILL.md) | 把数学/科学概念生成可视化互动科普单页，支持多场景切换、Three.js/Canvas、单文件构建与 Cloudflare Pages 部署 | 可视化科普、互动科普实验、科学交互演示 |
 | [`z-docx-format-brush`](z-docx-format-brush/SKILL.md) | 从模板 docx 提取格式指纹（字体/字号/行距/缩进/表格边框/封面/分页），统一刷到目标 docx，修复 pandoc/模型产物的格式混乱 | 格式刷、格式统一、套用模板格式、docx格式修复、公文格式 |
 
@@ -333,11 +332,6 @@ z-skills/
     scripts/
     tests/
     evals/
-  z-liang-wenfeng-grounded-voice/
-    SKILL.md
-    examples/
-    references/
-    tests/
   z-grounded-source-qa/
     SKILL.md
     README.md
