@@ -695,7 +695,7 @@ def race(P, sp, top, bot):
         win = it.get("hl", i == best)
         out += P.text(x0, y + 6, it["name"], 24, "title", s["ink"], weight=800)
         if it.get("note"):
-            out += P.text(x0 + text_w(it["name"], 24) + 14, y + 6, it["note"], 16, "body", s["muted"])
+            out += P.text(x0 + text_w(it["name"], 24) * 1.15 + 14, y + 6, it["note"], 16, "body", s["muted"])
         by = y + 24
         bh = min(40, lh - 60)
         r = min(s["radius"], 10)
