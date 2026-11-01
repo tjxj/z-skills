@@ -1,10 +1,10 @@
 # z-skills
 
-`z-skills` 是一组可复用的本地 Agent Skills，用来把常见工作流沉淀成稳定能力：网页素材采集、视频下载、视频学习网页、全景音频生成、文档解析、邮件读取、表格处理、Markdown 转 Word/PDF、诗词与技术文章成书、互动科普网页、证据型资料问答、docx 模板格式刷、手写幻灯片、手写 HTML 动画，以及文章四格漫画配图
+`z-skills` 是一组可复用的本地 Agent Skills，用来把常见工作流沉淀成稳定能力：网页素材采集、视频下载、视频学习网页、全景音频生成、文档解析、邮件读取、表格处理、Markdown 转 Word/PDF、诗词与技术文章成书、互动科普网页、证据型资料问答、docx 模板格式刷、手写幻灯片、手写 HTML 动画、会动的解析图，以及文章四格漫画配图
 
-这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **18 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
+这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **19 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
 
-[快速安装](#快速安装) · [Skills 一览](#skills-一览) · [诗词与技术文章成书](#诗词与技术文章成书) · [使用建议](#使用建议)
+[快速安装](#快速安装) · [Skills 一览](#skills-一览) · [「动」悉万物](#动悉万物会动的解析图) · [诗词与技术文章成书](#诗词与技术文章成书) · [使用建议](#使用建议)
 
 ## 快速安装
 
@@ -61,6 +61,20 @@ cp -R z-* "/path/to/your/.agent/skills/"
 | [`z-expense-policy-qa`](z-expense-policy-qa/SKILL.md) | 把报销与差旅制度变成可核对金额、材料、时限、例外和条款出处的问答助手，内置虚构演示制度 | 报销制度、差旅标准、这笔钱能不能报、缺什么材料 |
 | [`z-sci-viz-lab`](z-sci-viz-lab/SKILL.md) | 把数学/科学概念生成可视化互动科普单页，支持多场景切换、Three.js/Canvas、单文件构建与 Cloudflare Pages 部署 | 可视化科普、互动科普实验、科学交互演示 |
 | [`z-docx-format-brush`](z-docx-format-brush/SKILL.md) | 从模板 docx 提取格式指纹（字体/字号/行距/缩进/表格边框/封面/分页），统一刷到目标 docx，修复 pandoc/模型产物的格式混乱 | 格式刷、格式统一、套用模板格式、docx格式修复、公文格式 |
+| [`z-dongxi`](z-dongxi/README.md) | 「动」悉万物：一段内容变一张会动的 3:4 解析图，13 种图型 × 12 种风格，单行 SVG 直接粘进公众号，可导出 PNG/GIF/MP4 | 动态图、动态流程图、动态SVG、动图解释、让这张图动起来、mermaid动起来、excalidraw风动图 |
+
+## 「动」悉万物：会动的解析图
+
+[z-dongxi](z-dongxi/README.md) 把有过程的内容演出来：RAG 的数据怎么流、HTTPS 怎么握手、Agent 怎么循环、订单怎么流转、用户怎么在漏斗里流失。给主题和内容，Agent 自动选图型和风格、写 spec、渲染、lint、截帧自检。
+
+<p align="center">
+<img src="z-dongxi/demos/svg/rag.svg" width="240"> <img src="z-dongxi/demos/svg/https.svg" width="240"> <img src="z-dongxi/demos/svg/rag-sketch.svg" width="240">
+</p>
+
+```bash
+npx skills add tjxj/z-skills --skill z-dongxi
+python3 z-dongxi/scripts/render.py --spec z-dongxi/demos/specs/rag.json --style sketch --out rag.svg --png rag.png
+```
 
 ## z-web-pack 与 z-video-downloader 边界
 

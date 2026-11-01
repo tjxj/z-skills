@@ -1,0 +1,9 @@
+{"type":"layers","style":"blueprint","kicker":"STACK · 推理栈","title":"你发一句话，穿过了几层软件",
+"subtitle":"从聊天框到 GPU，每层各管一件事","trace":"roundtrip","glyph":"Prompt","back_glyph":"Token",
+"layers":[
+ {"title":"应用层","sub":"聊天界面 / Agent","chips":["ChatGPT","Cursor","Claude Code"]},
+ {"title":"API 网关","sub":"鉴权、限流、计费","chips":["OpenAI 兼容","Key"]},
+ {"title":"推理引擎","sub":"调度批次、管 KV Cache","chips":["vLLM","SGLang","TensorRT-LLM"]},
+ {"title":"模型权重","sub":"FP8 / INT4 量化","chips":["DeepSeek","Qwen","Llama"]},
+ {"title":"GPU 与算子","sub":"矩阵乘法跑在这里","chips":["CUDA","H100","4090"]}
+]}

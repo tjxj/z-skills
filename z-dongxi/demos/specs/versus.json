@@ -1,0 +1,5 @@
+{"type":"versus","style":"swiss","kicker":"ROI · 落地前后","title":"周报从 2 小时变成 6 分钟",
+"subtitle":"同一份周报，人工做和 AI 流水线做",
+"left":{"title":"原来","sub":"运营手动整理","steps":["导出 5 个平台数据","粘进 Excel 对齐","手算环比","写结论","排版发群"],"total":"≈ 120 分钟"},
+"right":{"title":"现在","sub":"脚本 + 大模型","steps":["定时拉取数据","自动对齐计算","模型写结论","人工过一遍"],"total":"≈ 6 分钟"},
+"slow_dur":5.6,"speed_ratio":0.18,"badge":"每月省下 7.6 小时"}

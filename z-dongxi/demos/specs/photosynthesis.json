@@ -1,0 +1,10 @@
+{"type":"cycle","style":"chalk","kicker":"生物课 · 第 5 章","title":"碳在地球上转一圈",
+"subtitle":"植物吸进去，动物呼出来，周而复始",
+"steps":[
+ {"title":"大气 CO₂"},
+ {"title":"光合作用","sub":"叶片吸收"},
+ {"title":"植物生长","sub":"变成糖和木头"},
+ {"title":"动物进食","sub":"碳进入食物链"},
+ {"title":"呼吸与分解","sub":"重新释放 CO₂"}
+],
+"rounds":2,"center":{"title":"碳循环","sub":"一圈约几十年","counter":"第 {n} 圈"}}

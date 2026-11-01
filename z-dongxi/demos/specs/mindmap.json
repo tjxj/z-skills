@@ -1,0 +1,8 @@
+{"type":"tree","style":"sketch","kicker":"思维导图","title":"想入门 AI 应用开发，学什么",
+"subtitle":"三条线，挑一条先走通",
+"root":{"title":"AI 应用开发"},
+"children":[
+ {"title":"提示词","children":[{"title":"角色与格式"},{"title":"少样本示例"},{"title":"思维链"}]},
+ {"title":"RAG","hl":true,"children":[{"title":"切块与嵌入"},{"title":"向量检索"},{"title":"重排"},{"title":"评测"}]},
+ {"title":"Agent","children":[{"title":"工具调用"},{"title":"MCP"},{"title":"记忆"}]}
+]}

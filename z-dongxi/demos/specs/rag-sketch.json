@@ -1,0 +1,21 @@
+{"type":"flow","style":"sketch","kicker":"白板讲解 · RAG","title":"大模型为什么要先“翻书”再回答",
+"subtitle":"没翻书就答，叫幻觉；翻了书再答，叫 RAG",
+"nodes":[
+ {"id":"q","title":"你问：公司年假几天？"},
+ {"id":"judge","title":"模型背过吗？","shape":"diamond"},
+ {"id":"guess","title":"硬编一个","sub":"“一般是 5 天吧”","role":"soft"},
+ {"id":"search","title":"去资料库翻","sub":"员工手册第 3 章"},
+ {"id":"kb","title":"员工手册","shape":"db","rank":3,"x":0.8},
+ {"id":"ans","title":"照着书回答","sub":"满一年 10 天，附原文出处","role":"accent","rank":4}
+],
+"edges":[
+ {"from":"q","to":"judge"},
+ {"from":"judge","to":"guess","label":"不翻书"},
+ {"from":"judge","to":"search","label":"RAG"},
+ {"from":"search","to":"kb","dashed":true},
+ {"from":"search","to":"ans"}
+],
+"play":[
+ {"path":["q","judge","guess"],"note":"没有 RAG：张口就编","color":"bad"},
+ {"path":["q","judge","search","ans"],"note":"有 RAG：先查再答"}
+]}

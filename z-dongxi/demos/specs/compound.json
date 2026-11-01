@@ -1,0 +1,4 @@
+{"type":"bars","style":"porcelain","kicker":"复利 · COMPOUND","title":"每月定投 2000，年化 8%，会变成多少",
+"subtitle":"前十年像在原地踏步，后面曲线自己往上翘","unit":" 万","y_label":"账户（万元）",
+"series":[{"label":"第5年","value":14.7},{"label":"第10年","value":36.6},{"label":"第15年","value":69.2},{"label":"第20年","value":117.8},{"label":"第25年","value":190.2},{"label":"第30年","value":298.1,"hl":true}],
+"note":"本金 72 万，收益 226 万"}

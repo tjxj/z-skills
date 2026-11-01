@@ -1,0 +1,24 @@
+{
+  "type": "pipeline",
+  "style": "swiss",
+  "kicker": "RAG · RETRIEVAL AUGMENTED GENERATION",
+  "title": "RAG 一次问答，数据走了哪几步",
+  "subtitle": "左边提前建好知识库，右边每次提问现查现答",
+  "foot": "离线建库一次，在线问答千次",
+  "lanes": [
+    {"name": "01 · 离线建库", "stages": [
+      {"id": "doc", "title": "原始文档", "sub": "PDF / 网页 / 工单", "glyph": "DOC"},
+      {"id": "chunk", "title": "切块", "sub": "每块约 500 字", "glyph": "✂"},
+      {"id": "emb1", "title": "向量化", "sub": "embedding 模型", "glyph": "VEC"},
+      {"id": "vdb", "title": "向量库", "sub": "存下所有块的坐标", "role": "dark", "row": 4}
+    ]},
+    {"name": "02 · 在线问答", "stages": [
+      {"id": "q", "title": "用户提问", "sub": "退货要几天到账", "glyph": "Q"},
+      {"id": "emb2", "title": "问题向量化", "sub": "同一个模型", "glyph": "VEC"},
+      {"id": "ret", "title": "检索 Top-K", "sub": "找最像的 5 块", "glyph": "K=5", "row": 3},
+      {"id": "llm", "title": "拼进提示词", "sub": "资料 + 问题交给大模型", "row": 4},
+      {"id": "ans", "title": "带出处的回答", "sub": "3-5 个工作日，见《退货政策》", "role": "accent", "row": 5}
+    ]}
+  ],
+  "links": [{"from": "vdb", "to": "ret", "label": "相似度"}]
+}

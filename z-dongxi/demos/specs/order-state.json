@@ -1,0 +1,19 @@
+{"type":"state","style":"field","kicker":"SOP · 订单状态机","title":"一个订单，一生会经过哪些状态",
+"subtitle":"每条箭头都是一个触发事件，客服对照这张图查单",
+"states":[
+ {"id":"new","title":"待支付","kind":"start"},
+ {"id":"paid","title":"已支付"},
+ {"id":"ship","title":"已发货"},
+ {"id":"done","title":"已签收","kind":"end"},
+ {"id":"refund","title":"退款中"},
+ {"id":"closed","title":"已关闭","role":"soft"}
+],
+"transitions":[
+ {"from":"new","to":"paid","label":"付款"},
+ {"from":"paid","to":"ship","label":"出库"},
+ {"from":"ship","to":"done","label":"签收"},
+ {"from":"done","to":"refund","label":"7 天内申请"},
+ {"from":"refund","to":"closed","label":"退款到账"},
+ {"from":"closed","to":"new","label":"超时未付","dashed":true}
+],
+"walk":["new","paid","ship","done","refund","closed"],"center":"ORDER · LIFECYCLE"}

@@ -1,0 +1,8 @@
+{"type":"race","style":"editorial","kicker":"ROI · 成本赛跑","title":"跑完 1 亿 token，哪种方案先回本",
+"subtitle":"同样的任务量，比谁花的钱少","unit":" 元","better":"lower","finish":"花费",
+"items":[
+ {"name":"GPT 类旗舰 API","value":3000,"note":"按量付费"},
+ {"name":"国产模型 API","value":800,"note":"按量付费"},
+ {"name":"本地 4090 部署","value":260,"note":"电费 + 折旧"}
+],
+"badge":"本地方案省下 91%"}

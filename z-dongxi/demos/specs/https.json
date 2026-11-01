@@ -1,0 +1,12 @@
+{"type":"sequence","style":"blueprint","kicker":"PROTOCOL · TLS 1.3","title":"HTTPS 握手：一来一回就加密好了",
+"subtitle":"浏览器和服务器在发第一个字之前，先对好暗号","seal":"TLS-13",
+"actors":[{"id":"c","title":"浏览器"},{"id":"s","title":"服务器"},{"id":"ca","title":"证书机构"}],
+"messages":[
+ {"from":"c","to":"s","text":"ClientHello + 我的密钥份额","note":"支持的加密套件"},
+ {"from":"s","to":"c","text":"ServerHello + 证书","note":"服务器的密钥份额"},
+ {"from":"c","to":"ca","text":"这张证书是真的吗"},
+ {"from":"ca","to":"c","text":"签名有效","reply":true},
+ {"from":"c","to":"c","text":"双方算出同一把会话密钥"},
+ {"from":"c","to":"s","text":"Finished · 开始加密通话"},
+ {"from":"s","to":"c","text":"加密的网页内容","reply":true}
+]}

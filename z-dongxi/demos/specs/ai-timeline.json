@@ -1,0 +1,10 @@
+{"type":"timeline","style":"inkwash","kicker":"大模型编年","title":"大模型这十年，几个关键节点","seal":"编年",
+"subtitle":"每一步都让下一步变得理所当然",
+"events":[
+ {"time":"2017","title":"Transformer 论文发表","sub":"Attention Is All You Need"},
+ {"time":"2018","title":"BERT 与 GPT-1","sub":"预训练 + 微调成为范式"},
+ {"time":"2020","title":"GPT-3","sub":"1750 亿参数，少样本学习"},
+ {"time":"2022","title":"ChatGPT","sub":"两个月一亿用户","hl":true},
+ {"time":"2024","title":"推理模型","sub":"先想再答，o1 / R1"},
+ {"time":"2025","title":"Agent 元年","sub":"模型开始自己调工具干活"}
+]}

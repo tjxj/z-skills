@@ -1,0 +1,17 @@
+{"type":"flow","style":"neon","kicker":"MoE · ROUTING","title":"混合专家：每个词只叫醒两个专家",
+"subtitle":"模型很大，但每次只算其中一小块",
+"nodes":[
+ {"id":"tok","title":"输入的词","sub":"“退款”","role":"dark"},
+ {"id":"router","title":"路由器","sub":"给 8 个专家打分","shape":"diamond"},
+ {"id":"e1","title":"专家 1","sub":"语法","rank":2},
+ {"id":"e2","title":"专家 2","sub":"电商","rank":2},
+ {"id":"e3","title":"专家 3","sub":"代码","rank":2},
+ {"id":"e4","title":"专家 4","sub":"法律","rank":2},
+ {"id":"mix","title":"加权合并","sub":"只算了 2/8 的参数","role":"accent","rank":3}
+],
+"edges":[
+ {"from":"tok","to":"router"},
+ {"from":"router","to":"e1","dashed":true},{"from":"router","to":"e2"},{"from":"router","to":"e3","dashed":true},{"from":"router","to":"e4"},
+ {"from":"e2","to":"mix"},{"from":"e4","to":"mix"}
+],
+"play":[{"path":["tok","router","e2","mix"],"note":"得分最高：电商 0.61"},{"path":["tok","router","e4","mix"],"note":"第二名：法律 0.27"}]}

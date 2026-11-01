@@ -1,0 +1,10 @@
+{"type":"cycle","style":"terminal","kicker":"agent --loop react","title":"Agent 干活的循环：想、做、看",
+"subtitle":"一直转，直到它觉得任务完成",
+"steps":[
+ {"title":"读任务","sub":"修复登录 bug"},
+ {"title":"想下一步","sub":"先看报错日志"},
+ {"title":"调工具","sub":"grep / 读文件 / 跑测试"},
+ {"title":"看结果","sub":"测试还挂 2 个"},
+ {"title":"改代码","sub":"写入补丁"}
+],
+"center":{"title":"ReAct","sub":"Reason + Act","values":["第 1 轮 · 2 failed","第 2 轮 · 1 failed","第 3 轮 · ✓ 全部通过"]}}

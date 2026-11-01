@@ -1,0 +1,9 @@
+{"type":"funnel","style":"riso","kicker":"GROWTH · 电商漏斗","title":"一万人点进来，最后几个人付钱",
+"subtitle":"每一层都在漏人，优化最漏的那层最划算","unit":" 人",
+"stages":[
+ {"title":"看到商品","value":10000},
+ {"title":"点进详情","value":3200,"note":"主图决定"},
+ {"title":"加入购物车","value":860,"note":"价格与评价"},
+ {"title":"提交订单","value":310},
+ {"title":"完成付款","value":236,"note":"转化 2.4%"}
+]}
