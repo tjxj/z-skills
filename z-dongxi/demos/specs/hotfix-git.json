@@ -1,0 +1,59 @@
+{
+ "type": "gitgraph",
+ "style": "terminal",
+ "kicker": "git log --graph",
+ "title": "线上出 bug，hotfix 怎么走",
+ "subtitle": "从 main 拉，修完合回 main 和 dev",
+ "branches": [
+  {
+   "name": "main"
+  },
+  {
+   "name": "hotfix",
+   "from": "main"
+  },
+  {
+   "name": "dev",
+   "from": "main"
+  }
+ ],
+ "commits": [
+  {
+   "branch": "main",
+   "msg": "v1.2 发布",
+   "tag": "v1.2"
+  },
+  {
+   "branch": "dev",
+   "msg": "开发新功能 A"
+  },
+  {
+   "branch": "hotfix",
+   "msg": "定位：支付回调超时"
+  },
+  {
+   "branch": "dev",
+   "msg": "新功能 B 写到一半"
+  },
+  {
+   "branch": "hotfix",
+   "msg": "修复并补测试"
+  },
+  {
+   "branch": "main",
+   "msg": "合并 hotfix",
+   "merge": "hotfix",
+   "tag": "v1.2.1",
+   "hl": true
+  },
+  {
+   "branch": "dev",
+   "msg": "同步 main，避免冲突",
+   "merge": "main"
+  },
+  {
+   "branch": "dev",
+   "msg": "继续开发"
+  }
+ ]
+}

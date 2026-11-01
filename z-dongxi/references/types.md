@@ -1,6 +1,8 @@
-# 13 种图型：选型表与 spec 字段
+# 31 种图型：选型表与 spec 字段
 
 先问一句：**这段内容里，什么东西在动？** 动的东西决定图型。
+
+## 过程类（13 种）：东西在走
 
 | 内容里在动的东西 | 图型 | 对应 Mermaid | 典型题材 |
 |---|---|---|---|
@@ -18,22 +20,47 @@
 | 从一点向外扩散 | `network` 网络扩散 | — | 谣言传播、病毒式增长、依赖传染 |
 | 改造前后两套流程比效率 | `versus` 前后对比 | — | ROI 展示、AI 落地前后、新旧方案 |
 
-拿不准就选 `flow`。Mermaid 的 gantt / pie / er / class 图本身没有「过程」，硬做成动图没意义，见 SKILL.md 的「不适合」。
+## 数据与结构类（18 种）：数字和关系在长出来
+
+| 内容里在动的东西 | 图型 | 对应 Mermaid | 典型题材 |
+|---|---|---|---|
+| 一笔钱 / 一个整体被分成几份 | `donut` 环形占比 | pie | 成本拆账、流量来源、时间分配 |
+| 一堆选项按两个维度落位 | `quadrant` 四象限 | quadrantChart | 功能优先级、选型、精力管理 |
+| 几件事排期，有依赖、有今天 | `gantt` 甘特排期 | gantt | 项目计划、上线排期、学习计划 |
+| 一批量从几处流向几处 | `sankey` 桑基流向 | sankey | 流量去向、预算流向、能量转换 |
+| 分支拉出、提交、合并 | `gitgraph` 分支图 | gitGraph | Git 工作流、版本发布、实验分支 |
+| 一段体验里情绪起落 | `journey` 用户旅程 | journey | 用户体验、学习曲线、上手过程 |
+| 一张卡片在几列之间推进 | `kanban` 看板流转 | kanban | 需求流转、内容生产、招聘进度 |
+| 几个对象在多个维度打分 | `radar` 雷达对比 | radar | 模型选型、能力评估、产品对比 |
+| 几个条件的交集 | `venn` 韦恩交集 | — | 选题、人才画像、产品定位 |
+| 由下往上越来越少、越来越值钱 | `pyramid` 金字塔 | — | DIKW、需求层次、能力模型 |
+| 几张表靠主外键连起来 | `er` 实体关系 | erDiagram | 数据库设计、数据模型、业务对象 |
+| 面积代表大小的拆分 | `treemap` 矩形树图 | treemap | 订阅开销、代码体积、市场份额 |
+| 一百个人里各占多少 | `waffle` 华夫格 | — | 转化率、留存、占比科普 |
+| 几个关键数字一起跳 | `stat` 数字看板 | — | 发布战报、周报、增长复盘 |
+| 两个维度交叉的强弱 | `heatmap` 热力格 | — | 发文时间、活跃时段、错误分布 |
+| 几个方案逐项打勾比较 | `table` 对照表 | — | 选型对比、套餐对比、方案取舍 |
+| 照着做的几步 | `steps` 大号步骤 | — | 上手教程、SOP、操作清单 |
+| 一个核心外面围着一圈圈生态 | `orbit` 生态轨道 | — | 协议生态、产品矩阵、技术栈 |
+
+拿不准就选 `flow`。只想放一张纯静态的分类清单时，用表格更合适。
 
 ## 公共字段
 
 ```json
-{"type":"pipeline","style":"auto","kicker":"小字眉题","title":"主标题，一句话说清讲什么",
- "subtitle":"副标题，可选","foot":"页脚一句话，可选","seal":"印章/图号，可选"}
+{"type":"pipeline","style":"auto","ratio":"3:4","kicker":"小字眉题","title":"主标题，一句话说清讲什么",
+ "subtitle":"副标题，可选","foot":"页脚一句话，可选","seal":"印章/图号，可选","direction":"LR 或 TB，可选"}
 ```
 
-- `style`：12 种风格名之一，或 `auto`（按标题关键词自动选）
-- 所有文字字段都可以是中文，宽度自动折行；标题超过 2 行会被截断，所以要短
+- `style`：25 种风格名之一，或 `auto`（按标题关键词自动选）
+- `ratio`：`3:4`（默认，公众号）/ `9:16`（竖屏视频、小红书全屏）/ `1:1`（朋友圈、方图）/ `4:3`（PPT、博客）/ `16:9`（B 站、横屏视频、PPT）。命令行 `--ratio` 优先
+- `direction`：`flow`、`pipeline`、`timeline` 支持。不写时竖版画幅从上往下，横版画幅从左往右
+- 标题超过 2 行会被截断，所以要短；所有坐标都从画幅推出，换画幅不用改 spec
 
-## 各图型字段
+## 过程类字段
 
 **flow**
-- `nodes`: `[{id,title,sub?,role?,shape?:"box|diamond|db",rank?,x?}]`，rank 为第几行（不写自动按边推断），x 为 0~1 的水平位置
+- `nodes`: `[{id,title,sub?,role?,shape?:"box|diamond|db",rank?,x?}]`，rank 为第几层（不写自动按边推断），x 为 0~1 的位置
 - `edges`: `[{from,to,label?,dashed?}]`，形成环的边自动画成回头线
 - `play`: 演哪几条路径，`[{path:[id...],note?,color?:"accent|bad|good|accent2"}]`，最后一条停住作为终态
 
@@ -50,6 +77,7 @@
 - 单线：`stages`；双线：`lanes:[{name,stages}]`
 - stage：`{id,title,sub?,glyph?,role?,row?}`，glyph 是沿线流动的小标签（如 DOC、VEC、Q）
 - `links`: 跨线连接 `[{from,to,label?,dashed?}]`；`sequential:false` 让两条线同时跑
+- 横版单线超过 4 节时自动折成两行蛇形
 
 **layers**
 - `layers`: `[{title,sub?,chips?:[...],role?}]`，从上到下
@@ -80,3 +108,69 @@
 
 **versus**
 - `left` / `right`: `{title,sub?,steps:[...],total}`；`slow_dur`、`speed_ratio`（右边比左边快多少）、`badge`
+
+## 数据与结构类字段
+
+**donut**：扇区依次画出，中间数字跳到重点项
+- `items`: `[{label,value,hl?,color?}]`，3~6 项；`unit`
+- `center`: `{title,text?,sub?}`，text 不写时显示 hl 项的百分比
+
+**quadrant**：四格先铺，点一个个落位，重点点有涟漪
+- `axes`: `{x:[左端,右端],y:[下端,上端],x_name?}`；`quadrants`: `[左上,右上,左下,右下]`；`best`: 高亮第几格（0 起，默认 1）
+- `points`: `[{label,x,y,hl?,color?}]`，x/y 为 0~1
+- `notes`: `[{title,sub?,role?}]`，横版画幅时放在右侧
+
+**gantt**：任务条依次伸长，依赖箭头跟着连，今天线最后落下
+- `tasks`: `[{name,start,end,group?,after?,label?,hl?}]`，start==end 画里程碑菱形；after 为前置任务序号或名字
+- `unit`、`end`、`ticks`、`tick_labels`、`now`、`now_label`
+
+**sankey**：带状流依次铺开，小圆点沿带子跑
+- `flows`: `[{from,to,value,hl?}]`，节点按出现顺序自动分列；`unit`；`colors`: `{节点名:颜色}`
+
+**gitgraph**：分支从主线拉出，提交逐个点亮，合并线画回去
+- `branches`: `[{name,from?,color?}]`
+- `commits`: `[{branch,msg,tag?,merge?:分支名,hl?}]`，按时间顺序
+
+**journey**：情绪曲线一路画过去，每一站亮起心情标签
+- `stages`: `[{title,sub?,score,feel?,hl?}]`，score 1~5（`scale` 可改上限）
+
+**kanban**：主角卡片从第一列一路挪到最后一列
+- `columns`: `[{name,cards:[文字或{title,sub}]}]`，3~5 列
+- `move`: `{title,sub?,path:[列序号...],note?}`
+
+**radar**：多边形从中心胀开
+- `axes`: 维度名 4~8 个；`series`: `[{name,values,color?}]`，1~3 组；`max`；`show_values`
+- `note`: `{title,sub}`，横版画幅放右下
+
+**venn**：圆从两边滑进来叠在一起，交集处亮起
+- `sets`: `[{title,sub?,color?}]`，2~3 个
+- `overlaps`: `{"ab":"..","bc":"..","ac":".."}`；`center`: 三圈交集文字；`caption`
+
+**pyramid**：从底层一级级往上垒
+- `levels`: `[{title,sub?,note?,role?}]`，从上到下写，3~6 层
+
+**er**：表一张张落下，关系线连上，小圆点沿外键跑
+- `entities`: `[{id,title,fields:["id PK","user_id FK","name"],hl?,pos?:[列,行]}]`
+- `relations`: `[{from,to,card?:"1:N",label?}]`；`cols`: 每行几张表
+
+**treemap**：块按大小依次长出来
+- `items`: `[{label,value,hl?,color?,text?}]`；`unit`
+
+**waffle**：100 格一格格填色，大数字最后落定
+- `parts`: `[{label,value,color?}]`，合计 100；`big`、`label`、`caption`
+
+**stat**：数字从 0 跳到终值，迷你走势线画出来
+- `items`: `[{label,value,delta?,lower_better?,spark?:[...],sub?,hl?}]`，2~6 个；`cols`
+
+**heatmap**：格子一行行亮起，最大值描边
+- `rows`、`cols`、`values`（二维数组）；`min`、`max`、`legend`、`note`、`show_values`
+
+**table**：表头先立，行逐条扫过，推荐列高亮
+- `columns`: 列名数组；`rows`: `[{label,cells:[...]}]`，cell 写 ✓ / ✕ / 部分 / 任意短文字
+- `hl`: 高亮第几列；`hl_tag`；`caption`
+
+**steps**：大号序号一个个点亮
+- `steps`: `[{title,sub?,hl?}]`，3~6 步
+
+**orbit**：环一圈圈画出，成员沿轨道落位，小圆点绕圈跑
+- `center`: 中心文字；`rings`: `[{name?,items:[...]}]`，1~3 圈，每圈最多 8 个

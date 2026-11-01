@@ -1,0 +1,28 @@
+{
+ "type": "pyramid",
+ "style": "porcelain",
+ "kicker": "认知 · DIKW",
+ "title": "从数据到智慧，差了几层",
+ "subtitle": "越往上越少，也越值钱",
+ "levels": [
+  {
+   "title": "智慧",
+   "note": "知道下一步该做什么"
+  },
+  {
+   "title": "知识",
+   "sub": "规律",
+   "note": "知道为什么会这样"
+  },
+  {
+   "title": "信息",
+   "sub": "整理过的数据",
+   "note": "知道发生了什么"
+  },
+  {
+   "title": "数据",
+   "sub": "原始记录",
+   "note": "一堆没被解释的数字"
+  }
+ ]
+}

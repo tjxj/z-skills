@@ -1,4 +1,4 @@
-# 自定义模式：13 种图型都不合适时
+# 自定义模式：31 种图型都不合适时
 
 有些内容的「动」很特别，比如 KV Cache 复用、注意力矩阵、齿轮咬合。这时直接手写 SVG，但仍然走同一套规矩。
 
@@ -13,11 +13,11 @@ import sys; sys.path.insert(0, "scripts")
 from dongxi import STYLES, Painter
 from dongxi.core import anim, motion, show_from, window
 
-s = STYLES["swiss"]; P = Painter(s, "swiss"); T = 9.0
+s = STYLES["swiss"]; P = Painter(s, "swiss", ratio="3:4"); T = 9.0   # P.W / P.H / P.L / P.R / P.CW 随画幅变
 head, y = P.header("KV CACHE", "为什么第二个问题答得更快")
-body = P.card(40, y + 20, 300, 80, "第一轮", "算出 1000 个 token 的 KV")
-body += f'<g opacity="0">{anim("opacity", show_from(2.0, T), T)}{P.lit(40, y + 20, 300, 80)}</g>'
-svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1000">{P.background()}{head}{body}</svg>'
+body = P.card(P.L, y + 20, P.CW / 2, 80, "第一轮", "算出 1000 个 token 的 KV")
+body += f'<g opacity="0">{anim("opacity", show_from(2.0, T), T)}{P.lit(P.L, y + 20, P.CW / 2, 80)}</g>'
+svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {P.W} {P.H}">{P.background()}{head}{body}</svg>'
 ```
 
 4. 跑 `python3 scripts/lint.py out.svg`，Floor 全过

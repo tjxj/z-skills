@@ -1,0 +1,35 @@
+{
+ "type": "donut",
+ "style": "candy",
+ "kicker": "成本 · 拆账",
+ "title": "一个 AI 客服，每月的钱花在哪",
+ "subtitle": "日均 3000 次对话，月账单约 1.2 万元",
+ "unit": " 元",
+ "items": [
+  {
+   "label": "大模型 API",
+   "value": 7400,
+   "hl": true
+  },
+  {
+   "label": "向量数据库",
+   "value": 1700
+  },
+  {
+   "label": "云服务器",
+   "value": 1500
+  },
+  {
+   "label": "人工抽检",
+   "value": 1000
+  },
+  {
+   "label": "其他",
+   "value": 400
+  }
+ ],
+ "center": {
+  "title": "大模型 API 占"
+ },
+ "foot": "示例数据，按你的用量替换"
+}

@@ -1,0 +1,39 @@
+{
+ "type": "treemap",
+ "style": "bauhaus",
+ "kicker": "订阅 · 拆开看",
+ "title": "一个月 AI 订阅，钱都去哪了",
+ "subtitle": "面积越大，花得越多",
+ "unit": " 元",
+ "items": [
+  {
+   "label": "编程助手",
+   "value": 420,
+   "hl": true
+  },
+  {
+   "label": "聊天大模型",
+   "value": 290
+  },
+  {
+   "label": "绘图",
+   "value": 150
+  },
+  {
+   "label": "语音转写",
+   "value": 80
+  },
+  {
+   "label": "翻译",
+   "value": 45
+  },
+  {
+   "label": "搜索",
+   "value": 40
+  },
+  {
+   "label": "笔记",
+   "value": 30
+  }
+ ]
+}

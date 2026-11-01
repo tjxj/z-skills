@@ -1,0 +1,24 @@
+{
+ "type": "waffle",
+ "style": "poster",
+ "kicker": "转化 · 100 个人",
+ "title": "100 个试用用户，几个会付费",
+ "subtitle": "每一格是一个人",
+ "value": 7,
+ "big": "7 人",
+ "parts": [
+  {
+   "label": "付费",
+   "value": 7
+  },
+  {
+   "label": "还在试用",
+   "value": 21
+  },
+  {
+   "label": "已流失",
+   "value": 72
+  }
+ ],
+ "caption": "付费率 7%，剩下的 93 个才是增长空间"
+}

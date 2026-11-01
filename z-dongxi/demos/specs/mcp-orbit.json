@@ -1,0 +1,31 @@
+{
+ "type": "orbit",
+ "style": "arcade",
+ "kicker": "生态 · MCP",
+ "title": "一个协议，接起了哪些东西",
+ "subtitle": "内圈是用它的客户端，外圈是能被接入的服务",
+ "center": "MCP",
+ "rings": [
+  {
+   "name": "客户端",
+   "items": [
+    "Claude",
+    "Cursor",
+    "VS Code",
+    "Zed"
+   ]
+  },
+  {
+   "name": "服务",
+   "items": [
+    "GitHub",
+    "数据库",
+    "浏览器",
+    "Slack",
+    "文件系统",
+    "搜索",
+    "日历"
+   ]
+  }
+ ]
+}

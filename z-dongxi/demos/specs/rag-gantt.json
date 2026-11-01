@@ -1,0 +1,70 @@
+{
+ "type": "gantt",
+ "style": "linear",
+ "kicker": "排期 · 两周上线",
+ "title": "两周上线一个 RAG 客服",
+ "subtitle": "关键路径只有一条，别的都能并行",
+ "unit": "天",
+ "end": 14,
+ "ticks": [
+  0,
+  2,
+  4,
+  6,
+  8,
+  10,
+  12,
+  14
+ ],
+ "tasks": [
+  {
+   "name": "整理 FAQ 文档",
+   "start": 0,
+   "end": 3,
+   "group": "数据"
+  },
+  {
+   "name": "切块与向量化",
+   "start": 3,
+   "end": 5,
+   "group": "数据",
+   "after": 0
+  },
+  {
+   "name": "检索 + 重排",
+   "start": 5,
+   "end": 8,
+   "group": "工程",
+   "after": 1,
+   "hl": true
+  },
+  {
+   "name": "对话界面",
+   "start": 2,
+   "end": 7,
+   "group": "工程"
+  },
+  {
+   "name": "评测集 50 题",
+   "start": 4,
+   "end": 9,
+   "group": "评测"
+  },
+  {
+   "name": "灰度 10% 用户",
+   "start": 9,
+   "end": 12,
+   "group": "上线",
+   "after": 2
+  },
+  {
+   "name": "全量上线",
+   "start": 13,
+   "end": 13,
+   "group": "上线",
+   "label": "上线"
+  }
+ ],
+ "now": 6,
+ "now_label": "今天"
+}

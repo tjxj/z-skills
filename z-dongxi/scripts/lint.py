@@ -2,15 +2,17 @@
 """公众号可用性 + 反模板检查。
 
 Floor（硬门槛，不过就不能发）：
-  viewBox 必须 0 0 750 1000；不能有 id= / <script> / <style> / @keyframes / foreignObject / url(# / href="#
-  不能有空行和换行；不能出现全角句号 。；不能出现「老章工程手记」；字号不小于 12；体积不超过 120KB；至少一个动画
+  viewBox 必须是五种画幅之一（3:4 750x1000 / 9:16 750x1334 / 1:1 900x900 / 4:3 1200x900 / 16:9 1280x720）；不能有 id= / <script> / <style> / @keyframes / foreignObject / url(# / href="#
+  不能有空行和换行；不能出现全角句号 。；不能出现「老章工程手记」；字号不小于 13；体积不超过 120KB；至少一个动画
 Reflex（提醒）：
-  字号小于 13 的文字太多；动画周期超过 20 秒；同一张图超过 4 种强调色；文字跑出画布
+  字号小于 15 的文字太多；动画周期超过 20 秒；同一张图超过 4 种强调色；文字跑出画布
 用法：python3 lint.py a.svg [b.svg ...]   或   python3 lint.py 文章.md（检查其中所有内联 SVG）
 """
 import pathlib
 import re
 import sys
+
+SIZES = {(750, 1000), (750, 1334), (900, 900), (1200, 900), (1280, 720)}
 
 FLOOR = [
     (r"\sid=", "出现 id 属性，公众号会剥掉"),
@@ -28,19 +30,21 @@ FLOOR = [
 
 def check(svg, name):
     errs, warns = [], []
-    if 'viewBox="0 0 750 1000"' not in svg:
-        errs.append("viewBox 不是 0 0 750 1000（3:4）")
+    vb = re.search(r'viewBox="0 0 (\d+) (\d+)"', svg)
+    W, H = (int(vb.group(1)), int(vb.group(2))) if vb else (0, 0)
+    if (W, H) not in SIZES:
+        errs.append(f"viewBox {W}x{H} 不在支持的画幅里")
     if "\n" in svg.strip():
         errs.append("SVG 内有换行，粘到公众号会断")
     for pat, msg in FLOOR:
         if re.search(pat, svg):
             errs.append(msg)
     sizes = [float(x) for x in re.findall(r'font-size="([\d.]+)"', svg)]
-    if sizes and min(sizes) < 12:
-        errs.append(f"最小字号 {min(sizes)} < 12，手机上看不清")
-    small = sum(1 for x in sizes if x < 13)
-    if small > 12:
-        warns.append(f"{small} 处字号小于 13，信息可能塞太多")
+    if sizes and min(sizes) < 13:
+        errs.append(f"最小字号 {min(sizes)} < 13，手机上看不清")
+    small = sum(1 for x in sizes if x < 15)
+    if small > 16:
+        warns.append(f"{small} 处字号小于 15，信息可能塞太多")
     kb = len(svg.encode()) / 1024
     if kb > 120:
         errs.append(f"体积 {kb:.0f}KB > 120KB")
@@ -52,7 +56,7 @@ def check(svg, name):
     if durs and max(durs) > 20:
         warns.append(f"周期 {max(durs):.0f}s，读者等不到结尾")
     for x, y in re.findall(r'<text x="(-?[\d.]+)" y="(-?[\d.]+)"', svg):
-        if not (0 <= float(x) <= 750 and 0 <= float(y) <= 1000):
+        if not (0 <= float(x) <= W and 0 <= float(y) <= H):
             warns.append(f"文字锚点 ({x},{y}) 在画布外")
             break
     print(("✗ " if errs else "✓ ") + f"{name}  {kb:.1f}KB  周期 {max(durs) if durs else 0:.1f}s")

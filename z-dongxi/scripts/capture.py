@@ -23,20 +23,26 @@ def period(svg):
     return max(durs) if durs else (float(m.group(1)) if m else 6.0)
 
 
+def size(svg):
+    m = re.search(r'viewBox="0 0 (\d+) (\d+)"', svg)
+    return (int(m.group(1)), int(m.group(2))) if m else (750, 1000)
+
+
 def frames(svg_path, times, outdir, scale=1):
     svg = pathlib.Path(svg_path).read_text(encoding="utf-8")
-    html = f"<html><body style='margin:0;background:#fff'>{svg.replace('width=\"100%\"', 'width=\"750\"')}</body></html>"
+    W, H = size(svg)
+    html = f"<html><body style='margin:0;background:#fff'>{svg.replace('width=\"100%\"', f'width=\"{W}\"')}</body></html>"
     out = []
     with sync_playwright() as p:
         b = p.chromium.launch()
-        pg = b.new_page(viewport={"width": 750, "height": 1000}, device_scale_factor=scale)
+        pg = b.new_page(viewport={"width": W, "height": H}, device_scale_factor=scale)
         pg.set_content(html)
         pg.evaluate("document.querySelector('svg').pauseAnimations()")
         for i, t in enumerate(times):
             pg.evaluate(f"document.querySelector('svg').setCurrentTime({t})")
             pg.wait_for_timeout(15)
             f = pathlib.Path(outdir) / f"f{i:05d}.png"
-            pg.screenshot(path=str(f), clip={"x": 0, "y": 0, "width": 750, "height": 1000})
+            pg.screenshot(path=str(f), clip={"x": 0, "y": 0, "width": W, "height": H})
             out.append(f)
         b.close()
     return out
@@ -44,7 +50,10 @@ def frames(svg_path, times, outdir, scale=1):
 
 def sheet(fs, times, out, cols=4):
     from PIL import Image, ImageDraw
-    w, h = 375, 500
+    from PIL import Image as _I
+    W, H = _I.open(fs[0]).size
+    w = 375 if H >= W else 500
+    h = round(w * H / W)
     rows = (len(fs) + cols - 1) // cols
     img = Image.new("RGB", (cols * (w + 12) + 12, rows * (h + 40) + 12), "#DDDDDD")
     d = ImageDraw.Draw(img)
@@ -77,7 +86,7 @@ def main():
         frames(a.svg, [i / a.fps for i in range(k)], tmp, scale=2 if a.mp4 else 1)
         if a.mp4:
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(a.fps), "-i", f"{tmp}/f%05d.png",
-                            "-vf", "scale=1080:1440:flags=lanczos", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", a.mp4], check=True)
+                            "-vf", "scale=1080:-2:flags=lanczos", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", a.mp4], check=True)
             print(f"✓ {a.mp4}")
         if a.gif:
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(a.fps), "-i", f"{tmp}/f%05d.png",

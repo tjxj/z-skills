@@ -1,0 +1,68 @@
+{
+ "type": "er",
+ "style": "blueprint",
+ "kicker": "SCHEMA · 电商",
+ "title": "一张订单背后的四张表",
+ "subtitle": "主键连外键，查询就是沿着线走",
+ "entities": [
+  {
+   "id": "user",
+   "title": "用户 users",
+   "fields": [
+    "id PK",
+    "name",
+    "phone"
+   ]
+  },
+  {
+   "id": "order",
+   "title": "订单 orders",
+   "fields": [
+    "id PK",
+    "user_id FK",
+    "total",
+    "status"
+   ],
+   "hl": true
+  },
+  {
+   "id": "item",
+   "title": "明细 order_items",
+   "fields": [
+    "id PK",
+    "order_id FK",
+    "sku_id FK",
+    "qty"
+   ]
+  },
+  {
+   "id": "sku",
+   "title": "商品 skus",
+   "fields": [
+    "id PK",
+    "title",
+    "price"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "from": "user",
+   "to": "order",
+   "card": "1:N",
+   "label": "下单"
+  },
+  {
+   "from": "order",
+   "to": "item",
+   "card": "1:N",
+   "label": "包含"
+  },
+  {
+   "from": "sku",
+   "to": "item",
+   "card": "1:N",
+   "label": "被买"
+  }
+ ]
+}

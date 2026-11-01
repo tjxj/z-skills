@@ -61,14 +61,16 @@ cp -R z-* "/path/to/your/.agent/skills/"
 | [`z-expense-policy-qa`](z-expense-policy-qa/SKILL.md) | 把报销与差旅制度变成可核对金额、材料、时限、例外和条款出处的问答助手，内置虚构演示制度 | 报销制度、差旅标准、这笔钱能不能报、缺什么材料 |
 | [`z-sci-viz-lab`](z-sci-viz-lab/SKILL.md) | 把数学/科学概念生成可视化互动科普单页，支持多场景切换、Three.js/Canvas、单文件构建与 Cloudflare Pages 部署 | 可视化科普、互动科普实验、科学交互演示 |
 | [`z-docx-format-brush`](z-docx-format-brush/SKILL.md) | 从模板 docx 提取格式指纹（字体/字号/行距/缩进/表格边框/封面/分页），统一刷到目标 docx，修复 pandoc/模型产物的格式混乱 | 格式刷、格式统一、套用模板格式、docx格式修复、公文格式 |
-| [`z-dongxi`](z-dongxi/README.md) | 「动」悉万物：一段内容变一张会动的 3:4 解析图，13 种图型 × 12 种风格，单行 SVG 直接粘进公众号，可导出 PNG/GIF/MP4 | 动态图、动态流程图、动态SVG、动图解释、让这张图动起来、mermaid动起来、excalidraw风动图 |
+| [`z-dongxi`](z-dongxi/README.md) | 「动」悉万物：一段内容变一张会动的解析图，31 种图型 × 25 种风格 × 5 种画幅（3:4 公众号默认），单行 SVG 直接粘进公众号，可导出 PNG/GIF/MP4 | 动态图、动态流程图、动态SVG、动图解释、让这张图动起来、mermaid动起来、excalidraw风动图、动态甘特图、动态桑基图 |
 
 ## 「动」悉万物：会动的解析图
 
-[z-dongxi](z-dongxi/README.md) 把有过程的内容演出来：RAG 的数据怎么流、HTTPS 怎么握手、Agent 怎么循环、订单怎么流转、用户怎么在漏斗里流失。给主题和内容，Agent 自动选图型和风格、写 spec、渲染、lint、截帧自检。
+[z-dongxi](z-dongxi/README.md) 把有过程、有数字的内容演出来：RAG 的数据怎么流、HTTPS 怎么握手、钱花在哪、流量去了哪、两周排期卡在哪、几个模型谁强谁弱。给主题和内容，Agent 自动选图型和风格、写 spec、渲染、lint、截帧自检。
 
 <p align="center">
-<img src="z-dongxi/demos/svg/rag.svg" width="240"> <img src="z-dongxi/demos/svg/https.svg" width="240"> <img src="z-dongxi/demos/svg/rag-sketch.svg" width="240">
+<img src="z-dongxi/demos/svg/rag.svg" width="240"> <img src="z-dongxi/demos/svg/traffic-sankey.svg" width="240"> <img src="z-dongxi/demos/svg/launch-stat.svg" width="240">
+
+<img src="z-dongxi/docs/types-grid.jpg" width="100%">
 </p>
 
 ```bash

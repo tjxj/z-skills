@@ -1,4 +1,4 @@
-"""绘制层：文字测量、时间轴、动画原语、按风格出图的画笔。
+"""绘制层：画布、文字测量、时间轴、动画原语、按风格出图的画笔。
 
 约束（公众号可用）：不用 id / defs / url(#) / <style> / <script>，动画只用 SMIL，
 所有动画共用一个周期 T，靠 keyTimes 排队，不依赖事件触发。
@@ -7,7 +7,15 @@ import html
 import math
 import random
 
-W, H = 750, 1000
+# 画幅：比例 -> (宽, 高)。3:4 是公众号正文默认
+CANVAS = {
+    "3:4": (750, 1000),
+    "9:16": (750, 1334),
+    "1:1": (900, 900),
+    "4:3": (1200, 900),
+    "16:9": (1280, 720),
+}
+DEFAULT_RATIO = "3:4"
 
 
 def esc(s):
@@ -20,6 +28,29 @@ def n(v):
     return str(int(v)) if v == int(v) else str(v)
 
 
+# ---------- 颜色 ----------
+
+def _rgb(c):
+    c = c.lstrip("#")
+    return [int(c[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+
+
+def lum(c):
+    def ch(v):
+        return v / 12.92 if v <= .03928 else ((v + .055) / 1.055) ** 2.4
+    r, g, b = (ch(v) for v in _rgb(c))
+    return .2126 * r + .7152 * g + .0722 * b
+
+
+def contrast(a, b):
+    la, lb = lum(a), lum(b)
+    return (max(la, lb) + .05) / (min(la, lb) + .05)
+
+
+def is_dark(c):
+    return lum(c) < .2
+
+
 # ---------- 文字 ----------
 
 NARROW = set("il.,:;|!'`()[]{} ")
@@ -27,7 +58,7 @@ NARROW = set("il.,:;|!'`()[]{} ")
 
 def char_w(c):
     o = ord(c)
-    if o >= 0x2E80 or c in "，。：；！？、（）《》“”‘’—…·×→←↑↓":
+    if o >= 0x2E80 or c in "，。：；！？、（）《》“”‘’—…·×→←↑↓✓✕":
         return 1.0
     if c in NARROW:
         return 0.32
@@ -86,6 +117,13 @@ def wrap(s, size, maxw, max_lines=3):
             lines[i - 1] += lines[i][0]
             lines[i] = lines[i][1:]
     return [x for x in lines if x]
+
+
+def fit(s, size, maxw, floor=14):
+    """单行放不下就缩字号，最小 floor。"""
+    while size > floor and text_w(s, size) > maxw:
+        size -= 1
+    return size
 
 
 # ---------- 时间轴 ----------
@@ -179,8 +217,10 @@ def quad(p0, c, p1, k=18):
     return out
 
 
-def elbow(p, q, r=14):
-    """先竖后横再竖的折线，带圆角。"""
+def elbow(p, q, r=14, horizontal=False):
+    """先竖后横再竖的折线，带圆角；horizontal=True 时先横后竖再横。"""
+    if horizontal:
+        return [(y, x) for x, y in elbow((p[1], p[0]), (q[1], q[0]), r)]
     mx = (p[1] + q[1]) / 2
     if abs(p[0] - q[0]) < 1:
         return [p, q]
@@ -192,6 +232,11 @@ def elbow(p, q, r=14):
     a += quad((q[0] - sx * r, mx), (q[0], mx), (q[0], mx + r), 6)[1:]
     a += [q]
     return a
+
+
+def arc_pts(cx, cy, r, a0, a1, k=None):
+    k = k or max(8, int(abs(a1 - a0) / .08))
+    return [(cx + r * math.cos(a0 + (a1 - a0) * i / k), cy + r * math.sin(a0 + (a1 - a0) * i / k)) for i in range(k + 1)]
 
 
 def rect_edge_point(cx, cy, w, h, tx, ty, pad=4):
@@ -208,33 +253,74 @@ def rect_edge_point(cx, cy, w, h, tx, ty, pad=4):
 # ---------- 画笔 ----------
 
 class Painter:
-    def __init__(self, style, name="", seed=11):
+    def __init__(self, style, name="", seed=11, ratio=DEFAULT_RATIO):
         self.s = style
         self.name = name
         self.rng = random.Random(seed)
         self.tone_i = 0
         self.rough = style.get("shape") == "rough"
+        self.ratio = ratio if ratio in CANVAS else DEFAULT_RATIO
+        self.W, self.H = CANVAS[self.ratio]
+        self.land = self.W > self.H
+        pad = 56 if self.land else 44
+        self.L, self.R = pad, self.W - pad
+        self.CW = self.R - self.L
+        self.CX = self.W / 2
+        # 字号阶梯：手机上 750 宽缩到约 375，正文不低于 16 才看得清
+        self.f = dict(h1=48, node=24, sub=17, label=16, mono=15, small=14, big=40)
+        self.dark = is_dark(style["bg"])
 
     # 颜色
+    def on(self, fill):
+        """在 fill 上写字用什么颜色：从墨色、底色、黑、白里挑对比最高的。"""
+        s = self.s
+        if fill in (None, "none"):
+            return s["ink"]
+        cands = [s["ink"], s["bg"], "#FFFFFF", "#111111"]
+        return max(cands, key=lambda c: contrast(c, fill))
+
     def tone(self, i=None):
+        """返回 (填充, 描边)。"""
         tones = self.s.get("tones")
         if not tones:
-            return self.s["panel"]
+            return self.s["panel"], self.s["ink"]
         if i is None:
             i = self.tone_i
             self.tone_i += 1
-        return tones[i % len(tones)]
+        strokes = self.s.get("tone_strokes")
+        return tones[i % len(tones)], (strokes[i % len(strokes)] if strokes else self.s["ink"])
 
     def role_colors(self, role):
         s = self.s
+        acc_st = s["accent"] if s.get("shape") != "cut" else s["ink"]
+        if s.get("outline_ink"):
+            acc_st = s["ink"]
+        a2 = s["accent2"]
         return {
-            "node": (s["panel"], s["ink"], s["ink"]),
-            "soft": (s["panel2"], s["rule"], s["ink"]),
-            "accent": (s["accent"], s["accent"] if s.get("shape") != "cut" else s["ink"], s["accent_ink"]),
-            "accent2": (s["accent2"], s["accent2"], s["bg"] if s["accent2"] == s["ink"] else s["accent_ink"]),
+            "node": (s["panel"], s["node_stroke"] if s.get("node_stroke") else s["ink"], s["ink"]),
+            "soft": (s["panel2"], s["rule"], self.on(s["panel2"])),
+            "accent": (s["accent"], acc_st, s.get("accent_ink") or self.on(s["accent"])),
+            "accent2": (a2, a2 if not s.get("outline_ink") else s["ink"], self.on(a2)),
             "dark": (s["ink"], s["ink"], s["bg"]),
             "ghost": ("none", s["rule"], s["muted"]),
         }[role]
+
+    def node_colors(self, role, tone=None):
+        """(填充, 描边, 文字, 次要文字)，自动处理色板轮换和对比度。"""
+        s = self.s
+        f, st, tc = self.role_colors(role)
+        if role == "node":
+            if isinstance(tone, tuple):
+                f, st = tone
+            elif isinstance(tone, str):
+                f = tone
+            elif s.get("tones"):
+                f, st = self.tone(tone)
+            if contrast(tc, f) < 4:
+                tc = self.on(f)
+        bgc = f if f != "none" else s["bg"]
+        sub = s["muted"] if role in ("node", "ghost", "soft") and contrast(s["muted"], bgc) >= 3.2 else tc
+        return f, st, tc, sub
 
     # 文字
     def font(self, role):
@@ -252,6 +338,10 @@ class Painter:
     def lines(self, x, y, lines, size, lh=None, **kw):
         lh = lh or size * 1.35
         return "".join(self.text(x, y + i * lh, ln, size, **kw) for i, ln in enumerate(lines))
+
+    def tw(self):
+        """标题字重。"""
+        return self.s["title_weight"]
 
     # 手绘笔触
     def _jit(self, a):
@@ -277,7 +367,7 @@ class Painter:
         return poly_d(out)
 
     def stroke_path(self, d_or_pts, color, sw, dash=None, extra="", closed=False):
-        """普通路径；手绘风格自动抖动并描两遍，霓虹风格叠三层光。"""
+        """普通路径；手绘风格自动抖动并描两遍，霓虹风格叠光。"""
         dash_a = f' stroke-dasharray="{dash}"' if dash else ""
         base = f' fill="none" stroke="{color}" stroke-linecap="round" stroke-linejoin="round"{dash_a}'
         if isinstance(d_or_pts, str):
@@ -309,34 +399,56 @@ class Painter:
                 f' stroke-linecap="round" opacity=".9"/>')
 
     # 形状
-    def box(self, x, y, w, h, role="node", tone=None, sw=None, dash=None, fill=None):
+    def shape_d(self, x, y, w, h, r=None):
+        """当前风格下矩形的轮廓路径。"""
         s = self.s
-        f, st, _ = self.role_colors(role)
+        shp = s.get("shape")
+        r = s["radius"] if r is None else r
+        if shp == "cut":
+            c = min(12, w / 4, h / 4)
+            return poly_d([(x + c, y), (x + w, y), (x + w, y + h - c), (x + w - c, y + h), (x, y + h), (x, y + c)], True)
+        if shp == "pixel":
+            p = 6
+            return poly_d([(x + p, y), (x + w - p, y), (x + w - p, y + p), (x + w, y + p), (x + w, y + h - p), (x + w - p, y + h - p),
+                           (x + w - p, y + h), (x + p, y + h), (x + p, y + h - p), (x, y + h - p), (x, y + p), (x + p, y + p)], True)
+        r = min(r, w / 2, h / 2)
+        if r <= 0:
+            return f"M{n(x)} {n(y)}H{n(x + w)}V{n(y + h)}H{n(x)}Z"
+        return (f"M{n(x + r)} {n(y)}H{n(x + w - r)}A{n(r)} {n(r)} 0 0 1 {n(x + w)} {n(y + r)}V{n(y + h - r)}"
+                f"A{n(r)} {n(r)} 0 0 1 {n(x + w - r)} {n(y + h)}H{n(x + r)}A{n(r)} {n(r)} 0 0 1 {n(x)} {n(y + h - r)}"
+                f"V{n(y + r)}A{n(r)} {n(r)} 0 0 1 {n(x + r)} {n(y)}Z")
+
+    def box(self, x, y, w, h, role="node", tone=None, sw=None, dash=None, fill=None, stroke=None):
+        s = self.s
+        f, st, _, _ = self.node_colors(role, tone)
         if fill:
             f = fill
-        sw = sw or s["stroke"]
-        if role == "node" and s.get("tones"):
-            f = tone if tone else self.tone()
+        if stroke:
+            st = stroke
+        sw = s["stroke"] if sw is None else sw
+        if s.get("outline") is False and role != "ghost" and not dash:
+            sw = 0
         out = ""
         shp = s.get("shape")
-        if s.get("shadow") and role not in ("ghost",):
+        if s.get("shadow") and role != "ghost":
             o = s["shadow"]
-            if shp == "cut":
-                out += f'<path d="{self._cut_d(x + o, y + o, w, h)}" fill="{s["ink"]}"/>'
-            else:
-                out += f'<rect x="{n(x + o)}" y="{n(y + o)}" width="{n(w)}" height="{n(h)}" rx="{s["radius"]}" fill="{s["ink"]}" opacity=".9"/>'
+            out += f'<path d="{self.shape_d(x + o, y + o, w, h)}" fill="{s.get("shadow_color", s["ink"])}"/>'
+        if s.get("soft_shadow") and role != "ghost":
+            out += f'<path d="{self.shape_d(x, y + 4, w, h)}" fill="{s["ink"]}" opacity=".06"/>'
+            out += f'<path d="{self.shape_d(x, y + 1.5, w, h)}" fill="{s["ink"]}" opacity=".05"/>'
         if s.get("misreg") and role != "ghost":
-            out += (f'<rect x="{n(x + 5)}" y="{n(y + 5)}" width="{n(w)}" height="{n(h)}" rx="{s["radius"]}"'
-                    f' fill="{s["accent"] if role != "accent" else s["accent2"]}" opacity=".55"/>')
+            out += f'<path d="{self.shape_d(x + 5, y + 5, w, h)}" fill="{s["accent"] if role != "accent" else s["accent2"]}" opacity=".55"/>'
             if role == "node":
                 st = s["accent2"]
+        if s.get("die") and role != "ghost":
+            out += f'<path d="{self.shape_d(x - 5, y - 5, w + 10, h + 10, s["radius"] + 5)}" fill="#FFFFFF"/>'
         if shp == "rough":
             if f != "none":
                 if s.get("hachure") and role == "node":
-                    out += f'<rect x="{n(x)}" y="{n(y)}" width="{n(w)}" height="{n(h)}" rx="{s["radius"]}" fill="{f}" opacity=".28"/>'
+                    out += f'<path d="{self.shape_d(x, y, w, h)}" fill="{f}" opacity=".35"/>'
                     out += self.hachure(x + 3, y + 3, w - 6, h - 6, f)
                 else:
-                    out += f'<rect x="{n(x)}" y="{n(y)}" width="{n(w)}" height="{n(h)}" rx="{s["radius"]}" fill="{f}" opacity="{.92 if role != "node" else .55}"/>'
+                    out += f'<path d="{self.shape_d(x, y, w, h)}" fill="{f}" opacity="{.95 if role != "node" else .6}"/>'
             corners = [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
             dpath = " ".join(self._rough_seg(corners[i], corners[(i + 1) % 4]) for i in range(4))
             dash_a = f' stroke-dasharray="{dash}"' if dash else ""
@@ -346,38 +458,32 @@ class Painter:
                 out += f'<path d="{dpath2}" fill="none" stroke="{st}" stroke-width="{n(sw * .6)}" stroke-linecap="round" opacity=".8"/>'
             return out
         dash_a = f' stroke-dasharray="{dash}"' if dash else ""
-        if shp == "cut":
-            out += f'<path d="{self._cut_d(x, y, w, h)}" fill="{f}" stroke="{st}" stroke-width="{n(sw)}"{dash_a}/>'
-        else:
-            out += (f'<rect x="{n(x)}" y="{n(y)}" width="{n(w)}" height="{n(h)}" rx="{s["radius"]}" fill="{f}"'
-                    f' stroke="{st}" stroke-width="{n(sw)}"{dash_a}/>')
+        stroke_a = f' stroke="{st}" stroke-width="{n(sw)}"' if sw else ""
+        out += f'<path d="{self.shape_d(x, y, w, h)}" fill="{f}"{stroke_a}{dash_a}/>'
         if s.get("glow") and role != "ghost":
-            out += (f'<rect x="{n(x - 3)}" y="{n(y - 3)}" width="{n(w + 6)}" height="{n(h + 6)}" rx="{s["radius"] + 3}"'
-                    f' fill="none" stroke="{st if role != "node" else s["accent"]}" stroke-width="5" opacity=".14"/>')
+            out += f'<path d="{self.shape_d(x - 3, y - 3, w + 6, h + 6, s["radius"] + 3)}" fill="none" stroke="{st if role != "node" else s["accent"]}" stroke-width="5" opacity=".14"/>'
         if s.get("tape") and role in ("node", "accent"):
             cx = x + w / 2
             out += (f'<rect x="{n(cx - 30)}" y="{n(y - 9)}" width="60" height="18" fill="#FFFFFF" opacity=".55"'
                     f' transform="rotate({n(self._jit(5))} {n(cx)} {n(y)})"/>')
+        if s.get("topbar") and role in ("node", "soft"):
+            out += f'<path d="{self.shape_d(x, y, w, 6, min(s["radius"], 3))}" fill="{st if s.get("tone_strokes") else s["accent"]}"/>'
         return out
 
-    def _cut_d(self, x, y, w, h, c=12):
-        c = min(c, w / 4, h / 4)
-        return poly_d([(x + c, y), (x + w, y), (x + w, y + h - c), (x + w - c, y + h), (x, y + h), (x, y + c)], True)
-
-    def lit(self, x, y, w, h, color=None, pad=5):
+    def lit(self, x, y, w, h, color=None, pad=6):
         """高亮框：叠在卡片上，靠动画控制显隐。"""
         c = color or self.s["accent"]
         x, y, w, h = x - pad, y - pad, w + 2 * pad, h + 2 * pad
-        r = self.s["radius"] + pad
-        out = f'<rect x="{n(x)}" y="{n(y)}" width="{n(w)}" height="{n(h)}" rx="{r}" fill="{c}" opacity=".12"/>'
+        r = self.s["radius"] + pad if self.s.get("shape") not in ("cut", "pixel") else 0
+        out = f'<path d="{self.shape_d(x, y, w, h, r)}" fill="{c}" opacity=".16"/>'
         if self.rough:
             corners = [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
             d = " ".join(self._rough_seg(corners[i], corners[(i + 1) % 4], 2, 3) for i in range(4))
-            out += f'<path d="{d}" fill="none" stroke="{c}" stroke-width="3.2" stroke-linecap="round"/>'
+            out += f'<path d="{d}" fill="none" stroke="{c}" stroke-width="3.6" stroke-linecap="round"/>'
         else:
             if self.s.get("glow"):
-                out += f'<rect x="{n(x)}" y="{n(y)}" width="{n(w)}" height="{n(h)}" rx="{r}" fill="none" stroke="{c}" stroke-width="10" opacity=".22"/>'
-            out += f'<rect x="{n(x)}" y="{n(y)}" width="{n(w)}" height="{n(h)}" rx="{r}" fill="none" stroke="{c}" stroke-width="3"/>'
+                out += f'<path d="{self.shape_d(x, y, w, h, r)}" fill="none" stroke="{c}" stroke-width="12" opacity=".22"/>'
+            out += f'<path d="{self.shape_d(x, y, w, h, r)}" fill="none" stroke="{c}" stroke-width="3.6"/>'
         return out
 
     def ellipse(self, cx, cy, rx, ry, fill, stroke, sw):
@@ -394,10 +500,24 @@ class Painter:
         return out
 
     def circle(self, cx, cy, r, fill, stroke="none", sw=0, extra=""):
-        st = f' stroke="{stroke}" stroke-width="{n(sw)}"' if stroke != "none" else ""
+        st = f' stroke="{stroke}" stroke-width="{n(sw)}"' if stroke != "none" and sw else ""
         return f'<circle cx="{n(cx)}" cy="{n(cy)}" r="{n(r)}" fill="{fill}"{st}{extra}/>'
 
-    def arrowhead(self, p_prev, p_end, color, size=10):
+    def disc(self, cx, cy, r, fill, stroke=None, sw=None):
+        """风格化圆：手绘抖动、贴纸白边、硬投影都跟着风格走。"""
+        s = self.s
+        out = ""
+        if s.get("shadow"):
+            out += self.circle(cx + s["shadow"] * .7, cy + s["shadow"] * .7, r, s.get("shadow_color", s["ink"]))
+        if s.get("die"):
+            out += self.circle(cx, cy, r + 5, "#FFFFFF")
+        stroke = stroke or (s["ink"] if s.get("outline") is not False else fill)
+        sw = s["stroke"] if sw is None else sw
+        if self.rough:
+            return out + self.ellipse(cx, cy, r, r, fill, stroke, sw)
+        return out + self.circle(cx, cy, r, fill, stroke, sw)
+
+    def arrowhead(self, p_prev, p_end, color, size=11):
         ang = math.atan2(p_end[1] - p_prev[1], p_end[0] - p_prev[0])
         a1 = (p_end[0] - size * math.cos(ang - .45), p_end[1] - size * math.sin(ang - .45))
         a2 = (p_end[0] - size * math.cos(ang + .45), p_end[1] - size * math.sin(ang + .45))
@@ -406,136 +526,237 @@ class Painter:
         return f'<path d="{poly_d([a1, p_end, a2], True)}" fill="{color}"/>'
 
     def edge(self, pts, color=None, arrow=True, dash=None, sw=None):
-        color = color or self.s["ink"]
-        sw = sw or self.s["stroke"]
+        color = color or self.s.get("edge", self.s["ink"])
+        sw = sw or self.s.get("edge_w", self.s["stroke"])
         out = self.stroke_path(pts, color, sw, dash)
         if arrow:
             out += self.arrowhead(pts[-2], pts[-1], color)
         return out
 
-    def label_chip(self, x, y, s, size=13, fill=None, color=None, anchor="middle"):
-        """线上标签：底色块 + 文字。"""
-        w = text_w(s, size) + 14
+    def label_chip(self, x, y, s, size=None, fill=None, color=None, anchor="middle"):
+        """线上标签：底色块 + 文字。y 为文字基线。"""
+        size = size or self.f["mono"]
+        w = text_w(s, size) + 16
         x0 = x - w / 2 if anchor == "middle" else x
         fill = fill or self.s["bg"]
-        return (f'<rect x="{n(x0)}" y="{n(y - size - 3)}" width="{n(w)}" height="{n(size + 9)}" rx="4" fill="{fill}"/>'
-                + self.text(x0 + w / 2, y, s, size, "mono", color or self.s["muted"], "middle"))
+        r = min(self.s["radius"], 6)
+        return (f'<rect x="{n(x0)}" y="{n(y - size - 4)}" width="{n(w)}" height="{n(size + 11)}" rx="{r}" fill="{fill}"/>'
+                + self.text(x0 + w / 2, y, s, size, "mono", color or self.s["muted"], "middle", 700))
 
-    def token(self, glyph=None, color=None, r=9, txt=None):
+    def pill(self, x, y, s, fill, color=None, size=None, anchor="start"):
+        """胶囊标签，返回 (svg, 宽)。y 为胶囊顶部。"""
+        size = size or self.f["small"]
+        w = text_w(s, size) + 20
+        h = size + 12
+        x0 = x - w / 2 if anchor == "middle" else (x - w if anchor == "end" else x)
+        out = f'<rect x="{n(x0)}" y="{n(y)}" width="{n(w)}" height="{n(h)}" rx="{n(h / 2)}" fill="{fill}"/>'
+        out += self.text(x0 + w / 2, y + h / 2 + size * .36, s, size, "mono", color or self.on(fill), "middle", 700)
+        return out, w
+
+    def token(self, glyph=None, color=None, r=10, txt=None):
         """沿路径移动的小物件，画在原点，由 animateMotion 搬运。"""
         c = color or self.s["accent"]
         out = ""
         if self.s.get("glow"):
             out += self.circle(0, 0, r * 2.2, c, extra=' opacity=".18"')
         if glyph:
-            w = max(26, text_w(glyph, 13) + 12)
-            out += (f'<rect x="{n(-w / 2)}" y="-12" width="{n(w)}" height="24" rx="5" fill="{c}"'
-                    f' stroke="{self.s["ink"]}" stroke-width="1.2"/>')
-            out += self.text(0, 5, glyph, 13, "mono", txt or self.s["accent_ink"], "middle", 700)
+            size = 15
+            w = max(30, text_w(glyph, size) + 14)
+            out += (f'<rect x="{n(-w / 2)}" y="-14" width="{n(w)}" height="28" rx="6" fill="{c}"'
+                    f' stroke="{self.s["ink"] if not self.dark else self.s["bg"]}" stroke-width="1.5"/>')
+            out += self.text(0, 5.5, glyph, size, "mono", txt or self.on(c), "middle", 800)
         else:
-            out += self.circle(0, 0, r, c, self.s["ink"] if self.rough else "none", 1.5)
+            out += self.circle(0, 0, r, c, self.s["ink"] if (self.rough or self.s.get("shadow")) else "none", 2)
         return out
 
-    def card(self, x, y, w, h, title, sub=None, role="node", tone=None, size=19, sub_size=15, align="center", tag=None):
+    def card(self, x, y, w, h, title, sub=None, role="node", tone=None, size=None, sub_size=None, align="center", tag=None):
         s = self.s
+        size = size or self.f["node"]
+        sub_size = sub_size or self.f["sub"]
+        if tone is None and role == "node" and s.get("tones"):
+            tone = self.tone()
+        elif isinstance(tone, int) and role == "node" and s.get("tones"):
+            tone = self.tone(tone)
         out = self.box(x, y, w, h, role, tone)
-        _, _, tc = self.role_colors(role)
-        if role == "node" and s.get("tones"):
-            tc = s["ink"]
-        sc = s["muted"] if role in ("node", "soft", "ghost") else tc
-        tl = wrap(title, size, w - 28, 2)
-        sl = wrap(sub, sub_size, w - 28, 2) if sub else []
-        block = len(tl) * size * 1.25 + (len(sl) * sub_size * 1.35 + 6 if sl else 0)
-        ty = y + (h - block) / 2 + size * .95
-        ax = x + w / 2 if align == "center" else x + 16
+        f, _, tc, sc = self.node_colors(role, tone)
+        padx = 18
+        tl = wrap(title, size, w - 2 * padx, 2)
+        if len(tl) == 2 and size > 18:
+            size2 = fit(title, size, w - 2 * padx, max(17, size - 5))
+            if text_w(title, size2) <= w - 2 * padx:
+                size, tl = size2, [title]
+        sl = wrap(sub, sub_size, w - 2 * padx, 2) if sub else []
+        while sl and (len(tl) * size * 1.22 + len(sl) * sub_size * 1.35 + 6 > h - 14) and len(sl) > 1:
+            sl = wrap(sub, sub_size, w - 2 * padx, len(sl) - 1)
+        if sl and len(tl) * size * 1.22 + sub_size * 1.35 + 6 > h - 10:
+            sl = []
+        block = len(tl) * size * 1.22 + (len(sl) * sub_size * 1.35 + 4 if sl else 0)
+        ty = y + (h - block) / 2 + size * .9
+        ax = x + w / 2 if align == "center" else x + padx
         anchor = "middle" if align == "center" else "start"
-        out += self.lines(ax, ty, tl, size, size * 1.25, role="title", fill=tc, anchor=anchor, weight=s["title_weight"] if s["title_weight"] < 900 else 800)
+        wt = s["title_weight"] if s["title_weight"] < 900 else 800
+        out += self.lines(ax, ty, tl, size, size * 1.22, role="title", fill=tc, anchor=anchor, weight=wt)
         if sl:
-            out += self.lines(ax, ty + len(tl) * size * 1.25 + 4, sl, sub_size, sub_size * 1.35, role="body", fill=sc, anchor=anchor)
+            out += self.lines(ax, ty + len(tl) * size * 1.22 + 2, sl, sub_size, sub_size * 1.35, role="body", fill=sc, anchor=anchor)
         if tag:
-            out += self.text(x + w - 10, y + 18, tag, 12, "mono", sc, "end", 700)
+            out += self.text(x + w - 12, y + 20, tag, self.f["small"], "mono", sc, "end", 700)
         return out
 
-    @staticmethod
-    def card_h(title, sub, w, size=19, sub_size=15, pad=18):
-        tl = len(wrap(title, size, w - 28, 2))
-        sl = len(wrap(sub, sub_size, w - 28, 2)) if sub else 0
-        return pad * 2 + tl * size * 1.25 + (sl * sub_size * 1.35 + 6 if sl else 0)
+    def card_h(self, title, sub, w, size=None, sub_size=None, pad=16):
+        size = size or self.f["node"]
+        sub_size = sub_size or self.f["sub"]
+        tl = len(wrap(title, size, w - 36, 2))
+        if tl == 2 and text_w(title, max(17, size - 5)) <= w - 36:
+            tl = 1
+        sl = len(wrap(sub, sub_size, w - 36, 2)) if sub else 0
+        return pad * 2 + tl * size * 1.22 + (sl * sub_size * 1.35 + 4 if sl else 0)
+
+    def num(self, x, y, k, size=None, fill=None, anchor="start"):
+        """大号序号 01 02，做视觉锚点。"""
+        size = size or self.f["mono"]
+        return self.text(x, y, f"{k:02d}", size, "mono", fill or self.s["accent"], anchor, 800)
 
     # 画布
     def background(self):
-        s = self.s
+        s, W, H = self.s, self.W, self.H
         out = f'<rect x="0" y="0" width="{W}" height="{H}" fill="{s["bg"]}"/>'
         tx = s.get("texture")
         if tx == "dots":
-            d = "".join(f"M{x} {y}h0" for y in range(24, H, 24) for x in range(24, W, 24))
-            out += f'<path d="{d}" stroke="{s["rule"]}" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>'
+            d = "".join(f"M{x} {y}h0" for y in range(26, H, 26) for x in range(26, W, 26))
+            out += f'<path d="{d}" stroke="{s["rule"]}" stroke-width="2" stroke-linecap="round" opacity=".55"/>'
         elif tx == "grid":
             minor = "".join(f"M{x} 0V{H}" for x in range(0, W + 1, 25)) + "".join(f"M0 {y}H{W}" for y in range(0, H + 1, 25))
             major = "".join(f"M{x} 0V{H}" for x in range(0, W + 1, 125)) + "".join(f"M0 {y}H{W}" for y in range(0, H + 1, 125))
-            out += f'<path d="{minor}" stroke="{s["rule"]}" stroke-width=".6" opacity=".55"/>'
-            out += f'<path d="{major}" stroke="{s["rule"]}" stroke-width="1.2" opacity=".9"/>'
+            out += f'<path d="{minor}" stroke="{s["rule"]}" stroke-width=".6" opacity=".5"/>'
+            out += f'<path d="{major}" stroke="{s["rule"]}" stroke-width="1.2" opacity=".85"/>'
+        elif tx == "paper":
+            d = "".join(f"M0 {y}H{W}" for y in range(40, H, 34))
+            out += f'<path d="{d}" stroke="{s["rule"]}" stroke-width="1" opacity=".55"/>'
+            out += f'<path d="M{self.L - 14} 0V{H}" stroke="{s["accent"]}" stroke-width="1.4" opacity=".35"/>'
         elif tx == "lines":
             d = "".join(f"M{x} 40V{H - 40}" for x in range(40, W, 112))
             out += f'<path d="{d}" stroke="{s["rule"]}" stroke-width=".7" opacity=".55"/>'
         elif tx == "grain":
             r = random.Random(3)
-            d = "".join(f"M{r.randint(0, W)} {r.randint(0, H)}h0" for _ in range(1400))
-            out += f'<path d="{d}" stroke="{s["ink"]}" stroke-width="1.3" stroke-linecap="round" opacity=".09"/>'
+            d = "".join(f"M{r.randint(0, W)} {r.randint(0, H)}h0" for _ in range(int(W * H / 530)))
+            out += f'<path d="{d}" stroke="{s["ink"]}" stroke-width="1.3" stroke-linecap="round" opacity=".08"/>'
         elif tx == "scan":
             d = "".join(f"M0 {y}H{W}" for y in range(0, H, 4))
             out += f'<path d="{d}" stroke="{s["accent"]}" stroke-width="1" opacity=".05"/>'
+        elif tx == "halftone":
+            out += "".join(
+                f'<circle cx="{x}" cy="{y}" r="{n(max(.4, 4.2 * (1 - math.hypot(W - x, H - y) / (W * .75))))}" fill="{s["accent"]}" opacity=".22"/>'
+                for y in range(H - 20, int(H * .45), -22) for x in range(W - 20, int(W * .35), -22)
+                if math.hypot(W - x, H - y) < W * .72)
+        out += self.deco()
         if s.get("frame"):
             fw = s["frame"]
-            out += f'<rect x="{fw / 2}" y="{fw / 2}" width="{W - fw}" height="{H - fw}" rx="{s["radius"] + 2}" fill="none" stroke="{s["ink"]}" stroke-width="{fw}"/>'
+            out += f'<rect x="{fw / 2}" y="{fw / 2}" width="{W - fw}" height="{H - fw}" rx="{s["radius"] + 2 if s["radius"] < 20 else 0}" fill="none" stroke="{s["ink"]}" stroke-width="{fw}"/>'
         return out
 
-    def header(self, kicker, title, subtitle=None, seal=None, T=None):
+    def deco(self):
+        """风格自带的背景装饰，只占角落，不抢主体。"""
+        s, W, H = self.s, self.W, self.H
+        d = s.get("deco")
+        if d == "bauhaus":
+            return (f'<circle cx="{W - 70}" cy="{H - 80}" r="120" fill="{s["accent2"]}" opacity=".10"/>'
+                    f'<path d="M0 {H} L0 {H - 210} A210 210 0 0 1 210 {H} Z" fill="{s["accent"]}" opacity=".10"/>'
+                    f'<rect x="{W - 46}" y="0" width="46" height="{n(H * .32)}" fill="{s["yellow"]}"/>')
+        if d == "stars":
+            r = random.Random(5)
+            return "".join(f'<rect x="{r.randint(0, W)}" y="{r.randint(0, H)}" width="3" height="3" fill="{s["ink"]}" opacity="{r.choice([".25", ".5", ".8"])}"/>'
+                           for _ in range(60))
+        if d == "blobs":
+            return (f'<ellipse cx="{W - 40}" cy="{H - 30}" rx="190" ry="130" fill="{s["tones"][0]}" opacity=".7"/>'
+                    f'<ellipse cx="20" cy="{H * .55}" rx="90" ry="140" fill="{s["tones"][1]}" opacity=".6"/>')
+        if d == "corner":
+            return f'<rect x="0" y="{H - 14}" width="{W}" height="14" fill="{s["accent"]}"/>'
+        if d == "aurora":
+            return (f'<ellipse cx="{W * .85}" cy="-40" rx="{W * .5}" ry="220" fill="{s["accent"]}" opacity=".10"/>'
+                    f'<ellipse cx="{W * .1}" cy="-80" rx="{W * .4}" ry="200" fill="{s["accent2"]}" opacity=".08"/>')
+        return ""
+
+    def header(self, kicker, title, subtitle=None, seal=None, animate=True):
         """返回 (svg, 正文起始 y)。"""
-        s = self.s
-        name = self.name
-        out, x = "", 40
-        tsize = 34 if text_w(title, 34) <= 670 else 30
-        tl = wrap(title, tsize, 670, 2)
-        if name == "field":
-            out += f'<rect x="40" y="38" width="10" height="{n(40 + len(tl) * tsize * 1.2)}" fill="{s["accent"]}"/>'
-            x = 64
+        s, L, R, CW = self.s, self.L, self.R, self.CW
+        hv = s.get("header", "rule")
+        out, x = "", L
+        tsize = self.f["h1"] if text_w(title, self.f["h1"]) <= CW - (90 if hv in ("seal", "tag") else 0) else 42
+        tmax = CW - (90 if hv in ("seal", "tag") else 0)
+        tl = wrap(title, tsize, tmax, 2)
+        if len(tl) == 2 and tsize > 38:
+            tsize = 38 if text_w(title, 38) > tmax else tsize
+            tl = wrap(title, tsize, tmax, 2)
+        lh = tsize * 1.18
+        top = 40 if not self.land else 34
+        ink = s["ink"]
+        ky = top + 22
+        ty = ky + 20 + tsize * .92 if kicker else top + tsize
+        if hv == "band":
+            band_h = (ty + (len(tl) - 1) * lh) + (44 if subtitle else 24) + 12
+            band_c = s.get("band", s["accent"])
+            out += f'<rect x="0" y="0" width="{self.W}" height="{n(band_h)}" fill="{band_c}"/>'
+            ink = self.on(band_c)
+        if hv == "bar":
+            out += f'<rect x="{L}" y="{top}" width="12" height="{n(ty + (len(tl) - 1) * lh - top + 6)}" fill="{s["accent"]}"/>'
+            x = L + 28
         if kicker:
-            k = ("$ " + kicker) if name == "terminal" else kicker
-            out += self.text(x, 62, k, 14, "mono", s["accent"], weight=700, ls=2)
-        ty = 108
-        if name == "riso":
-            out += self.lines(x + 4, ty + 4, tl, tsize, tsize * 1.2, role="title", fill=s["accent"], weight=s["title_weight"], extra=' opacity=".7"')
-        out += self.lines(x, ty, tl, tsize, tsize * 1.2, role="title", fill=s["ink"], weight=s["title_weight"])
-        y = ty + (len(tl) - 1) * tsize * 1.2
-        if name == "terminal" and T:
-            cx = x + min(650, text_w(tl[-1], tsize) * 1.08) + 14
-            out += (f'<rect x="{n(cx)}" y="{n(y - tsize * .8)}" width="14" height="{n(tsize * .9)}" fill="{s["accent"]}">'
+            k = ("$ " + kicker) if hv == "prompt" else kicker
+            kc = ink if hv == "band" else s["accent"]
+            if hv == "highlight":
+                pw = text_w(k, self.f["mono"]) + 22
+                out += f'<rect x="{x}" y="{ky - 19}" width="{n(pw)}" height="28" fill="{s["ink"]}"/>'
+                out += self.text(x + 11, ky, k, self.f["mono"], "mono", s["bg"], weight=800, ls=1.5)
+            else:
+                out += self.text(x, ky, k, self.f["mono"], "mono", kc, weight=800, ls=2)
+        if hv == "highlight":
+            for i, ln in enumerate(tl):
+                yy = ty + i * lh
+                out += f'<rect x="{x - 6}" y="{n(yy - tsize * .62)}" width="{n(text_w(ln, tsize) + 12)}" height="{n(tsize * .58)}" fill="{s.get("yellow", s["accent2"])}"/>'
+        if hv == "riso" or s.get("misreg"):
+            out += self.lines(x + 4, ty + 4, tl, tsize, lh, role="title", fill=s["accent"], weight=s["title_weight"], extra=' opacity=".75"')
+        out += self.lines(x, ty, tl, tsize, lh, role="title", fill=ink, weight=s["title_weight"])
+        y = ty + (len(tl) - 1) * lh
+        if hv == "prompt" and animate:
+            cx = x + min(CW - 20, text_w(tl[-1], tsize) * 1.04) + 10
+            out += (f'<rect x="{n(cx)}" y="{n(y - tsize * .8)}" width="16" height="{n(tsize * .9)}" fill="{s["accent"]}">'
                     f'<animate attributeName="opacity" values="1;0;1" keyTimes="0;.5;1" dur="1s" repeatCount="indefinite" calcMode="discrete"/></rect>')
         if subtitle:
-            y += 36
-            out += self.text(x, y, subtitle, 17, "body", s["muted"])
-        y += 22
-        if name == "sketch" or name == "chalk":
-            out += self.stroke_path([(40, y), (240, y + 2), (420, y - 1)], s["accent"], 3)
-        elif name == "editorial":
-            out += f'<path d="M40 {n(y)}H710M40 {n(y + 5)}H710" stroke="{s["ink"]}" stroke-width="1"/>'
-        elif name == "porcelain":
-            out += f'<path d="M40 {n(y)}H710" stroke="{s["accent"]}" stroke-width="1.5"/><path d="M40 {n(y + 5)}H710" stroke="{s["accent2"]}" stroke-width=".8"/>'
-        elif name not in ("inkwash",):
-            out += f'<line x1="40" y1="{n(y)}" x2="710" y2="{n(y)}" stroke="{s["ink"]}" stroke-width="2.5"/>'
-        if name == "inkwash":
-            sl = seal or "动悉"
-            out += f'<rect x="652" y="36" width="58" height="58" rx="4" fill="{s["accent"]}"/>'
-            out += self.text(681, 60, sl[:2][0], 20, "title", s["accent_ink"], "middle", 700)
-            out += self.text(681, 86, sl[:2][-1], 20, "title", s["accent_ink"], "middle", 700)
-            out += self.stroke_path([(40, y), (300, y + 1)], s["ink"], 1.2)
-        if name == "blueprint":
-            out += f'<rect x="560" y="34" width="150" height="34" fill="none" stroke="{s["ink"]}" stroke-width="1"/>'
-            out += self.text(635, 56, "DWG · " + (seal or "A-01"), 12, "mono", s["ink"], "middle", 700)
-        return out, y + 26
+            y += 40
+            sub_c = ink if hv == "band" else s["muted"]
+            sl = wrap(subtitle, 19, CW - (x - L), 2)
+            out += self.lines(x, y, sl, 19, 26, role="body", fill=sub_c, extra=' opacity=".85"' if hv == "band" else "")
+            y += (len(sl) - 1) * 26
+        y += 26
+        if hv == "band":
+            y += 14
+        elif hv == "scribble":
+            out += self.stroke_path([(L, y), (L + 220, y + 3), (L + 420, y - 1)], s["accent"], 4)
+        elif hv == "double":
+            out += f'<path d="M{L} {n(y)}H{R}M{L} {n(y + 6)}H{R}" stroke="{s["ink"]}" stroke-width="1.2"/>'
+        elif hv == "double-accent":
+            out += f'<path d="M{L} {n(y)}H{R}" stroke="{s["accent"]}" stroke-width="2"/><path d="M{L} {n(y + 6)}H{R}" stroke="{s["accent2"]}" stroke-width="1"/>'
+        elif hv == "plain":
+            pass
+        elif hv == "thin":
+            out += f'<line x1="{L}" y1="{n(y)}" x2="{R}" y2="{n(y)}" stroke="{s["rule"]}" stroke-width="1.5"/>'
+        elif hv == "seal":
+            out += self.stroke_path([(L, y), (L + 300, y + 1)], s["ink"], 1.4)
+        elif hv == "highlight":
+            out += f'<line x1="{L}" y1="{n(y)}" x2="{R}" y2="{n(y)}" stroke="{s["ink"]}" stroke-width="4"/>'
+        else:
+            out += f'<line x1="{L}" y1="{n(y)}" x2="{R}" y2="{n(y)}" stroke="{s["ink"]}" stroke-width="3"/>'
+        if hv == "seal":
+            sl2 = (seal or "动悉")[:2]
+            out += f'<rect x="{R - 62}" y="{top - 4}" width="62" height="62" rx="4" fill="{s["accent"]}"/>'
+            out += self.text(R - 31, top + 22, sl2[0], 22, "title", s["accent_ink"], "middle", 700)
+            out += self.text(R - 31, top + 49, sl2[-1], 22, "title", s["accent_ink"], "middle", 700)
+        if hv == "tag":
+            out += f'<rect x="{R - 160}" y="{top - 6}" width="160" height="36" fill="none" stroke="{s["ink"]}" stroke-width="1.2"/>'
+            out += self.text(R - 80, top + 17, "DWG · " + (seal or "A-01"), 14, "mono", s["ink"], "middle", 700)
+        return out, y + 30
 
     def foot(self, text):
         if not text:
             return ""
-        return self.text(40, H - 28, text, 13, "mono", self.s["muted"])
+        return self.text(self.L, self.H - 26, text, self.f["small"], "mono", self.s["muted"])

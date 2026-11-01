@@ -1,0 +1,40 @@
+{
+ "type": "journey",
+ "style": "lavender",
+ "kicker": "体验 · 情绪曲线",
+ "title": "第一次用 AI 写代码的心情",
+ "subtitle": "低谷在第三步，过去就回不去了",
+ "stages": [
+  {
+   "title": "装好工具",
+   "sub": "十分钟搞定",
+   "score": 4,
+   "feel": "期待"
+  },
+  {
+   "title": "让它写个页面",
+   "sub": "一句话就出来了",
+   "score": 5,
+   "feel": "惊喜"
+  },
+  {
+   "title": "改个老项目",
+   "sub": "改错文件、跑不起来",
+   "score": 1,
+   "feel": "崩溃"
+  },
+  {
+   "title": "学会写规则",
+   "sub": "把约定写进说明文件",
+   "score": 3,
+   "feel": "摸到门道"
+  },
+  {
+   "title": "交给它跑测试",
+   "sub": "自己只看结果",
+   "score": 5,
+   "feel": "回不去了",
+   "hl": true
+  }
+ ]
+}
