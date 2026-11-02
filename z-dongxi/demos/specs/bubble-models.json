@@ -1,0 +1,12 @@
+{"type":"bubble","style":"swiss","kicker":"BUBBLE · 三个维度","title":"几款开源模型：多大、多快、多少人用",
+"subtitle":"横轴参数量，纵轴每秒输出字数，气泡大小是下载量",
+"x":{"label":"参数量（B）","min":0,"max":80},"y":{"label":"字/秒","min":0,"max":120},
+"items":[
+ {"name":"小模型 A","x":4,"y":105,"size":90,"group":"端侧"},
+ {"name":"小模型 B","x":8,"y":88,"size":60,"group":"端侧"},
+ {"name":"中模型 C","x":27,"y":62,"size":120,"group":"通用","note":"下载量最高，又不太慢"},
+ {"name":"中模型 D","x":44,"y":40,"size":40,"group":"通用"},
+ {"name":"大模型 E","x":70,"y":22,"size":70,"group":"旗舰"},
+ {"name":"大模型 F","x":60,"y":30,"size":30,"group":"旗舰"}
+],
+"highlight":["中模型 C"],"foot":"示例数据，演示用"}

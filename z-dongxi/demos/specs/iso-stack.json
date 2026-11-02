@@ -1,0 +1,10 @@
+{"type":"iso","style":"pencil","kicker":"ISOMETRIC · 分层","title":"一个 AI 应用，从下往上搭了几层",
+"subtitle":"请求从最上层进来，一层层往下穿，最后落到显卡上",
+"layers":[
+ {"title":"对话界面","sub":"网页、App、微信机器人"},
+ {"title":"Agent 编排","sub":"拆任务、调工具、记上下文","highlight":true},
+ {"title":"模型接口","sub":"OpenAI 兼容的 API"},
+ {"title":"推理引擎","sub":"vLLM / SGLang 管显存和批处理"},
+ {"title":"GPU","sub":"算力底座，按小时计费"}
+],
+"caption":"小方块就是一次请求"}

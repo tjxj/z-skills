@@ -1,4 +1,4 @@
-"""二十四套材质。每套只定义颜色、字体、笔触、纹理和标题样式，不规定画面放什么。
+"""二十七套材质。每套只定义颜色、字体、笔触、纹理和标题样式，不规定画面放什么。
 
 灵感来源：Hallmark 的「材质不管结构」理念、Excalidraw、瑞士国际主义海报、包豪斯、
 新粗野主义、Apple 便当格、Linear 暗色界面、ByteByteGo 式技术配图、孔版印刷、半调网点。
@@ -8,6 +8,7 @@ SERIF = "'Source Han Serif SC','Source Han Serif SC VF','Noto Serif CJK SC','Not
 KAI = "'LXGW WenKai','LXGW WenKai Mono','Kaiti SC',STKaiti,KaiTi,serif"
 MONO = "'SF Mono','JetBrains Mono',Menlo,Consolas,monospace"
 SANS = "'Source Han Sans SC','Noto Sans CJK SC','Noto Sans SC','Helvetica Neue',Arial,sans-serif"
+TYPE = "'American Typewriter','Courier Prime','Courier New'," + SERIF
 HEAVY = "'Source Han Sans SC Heavy','Noto Sans CJK SC Black','Source Han Sans SC','Noto Sans CJK SC','Arial Black',sans-serif"
 
 # 字段说明
@@ -16,7 +17,8 @@ HEAVY = "'Source Han Sans SC Heavy','Noto Sans CJK SC Black','Source Han Sans SC
 # shape: rect | rough 手绘 | cut 切角 | pixel 像素台阶      texture: dots grid lines grain scan paper halftone none
 # header: rule | band 色带 | bar 左竖条 | highlight 荧光笔 | scribble 手绘线 | double | double-accent | thin | plain | seal 印章 | tag 图签 | prompt 光标
 # shadow: 硬投影偏移   soft_shadow: 柔和投影   die: 贴纸白边   glow: 霓虹叠描   misreg: 套色错位   hachure: 斜线填充
-# tones / tone_strokes: 节点按顺序轮换的填充色和描边色     deco: bauhaus stars blobs corner aurora
+# tones / tone_strokes: 节点按顺序轮换的填充色和描边色     deco: bauhaus stars blobs corner aurora torn 撕边
+# hatch_shadow: 排线投影  pencil: 彩铅排线填充  pin: 图钉  label=italic: 线上标签用斜体注解  node_dash: 卡片虚线边  rough_amp: 抖动幅度
 STYLES = {
     # ---- 技术向 ----
     "swiss": dict(
@@ -206,6 +208,24 @@ STYLES = {
         tones=["#DCEBCB", "#F6E3B4", "#F3D0C0", "#D3E4EC"], tone_strokes=["#2F7D4F", "#B7862B", "#C4502A", "#3C7A96"],
         keywords="植物 自然 环境 健康 饮食 农业 生态 气候 养生 户外",
         note="米绿底、叶片色块、自然配色，健康、自然、生态话题"),
+    # ---- 新增：手作与票据 ----
+    "pencil": dict(
+        cn="钢笔彩铅", bg="#F3EEE3", panel="#FBF7EE", panel2="#EEE5D3", ink="#2A2420", muted="#6B6054",
+        rule="#D9CEB8", accent="#B5302C", accent2="#3D6B98", good="#5C7F3B", bad="#B5302C",
+        font_title=SERIF, font_body=SERIF, font_mono=TYPE, title_weight=500, radius=8, stroke=1.6,
+        shape="rough", rough_amp=.5, texture="grain", frame=0, shadow=0, hatch_shadow=5, pencil=True,
+        pin=True, pin_colors=["#B5302C", "#3D6B98", "#C9962B"], header="plate", label="italic",
+        tones=["#F7E6BE", "#DCE7F1", "#F4DAD6", "#E3ECD4"],
+        keywords="状态 订单 绘本 插画 手绘 生活 奶茶 状态机 店铺 柜台",
+        note="米色纸、钢笔细线压彩铅排线、图钉和斜体注解，像一页手绘图鉴"),
+    "receipt": dict(
+        cn="收银小票", bg="#F7F5EF", panel="#FFFFFF", panel2="#EFECE4", ink="#1E1E1E", muted="#6A665E",
+        rule="#D8D3C8", accent="#D1242F", accent2="#1E1E1E", good="#1F7A3A", bad="#D1242F",
+        font_title=MONO, font_body=MONO, font_mono=MONO, title_weight=800, radius=0, stroke=1.4,
+        shape="rect", texture="none", frame=0, shadow=0, header="receipt", deco="torn", counter="#DCD6C8",
+        node_dash="2 4", tones=["#FFFFFF", "#F4F1EA"],
+        keywords="账单 花费 价格 成本 报价 购物 消费 订阅 发票 小票 算账 省钱 开销",
+        note="热敏纸小票、等宽字、撕边和条码，讲钱、讲成本、讲账单"),
 }
 
 DEFAULT_STYLE = "swiss"

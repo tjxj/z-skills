@@ -4,7 +4,7 @@
 
 **一段内容进去，一张会动的解析图出来**
 
-31 种图型 × 25 种风格 × 5 种画幅 · 单行内联 SVG · 直接粘进公众号 · 也能导出 PNG / GIF / MP4
+35 种图型 × 27 种风格 × 5 种画幅 · 单行内联 SVG · 直接粘进公众号 · 也能导出 PNG / GIF / MP4
 
 <img src="demos/svg/rag.svg" width="300"> <img src="demos/svg/traffic-sankey.svg" width="300"> <img src="demos/svg/launch-stat.svg" width="300">
 
@@ -15,15 +15,16 @@
 把「有过程、有数字」的内容演出来：数据怎么流、请求怎么穿透、钱花在哪、流量去了哪、排期卡在哪、哪个方案更划算。
 
 - **一句话就能出图**：说主题和内容，图型、风格、画幅、动画节奏都自动定，使用者不碰坐标
-- **31 种图型**：13 种过程类（流程、时序、状态机、管线……）+ 18 种数据与结构类（环形、甘特、桑基、雷达、ER、热力格……），Mermaid 常用的图基本都有动态版
-- **25 种风格**：瑞士网格、Excalidraw 白板手绘、工程蓝图、终端绿屏、暗夜产品、国际海报、新粗野、水墨朱印……同一份内容换一个词就换一身衣服
+- **35 种图型**：13 种过程类（流程、时序、状态机、管线……）+ 18 种数据与结构类（环形、甘特、桑基、雷达、ER、热力格……）+ 4 种层次与立体类（层级状态机、等距堆叠、坡度图、气泡图），Mermaid 常用的图基本都有动态版
+- **27 种风格**：瑞士网格、Excalidraw 白板手绘、工程蓝图、终端绿屏、暗夜产品、国际海报、新粗野、水墨朱印、钢笔彩铅、收银小票……同一份内容换一个词就换一身衣服
+- **页脚小物件**：任何图型加一行 `scene`，底部就摆上会冒热气的奶茶、漏沙的沙漏、闪灯的机柜、来回走的小人
 - **5 种画幅**：3:4 公众号（默认）、9:16 竖屏、1:1 方图、4:3 PPT、16:9 横屏视频，换画幅不用改内容
 - **公众号原生可用**：只用公众号支持的 SMIL 动画，不用 id / defs / style / script，单行输出，粘贴即用
 - **静态即终态**：不播放动画时也是一张完整的图，截图、导出 PNG 都能用
 - **自带质检**：lint 查兼容性，截帧看每一秒画面对不对
 - **一键转视频**：导出 MP4，宽 1080，高跟着画幅走
 
-## 31 种图型一览
+## 35 种图型一览
 
 <img src="docs/types-grid.jpg" width="100%">
 
@@ -63,7 +64,16 @@
 | <img src="demos/svg/choose-table.svg" width="260"> | <img src="demos/svg/agent-steps.svg" width="260"> | <img src="demos/svg/mcp-orbit.svg" width="260"> |
 | **RAG、微调、长上下文，怎么选**<br>`table` × `swiss`<br>逐行扫过，推荐列一直高亮 | **零基础做出第一个 Agent**<br>`steps` × `field`<br>大号序号一个个点亮 | **一个协议，接起了哪些东西**<br>`orbit` × `arcade`<br>内外两圈轨道，小圆点绕着 MCP 转 |
 
-## 25 种风格
+## 示例 · 层次与立体
+
+| | | |
+|:---:|:---:|:---:|
+| <img src="demos/svg/milktea-statechart.svg" width="260"> | <img src="demos/svg/parallel-statechart.svg" width="260"> | <img src="demos/svg/bug-statechart.svg" width="260"> |
+| **一杯奶茶从下单到出杯的状态**<br>`statechart` × `pencil`<br>复合状态里三步顺着走，底部奶茶冒热气、小人来回走 | **外卖小哥送单时，两件事同时在变**<br>`statechart` × `pencil`<br>两个并行区域同时推进，两边都完成才送达 | **会员退款的状态图，哪里漏了**<br>`statechart` × `swiss`<br>正常路径走完，红线描出违规路径并盖章 |
+| <img src="demos/svg/iso-stack.svg" width="260"> | <img src="demos/svg/slope-price.svg" width="260"> | <img src="demos/svg/bubble-models.svg" width="260"> |
+| **一个 AI 应用，从下往上搭了几层**<br>`iso` × `pencil`<br>等距块从下往上落位，小方块一层层穿下去 | **两年里，AI 服务月费的涨跌**<br>`slope` × `receipt`<br>收银小票风，涨的绿、跌的红，最后加粗 | **几款开源模型：多大、多快、多少人用**<br>`bubble` × `swiss`<br>气泡依次弹出，重点气泡泛涟漪、拉引线注解 |
+
+## 27 种风格
 
 同一份 RAG spec，只改 `style`：
 
@@ -80,7 +90,8 @@
 | `bento` 便当格 · 产品功能 | | `inkwash` 水墨朱印 · 国风历史 |
 | `lavender` 薰衣草 · 心理成长 | | `kraft` 牛皮纸 · 生活小店 |
 | `bauhaus` 包豪斯 · 设计方法论 | | `garden` 植物园 · 自然健康 |
-| `field` 现场手册 · SOP 规程 | | |
+| `field` 现场手册 · SOP 规程 | | `pencil` 钢笔彩铅 · 手绘图鉴 |
+| | | `receipt` 收银小票 · 账单成本 |
 
 ## 5 种画幅
 

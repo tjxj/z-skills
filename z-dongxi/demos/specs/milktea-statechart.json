@@ -1,0 +1,23 @@
+{"type":"statechart","style":"pencil","kicker":"STATECHART · 奶茶店","title":"一杯奶茶从下单到出杯的状态",
+"subtitle":"制作中是个复合状态，里面三步顺着走；任何一步都能被退单打断",
+"states":[
+ {"id":"order","title":"已下单","sub":"小票打出","note":"高峰期这里会排二十多单"},
+ {"id":"make","title":"制作中"},
+ {"id":"tea","title":"煮茶","parent":"make","initial":true},
+ {"id":"mix","title":"加料","parent":"make"},
+ {"id":"seal","title":"封口","parent":"make"},
+ {"id":"ready","title":"待取餐","sub":"屏幕叫号"},
+ {"id":"done","title":"已取走","kind":"final"},
+ {"id":"cancel","title":"已退单","role":"soft"}
+],
+"transitions":[
+ {"from":"order","to":"make","label":"接单"},
+ {"from":"tea","to":"mix","label":"茶好了"},
+ {"from":"mix","to":"seal","label":"装杯"},
+ {"from":"make","to":"ready","label":"出杯"},
+ {"from":"ready","to":"done","label":"扫码取餐"},
+ {"from":"make","to":"cancel","label":"顾客退单","guard":"未封口"},
+ {"from":"ready","to":"make","label":"超时重做","dashed":true}
+],
+"walk":["order","tea","mix","seal","ready","done"],
+"scene":["cup","pot","bell","hourglass","walker"]}

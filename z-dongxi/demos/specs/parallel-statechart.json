@@ -1,0 +1,18 @@
+{"type":"statechart","style":"pencil","kicker":"STATECHART · 并行区域","title":"外卖小哥送单时，两件事同时在变",
+"subtitle":"骑行和联系顾客各走各的，两边都到终点才算送达",
+"states":[
+ {"id":"pick","title":"到店取餐"},
+ {"id":"run","title":"配送中","parallel":true},
+ {"id":"ride","title":"骑行","parent":"run","region":"路上","initial":true},
+ {"id":"near","title":"到楼下","parent":"run","region":"路上"},
+ {"id":"wait","title":"未联系","parent":"run","region":"顾客","initial":true},
+ {"id":"call","title":"已电话","parent":"run","region":"顾客"},
+ {"id":"done","title":"已送达","kind":"final"}
+],
+"transitions":[
+ {"from":"pick","to":"run","label":"出发"},
+ {"from":"ride","to":"near","label":"导航结束"},
+ {"from":"wait","to":"call","label":"拨号","guard":"距离<1km"},
+ {"from":"run","to":"done","label":"交到手上","guard":"两边都完成"}
+],
+"walk":["pick",["ride","wait"],["ride","call"],["near","call"],"done"]}

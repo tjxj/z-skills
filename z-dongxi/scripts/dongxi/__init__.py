@@ -6,6 +6,8 @@ from .styles import DEFAULT_STYLE, STYLES, pick_style
 try:
     from .charts import CHARTS
     LAYOUTS.update(CHARTS)
+    from .extra import EXTRA
+    LAYOUTS.update(EXTRA)
 except ImportError:
     pass
 
@@ -26,8 +28,14 @@ def render(spec, style=None, ratio=None):
     P = Painter(STYLES[name], name, spec.get("seed", 11), ratio)
     head, top = P.header(spec.get("kicker"), spec["title"], spec.get("subtitle"), spec.get("seal"), True)
     bot = P.H - (62 if spec.get("foot") else 36)
+    props = ""
+    if spec.get("scene"):
+        from .props import SCENE_H, scene
+        bot -= SCENE_H
     body, T = LAYOUTS[kind](P, spec, top + 6, bot)
+    if spec.get("scene"):
+        props = scene(P, spec["scene"], bot + 4)
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {P.W} {P.H}" width="100%"'
            f' style="display:block;max-width:{P.W}px;margin:0 auto">'
-           + P.background() + head + body + P.foot(spec.get("foot")) + "</svg>")
+           + P.background() + head + props + body + P.foot(spec.get("foot")) + "</svg>")
     return svg.replace("\n", " ").replace("。", "．"), name, T

@@ -1,0 +1,17 @@
+{"type":"statechart","style":"swiss","kicker":"STATECHART · 找漏洞","title":"会员退款的状态图，哪里漏了",
+"subtitle":"规则写着退款后不能再用会员，状态图里却留了一条路",
+"states":[
+ {"id":"trial","title":"试用中"},
+ {"id":"vip","title":"会员中","sub":"可用全部功能"},
+ {"id":"refund","title":"退款中"},
+ {"id":"back","title":"已退款","role":"soft"},
+ {"id":"use","title":"继续使用","kind":"error","sub":"本不该到这里"}
+],
+"transitions":[
+ {"from":"trial","to":"vip","label":"付费"},
+ {"from":"vip","to":"refund","label":"申请退款"},
+ {"from":"refund","to":"back","label":"钱到账"},
+ {"from":"refund","to":"use","label":"缓存未清","guard":"token 未作废"}
+],
+"walk":["trial","vip","refund","back"],
+"bug":{"path":["vip","refund","use"],"rule":"退款完成后，会员权限必须立即收回；token 不作废就会出现白用","stamp":"漏洞","title":"违反规则"}}

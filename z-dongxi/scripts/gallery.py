@@ -18,7 +18,7 @@ from dongxi import CANVAS, STYLES, render  # noqa: E402
 SPECS = ROOT / "demos" / "specs"
 FONTS = [pathlib.Path.home() / "Library/Fonts/SourceHanSerifSC-VF.ttf", "/System/Library/Fonts/STHeiti Medium.ttc"]
 # 每种图型挑一张做图库代表
-TYPE_PICK = {"flow": "rag-sketch", "pipeline": "rag", "cycle": "agent-loop"}
+TYPE_PICK = {"flow": "rag-sketch", "pipeline": "rag", "cycle": "agent-loop", "statechart": "milktea-statechart"}
 RATIO_SPEC = "rag"
 STYLE_SPEC = "rag"
 WIDE = ["rag", "traffic-sankey", "rag-gantt", "launch-stat", "post-heatmap", "model-radar"]
