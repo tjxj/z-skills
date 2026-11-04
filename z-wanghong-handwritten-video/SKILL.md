@@ -32,7 +32,7 @@ python3 ../z-wanghong-handwritten-ppt/scripts/check_deck.py \
   "/absolute/path/to/deck/index.html"
 ```
 
-检查失败时先修复原 HTML。动画渲染不得绕过缺失的 `base.css`、`runtime.js` 或 `neat-annotations.css`。
+检查失败时先修复原 HTML。输入应是 `build.py` 生成的 `index.html`（样式、运行时、字体、图片均已内嵌）；只有源稿 `slides.html` 时先运行 `python3 ../z-wanghong-handwritten-ppt/scripts/build.py slides.html`，在 macOS 上保持默认的翩翩体构建。
 
 ### 3. 安装一次渲染依赖
 
@@ -84,7 +84,7 @@ scripts/render_html_video.sh \
 - 结论是否至少完整停留 0.8 秒；
 - MP4 是否没有可见或隐藏的音频流。
 
-需要逐帧核对时，使用原 PPT Skill 的 `scripts/render.sh` 先导出同一页静态 PNG，再与 MP4 对应完成帧对照。字形或排版出现差异时停止交付，检查指定字体文件、原 CSS 和 HTML 路径。
+需要逐帧核对时，使用原 PPT Skill 的 `scripts/render.py index.html --slides N` 先导出同一页静态 PNG，再与 MP4 对应完成帧对照。字形或排版出现差异时停止交付，检查指定字体文件、原 CSS 和 HTML 路径。
 
 ## 动效纪律
 

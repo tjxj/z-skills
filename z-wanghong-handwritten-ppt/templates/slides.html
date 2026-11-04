@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>手写讲稿模板</title>
+<!-- 以下两行只为在 skill 目录内直接预览；build.py 会把它们换成内嵌版本 -->
+<link rel="stylesheet" href="../assets/template.css">
+<style>
+  /* 本稿专属微调写在这里，会覆盖模板 */
+</style>
+</head>
+<body>
+<main class="deck">
+
+  <!-- 1 封面：小标题居中、中间一张图、底部一行作者与机构 -->
+  <section class="slide cover" data-title="封面">
+    <h1 class="title">把一个想法讲清楚</h1>
+    <div class="cover-art">
+      <svg class="diagram" viewBox="0 0 900 420" width="900" height="420" aria-label="示意图">
+        <path class="s-blue" d="M60 330 C 200 120, 330 120, 450 230 S 700 360, 840 110"/>
+        <path class="s" d="M60 360 L 860 360 M80 380 L 80 60"/>
+        <circle class="s-red" cx="450" cy="230" r="16"/>
+        <text x="476" y="214" font-size="34" fill="#d7303b">关键点</text>
+      </svg>
+    </div>
+    <div class="cover-meta"><div>作者名</div><div>所属机构</div></div>
+    <aside class="notes">开场一句话交代今天讲什么。</aside>
+  </section>
+
+  <!-- 2 标题句 + 几行手写 + 短红线 / 圈注 / 荧光 / 箭头标注 -->
+  <section class="slide" data-title="问题">
+    <h2 class="lead">一句话说清<span class="ul">要解决的问题</span></h2>
+    <div class="body">
+      <p class="line">现状：每次都要<span class="circle">重新找</span>一遍资料</p>
+      <p class="line">代价：一周大约浪费 <span class="hl-yellow">3 个小时</span></p>
+      <p class="line indent blue" data-note="真正的痛点" data-dir="e">而且越急越找不到</p>
+    </div>
+    <aside class="notes">先讲痛点，再讲方案。</aside>
+  </section>
+
+  <!-- 3 公式框 + 绿色结论带 -->
+  <section class="slide" data-title="核心关系">
+    <h2 class="lead">核心关系只有一条</h2>
+    <div class="body">
+      <p class="line center-x"><span class="box formula">节省时间 = 记录成本 − 查找成本</span></p>
+      <p class="line center-x small muted">e.g. 记一笔 10 秒，找一次 3 分钟</p>
+      <p class="takeaway center-x">先降低“记”的成本，后面才会越用越省</p>
+    </div>
+    <aside class="notes">公式只放一条，用红框圈住。</aside>
+  </section>
+
+  <!-- 4 左文右图 -->
+  <section class="slide" data-title="左文右图">
+    <h2 class="lead">左边讲道理，右边给证据</h2>
+    <div class="body">
+      <div class="cols" style="--cols: 1fr 1.1fr">
+        <div class="col">
+          <p class="line">· 手机上说一句话</p>
+          <p class="line">· 自动归到对的地方</p>
+          <p class="line">· 想查的时候<span class="ul-blue">直接问</span></p>
+        </div>
+        <figure class="fig">
+          <svg class="diagram" viewBox="0 0 640 420" width="640" height="420">
+            <rect class="s-muted" x="20" y="20" width="600" height="380" rx="8"/>
+            <path class="s-blue" d="M70 330 L 190 250 L 300 290 L 420 160 L 560 110"/>
+            <text x="420" y="140" font-size="30" fill="#2c4ec4">越用越快</text>
+          </svg>
+          <figcaption class="cap">示意：真实截图放在这里，配一行小字说明</figcaption>
+        </figure>
+      </div>
+    </div>
+    <aside class="notes">截图用 .fig 或 .shot 包住，下面一行说明。</aside>
+  </section>
+
+  <!-- 5 词语思维导图 -->
+  <section class="slide" data-title="结构">
+    <h2 class="lead">整件事的结构</h2>
+    <div class="body">
+      <div class="map" style="--map-h: 660px">
+        <div class="node big" id="m-core" style="left:50%; top:46%"><span class="dot-yellow">核心</span></div>
+        <div class="node" id="m-a" style="left:18%; top:18%">记录</div>
+        <div class="node" id="m-b" style="left:82%; top:18%">归档</div>
+        <div class="node blue" id="m-c" style="left:20%; top:82%">查询</div>
+        <div class="node red" id="m-d" style="left:80%; top:82%">提醒</div>
+        <i class="link" data-from="#m-core" data-to="#m-a"></i>
+        <i class="link" data-from="#m-core" data-to="#m-b"></i>
+        <i class="link blue" data-from="#m-core" data-to="#m-c"></i>
+        <i class="link red" data-from="#m-core" data-to="#m-d" data-arrow></i>
+      </div>
+    </div>
+    <aside class="notes">节点用 left/top 百分比定位，连线自动避开文字。</aside>
+  </section>
+
+  <!-- 6 手写表格 -->
+  <section class="slide" data-title="对比">
+    <h2 class="lead">三种做法对比</h2>
+    <div class="body">
+      <table class="hand-table center-x">
+        <thead><tr><th>做法</th><th>记录</th><th>查找</th></tr></thead>
+        <tbody>
+          <tr><td>纸质本子</td><td>快</td><td>很慢</td></tr>
+          <tr><td>备忘录</td><td>中</td><td>中</td></tr>
+          <tr class="pick"><td>对话式</td><td>最快</td><td>直接问</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <aside class="notes">表格一行一步出现，选中的行用绿色荧光。</aside>
+  </section>
+
+  <!-- 7 警示 + 流程 -->
+  <section class="slide" data-title="注意">
+    <h2 class="lead">上手只要三步</h2>
+    <div class="body">
+      <div class="flow">
+        <span class="box-ink">装技能</span><span class="arrow">→</span>
+        <span class="box-ink">连文档</span><span class="arrow">→</span>
+        <span class="box-ink">接微信</span>
+      </div>
+      <p class="line red center-x"><span class="warn"></span>敏感信息只存后 4 位</p>
+    </div>
+    <aside class="notes">警示用红色三角 + 红字。</aside>
+  </section>
+
+  <!-- 8 目录树 / 代码 -->
+  <section class="slide" data-title="目录">
+    <h2 class="lead">文件夹长这样</h2>
+    <div class="body">
+      <div class="cols" style="--cols: auto auto; justify-content: center">
+        <pre class="tree">生活后台/
+├── 日记
+├── 记账
+└── 凭证</pre>
+        <pre class="code">~/.workbuddy/skills/
+  diary/SKILL.md</pre>
+      </div>
+    </div>
+    <aside class="notes">目录树用 .tree，命令用 .code（蓝色）。</aside>
+  </section>
+
+  <!-- 9 结束 -->
+  <section class="slide end" data-title="结束">
+    <p class="big">先挑一个<span class="ul">最痛的</span>开始</p>
+    <p class="small muted">谢谢</p>
+    <aside class="notes">收尾。</aside>
+  </section>
+
+</main>
+<script src="../assets/runtime.js"></script>
+</body>
+</html>

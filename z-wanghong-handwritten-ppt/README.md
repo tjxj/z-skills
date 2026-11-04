@@ -1,55 +1,53 @@
 # z-wanghong-handwritten-ppt
 
-把文章、讲稿或技术主题制作成 16:9 的 Notability 学术手写风 HTML 幻灯片，并逐页导出 PNG。默认同时生成两个版本：
+把文章、讲稿或技术主题做成王虹学术报告风格的 16:9 手写 HTML 幻灯片：近白纸面、小号深蓝手写字、短红线、四角出头的细红框、绿色荧光结论带、红色警示三角、词语思维导图、带说明的截图，以及大量留白。
 
-- `index.html`：原版，可翻页的静态演示。
-- `index-timeline.html`：时间轴版，每一页拆成标题、框、箭头、文字行、图表等步骤，按空格或点击逐步出现，可开启自动连播，直接在浏览器里演示，效果接近 Office PPT。
+![总览](assets/preview-sheet.png)
 
-这套 skill 重点保留三件事：极简封面、连续清楚的逻辑链，以及工整但有手写温度的图表和标注。
+## 产出
 
-![封面预览](assets/preview-cover.png)
+一份 `slides.html` 源稿，构建出：
 
-![图解预览](assets/preview-diagram.png)
+- `index.html`：整页版。翻页、总览（O）、讲稿（N）、演讲者视图（S，双屏，含下一页和计时）、自动播放（P）、黑白屏（B / W）、全屏（F）。
+- `index-timeline.html`：逐步书写版。每按一次写出下一步：文字逐行写出，框线和圈按笔画画出，荧光从左向右扫过，箭头标注最后出现。
+- `png/01.png …`、`contact-sheet.png`，可选 `deck.pdf`。
 
-## 典型触发
+两个 HTML 都是单文件：手写字体（按本稿用字裁剪）、样式、脚本、图片全部内嵌，断网、换电脑、微信发送都能直接打开。
 
-- 王虹PPT风格
-- 王虹手写PPT
-- Notability学术手写幻灯片
-- 手写网页PPT
-- 数学家手写报告风
+## 快速开始
+
+```bash
+cp templates/slides.html ~/talk/slides.html        # 改内容
+python3 scripts/build.py ~/talk/slides.html         # → index.html + index-timeline.html
+python3 scripts/check_deck.py ~/talk/index.html     # 浏览器逐页排版检查
+python3 scripts/render.py ~/talk/index.html --pdf   # → png/ + contact-sheet.png + deck.pdf
+```
+
+Windows 把 `python3` 换成 `py`，路径用反斜杠即可。
+
+## 环境
+
+| 需要 | 说明 |
+|---|---|
+| Python 3.9+ | 只用标准库即可构建 |
+| Chrome 或 Edge | 检查与导出用；自动查找，或用 `--chrome` / 环境变量 `WH_CHROME` 指定 |
+| 可选 `pip install fonttools brotli pillow` | 字体按用字裁剪（单文件从几 MB 降到几百 KB）、图片压缩为 WebP |
+
+字体：macOS 装了“翩翩体-简”（字体册里下载）时默认使用它；其他情况自动使用随附的开源小赖字体（SIL OFL 1.1）。`--font xiaolai` 可强制使用小赖字体，保证各平台字形一致。
 
 ## 目录
 
-- `SKILL.md`：完整执行流程
-- `templates/deck.html`：基础模板
-- `assets/`：公共样式、翻页能力、时间轴动画运行时、neat-annotations 和预览图
-- `examples/deepseek-v4-flash/`：19 页完整示例
-- `references/style-guide.md`：风格拆解与两套提示词
-- `scripts/`：结构检查、时间轴版构建和 PNG 导出
-- `evals/`：典型任务样例
+- `SKILL.md`：执行流程
+- `templates/slides.html`：9 种页型起步模板
+- `assets/template.css`、`assets/runtime.js`：样式与运行时
+- `assets/fonts/`：小赖字体 GB2312 子集与许可证
+- `scripts/`：`build.py` 构建、`check_deck.py` 检查、`render.py` 导出
+- `references/style-guide.md`：根据王虹报告实拍拆解的视觉规则
+- `references/components.md`：组件手册
+- `references/prompts.md`：用图片模型生成单页的提示词
+- `examples/deepseek-v4-flash/`：19 页完整示例（源稿 + 两个成品）
+- `tests/`：`python3 -m unittest discover -s tests`
 
-## 快速检查
+## 致谢
 
-```bash
-python3 scripts/check_deck.py examples/deepseek-v4-flash/index.html
-scripts/render.sh \
-  examples/deepseek-v4-flash/index.html \
-  all \
-  /tmp/wanghong-ppt-png \
-  /absolute/path/to/Hanzipen.ttc
-```
-
-导出需要 macOS 上的 Google Chrome，以及字体册提供的“翩翩体-简”。脚本会锁定使用预览封面的同一字形，字体加载失败时不会继续导出。
-
-## 生成时间轴版
-
-原版 HTML 生成后，默认会同时产出时间轴版；需要单独生成时：
-
-```bash
-python3 scripts/build_timeline.py \
-  examples/deepseek-v4-flash/index.html \
-  --out examples/deepseek-v4-flash/index-timeline.html
-```
-
-时间轴版是内联的单文件，不依赖相对资源路径，可以单独移动或发送。打开 `examples/deepseek-v4-flash/index-timeline.html` 可查看示例效果。
+小赖字体（Xiaolai）由 lxgw 维护，基于 SIL Open Font License 1.1 发布，许可证见 `assets/fonts/OFL.txt`。

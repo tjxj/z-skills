@@ -1,133 +1,75 @@
-# 王虹手写 PPT 风格拆解
+# 王虹手写报告：视觉规则
 
-这套风格的核心是“现场推导笔记”：让观众沿着颜色、框线和图示跟随一条清楚的逻辑链。
+这份规则来自王虹学术报告现场照片的逐页拆解。原作是 Notability 里提前手写好的页面，投影时一页一页翻。模板里的每个默认值都对应下面某一条。
 
-## 一、真实风格特征
+## 一、整体气质
 
-1. **封面极简**
-   - 单行标题放在画面上方约三分之一处。
-   - 标题用深蓝色细笔，下面一条玫红色手绘横线。
-   - 作者、场合、日期分三行居中。
-   - 下半页保持大面积空白。
+- **纸面**：近乎纯白（`--paper #fdfdfb`），没有纸纹、格线、边框、页眉页脚、页码和 logo。
+- **字**：小号、深蓝黑（`--ink #1c2147`）、笔画细、行距宽。正文 40px（1920 宽画布），标题句 50px，比正文只大一档。原作从来不用大字号制造冲击力。
+- **留白**：内容通常只占画面一半左右。右侧和下方大面积空着，看上去“写到这里就够了”。模板把正文块放在标题下方 1:2 的位置（上空一份、下空两份），避免整页居中显得刻意，也避免全部顶到上面。
+- **轻微倾斜**：手写行不会完全水平。运行时给每行加 -0.5° 到 +0.1° 的随机倾斜（多数略向右上扬，固定种子，每次打开都一样）。表格、代码、SVG 不倾斜；整页不想倾斜就给 section 加 `.no-tilt`。
 
-2. **正文像数字白板笔记**
-   - 背景接近纯白或淡暖白，纸张纹理很弱。
-   - 主体笔迹以深蓝或黑色为主，字小而工整，行距宽松。
-   - 没有页眉、页脚、页码、品牌标识和装饰性背景。
+## 二、标题
 
-3. **颜色承担逻辑功能**
-   - 蓝色：标题下划线、公式、坐标轴、推导主线。
-   - 玫红：结论、警告、重点框、推荐项。
-   - 绿色：正向定义、成立条件、关键结构。
-   - 荧光黄：一个词或一段短语的瞬时强调。
-   - 每页可以出现多种颜色，颜色都要对应具体含义。
+- 标题是一句话，写在左上角，像笔记第一行：“为什么 GGUF 没有明显变小”。
+- 不加通栏横线，不加编号，不居中。
+- 需要强调时只在其中两三个字下面加一条短红线（`.ul`）。
 
-4. **图文排布自由，逻辑很规整**
-   - 常见结构是左边文字、右边小图，也会在顶部放公式、下方放推论。
-   - 直线、坐标轴、框、箭头都保留手画的不均匀感。
-   - 内容密度较高，每页围绕一个问题逐层展开。
+## 三、颜色只承担逻辑
 
-5. **强调方式克制**
-   - 定理、目标、结论用细线框。
-   - 关键词用窄条高亮，避免整段铺色。
-   - 重要词用短下划线，避免粗体和大字号。
+| 颜色 | 原作里的用途 | 模板写法 |
+|---|---|---|
+| 深蓝黑 | 全部正文 | 默认 |
+| 红 | 短下划线、细框、警示、被否定的结论 | `.ul` `.box` `.circle` `.warn` `.red` |
+| 蓝 | 公式、符号、推导、补充说明 | `.blue` `.ul-blue` `.box-blue` `.formula` `.arrow` |
+| 绿荧光 | 一页结论（一条宽带） | `.takeaway` `.hl-green` |
+| 黄 / 绿圆点 | 点名一个符号或数字 | `.dot-yellow` `.dot-green` |
+| 灰 | 次要说明、图注 | `.muted` `.cap` |
 
-## 二、GPT Image 通用提示词
+原则：一页最多两种强调；一页最多一条绿色结论带；红色只给真正的重点和风险。
 
-```text
-Use case: productivity-visual
-Asset type: exact 16:9 technical presentation slide
-Primary request: Create one handwritten Chinese technical slide in the visual language of a real Notability academic lecture page. The page should feel like a mathematician's carefully prepared live derivation notes: dense, calm, clear, and handmade.
+## 四、标记的形态
 
-Scene/backdrop: flat warm off-white digital note page; no stage; no projector frame; no photo perspective; nearly textureless background
+- **短红线**：只划在两三个字或一个短语下，线的两端略超出文字，轻微起伏。
+- **细红框**：3px 细线，四角的线头互相交叉、出头一点（原作手画矩形的典型特征），用来框公式、定义和推荐选项。
+- **圆圈**：椭圆，起笔和收笔不闭合，略有重叠。
+- **绿荧光带**：一整句结论下铺一条半透明绿色，两端圆钝、略不齐。
+- **圆点**：黄色或绿色的实心圆点垫在单个符号/数字后面。
+- **警示**：红色三角（内有感叹号），后面跟红字。
+- **删除线**：一条略有起伏的手画横线穿过文字，文字变灰，表示“这条路不通”。
+- **箭头标注**：一条弯曲的细箭头从旁边指向目标词，箭尾写一两个词的短注。
 
-Style/medium: authentic fine digital handwriting; small dark navy body text; slightly irregular baselines; thin hand-drawn boxes, arrows, axes and diagrams; natural pen pressure variation; no typed font
+所有线条由运行时用 SVG 生成：同一个元素每次长得一样，不同元素各有差异。
 
-Composition/framing: exact 16:9 landscape; one logical question per slide; compact handwritten notes on the left; one small explanatory diagram on the right; one thin result box near the bottom; generous outer margins; free-form alignment
+## 五、版式
 
-Color system:
-- deep navy for body text and formulas
-- vivid cobalt blue for derivation lines and axes
-- magenta-red for conclusions, warnings and recommendation boxes
-- fluorescent yellow for one short high-priority phrase
-- fluorescent green for a positive definition or confirmed structure
-- coral pink for exceptions or the small remaining part
+原作常见的版式，模板都有现成组件：
 
-Text (verbatim):
-"{标题或首句}"
-"{要点 1}"
-"{要点 2}"
-"{要点 3}"
-"{结论}"
+1. **封面**：小号标题居中偏上，中间一张图（论文插图、实拍照片或手绘示意），最下面一行作者与机构。没有副标题和装饰。
+2. **一句标题 + 几行手写**：最常见。2 到 5 行，左对齐，重要的行缩进或换蓝色。
+3. **公式页**：中间一个红框公式，下方一行 e.g. 小字，底部绿色结论带。
+4. **左文右图**：左边 3 行解释，右边一张照片或手绘图，图下一行小字说明。
+5. **词语思维导图**：中心词带黄点，四周 3 到 6 个词，用略弯的细线连起来，没有方框。
+6. **手写表格**：只有横线，表头蓝色，推荐行铺绿荧光。
+7. **流程**：几个短词用细框和蓝色箭头串起来。
+8. **截图 / 照片**：原图直接放，外面一圈浅灰细线，下面一行说明。
 
-Diagram: {说明图的对象、方向、标签、颜色和关系}
+## 六、动画（逐步书写版）
 
-Constraints: render all Chinese and Latin text exactly; use small neat handwriting; thin strokes; bright highlights only on short phrases; no commercial cards; no grid template; no icons; no gradients; no shadows; no glossy design; no footer; no page number; no watermark; no extra text
-```
+原作现场是一页页翻，模板额外提供“写出来”的效果，节奏模仿边讲边写：
 
-### 封面专用提示词
+- 文字从左到右逐行写出（按行的真实宽度裁切，不是整块淡入）。
+- 线条、框、圈按笔画顺序画出；荧光带从左向右扫过。
+- 图片淡入；思维导图的连线先画，再写出被连的词。
+- 箭头标注最后出现：先画箭头，再写短注。
+- 每次按键出现一步。默认每个段落/列表项/表格行/图片是一步；想合并就给几个元素写同样的 `data-step="2"`，想让某块整体一次出现就加 `data-whole`。
+- 封面和结束页整页自动写完，不需要按键。
 
-```text
-Create an exact 16:9 handwritten Chinese presentation cover on a flat warm off-white Notability page.
+## 七、禁止
 
-Place one single-line title near the upper third in fine dark navy handwriting. Draw one thin vivid magenta-red hand-drawn underline directly beneath it. Put the author, occasion and date as three small centered handwritten lines with generous vertical spacing. Keep the entire lower half almost empty.
-
-Text (verbatim):
-"DeepSeek-V4-Flash：极限量化与本地部署"
-"AI学习的老章"
-"AI 技术分享"
-"August 2, 2026"
-
-Constraints: exact text; one-line title; huge whitespace; no subtitle; no icon; no logo; no border; no shadow; no gradient; no typed font; no watermark; no extra text
-```
-
-## 三、HTML 实现提示词
-
-```text
-请把文章制作成一套 16:9 HTML 幻灯片，视觉参考 Notability 制作的数学学术报告手写页。
-
-整体要求：
-1. 画布固定为 16:9，背景使用淡暖白。页面没有页眉、页脚、页码、品牌装饰和卡片阴影。
-2. 中文、英文与数字固定使用 HanziPen SC，字形以 `assets/preview-cover.png` 为验收基准。
-3. 正文字号控制在投影可读范围内，标题比正文大一档，避免商业演示常见的超大标题。
-4. 主文字用深蓝色。蓝色用于推导线和坐标轴，玫红用于结论框和推荐项，绿色用于已确认结构，荧光黄用于极少量关键词，珊瑚粉用于例外或剩余部分。
-5. 每页只回答一个问题。允许左文右图、上式下图、定义加图解等自由布局。框、线、箭头和坐标轴都保留轻微手画抖动。
-6. 禁止圆角卡片、渐变、阴影、照片背景、装饰图标、粗大数字墙和统一网格。
-
-使用 neat-annotations：
-- 本地引入 neat-annotations.css。
-- 在要标注的词外包一层 span，使用 ann、方向类和颜色类。
-- data-note 可以直接放中文，例如 data-note="甜点档"。
-- 将 --ann-font 固定为 HanziPen SC，--ann-label-max-width 设为 180px 到 240px。
-- 标注采用绝对定位，因此被标注内容四周必须预留空间。
-- 重要信息要同时出现在正文里，标注只承担视觉提示。
-
-封面布局：
-- 单行标题位于画面上方约三分之一。
-- 标题下方画一条细玫红横线。
-- 作者“AI学习的老章”、场合和日期分三行居中。
-- 下半页保持大面积留白。
-
-正文布局建议：
-- 左侧 3 到 5 行手写要点，右侧一个手绘示意图。
-- 结论用 2px 到 3px 玫红细框。
-- 关键词高亮只覆盖文字本身。
-- SVG 线条使用轻微位移滤镜，保留手绘感。
-
-交互与导出：
-- 支持左右键翻页和全屏。
-- 逐页导出为 1920×1080 PNG。
-- 逐页检查中文标注、溢出、遮挡和 16:9 比例。
-```
-
-## 四、neat-annotations 中文支持结论
-
-可以使用中文，已经用中文 `data-note` 做了实际页面测试。
-
-- 标注文字来自 `data-note`，中文字符可以正常显示。
-- 八个箭头方向、颜色、高亮和嵌套标注与文字语言无关。
-- 项目所有文字统一使用 HanziPen SC。渲染前确认字体已安装，渲染后与预览封面核对字形。
-- 标注处于目标元素外侧，不会自动占据页面空间。中文短语较长时要加大最大宽度，并预留上下左右的空白。
-- 标注属于视觉提示。关键结论仍要写在正文中。
-
-参考：[neat-annotations 项目](https://github.com/syabro/neat-annotations) · [项目演示页](https://neat-annotations.syabro.com/) · [王虹报告现场报道](https://m.21jingji.com/article/20260728/herald/620fe6808829148b183085b0c8979608.html)
+- 卡片、阴影、渐变、圆角色块、彩色背景条
+- 超大数字墙、粗体整段、全大写英文
+- emoji 和图标库图标
+- 页眉、页脚、页码、logo、水印
+- 通栏标题横线、页面四周边框
+- 一页塞满文字；把原文段落原样贴上

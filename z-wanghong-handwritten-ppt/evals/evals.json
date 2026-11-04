@@ -2,19 +2,46 @@
   "skill": "z-wanghong-handwritten-ppt",
   "evals": [
     {
-      "id": "article-to-full-deck",
-      "prompt": "把这篇中文技术文章做成 16:9 王虹手写PPT风格的完整 HTML 幻灯片，并导出全部 PNG。",
-      "expected": ["极简封面", "一页一个问题", "完整逻辑链", "浏览器翻页", "逐页PNG", "无溢出"]
+      "id": "article-with-images-to-deck",
+      "prompt": "把这篇带截图的公众号文章做成王虹手写PPT，截图要用上。",
+      "expected": [
+        "只写 slides.html，用 build.py 生成 index.html 与 index-timeline.html",
+        "原文截图放进 .fig/.shot 并配一行 .cap 说明",
+        "标题是一句话，没有通栏横线",
+        "每页一个问题，正文 2 到 5 行",
+        "check_deck.py 0 个错误",
+        "render.py 导出全部 PNG 和总览图，并逐张看过"
+      ]
     },
     {
-      "id": "notability-chinese-annotations",
-      "prompt": "做一套 Notability 学术手写幻灯片，用中文 neat-annotations 标出推荐档、风险和结论。",
-      "expected": ["中文标注可读", "标注不遮挡", "颜色有明确含义", "关键结论仍在正文"]
+      "id": "windows-user",
+      "prompt": "我在 Windows 上，没有翩翩体，帮我把这份讲稿做成手写PPT并导出PDF。",
+      "expected": [
+        "使用 py / python 调用脚本",
+        "字体自动回退到随附小赖字体（或显式 --font xiaolai）",
+        "Chrome 或 Edge 被自动找到，否则提示 --chrome / WH_CHROME",
+        "render.py --pdf 产出 deck.pdf"
+      ]
     },
     {
-      "id": "dense-research-talk",
-      "prompt": "把论文讲稿整理成 45 分钟数学报告风 HTML PPT，要求工整、干净、信息量大。",
-      "expected": ["高信息密度", "逻辑连续", "手绘图表", "每页讲稿备注", "总览检查"]
+      "id": "step-animation",
+      "prompt": "做成可以一步一步写出来的手写演示，讲到哪里写到哪里。",
+      "expected": [
+        "交付 index-timeline.html",
+        "需要合并的内容使用 data-step，整块出现使用 data-whole",
+        "说明按键：→ 下一步，动画中再按一次立即写完，T 切换整页版"
+      ]
+    },
+    {
+      "id": "dense-math-talk",
+      "prompt": "把论文讲稿整理成 45 分钟数学报告风 HTML PPT，要有公式、示意图和结论。",
+      "expected": [
+        "公式用 .box .formula，结论用 .takeaway，每页最多一条",
+        "示意图用 svg.diagram 手绘",
+        "词语关系用 .map + .link",
+        "每页都有讲稿备注",
+        "颜色只承担逻辑，一页最多两种强调"
+      ]
     }
   ]
 }

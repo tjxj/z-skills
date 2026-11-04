@@ -106,9 +106,26 @@ const findChrome = (explicitPath) => {
 };
 
 const findAssetFont = () => {
-  const assetRoot = '/System/Library/AssetsV2/com_apple_MobileAsset_Font7';
+  // macOS 按需下载的字体位于 com_apple_MobileAsset_Font<N>，N 随系统版本变化
+  const assetsRoot = '/System/Library/AssetsV2';
+  let roots = [];
   try {
-    for (const entry of readdirSync(assetRoot, {withFileTypes: true})) {
+    roots = readdirSync(assetsRoot, {withFileTypes: true})
+      .filter((entry) => entry.isDirectory() && entry.name.startsWith('com_apple_MobileAsset_Font'))
+      .map((entry) => join(assetsRoot, entry.name))
+      .sort()
+      .reverse();
+  } catch {
+    return null;
+  }
+  for (const assetRoot of roots) {
+    let entries = [];
+    try {
+      entries = readdirSync(assetRoot, {withFileTypes: true});
+    } catch {
+      continue;
+    }
+    for (const entry of entries) {
       if (!entry.isDirectory() || !entry.name.endsWith('.asset')) continue;
       for (const filename of ['Hanzipen.ttc', 'HanziPen.ttc']) {
         const candidate = join(assetRoot, entry.name, 'AssetData', filename);
@@ -119,8 +136,6 @@ const findAssetFont = () => {
         }
       }
     }
-  } catch {
-    return null;
   }
   return null;
 };
@@ -290,7 +305,7 @@ const setMotionFrame = async (page, slideIndex, localTime, duration) => {
       });
 
       const markers = active.querySelectorAll(
-        '.marker, .marker-yellow, .marker-green, .marker-coral, .mark-yellow, .mark-green, .mark-coral',
+        '.marker, .marker-yellow, .marker-green, .marker-coral, .mark-yellow, .mark-green, .mark-coral, .hl, .hl-yellow, .hl-green, .hl-coral, .takeaway',
       );
       markers.forEach((marker, index) => {
         if (!(marker instanceof HTMLElement || marker instanceof SVGElement)) return;
@@ -358,10 +373,15 @@ const render = async (options) => {
   try {
     const page = await browser.newPage();
     await page.setViewport({width: 1920, height: 1080, deviceScaleFactor: 1});
-    await page.goto(`${pathToFileURL(options.html).href}#/1`, {
+    // ?export：z-wanghong-handwritten-ppt 运行时隐藏控制条、直接显示整页
+    await page.goto(`${pathToFileURL(options.html).href}?export#/1`, {
       waitUntil: 'networkidle0',
       timeout: 60_000,
     });
+    await page.waitForFunction(
+      () => !document.getElementById('wh-runtime') || document.documentElement.dataset.whReady === '1',
+      {timeout: 30_000},
+    );
     await loadDemoFont(page, fontPath);
     await page.addStyleTag({
       content: `

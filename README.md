@@ -55,7 +55,7 @@ cp -R z-* "/path/to/your/.agent/skills/"
 | [`z-md-excel`](z-md-excel/SKILL.md) | 把 Markdown 里的表格提取成 Excel 文件 | Markdown 表格转 Excel、导出 MD 表格 |
 | [`z-excel-editor`](z-excel-editor/SKILL.md) | 读取、编辑、清洗、格式化电子表格文件 | 修改 xlsx、清洗 csv、补公式、做表格 |
 | [`z-xkcd-panda-comic`](z-xkcd-panda-comic/SKILL.md) | 把文章、主题或观点改写成黑白手绘四格熊猫梗图 | 四格漫画、金馆长熊猫表情、金教授熊猫脸、熊猫梗图、文章转四格漫画 |
-| [`z-wanghong-handwritten-ppt`](z-wanghong-handwritten-ppt/SKILL.md) | 把文章或讲稿制作成 16:9 Notability 学术手写风 HTML 幻灯片并导出 PNG | 王虹PPT风格、王虹手写PPT、Notability学术手写幻灯片、手写网页PPT |
+| [`z-wanghong-handwritten-ppt`](z-wanghong-handwritten-ppt/SKILL.md) | 把文章或讲稿做成王虹学术手写风 16:9 单文件 HTML 幻灯片（整页版 + 逐步书写版），导出 PNG / PDF，macOS / Windows 通用 | 王虹PPT风格、王虹手写PPT、Notability学术手写幻灯片、手写网页PPT |
 | [`z-wanghong-handwritten-video`](z-wanghong-handwritten-video/SKILL.md) | 直接驱动王虹手写 PPT 的原 HTML DOM，锁定预览封面字形和原布局，输出无音轨动画 MP4 | 动画版王虹PPT、王虹手写动画、Notability手写视频、手写PPT转MP4 |
 | [`z-grounded-source-qa`](z-grounded-source-qa/SKILL.md) | 对任意本地 Markdown/TXT 资料做多表达式检索、证据型问答、核对和写作 | 只根据这些资料回答、按原文核对、给出出处、从访谈里找依据 |
 | [`z-expense-policy-qa`](z-expense-policy-qa/SKILL.md) | 把报销与差旅制度变成可核对金额、材料、时限、例外和条款出处的问答助手，内置虚构演示制度 | 报销制度、差旅标准、这笔钱能不能报、缺什么材料 |
@@ -313,6 +313,7 @@ z-skills/
     references/
     scripts/
     evals/
+    tests/
   z-wanghong-handwritten-video/
     SKILL.md
     scripts/
