@@ -2,7 +2,7 @@
 
 `z-skills` 是一组可复用的本地 Agent Skills，用来把常见工作流沉淀成稳定能力：网页素材采集、视频下载、视频学习网页、全景音频生成、文档解析、邮件读取、表格处理、Markdown 转 Word/PDF、诗词与技术文章成书、互动科普网页、证据型资料问答、docx 模板格式刷、手写幻灯片、手写 HTML 动画、会动的解析图，以及文章四格漫画配图
 
-这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **19 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
+这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **20 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
 
 [快速安装](#快速安装) · [Skills 一览](#skills-一览) · [「动」悉万物](#动悉万物会动的解析图) · [诗词与技术文章成书](#诗词与技术文章成书) · [使用建议](#使用建议)
 
@@ -62,6 +62,7 @@ cp -R z-* "/path/to/your/.agent/skills/"
 | [`z-sci-viz-lab`](z-sci-viz-lab/SKILL.md) | 把数学/科学概念生成可视化互动科普单页，支持多场景切换、Three.js/Canvas、单文件构建与 Cloudflare Pages 部署 | 可视化科普、互动科普实验、科学交互演示 |
 | [`z-docx-format-brush`](z-docx-format-brush/SKILL.md) | 从模板 docx 提取格式指纹（字体/字号/行距/缩进/表格边框/封面/分页），统一刷到目标 docx，修复 pandoc/模型产物的格式混乱 | 格式刷、格式统一、套用模板格式、docx格式修复、公文格式 |
 | [`z-dongxi`](z-dongxi/README.md) | 「动」悉万物：一段内容变一张会动的解析图，35 种图型 × 27 种风格 × 5 种画幅（3:4 公众号默认），单行 SVG 直接粘进公众号，可导出 PNG/GIF/MP4 | 动态图、动态流程图、动态SVG、动图解释、让这张图动起来、mermaid动起来、excalidraw风动图、动态甘特图、动态桑基图、层级状态机、等距图 |
+| [`z-xiaohongshu-cards`](z-xiaohongshu-cards/README.md) | 小红书 3:4 风格库：4 种可复现的命名风格，文章直接出 1080×1440 PNG，新风格持续沉淀 | 小红书卡片、小红书图文、3:4 图文、小绿书配图、做成卡片、沉淀这个风格 |
 
 ## 「动」悉万物：会动的解析图
 
@@ -76,6 +77,17 @@ cp -R z-* "/path/to/your/.agent/skills/"
 ```bash
 npx skills add tjxj/z-skills --skill z-dongxi
 python3 z-dongxi/scripts/render.py --spec z-dongxi/demos/specs/rag.json --style sketch --out rag.svg --png rag.png
+```
+
+## 小红书 3:4 风格库
+
+[z-xiaohongshu-cards](z-xiaohongshu-cards/README.md) 把做过的图文和视频风格沉淀成可渲染的模板。选一种风格，换文字和图片，导出 1080×1440 PNG。
+
+<img src="z-xiaohongshu-cards/docs/styles-grid.jpg" width="100%">
+
+```bash
+npx skills add tjxj/z-skills --skill z-xiaohongshu-cards
+node z-xiaohongshu-cards/scripts/render.cjs z-xiaohongshu-cards/styles/legal-pad/template.html --out output
 ```
 
 ## z-web-pack 与 z-video-downloader 边界
@@ -321,6 +333,13 @@ z-skills/
     references/
     tests/
     evals/
+  z-xiaohongshu-cards/
+    SKILL.md
+    README.md
+    styles/
+    scripts/
+    references/
+    docs/
   z-xkcd-panda-comic/
     SKILL.md
     assets/

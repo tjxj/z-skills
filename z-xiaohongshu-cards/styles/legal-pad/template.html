@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>黄便签手写</title>
+<style>
+  :root{
+    --serif:"SHSerif","Source Han Serif SC VF","思源宋体 VF","Source Han Serif SC","Noto Serif CJK SC","Songti SC",serif;
+    --latin:"Playfair Display","SHSerif","Source Han Serif SC VF","Songti SC",serif;
+    --kai:"LXGW WenKai","霞鹜文楷","Kaiti SC",STKaiti,serif;
+    --mono:"IBM Plex Mono","SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2b2b2b;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px;font-family:var(--serif)}
+  .card{width:1080px;height:1440px;position:relative;overflow:hidden;flex:none}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover}
+  .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font:500 28px/1.4 var(--mono);letter-spacing:2px;color:rgba(128,128,128,.95);
+    background:repeating-linear-gradient(135deg,rgba(128,128,128,.16) 0 16px,rgba(128,128,128,.07) 16px 32px)}
+
+  :root{
+    --pad:#FBEE9C; --rule:#A9BEDD; --margin:#E0574B; --ink:#1C2147; --red:#D8342B; --blue:#2F55C8;
+    --green:rgba(112,226,84,.82); --grey:#6E6A4E;
+    --hand:"HanziPen SC","翩翩体-简",cursive; --serif:"SHSerif","Source Han Serif SC VF",serif; --mono:Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#333;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px;color:var(--ink);font-family:var(--serif)}
+  .card{width:1080px;height:1440px;position:relative;overflow:hidden;background-color:var(--pad);
+    background-image:
+      linear-gradient(90deg,transparent 104px,var(--margin) 104px,var(--margin) 107px,transparent 107px,transparent 115px,var(--margin) 115px,var(--margin) 118px,transparent 118px),
+      repeating-linear-gradient(180deg,transparent 0 58px,var(--rule) 58px 60px);
+    padding:92px 70px 0 158px}
+  .card:before{content:"";position:absolute;left:0;right:0;top:0;height:50px;background:var(--pad);border-bottom:4px dotted #C9B95E}
+  .pg{position:absolute;top:76px;right:64px;font-family:var(--hand);font-size:38px;color:var(--red)}
+  .sign{position:absolute;right:64px;bottom:40px;font-family:var(--hand);font-size:34px;color:var(--ink);transform:rotate(-2deg)}
+  .hand{font-family:var(--hand)}
+  h1{font-family:var(--hand);font-weight:700;font-size:96px;line-height:1.2;letter-spacing:1px}
+  p.b{font-size:35px;line-height:60px;font-weight:500}
+  .blue{color:var(--blue)} .red{color:var(--red)}
+  .u,.bx,.ci{position:relative;display:inline-block}
+  .hl{background:var(--green);border-radius:14px 22px 16px 26px;padding:0 14px;margin:0 -6px;mix-blend-mode:multiply;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .marks{position:absolute;inset:0;pointer-events:none;z-index:9;overflow:visible}
+  .slide{position:absolute;background:#fff;border:2.5px solid var(--ink);box-shadow:9px 11px 0 rgba(28,33,71,.16)}
+  .slide img{display:block;width:100%;height:100%;object-fit:cover}
+  .tape{position:absolute;width:170px;height:50px;background:rgba(112,226,84,.72);z-index:3}
+  .tape.r{background:rgba(236,110,96,.7)}
+  .tape.w{background:rgba(255,255,255,.72)}
+  .tag{position:absolute;font-family:var(--hand);font-size:36px;line-height:1.25;z-index:4}
+
+  /* 01 */
+  .c1 .l1{font-family:var(--hand);font-size:70px;font-weight:700;margin-top:6px}
+  .c1 .big{font-family:var(--hand);font-weight:700;font-size:172px;line-height:1.16;letter-spacing:-5px;margin-top:10px;margin-left:-10px;white-space:nowrap}
+  .c1 .big{isolation:isolate}
+  .c1 .big .hl{background:none;position:relative;padding:0 6px;margin:0;mix-blend-mode:normal}
+  .c1 .big .hl:before{content:"";position:absolute;left:-4px;right:-14px;top:44%;height:48%;background:#8DE86C;border-radius:34px 14px 40px 18px;transform:rotate(-1.2deg);z-index:-1}
+  .c1 .ppt{font-family:var(--hand);font-weight:700;font-size:176px;line-height:1;margin-top:18px;display:flex;align-items:center;gap:64px}
+  .c1 .side{font-family:var(--hand);font-size:50px;font-weight:700;line-height:1.3;color:var(--ink)}
+
+  /* 02 legend */
+  .leg{position:absolute;left:158px;right:70px;top:800px;display:grid;grid-template-columns:330px 1fr;row-gap:0}
+  .leg>div{height:110px;display:flex;align-items:center;font-size:36px;font-weight:500}
+  .leg .m{font-family:var(--hand);font-size:50px;font-weight:700}
+
+  /* 03 quote */
+  .q{font-family:var(--hand);font-size:62px;line-height:90px;font-weight:700;margin-top:34px}
+
+  /* 04 list */
+  .it{display:grid;grid-template-columns:400px 1fr;align-items:center;height:120px;border-bottom:2.5px dashed rgba(28,33,71,.35)}
+  .it b{font-family:var(--mono);font-size:30px;font-weight:700;color:var(--blue)}
+  .it span{font-size:34px;font-weight:500}
+
+  /* 07 */
+  .sk p.b{line-height:84px;font-size:36px}
+  code{font-family:var(--mono);font-size:30px;font-weight:700;background:rgba(255,255,255,.75);padding:4px 12px;border:2px solid var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- 01 cover -->
+<section class="card c1" data-name="cover">
+  <div class="pg">WorkBuddy × Hy4 实测</div>
+  <div style="height:84px"></div>
+  <div class="l1">用 WorkBuddy 做</div>
+  <div class="big"><span>王虹</span><span class="hl">手写风</span></div>
+  <div class="ppt"><span class="ci">&nbsp;PPT&nbsp;</span><span class="side">一句话，<span class="u">21 分钟</span><br>一套 60 页</span></div>
+
+  <div class="slide" style="left:60px;top:850px;width:660px;height:372px;transform:rotate(-6deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="slide" style="left:410px;top:985px;width:720px;height:405px;transform:rotate(4deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tape" style="left:300px;top:832px;transform:rotate(-10deg)"></div>
+  <div class="tape r" style="left:700px;top:970px;transform:rotate(8deg)"></div>
+  <div class="tag red" style="left:736px;top:800px;transform:rotate(-3deg)">全是 AI 写的</div>
+  <svg class="marks" viewBox="0 0 1080 1440"><path d="M800 856 C 806 900, 780 930, 742 952" fill="none" stroke="#D8342B" stroke-width="4.5" stroke-linecap="round"/><path d="M766 930 L740 954 L776 960" fill="none" stroke="#D8342B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</section>
+
+<!-- 02 style -->
+<section class="card" data-name="style">
+  <div class="pg">2 / 8</div>
+  <h1 style="font-size:88px">这种 PPT<br>为什么<span class="u">一眼就记住</span></h1>
+  <div class="slide" style="left:158px;top:356px;width:760px;height:428px;transform:rotate(-1.2deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tape w" style="left:450px;top:336px;transform:rotate(-3deg)"></div>
+  <div class="leg">
+    <div class="m"><span class="u">短红线</span></div><div>划出两三个关键字</div>
+    <div class="m"><span class="bx">&nbsp;细红框&nbsp;</span></div><div>框住定义和推荐项</div>
+    <div class="m"><span class="hl">绿荧光</span></div><div>一页只留一句结论</div>
+    <div class="m blue">蓝字</div><div>写公式和补充说明</div>
+  </div>
+  <p class="b" style="position:absolute;left:158px;right:70px;top:1250px;font-size:30px">风格来自数学家王虹的学术报告，Notability 手写</p>
+  <div class="sign">Ai 学习的老章</div>
+</section>
+
+<!-- 03 prompt -->
+<section class="card" data-name="prompt">
+  <div class="pg">3 / 8</div>
+  <h1>我只说了<span class="u">一句话</span></h1>
+  <div class="q">「制作王虹手写风格 PPT，<br>素材：那篇文章的 .md<br>图片要尽可能展示，<br><span class="hl">PPT 篇幅不限</span>」</div>
+  <div class="slide" style="left:158px;top:690px;width:850px;height:218px;transform:rotate(.8deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tape" style="left:480px;top:670px;transform:rotate(3deg)"></div>
+  <div class="slide" style="left:158px;top:940px;width:520px;height:293px;transform:rotate(-1.2deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tape r" style="left:560px;top:922px;width:130px;transform:rotate(7deg)"></div>
+  <div class="tag red" style="left:770px;top:1040px;font-size:44px;transform:rotate(-3deg)">成品<br>长这样</div>
+  <svg class="marks" viewBox="0 0 1080 1440"><path d="M762 1090 C 740 1096, 722 1094, 698 1084" fill="none" stroke="#D8342B" stroke-width="4.5" stroke-linecap="round"/><path d="M722 1070 L696 1083 L716 1104" fill="none" stroke="#D8342B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <p class="b" style="position:absolute;left:158px;right:70px;top:1262px"><span class="red hand" style="font-weight:700;font-size:44px">21 分 38 秒</span> 跑完，文章配图一张不落</p>
+  <div class="sign">Ai 学习的老章</div>
+</section>
+
+<!-- 04 deliverables -->
+<section class="card" data-name="deliver">
+  <div class="pg">4 / 8</div>
+  <h1>它交回来<br>一整套<span class="u">能直接讲的</span></h1>
+  <div class="slide" style="left:158px;top:356px;width:850px;height:544px;transform:rotate(-1deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tape r" style="left:760px;top:338px;transform:rotate(7deg)"></div>
+  <div style="position:absolute;left:158px;right:70px;top:930px">
+    <div class="it"><b>.pptx</b><span>可编辑，每页带讲稿备注</span></div>
+    <div class="it"><b>index.html</b><span>网页演示，空格翻页</span></div>
+    <div class="it"><b>index-timeline.html</b><span>按一下写出一步</span></div>
+  </div>
+  <div class="sign">Ai 学习的老章</div>
+</section>
+
+<!-- 05 components -->
+<section class="card" data-name="charts">
+  <div class="pg">5 / 8</div>
+  <h1>图表也<span class="u">一起手写</span></h1>
+  <div class="slide" style="left:158px;top:240px;width:410px;height:231px;transform:rotate(-1.6deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="slide" style="left:598px;top:262px;width:410px;height:231px;transform:rotate(1.4deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tag" style="left:262px;top:486px">思维导图</div>
+  <div class="tag" style="left:716px;top:506px">手写表格</div>
+  <div class="slide" style="left:158px;top:570px;width:410px;height:231px;transform:rotate(1.2deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="slide" style="left:598px;top:590px;width:410px;height:231px;transform:rotate(-1.4deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tag" style="left:262px;top:816px">步骤流程</div>
+  <div class="tag" style="left:716px;top:836px">截图批注</div>
+  <div class="slide" style="left:158px;top:914px;width:850px;height:330px;transform:rotate(-.6deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tape w" style="left:500px;top:896px;transform:rotate(-4deg)"></div>
+  <p class="b" style="position:absolute;left:158px;right:70px;top:1268px">截图不改，贴在笔记里当<span class="hl">剪报</span></p>
+  <div class="sign">Ai 学习的老章</div>
+</section>
+
+<!-- 06 wall -->
+<section class="card" data-name="wall">
+  <div class="pg">6 / 8</div>
+  <h1>连起来<span class="u">翻一遍</span></h1>
+  <div id="wall"></div>
+  <p class="b" style="position:absolute;left:158px;right:70px;top:1262px">留白多，一页只讲<span class="hl">一件事</span></p>
+  <div class="sign">Ai 学习的老章</div>
+</section>
+
+<!-- 07 skill -->
+<section class="card" data-name="skill">
+  <div class="pg">7 / 8</div>
+  <h1>靠的是这个<br><span class="u">Skill</span></h1>
+  <div class="slide" style="left:158px;top:356px;width:850px;height:188px;transform:rotate(-.8deg)"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="tape" style="left:800px;top:338px;transform:rotate(6deg)"></div>
+  <div class="tag red" style="left:640px;top:560px;transform:rotate(-2deg)">快 1 万下载了</div>
+  <div class="sk" style="position:absolute;left:158px;right:70px;top:640px">
+    <p class="b" style="margin-bottom:14px"><code>z-wanghong-handwritten-ppt</code></p>
+    <p class="b">① 单文件 HTML，字体图片全内嵌，断网能开</p>
+    <p class="b">② 整页版和逐步书写版，一次都出</p>
+    <p class="b">③ 总览、讲稿、演讲者视图、自动播放都有</p>
+    <p class="b">④ 浏览器逐页量排版，越界和缺字会报错</p>
+    <p class="b">⑤ 导出逐页 PNG、总览图和 PDF</p>
+    <p class="b">⑥ Mac 用翩翩体，其他系统用开源小赖字体</p>
+  </div>
+  <p class="b" style="position:absolute;left:158px;right:70px;top:1262px">开源在 GitHub：<span class="blue">tjxj/z-skills</span></p>
+  <div class="sign">Ai 学习的老章</div>
+</section>
+
+<!-- 08 how -->
+<section class="card" data-name="howto">
+  <div class="pg">8 / 8</div>
+  <h1>照着做<br><span class="hl">三步</span>就够</h1>
+  <div style="position:absolute;left:158px;right:70px;top:380px">
+    <p class="hand" style="font-size:60px;font-weight:700;line-height:100px"><span class="red">1</span>　SkillHub 搜「王虹手写」</p>
+    <p class="b" style="margin-left:74px">把这个技能装进 WorkBuddy</p>
+    <p class="hand" style="font-size:60px;font-weight:700;line-height:100px;margin-top:18px"><span class="red">2</span>　丢给它文章和图片</p>
+    <p class="b" style="margin-left:74px">说明图片要全放，篇幅不限</p>
+    <p class="hand" style="font-size:60px;font-weight:700;line-height:100px;margin-top:18px"><span class="red">3</span>　等二十来分钟，收 PPT</p>
+    <p class="b" style="margin-left:74px">长任务放着跑，回来逐页看一遍</p>
+  </div>
+  <div style="position:absolute;left:158px;right:70px;top:1010px;background:#fff;border:2.5px solid var(--ink);box-shadow:9px 11px 0 rgba(28,33,71,.16);padding:26px 34px;transform:rotate(-.8deg)">
+    <p class="hand red" style="font-size:44px;font-weight:700">公司有指定模板？</p>
+    <p class="b" style="font-size:33px;line-height:52px;margin-top:6px">先把模板扔给 Hy4，让它在模板上继续做<br>排版要和要求一致，这点最重要</p>
+  </div>
+  <div class="tape r" style="left:820px;top:992px;transform:rotate(6deg)"></div>
+  <div class="sign">Ai 学习的老章</div>
+</section>
+
+<script>
+const wall=document.getElementById('wall');
+['01','04','05','06','08','11','12','14'].forEach((n,i)=>{
+  const x=158+(i%2)*436,y=240+Math.floor(i/2)*250,r=[-1.4,1.1,.9,-1.2,-.8,1.3,1.2,-1][i];
+  wall.insertAdjacentHTML('beforeend',`<div class="slide" style="left:${x}px;top:${y}px;width:414px;height:233px;transform:rotate(${r}deg)"><div class="ph" data-bleed>IMAGE</div></div>`);
+});
+const draw=()=>{
+let seed=7;const rnd=(a,b)=>{seed=(seed*16807)%2147483647;return a+(b-a)*(seed/2147483647)};
+document.querySelectorAll('.card').forEach(card=>{
+  const c=card.getBoundingClientRect();
+  const s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('class','marks');s.setAttribute('viewBox','0 0 1080 1440');
+  let out='';const st='fill="none" stroke="#D8342B" stroke-linecap="round" stroke-linejoin="round"';
+  card.querySelectorAll('.u').forEach(e=>{const r=e.getBoundingClientRect(),x=r.left-c.left,y=r.bottom-c.top-2,w=r.width,sw=Math.max(5,Math.min(9,r.height/11));
+    out+=`<path d="M${x-6} ${y+rnd(-3,3)} C ${x+w*.3} ${y+rnd(-9,-2)}, ${x+w*.65} ${y+rnd(3,9)}, ${x+w+8} ${y+rnd(-6,2)}" ${st} stroke-width="${sw}"/>`});
+  card.querySelectorAll('.bx').forEach(e=>{const r=e.getBoundingClientRect(),x=r.left-c.left,y=r.top-c.top,w=r.width,h=r.height,o=14;
+    out+=`<path d="M${x-o} ${y+1} L${x+w+o} ${y-2} M${x+w} ${y-o} L${x+w+2} ${y+h+o} M${x+w+o} ${y+h} L${x-o} ${y+h+2} M${x} ${y+h+o} L${x-2} ${y-o}" ${st} stroke-width="3.5"/>`});
+  card.querySelectorAll('.ci').forEach(e=>{const r=e.getBoundingClientRect(),cx=r.left-c.left+r.width/2,cy=r.top-c.top+r.height/2,a=r.width/2+18,b=r.height/2+6;
+    out+=`<path d="M${cx-a*.2} ${cy-b} C ${cx+a*1.1} ${cy-b*1.15}, ${cx+a*1.1} ${cy+b*1.1}, ${cx} ${cy+b} C ${cx-a*1.15} ${cy+b*1.05}, ${cx-a*1.1} ${cy-b*1.1}, ${cx+a*.25} ${cy-b*1.08}" ${st} stroke-width="7"/>`});
+  s.innerHTML=out;card.appendChild(s);
+});
+};
+(window.__serifReady||Promise.resolve()).then(()=>document.fonts.ready).then(draw);
+</script>
+</body>
+</html>

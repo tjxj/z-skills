@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>宣纸朱印</title>
+<style>
+  :root{
+    --serif:"SHSerif","Source Han Serif SC VF","思源宋体 VF","Source Han Serif SC","Noto Serif CJK SC","Songti SC",serif;
+    --latin:"Playfair Display","SHSerif","Source Han Serif SC VF","Songti SC",serif;
+    --kai:"LXGW WenKai","霞鹜文楷","Kaiti SC",STKaiti,serif;
+    --mono:"IBM Plex Mono","SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2b2b2b;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px;font-family:var(--serif)}
+  .card{width:1080px;height:1440px;position:relative;overflow:hidden;flex:none}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover}
+  .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font:500 28px/1.4 var(--mono);letter-spacing:2px;color:rgba(128,128,128,.95);
+    background:repeating-linear-gradient(135deg,rgba(128,128,128,.16) 0 16px,rgba(128,128,128,.07) 16px 32px)}
+
+  :root{--paper:#F2ECDF;--paper2:#E8DFCC;--ink:#26231F;--ink2:#5A5348;--red:#B0362A;--cel:#5E8C86;--line:#CDBFA5}
+  .card{background:radial-gradient(ellipse at 20% 10%,rgba(255,255,255,.55),transparent 55%),radial-gradient(ellipse at 90% 95%,rgba(176,54,42,.06),transparent 50%),var(--paper);color:var(--ink)}
+  .mount{position:absolute;inset:28px;border:2px solid var(--line);pointer-events:none}.mount:after{content:"";position:absolute;inset:8px;border:1px solid var(--line)}
+  .mtn{position:absolute;left:0;right:0;bottom:250px;width:100%;height:260px;opacity:.16}
+  .top{position:absolute;left:70px;right:70px;top:66px;display:flex;align-items:center;justify-content:space-between;font-size:26px;color:var(--ink2);letter-spacing:6px}
+  .seal{width:64px;height:64px;background:var(--red);color:#F6E9DA;font-family:var(--kai);font-size:26px;line-height:28px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:6px;letter-spacing:0}
+  .sc{position:absolute;left:70px;right:70px;top:190px;height:950px}
+  .kicker{font-family:var(--kai);color:var(--red);font-size:34px;letter-spacing:8px}
+  .h1{font-size:92px;font-weight:900;line-height:1.18;letter-spacing:2px;margin-top:22px}.red{color:var(--red)}
+  .chip{display:inline-block;border:2px solid var(--ink);padding:8px 22px;font-size:32px;margin:0 10px 12px 0}.chip.r{border-color:var(--red);color:var(--red)}
+  .rule{border-left:8px solid var(--red);padding-left:30px;margin-top:50px}
+  .book{position:absolute;left:530px;top:620px;width:360px;height:490px;background:#fff;border:6px solid #fff;box-shadow:0 18px 40px rgba(60,40,20,.22);transform:rotate(5deg)}
+  .barrow{display:flex;align-items:center;gap:18px;margin:8px 0;font-size:28px}.barrow .lb{width:200px;text-align:right;color:var(--ink2)}.barrow .tr{flex:1;height:34px}.barrow .bar{height:100%;background:var(--ink)}.barrow .bar.r{background:var(--red)}.barrow .v{width:90px;font-weight:800}
+  .stamp{display:inline-block;border:8px solid var(--red);color:var(--red);font-family:var(--kai);font-weight:700;padding:6px 26px;font-size:50px;transform:rotate(-3deg)}
+  .stat{border-top:2px solid var(--ink);padding-top:14px}.stat b{font-size:96px;font-weight:900;display:block;line-height:1}.stat span{font-size:32px;color:var(--ink2);letter-spacing:2px}
+  .sub{position:absolute;left:70px;right:70px;top:1170px;height:200px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:48px;font-weight:700;line-height:1.4;padding:0 20px}
+  .sub:before{content:"";position:absolute;left:50%;top:0;width:120px;margin-left:-60px;height:2px;background:var(--red);opacity:.6}
+</style>
+</head>
+<body>
+<section class="card" data-name="cover"><div class="mount"></div><svg class="mtn" data-bleed viewBox="0 0 1080 260" preserveAspectRatio="none"><path d="M0 200 C 120 120 220 70 330 130 S 520 210 640 120 S 860 40 1080 160 V260 H0Z" fill="#26231F"/><path d="M0 240 C 180 180 320 200 470 170 S 800 150 1080 220 V260 H0Z" fill="#26231F" opacity=".6"/></svg><div class="top"><span>老章 · AI 编书实录</span><div class="seal">老<br>章</div></div>
+  <div class="sc"><div class="kicker">一个周末的实验</div><div class="h1">让 AI<br>编一整本书</div><div style="margin-top:24px"><span class="chip">1M Token 上下文</span><span class="chip r">能不能编书？</span></div></div>
+  <div class="book shot"><div class="ph" data-bleed>IMAGE</div></div>
+  <div class="sub">现在的大模型，动不动就支持一百万 Token 上下文</div>
+</section>
+
+<section class="card" data-name="rule"><div class="mount"></div><svg class="mtn" data-bleed viewBox="0 0 1080 260" preserveAspectRatio="none"><path d="M0 200 C 120 120 220 70 330 130 S 520 210 640 120 S 860 40 1080 160 V260 H0Z" fill="#26231F"/><path d="M0 240 C 180 180 320 200 470 170 S 800 150 1080 220 V260 H0Z" fill="#26231F" opacity=".6"/></svg><div class="top"><span>老章 · AI 编书实录</span><div class="seal">老<br>章</div></div>
+  <div class="sc"><div class="kicker">第一条规矩</div><div class="rule"><div class="h1" style="margin:0">正文一个字<br>都不许来自<br><span class="red">模型记忆</span></div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:34px;margin-top:90px"><div class="stat"><b>808</b><span>条系年未详</span></div><div class="stat"><b>10</b><span>卷编年</span></div><div class="stat"><b>0</b><span>字硬塞</span></div></div></div>
+  <div class="sub">先说最关键的一条规矩：正文一个字都不许来自模型记忆</div>
+</section>
+
+<section class="card" data-name="data"><div class="mount"></div><svg class="mtn" data-bleed viewBox="0 0 1080 260" preserveAspectRatio="none"><path d="M0 200 C 120 120 220 70 330 130 S 520 210 640 120 S 860 40 1080 160 V260 H0Z" fill="#26231F"/><path d="M0 240 C 180 180 320 200 470 170 S 800 150 1080 220 V260 H0Z" fill="#26231F" opacity=".6"/></svg><div class="top"><span>老章 · AI 编书实录</span><div class="seal">老<br>章</div></div>
+  <div class="sc"><div class="kicker">最磨人：编年与去重</div><div style="margin-top:26px"><span class="chip">题名</span><span class="chip">首句</span><span class="chip">正文</span></div>
+    <div style="margin-top:30px">
+      <div class="barrow"><div class="lb">卷一 眉山出蜀</div><div class="tr"><div class="bar" style="width:8%"></div></div><div class="v">42</div></div>
+      <div class="barrow"><div class="lb">卷二 京师凤翔</div><div class="tr"><div class="bar" style="width:24%"></div></div><div class="v">148</div></div>
+      <div class="barrow"><div class="lb">卷三 变法外任</div><div class="tr"><div class="bar" style="width:65%"></div></div><div class="v">404</div></div>
+      <div class="barrow"><div class="lb">卷四 密州</div><div class="tr"><div class="bar" style="width:18%"></div></div><div class="v">114</div></div>
+      <div class="barrow"><div class="lb">卷五 徐湖乌台</div><div class="tr"><div class="bar" style="width:46%"></div></div><div class="v">289</div></div>
+      <div class="barrow"><div class="lb">卷六 黄州</div><div class="tr"><div class="bar" style="width:47%"></div></div><div class="v">295</div></div>
+      <div class="barrow"><div class="lb">卷七 元祐四州</div><div class="tr"><div class="bar r" style="width:100%"></div></div><div class="v">623</div></div>
+      <div class="barrow"><div class="lb">卷八 惠州</div><div class="tr"><div class="bar" style="width:20%"></div></div><div class="v">123</div></div>
+    </div>
+    <div style="margin-top:36px;display:flex;align-items:center;gap:30px"><span class="stamp">系年未详</span><span style="font-size:48px;font-weight:800">808 条，绝不硬塞</span></div></div>
+  <div class="sub">没有可靠证据的，统一放进系年未详，绝不硬塞</div>
+</section>
+</body>
+</html>

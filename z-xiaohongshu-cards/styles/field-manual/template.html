@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>现场手册</title>
+<style>
+  :root{
+    --serif:"SHSerif","Source Han Serif SC VF","思源宋体 VF","Source Han Serif SC","Noto Serif CJK SC","Songti SC",serif;
+    --latin:"Playfair Display","SHSerif","Source Han Serif SC VF","Songti SC",serif;
+    --kai:"LXGW WenKai","霞鹜文楷","Kaiti SC",STKaiti,serif;
+    --mono:"IBM Plex Mono","SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2b2b2b;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px;font-family:var(--serif)}
+  .card{width:1080px;height:1440px;position:relative;overflow:hidden;flex:none}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover}
+  .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font:500 28px/1.4 var(--mono);letter-spacing:2px;color:rgba(128,128,128,.95);
+    background:repeating-linear-gradient(135deg,rgba(128,128,128,.16) 0 16px,rgba(128,128,128,.07) 16px 32px)}
+
+  :root{--ivory:#F6F1E7;--black:#111820;--navy:#0A2B4E;--red:#C72A1D;--grey:#555A60;--coral:#FF8B77;--cream:#FFF1CE;--ice:#DCE5EA;--sans:Arial,"Source Han Sans SC","Noto Sans CJK SC",sans-serif}
+  .card{background:var(--ivory);color:var(--black);padding:44px}
+  .fr{position:absolute;inset:40px;border:3px solid var(--black)}.fr:after{content:"";position:absolute;inset:6px;border:1px solid var(--black)}
+  .in{position:relative;height:100%;padding:34px 44px;display:flex;flex-direction:column}
+  .meta{display:flex;justify-content:space-between;font:700 19px var(--sans);letter-spacing:2px;color:var(--navy);padding-bottom:12px;border-bottom:3px solid var(--black)}.meta b{color:var(--red)}
+  h1{font-size:96px;font-weight:900;line-height:1.18;color:var(--black);margin-top:26px}
+  .ul{height:8px;background:var(--red);width:62%;margin-top:6px}
+  .sub{font-size:31px;font-weight:700;color:var(--navy);margin-top:18px}
+  .sec{font:700 20px var(--sans);letter-spacing:2px;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--black)}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pl{padding:24px;min-height:320px}.pl.n{background:var(--navy);color:var(--ice)}.pl.r{background:var(--red);color:var(--cream)}
+  .pl small{font:700 19px var(--sans);letter-spacing:1px;color:var(--coral)}.pl.r small{color:var(--cream)}.pl h3{font-size:42px;font-weight:900;color:#fff;margin:6px 0 12px}.pl p{font-size:26px;line-height:1.5}
+  .st{display:grid;grid-template-columns:120px 1fr;border:2px solid var(--black);margin-bottom:14px;background:#fff8ea}
+  .st i{background:var(--black);color:var(--ivory);font:700 22px var(--sans);font-style:normal;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.3}
+  .st div{padding:16px 22px}.st h3{font-size:36px;font-weight:900;color:var(--navy)}.st p{font-size:25px;color:var(--grey);margin-top:4px}.st.hot h3{color:var(--red)}
+  .bar{margin-top:auto;background:var(--navy);color:#fff;padding:22px 26px;font-size:36px;font-weight:900;text-align:center}.bar small{display:block;font:700 18px var(--sans);letter-spacing:2px;color:var(--coral);margin-bottom:6px}
+  .kv{display:grid;grid-template-columns:230px 1fr;border-bottom:1px solid var(--black);padding:20px 0;font-size:30px;align-items:center}.kv b{color:var(--navy);font-size:34px}.kv.r b{color:var(--red)}
+  .big{font-size:170px;font-weight:900;color:var(--red);line-height:1}
+</style>
+</head>
+<body>
+<section class="card" data-name="cover"><div class="fr"></div><div class="in">
+  <div class="meta"><span>FIELD MANUAL / AGENT ARCHITECTURE LEDGER</span><b>SPEC NO. 04</b></div>
+  <h1>工具入厨，<br>业务入谱</h1><div class="ul"></div>
+  <div class="sub">为什么模型团队必须把核心工作流从 Tool Plane 迁往 MCP Data Plane</div>
+  <div class="sec">SECTION 01 / DUAL-PLANE ARCHITECTURE COMPARISON</div>
+  <div class="duo"><div class="pl n"><small>PLANE A · TOOL PLANE</small><h3>工具面：搬运厨房的厨具</h3><p>代码随手带走，只能在 Harness 进程运行；换 Agent 就要重搬一遍。</p></div><div class="pl r"><small>PLANE B · DATA PLANE</small><h3>数据面：放在合同的菜谱</h3><p>业务逻辑沉淀到 MCP，任何 Harness 都能调用同一份能力。</p></div></div>
+  <div class="bar"><small>ACTION RULE</small>底层工具用原厂 Harness，私有业务走 MCP</div>
+</div></section>
+
+<section class="card" data-name="steps"><div class="fr"></div><div class="in">
+  <div class="meta"><span>FIELD MANUAL / FOUR-STEP EXECUTION</span><b>SPEC NO. 04</b></div>
+  <h1 style="font-size:78px">四步演进路径</h1><div class="ul" style="width:44%"></div>
+  <div class="sec">SECTION 02 / FOUR-STEP EXECUTION &amp; ABSTRACTION SHIFT</div>
+  <div class="st"><i>STEP 01<br>熔炼耦合</i><div><h3>大模型正在用自家 Harness 的轨迹数据训练</h3><p>以前模型和工具分离，现在原厂搭配才是最优</p></div></div>
+  <div class="st"><i>STEP 02<br>差距拉开</i><div><h3>同代模型换第三方 Harness 跑分差距 3%–5%</h3><p>35 分的模型在原厂和第三方之间差出一截</p></div></div>
+  <div class="st"><i>STEP 03<br>协议上移</i><div><h3>通过 MCP Broker 实现跨 Harness 记忆与子线程互调</h3><p>把私有技能和数据抽离到协议层</p></div></div>
+  <div class="st hot"><i>STEP 04<br>终局形态</i><div><h3>Harness 退化为隐形底座，ADE 与聊天框退居入口</h3><p>用户只见任务，看不到工具层</p></div></div>
+  <div class="bar"><small>TAKEAWAY</small>行动：先把业务搬进 MCP，再谈换模型</div>
+</div></section>
+
+<section class="card" data-name="ledger"><div class="fr"></div><div class="in">
+  <div class="meta"><span>FIELD MANUAL / CHECK LEDGER</span><b>SPEC NO. 04</b></div>
+  <h1 style="font-size:78px">上线前核对台账</h1><div class="ul" style="width:48%"></div>
+  <div class="big" style="margin-top:36px">3–5%</div><div class="sub" style="margin-top:6px">原厂与第三方 Harness 的跑分差</div>
+  <div class="sec">SECTION 03 / LEDGER</div>
+  <div class="kv"><b>责任人</b><span>业务团队负责 MCP，平台团队负责 Broker</span></div>
+  <div class="kv"><b>验收项</b><span>同一技能在两个 Harness 里都能调用</span></div>
+  <div class="kv r"><b>风险项</b><span>私有逻辑写死在某家 Harness 的插件里</span></div>
+  <div class="bar"><small>ACTION RULE</small>能走协议的，别写进工具</div>
+</div></section>
+</body>
+</html>

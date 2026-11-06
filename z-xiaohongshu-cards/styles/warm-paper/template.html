@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>暖纸蓝橙</title>
+<style>
+  :root{
+    --serif:"SHSerif","Source Han Serif SC VF","思源宋体 VF","Source Han Serif SC","Noto Serif CJK SC","Songti SC",serif;
+    --latin:"Playfair Display","SHSerif","Source Han Serif SC VF","Songti SC",serif;
+    --kai:"LXGW WenKai","霞鹜文楷","Kaiti SC",STKaiti,serif;
+    --mono:"IBM Plex Mono","SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2b2b2b;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px;font-family:var(--serif)}
+  .card{width:1080px;height:1440px;position:relative;overflow:hidden;flex:none}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover}
+  .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font:500 28px/1.4 var(--mono);letter-spacing:2px;color:rgba(128,128,128,.95);
+    background:repeating-linear-gradient(135deg,rgba(128,128,128,.16) 0 16px,rgba(128,128,128,.07) 16px 32px)}
+
+  :root{
+    --paper:#FAF7F2; --ink:#1F2937; --grey:#6B7280; --soft:#9CA3AF; --line:#E7E0D4;
+    --blue:#4B67B4; --blue-soft:#E8EDFA; --orange:#E8875F; --orange-soft:#FDE9DF; --green:#0F9D6E;
+    --sans:"SHSerif","Source Han Serif SC VF","思源宋体 VF",serif;
+    --mono:"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2b2b2b;font-family:var(--sans);color:var(--ink);padding:40px;display:flex;flex-direction:column;gap:40px;align-items:center}
+  .card{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--paper);
+    background-image:radial-gradient(#E4DCCD 1.6px,transparent 1.6px);background-size:34px 34px;
+    padding:84px 80px 76px;display:flex;flex-direction:column}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px}
+  .tag{background:var(--blue-soft);color:var(--blue);font-weight:800;font-size:28px;padding:12px 26px;border-radius:999px;letter-spacing:1px}
+  .pg{font-family:var(--mono);font-size:26px;color:var(--soft);letter-spacing:2px}
+  h1{font-size:92px;line-height:1.16;font-weight:900;letter-spacing:-1px}
+  .mk{background:linear-gradient(transparent 60%,var(--orange-soft) 60%,var(--orange-soft) 92%,transparent 92%)}
+  .blue{color:var(--blue)}
+  .sub{font-size:34px;color:var(--grey);margin-top:22px;line-height:1.5}
+  .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:24px;color:var(--soft);padding-top:28px}
+  .foot b{color:var(--ink);font-weight:800}
+  .shot{border-radius:34px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(31,41,55,.45),0 0 0 1px rgba(0,0,0,.04);background:#fff}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
+
+  /* 01 cover */
+  .c1 .kick{display:inline-flex;align-items:center;gap:14px;font-size:32px;font-weight:800;color:var(--blue)}
+  .c1 .kick i{width:44px;height:6px;border-radius:3px;background:var(--orange);display:block}
+  .c1 h1{font-size:132px;line-height:1.08;margin-top:26px}
+  .fan{position:relative;height:560px;margin-top:48px;flex:none}
+  .fan .shot{position:absolute;width:290px;height:500px}
+  .fan .l{left:60px;transform:rotate(-7deg);top:44px}
+  .fan .m{left:305px;z-index:2;top:0;width:310px;height:550px}
+  .fan .r{right:60px;transform:rotate(7deg);top:44px}
+  .chips{display:flex;gap:16px;flex-wrap:wrap;margin-top:40px}
+  .chip{font-size:30px;font-weight:700;padding:14px 28px;border-radius:999px;background:#fff;border:2px solid var(--line)}
+  .chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
+
+  /* 02 two ways */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px;flex:1;min-height:0}
+  .way{border-radius:32px;padding:40px 36px;display:flex;flex-direction:column;background:#fff;border:2px solid var(--line)}
+  .way.on{background:var(--blue);border-color:var(--blue);color:#fff}
+  .way .lb{font-family:var(--mono);font-size:24px;letter-spacing:3px;opacity:.7}
+  .way h2{font-size:52px;font-weight:900;margin:10px 0 22px}
+  .way li{list-style:none;font-size:29px;line-height:1.5;padding-left:30px;position:relative;margin-bottom:8px}
+  .way li:before{content:"";position:absolute;left:4px;top:19px;width:12px;height:12px;border-radius:50%;background:var(--orange)}
+  .way .shot{margin-top:auto;height:430px;border-radius:24px}
+
+  /* 03 matrix */
+  .grid8{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px}
+  .cell{background:#fff;border:2px solid var(--line);border-radius:26px;padding:28px 30px;display:flex;gap:22px;align-items:flex-start}
+  .cell .n{font-family:var(--mono);font-size:26px;font-weight:800;color:var(--orange);padding-top:6px}
+  .cell h3{font-size:36px;font-weight:900}
+  .cell p{font-size:25px;color:var(--grey);margin-top:6px}
+  .cell.on{background:var(--blue);border-color:var(--blue)}
+  .cell.on h3,.cell.on .n{color:#fff}.cell.on p{color:#DCE3F7}
+  .more{margin-top:28px;border:2.5px dashed var(--orange);border-radius:26px;padding:26px 30px;display:flex;justify-content:space-between;align-items:center;font-size:29px}
+  .more b{font-weight:900;font-size:34px}
+  .badge{background:var(--orange);color:#fff;font-weight:800;font-size:26px;padding:10px 22px;border-radius:999px}
+
+  /* 04 steps */
+  .steps{margin-top:44px;position:relative;display:flex;flex-direction:column;gap:20px}
+  .steps:before{content:"";position:absolute;left:43px;top:40px;bottom:60px;width:4px;background:var(--line);border-radius:2px}
+  .step{display:flex;gap:34px;align-items:flex-start;position:relative}
+  .dot{flex:none;width:90px;height:90px;border-radius:50%;background:#fff;border:4px solid var(--blue);color:var(--blue);font-weight:900;font-size:38px;display:flex;align-items:center;justify-content:center;font-family:var(--mono)}
+  .step.on .dot{background:var(--blue);color:#fff}
+  .sbox{flex:1;background:#fff;border:2px solid var(--line);border-radius:26px;padding:22px 30px}
+  .who{font-size:23px;font-weight:800;color:var(--orange);letter-spacing:2px}
+  .sbox h3{font-size:40px;font-weight:900;margin-top:6px}
+  .sbox p{font-size:27px;color:var(--grey);margin-top:8px;line-height:1.45}
+  .cmd{margin-top:16px;background:var(--ink);color:#E5E7EB;font-family:var(--mono);font-size:28px;padding:20px 24px;border-radius:16px}
+  .cmd span{color:var(--orange)}
+
+  /* 05 compare */
+  .cmp{margin-top:56px;background:#fff;border:2px solid var(--line);border-radius:32px;overflow:hidden}
+  .cmp .row{display:grid;grid-template-columns:150px 1fr 1fr;border-top:2px solid var(--line)}
+  .cmp .row:first-child{border-top:0}
+  .cmp .row>div{padding:26px 26px;font-size:28px;line-height:1.45}
+  .cmp .k{color:var(--soft);font-weight:800;font-size:25px;letter-spacing:2px;padding-top:30px!important}
+  .cmp .a{background:#F4F6FC}
+  .cmp .hd>div{font-size:40px;font-weight:900;padding:32px 26px}
+  .cmp .hd .a{background:var(--blue);color:#fff}
+  .cmp .hd .b{background:var(--orange-soft);color:#B4532A}
+  .verdict{margin-top:40px;display:flex;gap:22px;align-items:flex-start}
+  .verdict i{flex:none;width:8px;align-self:stretch;border-radius:4px;background:var(--orange)}
+  .verdict p{font-size:38px;font-weight:800;line-height:1.5}
+
+  /* 06 screens */
+  .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px}
+  .tri figure{display:flex;flex-direction:column;align-items:center;gap:22px}
+  .tri .shot{width:100%;height:560px;border-radius:30px}
+  .tri figcaption{font-size:30px;font-weight:800}
+  .tri .on .shot{box-shadow:0 0 0 6px var(--blue),0 30px 60px -28px rgba(31,41,55,.45)}
+  .tri .on figcaption{color:var(--blue)}
+  .note{margin-top:40px;background:#fff;border:2px solid var(--line);border-radius:28px;padding:32px 36px;font-size:32px;line-height:1.55}
+  .note b{color:var(--blue)}
+
+  /* 07 traps */
+  .traps{margin-top:56px;display:flex;flex-direction:column;gap:22px}
+  .trap{background:#fff;border:2px solid var(--line);border-radius:26px;padding:30px 34px;display:flex;gap:30px;align-items:center}
+  .trap .ic{flex:none;width:76px;height:76px;border-radius:22px;background:var(--orange-soft);color:#C2410C;font-weight:900;font-size:36px;display:flex;align-items:center;justify-content:center}
+  .trap h3{font-size:36px;font-weight:900}
+  .trap p{font-size:27px;color:var(--grey);margin-top:6px}
+  .trap.hot{border-color:var(--orange);background:#FFF7F2}
+  .trap.hot .ic{background:var(--orange);color:#fff}
+
+  /* 08 takeaway */
+  .c8{background:var(--blue);background-image:radial-gradient(rgba(255,255,255,.14) 1.6px,transparent 1.6px);color:#fff}
+  .c8 .tag{background:rgba(255,255,255,.16);color:#fff}
+  .c8 .pg,.c8 .foot{color:#C7D2F0}.c8 .foot b{color:#fff}
+  .c8 h1{font-size:120px}
+  .recs{margin-top:64px;display:flex;flex-direction:column;gap:24px}
+  .rec{background:#fff;color:var(--ink);border-radius:30px;padding:36px 40px;display:flex;gap:34px;align-items:center}
+  .rec .n{font-family:var(--mono);font-size:64px;font-weight:300;color:var(--orange);flex:none;width:90px}
+  .rec .if{font-size:26px;font-weight:800;color:var(--grey);letter-spacing:1px}
+  .rec h3{font-size:46px;font-weight:900;margin-top:6px}
+  .rec p{font-size:28px;color:var(--grey);margin-top:6px}
+  .repo{margin-top:52px;font-size:30px;line-height:1.7;color:#E3E8F7}
+  .repo b{font-family:var(--mono);color:#fff;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- 01 cover -->
+<section class="card c1" data-name="cover">
+  <div class="top"><span class="tag">DSH Go 1.0 实操</span><span class="pg">01 / 08</span></div>
+  <div class="kick"><i></i>DeepSeek Harness 有手机端了</div>
+  <h1>手机遥控<br><span class="mk">电脑上的 <span class="blue">DSH</span></span></h1>
+  <div class="fan">
+    <div class="shot l"><div class="ph" data-bleed>IMAGE</div></div>
+    <div class="shot m"><div class="ph" data-bleed>IMAGE</div></div>
+    <div class="shot r"><div class="ph" data-bleed>IMAGE</div></div>
+  </div>
+  <div class="chips"><span class="chip on">SSH 直连</span><span class="chip on">跨网遥控</span><span class="chip">免 Root</span><span class="chip">开源</span></div>
+  <div class="foot"><span><b>Ai 学习的老章</b> · 实操笔记</span><span>Android 8+</span></div>
+</section>
+
+<!-- 02 two ways -->
+<section class="card" data-name="compare">
+  <div class="top"><span class="tag">两种用法</span><span class="pg">02 / 08</span></div>
+  <h1>跑在手机<br>还是<span class="mk">连电脑</span></h1>
+  <div class="duo">
+    <div class="way">
+      <span class="lb">LOCAL</span><h2>本机引擎</h2>
+      <ul><li>内置 Ubuntu + Node.js</li><li>免 Root，免 Termux</li><li>预留约 1 GB 空间</li></ul>
+      <div class="shot"><div class="ph" data-bleed>IMAGE</div></div>
+    </div>
+    <div class="way on">
+      <span class="lb">REMOTE</span><h2>远程主机</h2>
+      <ul><li>SSH 或 DSH Remote</li><li>手机上什么都不用装</li><li>对话留在电脑上</li></ul>
+      <div class="shot"><div class="ph" data-bleed>IMAGE</div></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>Ai 学习的老章</b></span><span>内存紧张的手机，直接选远程</span></div>
+</section>
+
+<!-- 03 features -->
+<section class="card" data-name="matrix">
+  <div class="top"><span class="tag">1.0 能做什么</span><span class="pg">03 / 08</span></div>
+  <h1>一个 App<br><span class="mk">八件事</span></h1>
+  <div class="grid8">
+    <div class="cell"><span class="n">01</span><div><h3>本机运行</h3><p>免 Root · 免 Termux</p></div></div>
+    <div class="cell on"><span class="n">02</span><div><h3>遥控电脑</h3><p>SSH · DSH Remote</p></div></div>
+    <div class="cell"><span class="n">03</span><div><h3>中途插话</h3><p>排队消息可立即发送</p></div></div>
+    <div class="cell"><span class="n">04</span><div><h3>原生插件</h3><p>工具卡、表单和面板</p></div></div>
+    <div class="cell"><span class="n">05</span><div><h3>手机操控</h3><p>看屏幕、点按、输入</p></div></div>
+    <div class="cell"><span class="n">06</span><div><h3>离线语音</h3><p>241 MB 模型本地识别</p></div></div>
+    <div class="cell"><span class="n">07</span><div><h3>加密分享</h3><p>浏览器里回放对话</p></div></div>
+    <div class="cell"><span class="n">08</span><div><h3>桌宠陪伴</h3><p>Deepy 小鲸鱼和鲸娘</p></div></div>
+  </div>
+  <div class="more"><div><b>图像与视频生成</b><br><span style="color:var(--grey);font-size:26px">App 已就绪，等生成插件发布</span></div><span class="badge">即将上线</span></div>
+  <div class="foot"><span><b>Ai 学习的老章</b></span><span>另有六套主题色 · 中英双语</span></div>
+</section>
+
+<!-- 04 steps -->
+<section class="card" data-name="steps">
+  <div class="top"><span class="tag">上手</span><span class="pg">04 / 08</span></div>
+  <h1>四步<br><span class="mk">连上你的电脑</span></h1>
+  <div class="steps">
+    <div class="step"><div class="dot">1</div><div class="sbox"><div class="who">手机</div><h3>下载 arm64 安装包</h3><p>GitHub Releases，Android 8 及以上</p></div></div>
+    <div class="step"><div class="dot">2</div><div class="sbox"><div class="who">电脑</div><h3>装好 DSH</h3><div class="cmd"><span>$</span> npm i -g @deepseek-ai/dsh</div></div></div>
+    <div class="step"><div class="dot">3</div><div class="sbox"><div class="who">手机</div><h3>首次启动选「远程主机」</h3><p>添加 SSH 主机，或用 DSH Remote 登录</p></div></div>
+    <div class="step on"><div class="dot">4</div><div class="sbox"><div class="who">手机</div><h3>核对指纹，信任并连接</h3><p>之后在对话列表底部随时切换主机</p></div></div>
+  </div>
+  <div class="foot"><span><b>Ai 学习的老章</b></span><span>只连远程，手机不用装运行环境</span></div>
+</section>
+
+<!-- 05 compare -->
+<section class="card" data-name="p5">
+  <div class="top"><span class="tag">两条路怎么选</span><span class="pg">05 / 08</span></div>
+  <h1>SSH 还是<br><span class="mk">DSH Remote</span></h1>
+  <div class="cmp">
+    <div class="row hd"><div></div><div class="a">SSH 直连</div><div class="b">DSH Remote</div></div>
+    <div class="row"><div class="k">适合</div><div class="a">同一局域网<br>或有公网 IP</div><div>人在外面<br>不想配网络</div></div>
+    <div class="row"><div class="k">配置</div><div class="a">主机、用户名、端口 22<br>密码或私钥只存手机</div><div>电脑装远程插件并登录<br>手机同账号登录</div></div>
+    <div class="row"><div class="k">启动</div><div class="a">默认 dsh web<br>nvm 装的填完整路径</div><div>主机在线即可选中</div></div>
+    <div class="row"><div class="k">功能</div><div class="a"><b>全部可用</b></div><div>只能发图片<br>插件只能开关</div></div>
+  </div>
+  <div class="verdict"><i></i><p>同网走 SSH，功能最全<br>跨网走 Remote，省事但少一截</p></div>
+  <div class="foot"><span><b>Ai 学习的老章</b></span><span>Remote 没有 DS Bot 和日志导出</span></div>
+</section>
+
+<!-- 06 screens -->
+<section class="card" data-name="p6">
+  <div class="top"><span class="tag">实际界面</span><span class="pg">06 / 08</span></div>
+  <h1>本机和电脑<br><span class="mk">一键切换</span></h1>
+  <div class="tri">
+    <figure><div class="shot"><div class="ph" data-bleed>IMAGE</div></div><figcaption>本机对话</figcaption></figure>
+    <figure class="on"><div class="shot"><div class="ph" data-bleed>IMAGE</div></div><figcaption>切换主机</figcaption></figure>
+    <figure><div class="shot"><div class="ph" data-bleed>IMAGE</div></div><figcaption>电脑上的对话</figcaption></figure>
+  </div>
+  <div class="note">对话列表底部点<b>当前主机名</b>，本机和电脑来回切<br>对话、工作区和插件都归各自的主机</div>
+  <div class="foot"><span><b>Ai 学习的老章</b></span><span>截图来自项目 README</span></div>
+</section>
+
+<!-- 07 traps -->
+<section class="card" data-name="p7">
+  <div class="top"><span class="tag">先避坑</span><span class="pg">07 / 08</span></div>
+  <h1>这五件事<br><span class="mk">提前知道</span></h1>
+  <div class="traps">
+    <div class="trap hot"><div class="ic">1</div><div><h3>电脑要开机，不能休眠</h3><p>DSH 保持运行，Mac 插电可配合 caffeinate</p></div></div>
+    <div class="trap"><div class="ic">2</div><div><h3>nvm 装的 DSH 填完整路径</h3><p>SSH 的启动命令默认是 dsh web</p></div></div>
+    <div class="trap"><div class="ic">3</div><div><h3>签名不同的测试包要先卸载</h3><p>卸载会清空对话和运行环境</p></div></div>
+    <div class="trap"><div class="ic">4</div><div><h3>国产系统容易杀后台</h3><p>按 App 提示直达放行设置</p></div></div>
+    <div class="trap"><div class="ic">5</div><div><h3>匿名统计默认开启</h3><p>设置 › 隐私与分享 可以关掉</p></div></div>
+  </div>
+  <div class="foot"><span><b>Ai 学习的老章</b></span><span>建议收藏再折腾</span></div>
+</section>
+
+<!-- 08 takeaway -->
+<section class="card c8" data-name="takeaway">
+  <div class="top"><span class="tag">我的建议</span><span class="pg">08 / 08</span></div>
+  <h1>怎么选？</h1>
+  <div class="recs">
+    <div class="rec"><span class="n">01</span><div><div class="if">在同一网络</div><h3>SSH 直连</h3><p>功能最全，配置一次就好</p></div></div>
+    <div class="rec"><span class="n">02</span><div><div class="if">人在外面</div><h3>DSH Remote</h3><p>免配网络，端到端加密</p></div></div>
+    <div class="rec"><span class="n">03</span><div><div class="if">手机性能够</div><h3>再装本机引擎</h3><p>解锁手机操控和离线语音</p></div></div>
+  </div>
+  <p class="repo">GitHub 搜 <b>ccch1mneyyy/dsh-go</b><br>社区开发，非 DeepSeek 官方 · AGPL-3.0 开源</p>
+  <div class="foot"><span><b>Ai 学习的老章</b></span><span>你会用手机遥控电脑干活吗？</span></div>
+</section>
+
+</body>
+</html>
