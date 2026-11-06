@@ -1,0 +1,23 @@
+{
+  "style": "riso-zine",
+  "brand": "@你的账号",
+  "pages": [
+    {"type": "cover", "name": "cover", "tag": "ZINE 01", "kicker": "三十岁前没人告诉我", "title": "允许自己\n慢一点", "sub": "写给总在赶路的人", "tags": ["不内耗", "敢拒绝", "有余地"], "note": "转给需要的朋友"},
+    {"type": "points", "name": "points", "tag": "慢下来", "title": "这三件事**可以放下**", "note": "放下才走得远", "items": [
+      {"head": "别人的进度条", "text": "你只需要和昨天比"},
+      {"head": "随叫随到", "text": "晚回一条消息天不会塌"},
+      {"head": "完美的开始", "text": "先做出烂版本再说"}
+    ]},
+    {"type": "steps", "name": "steps", "tag": "小练习", "title": "每天这样留白", "note": "一周就有感觉", "items": [
+      {"head": "早上不看手机", "text": "先喝水，发呆五分钟"},
+      {"head": "午饭不开视频", "text": "好好吃完一顿饭"},
+      {"head": "下午走一圈", "text": "绕楼下走十分钟"},
+      {"head": "睡前写三行", "text": "今天发生的小事就够了"}
+    ]},
+    {"type": "compare", "name": "compare", "tag": "两种日子", "title": "赶路和散步", "left": {"label": "赶路的日子", "items": ["待办永远做不完", "周末只想躺平", "越忙越慌"]}, "right": {"label": "散步的日子", "items": ["只选三件要事", "周末有力气玩", "忙也不乱"]}, "verdict": "把三件要事写下来，其他的先放放", "note": "选一件今天就试"},
+    {"type": "quote", "name": "quote", "tag": "写给你", "text": "人生很长，\n今天做不完\n也没关系。", "source": "贴在冰箱门上", "note": "截图当壁纸"},
+    {"type": "stat", "name": "stat", "tag": "小目标", "title": "每天留出空白时间", "value": "30", "unit": "分钟", "text": "什么都不安排，也算把日子过好了", "items": [{"head": "不刷手机", "text": "让眼睛歇歇"}, {"head": "不做计划", "text": "让脑子歇歇"}, {"head": "不做解释", "text": "让自己歇歇"}], "note": "时长仅作建议"},
+    {"type": "image", "name": "shot", "tag": "我的周记", "title": "这周的慢生活记录", "image": "../_base/sample-shot.svg", "caption": "用手机备忘录记下就好，不用好看", "note": "把图换成你的"},
+    {"type": "end", "name": "end", "tag": "最后", "title": "这周先做到这些", "items": [{"head": "拒绝一件小事"}, {"head": "早睡一天"}, {"head": "好好吃一顿饭"}], "cta": "你最近放下了什么？", "note": "评论区留一句话"}
+  ]
+}

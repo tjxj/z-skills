@@ -1,0 +1,85 @@
+/* 双色孔版：只用两块专色，靠叠印和错版出层次 */
+:root{--paper:#F5F0E4;--pink:#FF4F7E;--blue:#2438D6;--ink:#17206B}
+.card{background:var(--paper);color:var(--blue);font-family:var(--sans);padding:64px 70px 56px}
+.decor{mix-blend-mode:multiply}
+.decor i{position:absolute;display:block}
+.o1{width:760px;height:760px;border-radius:50%;background:var(--pink);right:-240px;top:-200px}
+.o2{width:620px;height:620px;border-radius:50%;background:#7E93FF;left:-210px;bottom:-170px}
+.dots{inset:0;background:radial-gradient(var(--blue) 3.6px,transparent 4px) 0 0/16px 16px;-webkit-mask:linear-gradient(135deg,transparent 58%,#000 92%);opacity:.75}
+.p-points .o1{top:auto;bottom:-300px;right:-260px}
+.p-points .o2{left:auto;right:-160px;top:-260px;bottom:auto}
+.p-steps .o1{right:auto;left:-300px;top:-240px}
+.p-steps .o2{left:auto;right:-240px}
+.p-compare .o1,.p-compare .o2{display:none}
+.p-stat .o1{right:-100px;top:210px;width:900px;height:900px}
+.p-stat .o2{left:-240px;bottom:-280px}
+.p-image .o1{width:520px;height:520px;right:-160px;top:-180px}
+.p-image .dots{-webkit-mask:linear-gradient(transparent 70%,#000)}
+.head{font-weight:900;font-size:32px;margin-bottom:40px}
+.htag{background:var(--blue);color:var(--paper);padding:8px 22px;transform:rotate(-2deg)}
+.pg{font:800 44px var(--mono)}
+.foot{font-size:27px;font-weight:700;margin:24px -70px -56px;border-top:6px solid var(--blue);padding:16px 70px 30px;background:var(--paper)}
+.title{font-size:92px;font-weight:900;line-height:1.1;letter-spacing:-2px;text-shadow:7px 7px 0 var(--pink)}
+mark{color:var(--pink);text-shadow:none}
+/* 封面 */
+.p-cover .main{justify-content:flex-end;padding-bottom:30px}
+.kicker{font-size:38px;font-weight:900;margin-bottom:26px;align-self:flex-start;background:var(--pink);color:var(--paper);padding:8px 22px;transform:rotate(1.5deg)}
+.p-cover .title{font-size:158px;line-height:1.04;letter-spacing:-5px;text-shadow:11px 11px 0 var(--pink)}
+.p-cover[data-tl="l"] .title{font-size:124px}
+.sub{font-size:42px;font-weight:800;line-height:1.34;margin-top:44px}
+.tags{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+.tags li{font-size:34px;font-weight:900;padding:8px 24px;border:5px solid var(--blue);background:var(--paper);border-radius:60px}
+.tags li:nth-child(odd){transform:rotate(-2deg)}.tags li:nth-child(even){transform:rotate(2deg);background:var(--pink);color:var(--paper);border-color:var(--pink)}
+.p-cover .shot{height:300px;margin-top:30px;filter:grayscale(1) contrast(1.2);mix-blend-mode:multiply}
+/* 色块列表 */
+.list{flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px;margin-top:40px}
+.p-points .item{display:flex;gap:26px;align-items:center;padding:24px 28px;background:var(--blue);color:var(--paper)}
+.p-points .item:nth-child(even){background:var(--pink);margin-left:60px}
+.p-points .item:nth-child(odd){margin-right:60px}
+.idx{font:800 66px/1 var(--mono);flex:none}
+.ihead{font-size:50px;font-weight:900;line-height:1.2}
+.itext{font-size:36px;font-weight:500;line-height:1.36;margin-top:6px}
+/* 台阶 */
+.p-steps .list{gap:18px}
+.p-steps .item{display:flex;gap:22px;align-items:center;background:var(--paper);border:6px solid var(--blue);padding:20px 24px;box-shadow:12px 12px 0 var(--pink)}
+.p-steps .item:nth-child(1){margin-right:150px}.p-steps .item:nth-child(2){margin:0 100px 0 50px}.p-steps .item:nth-child(3){margin:0 50px 0 100px}.p-steps .item:nth-child(4){margin-left:150px}.p-steps .item:nth-child(5){margin-left:190px}
+/* 叠印对比 */
+.cols{flex:1;display:grid;grid-template-columns:1fr 1fr;margin-top:40px;min-height:0;mix-blend-mode:multiply}
+.col{padding:32px 28px;display:flex;flex-direction:column;color:var(--ink)}
+.col.a{background:#A9B6FF;margin-right:-38px;padding-right:66px}
+.col.b{background:#FF9AB5;margin:60px 0 -30px;padding-left:66px}
+.clabel{font-size:48px;font-weight:900;line-height:1.14}
+.col ul{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;padding-top:12px}
+.col li{font-size:37px;font-weight:700;line-height:1.3}
+.verdict{font-size:44px;font-weight:900;line-height:1.26;margin-top:62px;color:var(--pink)}
+/* 金句 */
+.p-quote{background:var(--pink);color:var(--paper)}
+.p-quote .o1{background:#FF9AB5;right:-200px;top:300px}.p-quote .o2{background:#FFC2D2}
+.p-quote .dots{background:radial-gradient(#fff 3.6px,transparent 4px) 0 0/16px 16px;mix-blend-mode:normal;opacity:.5}
+.p-quote .main{justify-content:center}
+.p-quote .htag{background:var(--paper);color:var(--pink)}
+.p-quote .head,.p-quote .foot{color:var(--paper);border-color:var(--paper)}
+.p-quote .foot{background:var(--pink)}
+.qtext{font-size:112px;font-weight:900;line-height:1.16;letter-spacing:-3px;text-shadow:7px 7px 0 var(--blue);text-wrap:pretty}
+.qsrc{font-size:38px;font-weight:800;margin-top:46px}
+/* 大数字 */
+.p-stat .big{display:flex;align-items:baseline;gap:18px;margin-top:20px}
+.value{font:900 380px/1 var(--sans);letter-spacing:-14px;color:var(--blue);text-shadow:12px 12px 0 var(--paper)}
+.unit{font-size:82px;font-weight:900;color:var(--paper);background:var(--blue);padding:0 14px}
+.bnote{font-size:42px;font-weight:800;line-height:1.3;margin-top:26px;color:var(--ink)}
+.p-stat .list{flex:none;flex-direction:row;gap:14px;margin-top:auto}
+.p-stat .item{flex:1;background:var(--paper);border:5px solid var(--blue);padding:18px}
+.p-stat .ihead{font-size:36px}.p-stat .itext{font-size:29px}
+/* 配图 */
+.p-image .shot{flex:1;margin-top:40px;filter:grayscale(1) contrast(1.15);box-shadow:14px 14px 0 var(--pink);border:6px solid var(--blue)}
+.caption{font-size:38px;font-weight:800;line-height:1.3;margin-top:34px;color:var(--ink)}
+/* 结尾 */
+.p-end{background:var(--blue);color:var(--paper)}
+.p-end .o1{background:var(--pink);mix-blend-mode:screen}.p-end .o2,.p-end .dots{display:none}
+.p-end .decor{mix-blend-mode:normal}
+.p-end .htag{background:var(--paper);color:var(--blue)}
+.p-end .foot{border-color:var(--paper);background:var(--blue)}
+.p-end .title{text-shadow:7px 7px 0 var(--pink)}
+.p-end .item{display:flex;gap:26px;align-items:center;border-bottom:5px solid var(--paper);padding-bottom:18px}
+.p-end .idx{color:var(--pink)}
+.cta{font-size:56px;font-weight:900;line-height:1.2;color:var(--blue);background:var(--paper);padding:18px 26px;transform:rotate(-1.5deg);margin:20px 0 16px}

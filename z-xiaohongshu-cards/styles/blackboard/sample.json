@@ -1,0 +1,23 @@
+{
+  "style": "blackboard",
+  "brand": "@你的账号",
+  "pages": [
+    {"type": "cover", "name": "cover", "tag": "今日一课", "kicker": "给总记不住的你", "title": "费曼学习法\n四步讲透", "sub": "讲不出来的地方，就是没学会的地方", "tags": ["选概念", "讲出来", "找卡点", "说人话"], "note": "下课别忘了收藏"},
+    {"type": "steps", "name": "steps", "tag": "四个步骤", "title": "跟着做一遍", "note": "用一个概念试试", "items": [
+      {"head": "选一个概念", "text": "写在白纸最上方"},
+      {"head": "讲给外行听", "text": "想象对面坐着小学生"},
+      {"head": "回到书里补", "text": "卡住的地方就是漏洞"},
+      {"head": "换成大白话", "text": "用比喻替换所有术语"}
+    ]},
+    {"type": "points", "name": "why", "tag": "为什么有效", "title": "它有用的**三个原因**", "note": "输出倒逼输入", "items": [
+      {"head": "主动回忆", "text": "把知识取出来才记得牢"},
+      {"head": "暴露盲区", "text": "讲不顺的地方一目了然"},
+      {"head": "建立连接", "text": "比喻把新知识挂到旧经验上"}
+    ]},
+    {"type": "compare", "name": "compare", "tag": "对比", "title": "两种学法", "left": {"label": "反复看书", "items": ["感觉都会了", "合上书就忘", "越看越放心"]}, "right": {"label": "讲出来", "items": ["当场发现不会", "记忆更持久", "过程有点累"]}, "verdict": "累一点的方法，记得更久", "note": "看懂不等于学会"},
+    {"type": "quote", "name": "quote", "tag": "板书", "text": "说不清楚，\n通常是还没想清楚。", "source": "—— 写在黑板右上角", "note": "抄下来贴桌前"},
+    {"type": "stat", "name": "time", "tag": "练习", "title": "每天练多久", "value": "15", "unit": "分钟", "text": "一天只讲透一个概念，比囫囵吞枣一小时更扎实", "items": [{"head": "早上", "text": "选概念"}, {"head": "午后", "text": "讲一遍"}, {"head": "睡前", "text": "补漏洞"}], "note": "时长仅作建议"},
+    {"type": "image", "name": "shot", "tag": "课堂笔记", "title": "我的一页讲解笔记", "image": "../_base/sample-shot.svg", "caption": "左边写原文，右边写大白话", "note": "把图换成你的"},
+    {"type": "end", "name": "end", "tag": "课后作业", "title": "今晚的作业", "items": [{"head": "选一个概念"}, {"head": "录一分钟讲解"}, {"head": "听回放找卡点"}], "cta": "今天你想讲明白什么？", "note": "评论区交作业"}
+  ]
+}

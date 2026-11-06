@@ -1,0 +1,24 @@
+{
+  "style": "receipt-strip",
+  "brand": "@你的账号",
+  "pages": [
+    {"type": "cover", "name": "cover", "tag": "搬家清单", "kicker": "租房小店", "title": "第一次租房\n这样买不亏", "sub": "把钱花在每天都用的东西上", "tags": ["必买 5 件", "缓买 3 件", "别买 2 件"], "note": "存下来 下次照单买"},
+    {"type": "points", "name": "must", "tag": "必买", "title": "入住当天**必买**", "note": "每一件都天天用", "items": [
+      {"head": "一盏落地灯", "text": "出租屋顶灯偏冷，暖光立刻舒服"},
+      {"head": "床垫保护罩", "text": "隔开旧床垫，睡得更安心"},
+      {"head": "防滑浴室垫", "text": "老房子卫生间地滑，先防摔"},
+      {"head": "多孔插线板", "text": "旧房插座少，选带开关的"}
+    ]},
+    {"type": "steps", "name": "steps", "tag": "验房", "title": "入住前验房四件事", "note": "拍照留底 发给房东", "items": [
+      {"head": "开水龙头", "text": "冷热水和下水都试一遍"},
+      {"head": "查插座", "text": "手机充电器逐个试"},
+      {"head": "抄水电表", "text": "拍下读数，退租时对账"},
+      {"head": "拍家具", "text": "旧损处先拍，避免被扣押金"}
+    ]},
+    {"type": "compare", "name": "buy", "tag": "比价", "title": "哪些钱值得花", "left": {"label": "别急着买", "items": ["大件收纳柜", "网红小家电", "整套厨具"]}, "right": {"label": "值得花", "items": ["舒服的枕头", "遮光窗帘", "好用的台灯"]}, "verdict": "住满一个月再添大件", "note": "冲动消费退货麻烦"},
+    {"type": "quote", "name": "quote", "tag": "留言", "text": "房子是租的，每天的睡眠和心情是自己的。", "source": "收银员 03 号", "note": "欢迎下次光临"},
+    {"type": "stat", "name": "total", "tag": "预算", "title": "一个单间的起步预算", "value": "680", "unit": "元", "text": "按普通单间估算，换成你所在城市的价格再算一遍", "items": [{"head": "灯具和插线板", "text": "180 元"}, {"head": "床上用品", "text": "320 元"}, {"head": "浴室和清洁", "text": "180 元"}], "note": "示例数据 请自行核算"},
+    {"type": "image", "name": "shot", "tag": "实拍", "title": "入住第一周的账单", "image": "../_base/sample-shot.svg", "caption": "把每笔记下来，一周后就知道哪里超支", "note": "把截图换成你的"},
+    {"type": "end", "name": "end", "tag": "结账", "title": "结账前核对一遍", "items": [{"head": "押金条收好了"}, {"head": "水电读数拍了"}, {"head": "退租条款看了"}], "cta": "你第一次租房买错过什么？", "note": "评论区交流避坑"}
+  ]
+}

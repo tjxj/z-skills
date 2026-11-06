@@ -1,0 +1,25 @@
+<template data-part="decor"><div class="decor" data-bleed aria-hidden="true"><div class="ticket"></div><i class="perf"></i></div></template>
+<template data-part="head"><header class="head"><span class="htag">{{tag}}</span><span class="pg">第 {{no}} 站 / 共 {{total}} 站</span></header></template>
+<template data-part="foot"><footer class="foot"><div class="code" data-bleed></div><div class="meta"><span class="brand">{{brand}}</span><span class="fnote">{{note}}</span></div></footer></template>
+
+<template data-page="cover">
+  {{#kicker}}<p class="kicker">{{kicker}}</p>{{/kicker}}
+  <h1 class="title">{{title}}</h1>
+  {{#sub}}<p class="sub">{{sub}}</p>{{/sub}}
+  {{#hasTags}}<ul class="route">{{#tags}}<li>{{.}}</li>{{/tags}}</ul>{{/hasTags}}
+  {{#image}}<figure class="shot"><img src="{{image}}" alt=""></figure>{{/image}}
+  <div class="post" data-bleed><svg viewBox="0 0 200 200"><g fill="none" stroke="#D2452D" stroke-width="5"><circle cx="100" cy="100" r="92"/><circle cx="100" cy="100" r="62"/></g><path d="M0 74h60M0 100h40M0 126h60" stroke="#D2452D" stroke-width="5"/></svg><b>已检票</b></div>
+</template>
+
+<template data-page="quote">
+  <p class="memo">明信片背面</p>
+  <blockquote class="qtext">{{text}}</blockquote>
+  {{#source}}<p class="qsrc">{{source}}</p>{{/source}}
+</template>
+
+<template data-page="stat">
+  <h2 class="title">{{title}}</h2>
+  <div class="big"><small>SEAT</small><span class="value">{{value}}</span>{{#unit}}<span class="unit">{{unit}}</span>{{/unit}}</div>
+  {{#text}}<p class="bnote">{{text}}</p>{{/text}}
+  {{#hasItems}}<ul class="list">{{#items}}<li class="item"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ul>{{/hasItems}}
+</template>

@@ -1,0 +1,53 @@
+<template data-part="decor"><div class="decor" data-bleed aria-hidden="true"><div class="seal-line"><span>密　封　线　内　不　要　答　题</span></div></div></template>
+<template data-part="head"><header class="head"><span class="htag">{{tag}}</span><span class="pg">第 {{no}} 页 · 共 {{total}} 页</span></header></template>
+<template data-part="foot"><footer class="foot"><span class="brand">{{brand}}</span><span class="fnote">{{note}}</span></footer></template>
+
+<template data-page="cover">
+  <div class="score" data-bleed><svg viewBox="0 0 260 200"><path d="M30 104C24 42 96 14 150 18c58 4 94 40 86 92-8 50-62 76-118 70C66 174 26 150 34 96" fill="none" stroke="#D3271D" stroke-width="7" stroke-linecap="round"/></svg><b>100</b></div>
+  {{#kicker}}<p class="kicker">{{kicker}}</p>{{/kicker}}
+  <h1 class="title">{{title}}</h1>
+  {{#sub}}<p class="sub">{{sub}}</p>{{/sub}}
+  <dl class="fields"><div><dt>姓名</dt><dd>你</dd></div><div><dt>考试时间</dt><dd>3 分钟</dd></div><div><dt>满分</dt><dd>100</dd></div></dl>
+  {{#hasTags}}<ul class="tags">{{#tags}}<li>{{.}}</li>{{/tags}}</ul>{{/hasTags}}
+  {{#image}}<figure class="shot"><img src="{{image}}" alt=""></figure>{{/image}}
+</template>
+
+<template data-page="points">
+  <h2 class="title"><span class="sec">一、</span>{{title}}</h2>
+  <ol class="list">{{#items}}<li class="item"><div class="q"><span class="idx">{{n1}}.</span><h3 class="ihead">{{head}}</h3><span class="bracket"><span>（</span><svg viewBox="0 0 60 50" data-bleed><path d="M6 26 22 42 54 6" fill="none" stroke="#D3271D" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>）</span></span></div>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ol>
+</template>
+
+<template data-page="steps">
+  <h2 class="title"><span class="sec">二、</span>{{title}}</h2>
+  <p class="solve">解：</p>
+  <ol class="list">{{#items}}<li class="item"><span class="idx">第 {{n1}} 步</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol>
+</template>
+
+<template data-page="compare">
+  <h2 class="title"><span class="sec">三、</span>{{title}}</h2>
+  <div class="cols">
+    <section class="col a"><h3 class="clabel">{{left.label}}</h3><ul>{{#left.items}}<li><span>{{.}}</span><svg viewBox="0 0 50 50" data-bleed><path d="M8 8 42 42M42 8 8 42" fill="none" stroke="#D3271D" stroke-width="6" stroke-linecap="round"/></svg></li>{{/left.items}}</ul></section>
+    <section class="col b"><h3 class="clabel">{{right.label}}</h3><ul>{{#right.items}}<li><span>{{.}}</span><svg viewBox="0 0 60 50" data-bleed><path d="M6 26 22 42 54 6" fill="none" stroke="#D3271D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></li>{{/right.items}}</ul></section>
+  </div>
+  {{#verdict}}<p class="verdict">{{verdict}}</p>{{/verdict}}
+</template>
+
+<template data-page="quote">
+  <p class="essay">四、作文（不少于一句话）</p>
+  <blockquote class="chars qtext">{{#textChars}}<i>{{.}}</i>{{/textChars}}</blockquote>
+  {{#source}}<p class="qsrc">{{source}}</p>{{/source}}
+</template>
+
+<template data-page="stat">
+  <h2 class="title">{{title}}</h2>
+  <div class="big"><span class="value">{{value}}</span>{{#unit}}<span class="unit">{{unit}}</span>{{/unit}}</div>
+  {{#text}}<p class="bnote">{{text}}</p>{{/text}}
+  {{#hasItems}}<ul class="list">{{#items}}<li class="item"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ul>{{/hasItems}}
+</template>
+
+<template data-page="end">
+  <h2 class="title">{{title}}</h2>
+  <p class="comment-label">老师评语：</p>
+  {{#hasItems}}<ol class="list">{{#items}}<li class="item"><span class="idx">{{n1}}</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol>{{/hasItems}}
+  {{#cta}}<p class="cta">{{cta}}</p>{{/cta}}
+</template>

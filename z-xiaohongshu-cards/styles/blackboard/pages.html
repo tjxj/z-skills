@@ -1,0 +1,17 @@
+<template data-part="decor"><div class="decor" data-bleed aria-hidden="true"><svg width="0" height="0" style="position:absolute"><filter id="chalk" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2" result="d"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.1 1.5" result="m"/><feComposite in="d" in2="m" operator="in"/></filter></svg><i class="smear s1"></i><i class="smear s2"></i><i class="tray"></i><i class="stick a"></i><i class="stick b"></i></div></template>
+<template data-part="head"><header class="head"><span class="htag">{{tag}}</span><span class="pg">{{no}} / {{total}}</span></header></template>
+
+<template data-page="cover">
+  {{#kicker}}<p class="kicker">{{kicker}}</p>{{/kicker}}
+  <h1 class="title">{{title}}</h1>
+  <svg class="wave" data-bleed viewBox="0 0 640 30" preserveAspectRatio="none"><path d="M4 16c40-18 70 16 110 2s70-14 110 0 70 14 110 0 70-14 110 0 70 12 192-4" fill="none" stroke="#F6D860" stroke-width="7" stroke-linecap="round"/></svg>
+  {{#sub}}<p class="sub">{{sub}}</p>{{/sub}}
+  {{#hasTags}}<ul class="tags">{{#tags}}<li>{{.}}</li>{{/tags}}</ul>{{/hasTags}}
+  {{#image}}<figure class="shot"><img src="{{image}}" alt=""></figure>{{/image}}
+</template>
+
+<template data-page="quote">
+  <p class="memo">今日板书</p>
+  <blockquote class="qtext">{{text}}</blockquote>
+  {{#source}}<p class="qsrc">{{source}}</p>{{/source}}
+</template>

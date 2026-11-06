@@ -1,0 +1,24 @@
+{
+  "style": "blueprint",
+  "brand": "@你的账号",
+  "pages": [
+    {"type": "cover", "name": "cover", "tag": "原理图解", "kicker": "RAG / 01", "title": "知识库问答\n到底怎么工作", "sub": "把一次提问拆成四个部件", "tags": ["切片", "向量", "检索", "生成"], "note": "读完能画出这张图"},
+    {"type": "points", "name": "parts", "tag": "部件", "title": "系统由**四个部件**组成", "note": "每个部件可单独替换", "items": [
+      {"head": "切片器", "text": "把长文档切成语义完整的小段"},
+      {"head": "向量库", "text": "保存每段文字的语义坐标"},
+      {"head": "检索器", "text": "找出和问题最接近的几段"},
+      {"head": "大模型", "text": "只根据检索结果组织答案"}
+    ]},
+    {"type": "steps", "name": "flow", "tag": "数据流", "title": "一次提问的路径", "note": "箭头方向即数据方向", "items": [
+      {"head": "问题转成向量", "text": "用和入库时相同的嵌入模型"},
+      {"head": "召回候选片段", "text": "先多取一些，保证不漏"},
+      {"head": "重排留下最相关", "text": "把噪声挡在模型之外"},
+      {"head": "带引用生成回答", "text": "答案能追溯到原文"}
+    ]},
+    {"type": "compare", "name": "compare", "tag": "方案比选", "title": "长上下文还是检索", "left": {"label": "方案 A 全塞", "items": ["实现最简单", "文档多就贵", "易被噪声带偏"]}, "right": {"label": "方案 B 检索", "items": ["成本可控", "答案可追溯", "切片要调优"]}, "verdict": "文档常更新、量又大时选方案 B", "note": "按文档规模决定"},
+    {"type": "quote", "name": "rule", "tag": "设计原则", "text": "检索决定答案的上限，模型只决定表达的好坏。", "source": "NOTE 05", "note": "调优先调检索"},
+    {"type": "stat", "name": "size", "tag": "关键参数", "title": "切片长度的起步值", "value": "512", "unit": "token", "text": "先用这个起点跑通，再按召回效果上下调整", "items": [{"head": "太短", "text": "上下文断裂"}, {"head": "太长", "text": "混入噪声"}, {"head": "重叠", "text": "相邻段留一成"}], "note": "经验起点 需实测"},
+    {"type": "image", "name": "shot", "tag": "实测", "title": "召回结果怎么看", "image": "../_base/sample-shot.svg", "caption": "每条结果都标来源，人工抽查最快发现切片问题", "note": "把截图换成你的"},
+    {"type": "end", "name": "end", "tag": "验收", "title": "上线前的验收项", "items": [{"head": "答案带原文引用"}, {"head": "查不到时会说不知道"}, {"head": "文档更新能自动入库"}], "cta": "你的知识库卡在哪一步？", "note": "评论区聊聊"}
+  ]
+}

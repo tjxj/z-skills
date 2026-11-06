@@ -1,0 +1,62 @@
+<template data-part="decor"><div class="decor" data-bleed aria-hidden="true"><i class="scan"></i></div></template>
+<template data-part="head"><header class="head"><span class="lights"><i></i><i></i><i></i></span><span class="htag">~/{{tag}}</span><span class="pg">{{no}}/{{total}}</span></header></template>
+<template data-part="foot"><footer class="foot"><span class="brand">{{brand}}</span><span class="fnote">{{note}}</span></footer></template>
+
+<template data-page="cover">
+  {{#kicker}}<p class="kicker">{{kicker}}</p>{{/kicker}}
+  <h1 class="title">{{title}}<span class="cursor" data-bleed></span></h1>
+  {{#sub}}<p class="sub">{{sub}}</p>{{/sub}}
+  {{#hasTags}}<ul class="tags">{{#tags}}<li>{{.}}</li>{{/tags}}</ul>{{/hasTags}}
+  {{#image}}<figure class="shot"><img src="{{image}}" alt=""></figure>{{/image}}
+</template>
+
+<template data-page="points">
+  <p class="cmd">cat notes.md</p>
+  <h2 class="title">{{title}}</h2>
+  <ol class="list">{{#items}}<li class="item"><span class="idx">[{{i}}]</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol>
+</template>
+
+<template data-page="steps">
+  <p class="cmd">./run.sh</p>
+  <h2 class="title">{{title}}</h2>
+  <ol class="list">{{#items}}<li class="item"><span class="idx">{{n1}}/{{count}}</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div><span class="ok" data-bleed>OK</span></li>{{/items}}</ol>
+</template>
+
+<template data-page="compare">
+  <p class="cmd">git diff</p>
+  <h2 class="title">{{title}}</h2>
+  <div class="cols">
+    <section class="col a"><h3 class="clabel">--- {{left.label}}</h3><ul>{{#left.items}}<li>{{.}}</li>{{/left.items}}</ul></section>
+    <section class="col b"><h3 class="clabel">+++ {{right.label}}</h3><ul>{{#right.items}}<li>{{.}}</li>{{/right.items}}</ul></section>
+  </div>
+  {{#verdict}}<p class="verdict">{{verdict}}</p>{{/verdict}}
+</template>
+
+<template data-page="quote">
+  <p class="cmd">fortune</p>
+  <blockquote class="qtext">{{text}}</blockquote>
+  {{#source}}<p class="qsrc">{{source}}</p>{{/source}}
+</template>
+
+<template data-page="stat">
+  <p class="cmd">time ./job</p>
+  <h2 class="title">{{title}}</h2>
+  <div class="big"><span class="value">{{value}}</span>{{#unit}}<span class="unit">{{unit}}</span>{{/unit}}</div>
+  <div class="meter" data-bleed></div>
+  {{#text}}<p class="bnote">{{text}}</p>{{/text}}
+  {{#hasItems}}<ul class="list">{{#items}}<li class="item"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ul>{{/hasItems}}
+</template>
+
+<template data-page="image">
+  <p class="cmd">open screenshot.png</p>
+  <h2 class="title">{{title}}</h2>
+  <figure class="shot"><img src="{{image}}" alt=""></figure>
+  {{#caption}}<p class="caption">{{caption}}</p>{{/caption}}
+</template>
+
+<template data-page="end">
+  <p class="cmd">echo done</p>
+  <h2 class="title">{{title}}</h2>
+  {{#hasItems}}<ol class="list">{{#items}}<li class="item"><span class="idx">[x]</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol>{{/hasItems}}
+  {{#cta}}<p class="cta">{{cta}}</p>{{/cta}}
+</template>
