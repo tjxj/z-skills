@@ -62,7 +62,7 @@ cp -R z-* "/path/to/your/.agent/skills/"
 | [`z-sci-viz-lab`](z-sci-viz-lab/SKILL.md) | 把数学/科学概念生成可视化互动科普单页，支持多场景切换、Three.js/Canvas、单文件构建与 Cloudflare Pages 部署 | 可视化科普、互动科普实验、科学交互演示 |
 | [`z-docx-format-brush`](z-docx-format-brush/SKILL.md) | 从模板 docx 提取格式指纹（字体/字号/行距/缩进/表格边框/封面/分页），统一刷到目标 docx，修复 pandoc/模型产物的格式混乱 | 格式刷、格式统一、套用模板格式、docx格式修复、公文格式 |
 | [`z-dongxi`](z-dongxi/README.md) | 「动」悉万物：一段内容变一张会动的解析图，35 种图型 × 27 种风格 × 5 种画幅（3:4 公众号默认），单行 SVG 直接粘进公众号，可导出 PNG/GIF/MP4 | 动态图、动态流程图、动态SVG、动图解释、让这张图动起来、mermaid动起来、excalidraw风动图、动态甘特图、动态桑基图、层级状态机、等距图 |
-| [`z-xiaohongshu-cards`](z-xiaohongshu-cards/README.md) | 小红书 3:4 风格库：4 种可复现的命名风格，文章直接出 1080×1440 PNG，新风格持续沉淀 | 小红书卡片、小红书图文、3:4 图文、小绿书配图、做成卡片、沉淀这个风格 |
+| [`z-xiaohongshu-cards`](z-xiaohongshu-cards/README.md) | 小红书 3:4 风格库：12 种可复现的命名风格，文章直接出 1080×1440 PNG，新风格持续沉淀 | 小红书卡片、小红书图文、3:4 图文、小绿书配图、做成卡片、沉淀这个风格 |
 
 ## 「动」悉万物：会动的解析图
 

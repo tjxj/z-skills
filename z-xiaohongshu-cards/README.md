@@ -80,3 +80,7 @@ node scripts/check_all.cjs
 ## 新增风格
 
 按 [references/add-style.md](references/add-style.md) 操作。
+
+## 许可证
+
+本 Skill 采用 [MIT License](LICENSE)。字体由 npm 依赖提供，按上表各自的许可证使用。
