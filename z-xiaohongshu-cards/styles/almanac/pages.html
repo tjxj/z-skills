@@ -1,0 +1,45 @@
+<template data-part="decor"><div class="decor" data-bleed aria-hidden="true"><i class="pad"></i><i class="hole l"></i><i class="hole r"></i><i class="band"></i></div></template>
+<template data-part="head"><header class="head"><span class="htag">{{tag}}</span><span class="pg">第 {{no}} 张</span></header></template>
+<template data-part="foot"><footer class="foot"><span class="brand">{{brand}}</span><span class="fnote">{{note}}</span></footer></template>
+
+<template data-page="cover">
+  <div class="split">
+    <h1 class="title">{{title}}</h1>
+    <div class="side">
+      {{#kicker}}<p class="kicker">{{kicker}}</p>{{/kicker}}
+      {{#sub}}<p class="sub">{{sub}}</p>{{/sub}}
+      {{#hasTags}}<ul class="tags">{{#tags}}<li>{{.}}</li>{{/tags}}</ul>{{/hasTags}}
+    </div>
+  </div>
+  {{#image}}<figure class="shot"><img src="{{image}}" alt=""></figure>{{/image}}
+</template>
+
+<template data-page="points">
+  <h2 class="title">{{title}}</h2>
+  <ol class="list">{{#items}}<li class="item"><span class="idx">{{cn}}</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol>
+</template>
+
+<template data-page="steps">
+  <h2 class="title">{{title}}</h2>
+  <ol class="list">{{#items}}<li class="item"><span class="idx">{{cn}}</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol>
+</template>
+
+<template data-page="compare">
+  <h2 class="title">{{title}}</h2>
+  <div class="cols">
+    <section class="col a"><span class="char">宜</span><h3 class="clabel">{{left.label}}</h3><ul>{{#left.items}}<li>{{.}}</li>{{/left.items}}</ul></section>
+    <section class="col b"><span class="char">忌</span><h3 class="clabel">{{right.label}}</h3><ul>{{#right.items}}<li>{{.}}</li>{{/right.items}}</ul></section>
+  </div>
+  {{#verdict}}<p class="verdict">{{verdict}}</p>{{/verdict}}
+</template>
+
+<template data-page="quote">
+  <blockquote class="qtext">{{text}}</blockquote>
+  {{#source}}<p class="qsrc">{{source}}</p>{{/source}}
+</template>
+
+<template data-page="end">
+  <h2 class="title">{{title}}</h2>
+  {{#hasItems}}<ol class="list">{{#items}}<li class="item"><span class="idx">{{cn}}</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol>{{/hasItems}}
+  {{#cta}}<p class="cta">{{cta}}</p>{{/cta}}
+</template>

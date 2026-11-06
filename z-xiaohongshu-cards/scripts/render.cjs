@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * 把 cards.html 里的每个 .card 渲染成 1080×1440 PNG，并做版面检查。
+ * 把 cards.html 里的每个 .card 渲染成 1080×1440 PNG，内容放不下时自动缩字，并做版面检查。
  *
  *   node render.cjs <cards.html> [--out 输出目录] [--scale 1] [--sheet 总览图.jpg]
  *
@@ -50,6 +50,31 @@ function findSerif() {
   return list.find((p) => fs.existsSync(p)) || null;
 }
 
+/* 开源字体包：npm 安装后在任何系统上都能得到同样的字形。 */
+const FONT_PACKS = [
+  ['@fontsource-variable/noto-serif-sc', 'index.css'],
+  ['@fontsource-variable/noto-sans-sc', 'index.css'],
+  ['@fontsource-variable/jetbrains-mono', 'index.css'],
+  ['lxgw-wenkai-webfont', 'lxgwwenkai-regular.css'],
+  ['lxgw-wenkai-webfont', 'lxgwwenkai-bold.css'],
+];
+
+function fontCss() {
+  const css = [];
+  const missing = new Set();
+  for (const [pkg, entry] of FONT_PACKS) {
+    let file = null;
+    for (const from of [process.cwd(), __dirname]) {
+      try { file = require.resolve(`${pkg}/package.json`, { paths: [from] }); break; } catch (e) { /* 继续找 */ }
+    }
+    const full = file && path.join(path.dirname(file), entry);
+    if (!full || !fs.existsSync(full)) { missing.add(pkg); continue; }
+    const base = path.dirname(full);
+    css.push(fs.readFileSync(full, 'utf8').replace(/url\((['"]?)(\.\/)?(?!data:|https?:)([^'")]+)\1\)/g, (_, q, d, u) => `url("${pathToFileURL(path.join(base, u)).href}")`));
+  }
+  return { css: css.join('\n'), missing: [...missing] };
+}
+
 async function launch(chromium) {
   try {
     return await chromium.launch({ channel: 'chrome' });
@@ -58,15 +83,56 @@ async function launch(chromium) {
   }
 }
 
+/* 在页面里运行：内容放不下时按比例缩字，标题不低于 72px，其余不低于 24px。 */
+function fitCard(card) {
+  const main = card.querySelector('.main');
+  if (!main) return 1;
+  const over = () => {
+    const box = main.getBoundingClientRect();
+    return [...main.querySelectorAll('*')].some((el) => {
+      if (el.closest('[data-bleed],svg') || getComputedStyle(el).display === 'inline') return false;
+      const r = el.getBoundingClientRect();
+      return r.width > 0 && (r.bottom > box.bottom + 8 || r.right > box.right + 8 || r.left < box.left - 8 || r.top < box.top - 8);
+    });
+  };
+  window.__over = over;
+  /* 大数字先按宽度收，数字位数多时不挤出版面 */
+  const value = main.querySelector('.value');
+  const big = main.querySelector('.big');
+  if (value && big) {
+    const room = main.getBoundingClientRect().width - 24;
+    let px = parseFloat(getComputedStyle(value).fontSize);
+    const unit = big.querySelector('.unit');
+    const label = big.querySelector('.tot');
+    const used = () => [value, unit, label].reduce((w, el) => w + (el ? el.getBoundingClientRect().width + 20 : 0), 0);
+    while (used() > room && px > 72) { px -= 6; value.style.fontSize = `${px}px`; }
+  }
+  const texts = [...main.querySelectorAll('*')].filter((el) => [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()));
+  const base = texts.map((el) => parseFloat(getComputedStyle(el).fontSize));
+  let k = 1;
+  while (over() && k > 0.72) {
+    k -= 0.02;
+    texts.forEach((el, i) => {
+      const floor = el.closest('.title') ? 72 : 24;
+      el.style.fontSize = `${Math.max(Math.min(floor, base[i]), base[i] * k)}px`;
+    });
+  }
+  return Number(k.toFixed(2));
+}
+
 /* 在页面里运行：找出越界文字。带 data-bleed 的装饰元素不查。 */
 function inspectCard(card) {
   const box = card.getBoundingClientRect();
   const bad = [];
+  const small = [];
+  const main = card.querySelector('.main');
+  const clipped = !!(main && window.__over && window.__over());
   const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {
     const node = walker.currentNode;
     const text = node.textContent.trim();
     if (!text || node.parentElement.closest('[data-bleed],svg,style,script')) continue;
+    if (main && parseFloat(getComputedStyle(node.parentElement).fontSize) < 22) small.push(text.slice(0, 18));
     const range = document.createRange();
     range.selectNodeContents(node);
     for (const r of range.getClientRects()) {
@@ -82,6 +148,9 @@ function inspectCard(card) {
     h: Math.round(box.height),
     name: card.dataset.name || '',
     bad: [...new Set(bad)],
+    small: [...new Set(small)],
+    clipped,
+    ph: card.querySelectorAll('.ph').length,
   };
 }
 
@@ -108,16 +177,23 @@ async function main() {
       document.fonts.add(face);
       window.__serifReady = face.load().catch(() => null);
     }, pathToFileURL(serif).href);
-  } else {
-    console.warn('提示：没找到 SourceHanSerifSC-VF.ttf，用系统衬线字体回退，可设 XHS_SERIF_FONT 指定路径。');
   }
+
+  const fonts = fontCss();
+  if (fonts.missing.length) console.warn(`提示：缺少字体包 ${fonts.missing.join(' ')}，效果会随系统变化。安装：npm i ${fonts.missing.join(' ')}`);
 
   const page = await context.newPage();
   let failed = 0;
   page.on('pageerror', (e) => { console.error('页面错误：', e.message); failed++; });
   await page.goto(pathToFileURL(html).href);
   await page.waitForLoadState('networkidle');
+  if (fonts.css) await page.addStyleTag({ content: fonts.css });
   await page.evaluate(async () => {
+    /* 字体包按字符分片，先触发全部用到的分片再等待 */
+    const used = new Set();
+    document.querySelectorAll('.card *').forEach((el) => used.add(getComputedStyle(el).fontFamily));
+    const text = document.body.innerText;
+    await Promise.all([...used].flatMap((f) => [400, 700, 900].map((w) => document.fonts.load(`${w} 40px ${f}`, text).catch(() => null))));
     await (window.__serifReady || Promise.resolve());
     await document.fonts.ready;
     await Promise.all([...document.images].map((i) => (i.decode ? i.decode().catch(() => null) : null)));
@@ -128,6 +204,7 @@ async function main() {
   if (!cards.length) { console.error('没有找到 .card'); process.exit(1); }
   const files = [];
   for (let i = 0; i < cards.length; i++) {
+    const k = await cards[i].evaluate(fitCard);
     const info = await cards[i].evaluate(inspectCard);
     const n = String(i + 1).padStart(2, '0');
     const file = path.join(outDir, `xhs-${n}${info.name ? '-' + info.name : ''}.png`);
@@ -136,7 +213,9 @@ async function main() {
     const sized = info.w === W && info.h === H;
     if (!sized) failed++;
     if (info.bad.length) failed++;
-    console.log(`${n} ${path.basename(file)} ${info.w}×${info.h}${sized ? '' : ' 尺寸不对'}${info.bad.length ? ' 越界：' + info.bad.join(' / ') : ''}`);
+    if (info.clipped) failed++;
+    if (info.small.length) failed++;
+    console.log(`${n} ${path.basename(file)} ${info.w}×${info.h}${sized ? '' : ' 尺寸不对'}${k < 1 ? ` 自动缩字 ${k}` : ''}${info.clipped ? ' 内容放不下，删字或拆页' : ''}${info.small.length ? ' 字太小：' + info.small.join(' / ') : ''}${info.bad.length ? ' 越界：' + info.bad.join(' / ') : ''}${info.ph ? ' 还有占位块' : ''}`);
   }
 
   if (o.sheet) {

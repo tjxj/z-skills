@@ -1,0 +1,23 @@
+{
+  "style": "night-terminal",
+  "brand": "@你的账号",
+  "pages": [
+    {"type": "cover", "name": "cover", "tag": "git-tips", "kicker": "git log --since=today", "title": "误删代码\n还能救回来", "sub": "五条命令，覆盖最常见的翻车现场", "tags": ["reflog", "restore", "stash"], "note": "先收藏 出事再翻"},
+    {"type": "points", "name": "points", "tag": "git-tips", "title": "翻车前的**三个习惯**", "note": "预防比抢救省事", "items": [
+      {"head": "小步提交", "text": "每完成一件事就 commit"},
+      {"head": "先开分支", "text": "实验性改动别碰主分支"},
+      {"head": "推送备份", "text": "下班前 push 到远端"}
+    ]},
+    {"type": "steps", "name": "steps", "tag": "git-tips", "title": "救回提交的四步", "note": "reflog 默认保留约 90 天", "items": [
+      {"head": "git reflog", "text": "列出 HEAD 走过的每一步"},
+      {"head": "找到提交号", "text": "定位出事前的那条记录"},
+      {"head": "git branch rescue", "text": "在那条提交上开救援分支"},
+      {"head": "git switch rescue", "text": "确认代码回来了"}
+    ]},
+    {"type": "compare", "name": "diff", "tag": "git-tips", "title": "该用哪条命令", "left": {"label": "慎用", "items": ["reset --hard", "push --force", "clean -fd"]}, "right": {"label": "优先", "items": ["revert 提交", "push --force-with-lease", "stash -u 暂存"]}, "verdict": "能留痕的命令优先", "note": "共享分支尤其注意"},
+    {"type": "quote", "name": "quote", "tag": "git-tips", "text": "提交过的东西，\n基本都救得回来。", "source": "man git-reflog 读后感", "note": "没提交的就难说了"},
+    {"type": "stat", "name": "stat", "tag": "git-tips", "title": "reflog 的默认保留期", "value": "90", "unit": "天", "text": "过期后的不可达记录才可能被清理，够你反应过来了", "items": [{"head": "可达提交", "text": "保留 90 天"}, {"head": "不可达提交", "text": "保留 30 天"}], "note": "以 git 配置为准"},
+    {"type": "image", "name": "shot", "tag": "git-tips", "title": "reflog 输出长这样", "image": "../_base/sample-shot.svg", "caption": "HEAD@{n} 就是可以回去的位置", "note": "把截图换成你的"},
+    {"type": "end", "name": "end", "tag": "git-tips", "title": "今天就做这三件", "items": [{"head": "打开 reflog 看一眼"}, {"head": "配好 push 默认分支"}, {"head": "收藏这组命令"}], "cta": "你翻过最大的车是？", "note": "评论区比惨"}
+  ]
+}

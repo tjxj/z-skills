@@ -1,0 +1,53 @@
+<template data-part="decor"><div class="decor" data-bleed aria-hidden="true"><div class="paper"></div></div></template>
+<template data-part="head"><header class="head"><span class="shop">{{tag}}</span><span class="order"><span>NO.{{no}}/{{total}}</span><span>{{brand}}</span></span></header></template>
+<template data-part="foot"><footer class="foot"><div class="bar" data-bleed></div><span class="fnote">{{note}}</span></footer></template>
+
+<template data-page="cover">
+  {{#kicker}}<p class="kicker">{{kicker}}</p>{{/kicker}}
+  <h1 class="title">{{title}}</h1>
+  {{#sub}}<p class="sub">{{sub}}</p>{{/sub}}
+  {{#hasTags}}<ul class="tags">{{#tags}}<li><span>{{.}}</span><i></i><b>×1</b></li>{{/tags}}</ul>{{/hasTags}}
+  {{#image}}<figure class="shot"><img src="{{image}}" alt=""></figure>{{/image}}
+  <div class="stamp" data-bleed>已核对</div>
+</template>
+
+<template data-page="points">
+  <h2 class="title">{{title}}</h2>
+  <p class="cols-h"><span>项目</span><span>说明</span></p>
+  <ol class="list">{{#items}}<li class="item"><div class="row"><span class="idx">{{i}}</span><h3 class="ihead">{{head}}</h3><i></i><b>✓</b></div>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ol>
+</template>
+
+<template data-page="steps">
+  <h2 class="title">{{title}}</h2>
+  <p class="cols-h"><span>步骤</span><span>完成</span></p>
+  <ol class="list">{{#items}}<li class="item"><div class="row"><span class="idx">{{i}}</span><h3 class="ihead">{{head}}</h3><i></i><b class="box"></b></div>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ol>
+</template>
+
+<template data-page="compare">
+  <h2 class="title">{{title}}</h2>
+  <div class="cols">
+    <section class="col a"><h3 class="clabel">{{left.label}}</h3><ul>{{#left.items}}<li>{{.}}</li>{{/left.items}}</ul></section>
+    <section class="col b"><h3 class="clabel">{{right.label}}</h3><ul>{{#right.items}}<li>{{.}}</li>{{/right.items}}</ul></section>
+  </div>
+  {{#verdict}}<p class="verdict"><span>结论</span>{{verdict}}</p>{{/verdict}}
+</template>
+
+<template data-page="quote">
+  <p class="memo">*** 店 长 留 言 ***</p>
+  <blockquote class="qtext">{{text}}</blockquote>
+  {{#source}}<p class="qsrc">{{source}}</p>{{/source}}
+</template>
+
+<template data-page="stat">
+  <h2 class="title">{{title}}</h2>
+  {{#hasItems}}<ul class="list">{{#items}}<li class="item"><div class="row"><h3 class="ihead">{{head}}</h3><i></i><b>{{text}}</b></div></li>{{/items}}</ul>{{/hasItems}}
+  <div class="big"><span class="tot">合计</span><span class="value">{{value}}</span>{{#unit}}<span class="unit">{{unit}}</span>{{/unit}}</div>
+  {{#text}}<p class="bnote">{{text}}</p>{{/text}}
+</template>
+
+<template data-page="end">
+  <h2 class="title">{{title}}</h2>
+  {{#hasItems}}<ol class="list">{{#items}}<li class="item"><div class="row"><span class="idx">{{i}}</span><h3 class="ihead">{{head}}</h3><i></i><b>✓</b></div>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ol>{{/hasItems}}
+  {{#cta}}<p class="cta">{{cta}}</p>{{/cta}}
+  <p class="thanks">* 谢 谢 惠 顾 *</p>
+</template>

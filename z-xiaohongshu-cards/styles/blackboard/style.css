@@ -1,0 +1,68 @@
+/* 粉笔黑板：墨绿板面、擦痕、粉笔槽 */
+:root{--board:#1F3B33;--chalk:#FFFDF4;--yellow:#FFE36B;--pink:#FFB0B5;--blue:#BCE7F5;--wood:#7A5230}
+.card{background:var(--board);color:var(--chalk);font-family:var(--hand);font-weight:700;padding:74px 80px 124px}
+.decor{background:radial-gradient(120% 70% at 20% 10%,rgba(255,255,255,.07),transparent 60%),radial-gradient(90% 60% at 90% 90%,rgba(0,0,0,.28),transparent 70%)}
+.smear{position:absolute;border-radius:50%;background:rgba(255,255,255,.05);filter:blur(26px)}
+.s1{left:-80px;top:380px;width:720px;height:170px;transform:rotate(-8deg)}
+.s2{right:-120px;top:880px;width:640px;height:150px;transform:rotate(6deg)}
+.tray{position:absolute;left:0;right:0;bottom:0;height:58px;background:linear-gradient(#8E6238,#5E3D22);box-shadow:0 -6px 10px rgba(0,0,0,.35)}
+.stick{position:absolute;bottom:46px;height:18px;border-radius:5px}
+.stick.a{left:120px;width:96px;background:var(--chalk)}
+.stick.b{left:240px;width:64px;background:var(--pink);transform:rotate(-3deg)}
+.head,.foot,.title,.kicker,.sub,.tags,.list,.cols,.verdict,.memo,.qtext,.qsrc,.big,.bnote,.caption,.cta{filter:url(#chalk)}
+.head{font-size:30px;margin-bottom:48px;color:var(--blue)}
+.htag{border:4px solid var(--blue);border-radius:40px;padding:6px 26px}
+.foot{font-size:28px;color:var(--blue);margin-top:24px}
+.title{font-size:96px;line-height:1.22}
+mark{color:var(--yellow)}
+/* 封面 */
+.p-cover .main{justify-content:center}
+.kicker{font-size:40px;color:var(--pink);margin-bottom:26px}
+.p-cover .title{font-size:132px;line-height:1.16}
+.p-cover[data-tl="l"] .title{font-size:112px}
+.wave{width:80%;height:34px;margin-top:22px}
+.sub{font-size:46px;line-height:1.4;margin-top:40px;color:var(--blue)}
+.tags{display:flex;flex-wrap:wrap;gap:18px;margin-top:50px}
+.tags li{font-size:36px;padding:6px 26px;border:4px dashed var(--yellow);color:var(--yellow);border-radius:14px}
+.p-cover .shot{height:300px;margin-top:40px;border:5px solid var(--chalk);filter:grayscale(.3)}
+/* 列表 */
+.list{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;margin-top:32px}
+.item{display:flex;gap:30px;align-items:flex-start}
+.idx{flex:none;width:88px;height:88px;border:5px solid var(--yellow);border-radius:50%;color:var(--yellow);font-size:44px;display:flex;align-items:center;justify-content:center;transform:rotate(-4deg)}
+.item:nth-child(even) .idx{border-color:var(--pink);color:var(--pink);transform:rotate(3deg)}
+.ihead{font-size:58px;line-height:1.26}
+.itext{font-size:42px;line-height:1.38;margin-top:8px;color:var(--blue);font-weight:400}
+.p-steps .list{position:relative}
+.p-steps .item:not(:last-child)::after{content:"↓";position:absolute;margin:88px 0 0 28px;font-size:44px;color:var(--chalk);opacity:.7}
+/* 对比 */
+.cols{flex:1;display:grid;grid-template-columns:1fr 1fr;margin-top:40px;min-height:0}
+.col{padding:0 34px;display:flex;flex-direction:column}
+.col.a{padding-left:0;border-right:5px dashed rgba(244,241,230,.7)}
+.col.b{padding-right:0}
+.clabel{font-size:50px;color:var(--pink);padding-bottom:12px}
+.col.b .clabel{color:var(--yellow)}
+.col ul{flex:1;display:flex;flex-direction:column;justify-content:space-evenly}
+.col li{font-size:46px;line-height:1.36}
+.col li::before{content:"· ";color:var(--pink)}
+.col.b li::before{color:var(--yellow)}
+.verdict{font-size:46px;line-height:1.4;margin-top:30px;color:var(--board);background:var(--yellow);padding:16px 28px;border-radius:10px;transform:rotate(-.6deg)}
+/* 板书金句 */
+.p-quote .main{justify-content:center}
+.memo{font-size:40px;color:var(--pink);margin-bottom:40px}
+.qtext{font-size:98px;line-height:1.4;text-wrap:pretty}
+.qsrc{font-size:38px;color:var(--blue);margin-top:44px;text-align:right}
+/* 大数字 */
+.big{display:flex;align-items:baseline;gap:18px;justify-content:center;margin-top:46px;color:var(--yellow)}
+.value{font-size:280px;line-height:1.1}
+.unit{font-size:80px}
+.bnote{font-size:42px;line-height:1.44;margin-top:20px;text-align:center;font-weight:400}
+.p-stat .list{flex:1;flex-direction:row;gap:0;align-items:center;margin-top:20px}
+.p-stat .item{flex:1;flex-direction:column;gap:4px;text-align:center;padding:0 16px;border-left:4px dashed rgba(244,241,230,.5)}
+.p-stat .item:first-child{border-left:none}
+.p-stat .ihead{font-size:46px;color:var(--pink);width:100%}
+.p-stat .itext{font-size:36px;width:100%}
+/* 配图 */
+.p-image .shot{flex:1;margin-top:38px;border:6px solid var(--chalk);transform:rotate(-.6deg)}
+.caption{font-size:40px;line-height:1.4;margin-top:26px;color:var(--blue);font-weight:400}
+/* 结尾 */
+.cta{font-size:56px;color:var(--yellow);text-align:center;margin-top:30px}

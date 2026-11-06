@@ -1,0 +1,23 @@
+{
+  "style": "almanac",
+  "brand": "@你的账号",
+  "pages": [
+    {"type": "cover", "name": "cover", "tag": "霜降时节", "kicker": "一日一页的养生小历", "title": "秋冬\n养生历", "sub": "天凉之后这样过", "tags": ["吃", "睡", "动"], "note": "内容仅作生活参考"},
+    {"type": "points", "name": "food", "tag": "饮食", "title": "这个时节**吃什么**", "note": "因人而异 适量为宜", "items": [
+      {"head": "一碗热汤", "text": "白萝卜炖排骨，暖胃又不腻"},
+      {"head": "应季水果", "text": "梨和柿子，别空腹多吃"},
+      {"head": "少吃生冷", "text": "冰饮先放一放"}
+    ]},
+    {"type": "steps", "name": "steps", "tag": "作息", "title": "一日作息四时辰", "note": "能做到几条算几条", "items": [
+      {"head": "七点起床", "text": "晒十分钟太阳"},
+      {"head": "午后小憩", "text": "二十分钟就够"},
+      {"head": "傍晚散步", "text": "走到身上微微发热"},
+      {"head": "十一点前入睡", "text": "睡前泡脚十五分钟"}
+    ]},
+    {"type": "compare", "name": "yiji", "tag": "今日宜忌", "title": "秋冬日常宜忌", "left": {"label": "这样做", "items": ["添衣护颈", "开窗通风", "早睡早起"]}, "right": {"label": "别这样", "items": ["光脚踩地", "熬夜追剧", "冷水洗头"]}, "verdict": "身体的小信号，早一点听见", "note": "内容仅作生活参考"},
+    {"type": "quote", "name": "quote", "tag": "一句话", "text": "顺着天气过日子\n身体自然舒服", "source": "写在日历背面", "note": "撕下来留着"},
+    {"type": "stat", "name": "date", "tag": "小目标", "title": "每天走够这些步", "value": "6000", "unit": "步", "text": "不用追求一万步，走到微微出汗就很好", "items": [{"head": "饭后", "text": "散步二十分钟"}, {"head": "通勤", "text": "提前一站下车"}, {"head": "周末", "text": "去公园走走"}], "note": "数字仅作参考"},
+    {"type": "image", "name": "shot", "tag": "实拍", "title": "今日的一碗汤", "image": "../_base/sample-shot.svg", "caption": "炖上一小时，整个屋子都暖了", "note": "把图换成你的"},
+    {"type": "end", "name": "end", "tag": "明日", "title": "明天开始试试", "items": [{"head": "早睡半小时"}, {"head": "喝一碗热汤"}, {"head": "散步二十分钟"}], "cta": "你的秋冬养生小习惯是什么？", "note": "评论区分享"}
+  ]
+}

@@ -1,0 +1,71 @@
+/* 深夜终端：黑底绿字，命令行提示符串起全页 */
+:root{--bg:#0B0F13;--panel:#10161C;--fg:#E8F0EC;--mute:#A3B3AD;--green:#4DF29A;--amber:#FFB84D;--red:#FF6B6B;--line:#26313A}
+.card{background:var(--bg);color:var(--fg);font-family:var(--mono);padding:0}
+.scan{position:absolute;inset:0;background:repeating-linear-gradient(transparent 0 3px,rgba(255,255,255,.018) 3px 6px)}
+.head{height:88px;padding:0 44px;background:#171F27;border-bottom:3px solid var(--line);font-size:28px;color:var(--mute);gap:26px;justify-content:flex-start}
+.lights{display:flex;gap:14px}.lights i{width:24px;height:24px;border-radius:50%;background:var(--red)}.lights i:nth-child(2){background:var(--amber)}.lights i:nth-child(3){background:var(--green)}
+.htag{flex:1;font-weight:600}
+.main{padding:48px 60px 0}
+.foot{padding:18px 60px 34px;color:var(--mute);font-size:25px;border-top:3px solid var(--line);margin-top:24px}
+.title{font-size:80px;font-weight:800;line-height:1.2;letter-spacing:-1px}
+mark{color:var(--green)}
+.cmd{font-size:32px;font-weight:600;color:var(--green);margin-bottom:22px}
+.cmd::before{content:"$ ";color:var(--amber)}
+/* 封面 */
+.p-cover .main{justify-content:center}
+.kicker{font-size:36px;font-weight:600;color:var(--green);margin-bottom:34px}
+.kicker::before{content:"$ ";color:var(--amber)}
+.p-cover .title{font-size:124px;line-height:1.14;letter-spacing:-3px}
+.p-cover[data-tl="l"] .title{font-size:104px}
+.cursor{display:inline-block;width:.52em;height:.92em;background:var(--green);margin-left:18px;vertical-align:-.08em}
+.sub{font-size:40px;line-height:1.4;margin-top:44px;color:var(--mute)}
+.sub::before{content:"# ";color:var(--amber)}
+.tags{display:flex;flex-wrap:wrap;gap:16px;margin-top:48px}
+.tags li{font-size:32px;font-weight:600;color:var(--bg);background:var(--green);padding:8px 22px}
+.tags li::before{content:"--"}
+.p-cover .shot{height:300px;margin-top:40px;border:3px solid var(--line)}
+/* 列表 */
+.list{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;margin-top:24px}
+.item{display:flex;gap:28px;align-items:flex-start}
+.idx{flex:none;font-size:40px;font-weight:700;color:var(--amber);line-height:1.34}
+.ihead{font-size:52px;font-weight:800;line-height:1.26;color:var(--fg)}
+.itext{font-size:38px;line-height:1.42;margin-top:8px;color:var(--mute)}
+.itext::before{content:"# ";color:#4F5F5A}
+.ibody{flex:1;min-width:0}
+.ok{flex:none;color:var(--green);font-size:34px;font-weight:800;line-height:1.5}
+.ok::before{content:"[";color:var(--mute)}.ok::after{content:"]";color:var(--mute)}
+/* 差异 */
+.cols{flex:1;display:flex;flex-direction:column;gap:18px;margin-top:28px;min-height:0}
+.col{flex:1;padding:20px 26px;display:flex;flex-direction:column;background:rgba(255,107,107,.1);border-left:8px solid var(--red)}
+.col.b{background:rgba(77,242,154,.1);border-left-color:var(--green)}
+.clabel{font-size:34px;font-weight:700;color:var(--red)}
+.col.b .clabel{color:var(--green)}
+.col ul{flex:1;display:flex;flex-direction:column;justify-content:space-evenly}
+.col li{font-size:40px;font-weight:600;line-height:1.34}
+.col li::before{content:"- ";color:var(--red);font-weight:800}
+.col.b li::before{content:"+ ";color:var(--green)}
+.verdict{font-size:38px;font-weight:700;line-height:1.36;color:var(--amber);margin-top:22px}
+.verdict::before{content:"> "}
+/* 引言 */
+.p-quote .main{justify-content:center}
+.qtext{font-size:82px;font-weight:800;line-height:1.34;color:var(--green);margin-top:20px;text-wrap:pretty}
+.qsrc{font-size:34px;color:var(--mute);margin-top:44px}
+.qsrc::before{content:"# "}
+/* 指标 */
+.p-stat .big{display:flex;align-items:baseline;gap:18px;margin-top:40px;color:var(--green)}
+.value{font-size:280px;font-weight:800;line-height:1.04;letter-spacing:-10px}
+.unit{font-size:64px;font-weight:700;color:var(--amber)}
+.meter{height:46px;margin-top:18px;background:repeating-linear-gradient(90deg,var(--green) 0 24px,transparent 24px 34px);-webkit-mask:linear-gradient(90deg,#000 72%,rgba(0,0,0,.18) 72%)}
+.bnote{font-size:39px;line-height:1.44;margin-top:30px;color:var(--fg)}
+.p-stat .list{margin-top:18px;gap:8px;justify-content:center}
+.p-stat .item{gap:20px;align-items:baseline}
+.p-stat .ihead{font-size:42px;color:var(--amber);flex:none}
+.p-stat .itext{font-size:37px;margin-top:0}
+/* 配图 */
+.p-image .shot{flex:1;margin-top:30px;border:3px solid var(--line)}
+.caption{font-size:34px;line-height:1.4;margin-top:22px;color:var(--mute)}
+.caption::before{content:"# ";color:var(--amber)}
+/* 结尾 */
+.p-end .idx{color:var(--green)}
+.cta{font-size:44px;font-weight:800;color:var(--bg);background:var(--green);padding:18px 26px;margin-top:20px}
+.cta::before{content:"$ "}

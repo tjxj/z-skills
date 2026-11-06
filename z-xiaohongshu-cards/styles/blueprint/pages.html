@@ -1,0 +1,30 @@
+<template data-part="decor"><div class="decor" data-bleed aria-hidden="true"><i class="frame"></i><i class="tick t"></i><i class="tick b"></i><i class="tick l"></i><i class="tick r"></i></div></template>
+<template data-part="head"><header class="head"><span class="htag">{{tag}}</span><span class="pg">SHEET {{no}}/{{total}}</span></header></template>
+<template data-part="foot"><footer class="foot"><div class="tb a"><small>绘制</small><span class="brand">{{brand}}</span></div><div class="tb b"><small>备注</small><span class="fnote">{{note}}</span></div><div class="tb c"><small>图号</small><span>XHS-{{no}}</span></div></footer></template>
+
+<template data-page="cover">
+  <svg class="schem" data-bleed viewBox="0 0 880 500"><g fill="none" stroke="#CFE1FF" stroke-width="3"><circle cx="440" cy="250" r="210"/><circle cx="440" cy="250" r="150" stroke-dasharray="14 10"/><circle cx="440" cy="250" r="72"/><path d="M180 250H700M440 -6V506" stroke-dasharray="36 10 6 10"/><path d="M292 102 588 398M588 102 292 398" opacity=".5"/></g><g fill="#FFD166"><circle cx="440" cy="250" r="12"/><circle cx="590" cy="250" r="9"/><circle cx="440" cy="100" r="9"/><circle cx="292" cy="398" r="9"/></g><path d="M652 102 780 40H880" fill="none" stroke="#FFD166" stroke-width="3"/></svg>
+  {{#kicker}}<p class="kicker">{{kicker}}</p>{{/kicker}}
+  <h1 class="title">{{title}}</h1>
+  {{#sub}}<p class="sub">{{sub}}</p>{{/sub}}
+  {{#hasTags}}<ul class="tags">{{#tags}}<li>{{.}}</li>{{/tags}}</ul>{{/hasTags}}
+  {{#image}}<figure class="shot"><img src="{{image}}" alt=""></figure>{{/image}}
+</template>
+
+<template data-page="points">
+  <h2 class="title">{{title}}</h2>
+  <ol class="list">{{#items}}<li class="item"><span class="idx">{{n1}}</span><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol>
+</template>
+
+<template data-page="quote">
+  <p class="memo">技术要求</p>
+  <blockquote class="qtext">{{text}}</blockquote>
+  {{#source}}<p class="qsrc">{{source}}</p>{{/source}}
+</template>
+
+<template data-page="stat">
+  <h2 class="title">{{title}}</h2>
+  <div class="big"><span class="value">{{value}}</span>{{#unit}}<span class="unit">{{unit}}</span>{{/unit}}</div>
+  {{#text}}<p class="bnote">{{text}}</p>{{/text}}
+  {{#hasItems}}<ul class="list">{{#items}}<li class="item"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ul>{{/hasItems}}
+</template>
