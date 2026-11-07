@@ -1,0 +1,7 @@
+numpy>=1.24
+opencv-python>=4.8
+Pillow>=10.0
+fonttools>=4.40
+# optional: OpenType Sanitizer check (same validator browsers use)
+# opentype-sanitizer>=9.1
+# system tool, not pip: potrace  (brew install potrace / apt install potrace)
