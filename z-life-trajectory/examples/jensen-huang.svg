@@ -1,0 +1,817 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 17000" width="100%" style="display:block;max-width:750px;margin:0 auto;font-family:'Source Han Serif SC','Source Han Serif SC VF','Noto Serif SC','Noto Serif CJK SC','Songti SC',serif">
+<rect width="750" height="17000" fill="#F7F3EA"/>
+<path d="M15 15H750M15 45H750M15 75H750M15 105H750M15 135H750M15 165H750M15 195H750M15 225H750M15 255H750M15 285H750M15 315H750M15 345H750M15 375H750M15 405H750M15 435H750M15 465H750M15 495H750M15 525H750M15 555H750M15 585H750M15 615H750M15 645H750M15 675H750M15 705H750M15 735H750M15 765H750M15 795H750M15 825H750M15 855H750M15 885H750M15 915H750M15 945H750M15 975H750M15 1005H750M15 1035H750M15 1065H750M15 1095H750M15 1125H750M15 1155H750M15 1185H750M15 1215H750M15 1245H750M15 1275H750M15 1305H750M15 1335H750M15 1365H750M15 1395H750M15 1425H750M15 1455H750M15 1485H750M15 1515H750M15 1545H750M15 1575H750M15 1605H750M15 1635H750M15 1665H750M15 1695H750M15 1725H750M15 1755H750M15 1785H750M15 1815H750M15 1845H750M15 1875H750M15 1905H750M15 1935H750M15 1965H750M15 1995H750M15 2025H750M15 2055H750M15 2085H750M15 2115H750M15 2145H750M15 2175H750M15 2205H750M15 2235H750M15 2265H750M15 2295H750M15 2325H750M15 2355H750M15 2385H750M15 2415H750M15 2445H750M15 2475H750M15 2505H750M15 2535H750M15 2565H750M15 2595H750M15 2625H750M15 2655H750M15 2685H750M15 2715H750M15 2745H750M15 2775H750M15 2805H750M15 2835H750M15 2865H750M15 2895H750M15 2925H750M15 2955H750M15 2985H750M15 3015H750M15 3045H750M15 3075H750M15 3105H750M15 3135H750M15 3165H750M15 3195H750M15 3225H750M15 3255H750M15 3285H750M15 3315H750M15 3345H750M15 3375H750M15 3405H750M15 3435H750M15 3465H750M15 3495H750M15 3525H750M15 3555H750M15 3585H750M15 3615H750M15 3645H750M15 3675H750M15 3705H750M15 3735H750M15 3765H750M15 3795H750M15 3825H750M15 3855H750M15 3885H750M15 3915H750M15 3945H750M15 3975H750M15 4005H750M15 4035H750M15 4065H750M15 4095H750M15 4125H750M15 4155H750M15 4185H750M15 4215H750M15 4245H750M15 4275H750M15 4305H750M15 4335H750M15 4365H750M15 4395H750M15 4425H750M15 4455H750M15 4485H750M15 4515H750M15 4545H750M15 4575H750M15 4605H750M15 4635H750M15 4665H750M15 4695H750M15 4725H750M15 4755H750M15 4785H750M15 4815H750M15 4845H750M15 4875H750M15 4905H750M15 4935H750M15 4965H750M15 4995H750M15 5025H750M15 5055H750M15 5085H750M15 5115H750M15 5145H750M15 5175H750M15 5205H750M15 5235H750M15 5265H750M15 5295H750M15 5325H750M15 5355H750M15 5385H750M15 5415H750M15 5445H750M15 5475H750M15 5505H750M15 5535H750M15 5565H750M15 5595H750M15 5625H750M15 5655H750M15 5685H750M15 5715H750M15 5745H750M15 5775H750M15 5805H750M15 5835H750M15 5865H750M15 5895H750M15 5925H750M15 5955H750M15 5985H750M15 6015H750M15 6045H750M15 6075H750M15 6105H750M15 6135H750M15 6165H750M15 6195H750M15 6225H750M15 6255H750M15 6285H750M15 6315H750M15 6345H750M15 6375H750M15 6405H750M15 6435H750M15 6465H750M15 6495H750M15 6525H750M15 6555H750M15 6585H750M15 6615H750M15 6645H750M15 6675H750M15 6705H750M15 6735H750M15 6765H750M15 6795H750M15 6825H750M15 6855H750M15 6885H750M15 6915H750M15 6945H750M15 6975H750M15 7005H750M15 7035H750M15 7065H750M15 7095H750M15 7125H750M15 7155H750M15 7185H750M15 7215H750M15 7245H750M15 7275H750M15 7305H750M15 7335H750M15 7365H750M15 7395H750M15 7425H750M15 7455H750M15 7485H750M15 7515H750M15 7545H750M15 7575H750M15 7605H750M15 7635H750M15 7665H750M15 7695H750M15 7725H750M15 7755H750M15 7785H750M15 7815H750M15 7845H750M15 7875H750M15 7905H750M15 7935H750M15 7965H750M15 7995H750M15 8025H750M15 8055H750M15 8085H750M15 8115H750M15 8145H750M15 8175H750M15 8205H750M15 8235H750M15 8265H750M15 8295H750M15 8325H750M15 8355H750M15 8385H750M15 8415H750M15 8445H750M15 8475H750M15 8505H750M15 8535H750M15 8565H750M15 8595H750M15 8625H750M15 8655H750M15 8685H750M15 8715H750M15 8745H750M15 8775H750M15 8805H750M15 8835H750M15 8865H750M15 8895H750M15 8925H750M15 8955H750M15 8985H750M15 9015H750M15 9045H750M15 9075H750M15 9105H750M15 9135H750M15 9165H750M15 9195H750M15 9225H750M15 9255H750M15 9285H750M15 9315H750M15 9345H750M15 9375H750M15 9405H750M15 9435H750M15 9465H750M15 9495H750M15 9525H750M15 9555H750M15 9585H750M15 9615H750M15 9645H750M15 9675H750M15 9705H750M15 9735H750M15 9765H750M15 9795H750M15 9825H750M15 9855H750M15 9885H750M15 9915H750M15 9945H750M15 9975H750M15 10005H750M15 10035H750M15 10065H750M15 10095H750M15 10125H750M15 10155H750M15 10185H750M15 10215H750M15 10245H750M15 10275H750M15 10305H750M15 10335H750M15 10365H750M15 10395H750M15 10425H750M15 10455H750M15 10485H750M15 10515H750M15 10545H750M15 10575H750M15 10605H750M15 10635H750M15 10665H750M15 10695H750M15 10725H750M15 10755H750M15 10785H750M15 10815H750M15 10845H750M15 10875H750M15 10905H750M15 10935H750M15 10965H750M15 10995H750M15 11025H750M15 11055H750M15 11085H750M15 11115H750M15 11145H750M15 11175H750M15 11205H750M15 11235H750M15 11265H750M15 11295H750M15 11325H750M15 11355H750M15 11385H750M15 11415H750M15 11445H750M15 11475H750M15 11505H750M15 11535H750M15 11565H750M15 11595H750M15 11625H750M15 11655H750M15 11685H750M15 11715H750M15 11745H750M15 11775H750M15 11805H750M15 11835H750M15 11865H750M15 11895H750M15 11925H750M15 11955H750M15 11985H750M15 12015H750M15 12045H750M15 12075H750M15 12105H750M15 12135H750M15 12165H750M15 12195H750M15 12225H750M15 12255H750M15 12285H750M15 12315H750M15 12345H750M15 12375H750M15 12405H750M15 12435H750M15 12465H750M15 12495H750M15 12525H750M15 12555H750M15 12585H750M15 12615H750M15 12645H750M15 12675H750M15 12705H750M15 12735H750M15 12765H750M15 12795H750M15 12825H750M15 12855H750M15 12885H750M15 12915H750M15 12945H750M15 12975H750M15 13005H750M15 13035H750M15 13065H750M15 13095H750M15 13125H750M15 13155H750M15 13185H750M15 13215H750M15 13245H750M15 13275H750M15 13305H750M15 13335H750M15 13365H750M15 13395H750M15 13425H750M15 13455H750M15 13485H750M15 13515H750M15 13545H750M15 13575H750M15 13605H750M15 13635H750M15 13665H750M15 13695H750M15 13725H750M15 13755H750M15 13785H750M15 13815H750M15 13845H750M15 13875H750M15 13905H750M15 13935H750M15 13965H750M15 13995H750M15 14025H750M15 14055H750M15 14085H750M15 14115H750M15 14145H750M15 14175H750M15 14205H750M15 14235H750M15 14265H750M15 14295H750M15 14325H750M15 14355H750M15 14385H750M15 14415H750M15 14445H750M15 14475H750M15 14505H750M15 14535H750M15 14565H750M15 14595H750M15 14625H750M15 14655H750M15 14685H750M15 14715H750M15 14745H750M15 14775H750M15 14805H750M15 14835H750M15 14865H750M15 14895H750M15 14925H750M15 14955H750M15 14985H750M15 15015H750M15 15045H750M15 15075H750M15 15105H750M15 15135H750M15 15165H750M15 15195H750M15 15225H750M15 15255H750M15 15285H750M15 15315H750M15 15345H750M15 15375H750M15 15405H750M15 15435H750M15 15465H750M15 15495H750M15 15525H750M15 15555H750M15 15585H750M15 15615H750M15 15645H750M15 15675H750M15 15705H750M15 15735H750M15 15765H750M15 15795H750M15 15825H750M15 15855H750M15 15885H750M15 15915H750M15 15945H750M15 15975H750M15 16005H750M15 16035H750M15 16065H750M15 16095H750M15 16125H750M15 16155H750M15 16185H750M15 16215H750M15 16245H750M15 16275H750M15 16305H750M15 16335H750M15 16365H750M15 16395H750M15 16425H750M15 16455H750M15 16485H750M15 16515H750M15 16545H750M15 16575H750M15 16605H750M15 16635H750M15 16665H750M15 16695H750M15 16725H750M15 16755H750M15 16785H750M15 16815H750M15 16845H750M15 16875H750M15 16905H750M15 16935H750M15 16965H750M15 16995H750" fill="none" stroke="#E6DED0" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0 30"/>
+<rect x="0" y="14000" width="750" height="1000" fill="#1E2430"/>
+<path d="M15 14015H750M15 14045H750M15 14075H750M15 14105H750M15 14135H750M15 14165H750M15 14195H750M15 14225H750M15 14255H750M15 14285H750M15 14315H750M15 14345H750M15 14375H750M15 14405H750M15 14435H750M15 14465H750M15 14495H750M15 14525H750M15 14555H750M15 14585H750M15 14615H750M15 14645H750M15 14675H750M15 14705H750M15 14735H750M15 14765H750M15 14795H750M15 14825H750M15 14855H750M15 14885H750M15 14915H750M15 14945H750M15 14975H750" fill="none" stroke="#2A3242" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0 30"/>
+<text x="706" y="1098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">01</text>
+<rect x="118" y="1080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="1087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1963 — 1973</text>
+<text x="118" y="1152" font-size="52" fill="#1E2430" font-weight="900">在台南和曼谷长大</text>
+<text x="118" y="1196" font-size="22" fill="#5F636B">九岁那年，被父母送往美国</text>
+<text x="706" y="2098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">02</text>
+<rect x="118" y="2080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="2087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1973 — 1975 · 肯塔基</text>
+<text x="118" y="2152" font-size="52" fill="#1E2430" font-weight="900">误入问题少年学校</text>
+<text x="118" y="2196" font-size="22" fill="#5F636B">为了凑学费，父母几乎卖掉了全部家当</text>
+<text x="706" y="3098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">03</text>
+<rect x="118" y="3080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="3087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1975 — 1978 · 俄勒冈</text>
+<text x="118" y="3152" font-size="52" fill="#1E2430" font-weight="900">跳级、编程、打乒乓</text>
+<text x="118" y="3196" font-size="22" fill="#5F636B">父母赶到美国，一家人终于团聚</text>
+<text x="706" y="4098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">04</text>
+<rect x="118" y="4080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="4087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1978 — 1985</text>
+<text x="118" y="4152" font-size="52" fill="#1E2430" font-weight="900">一边洗碗，一边读书</text>
+<text x="118" y="4196" font-size="22" fill="#5F636B">Denny's 夜班、俄勒冈州立大学、AMD</text>
+<text x="706" y="5098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">05</text>
+<rect x="118" y="5080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="5087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1985 — 1992</text>
+<text x="118" y="5152" font-size="52" fill="#1E2430" font-weight="900">遇见两位合伙人</text>
+<text x="118" y="5196" font-size="22" fill="#5F636B">在 LSI Logic 做图形芯片</text>
+<text x="706" y="6098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">06</text>
+<rect x="118" y="6080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="6087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1992 — 1993</text>
+<text x="118" y="6152" font-size="52" fill="#1E2430" font-weight="900">在 Denny's 卡座里创业</text>
+<text x="118" y="6196" font-size="22" fill="#5F636B">30 岁生日那天，他正式加入</text>
+<text x="706" y="7098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">07</text>
+<rect x="118" y="7080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="7087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1995 — 1996</text>
+<text x="118" y="7152" font-size="52" fill="#1E2430" font-weight="900">第一款芯片就押错了</text>
+<text x="118" y="7196" font-size="22" fill="#5F636B">微软只认三角形，NV1 押的是四边形</text>
+<text x="706" y="8098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">08</text>
+<rect x="118" y="8080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="8087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1997 — 1998</text>
+<text x="118" y="8152" font-size="52" fill="#1E2430" font-weight="900">离破产只有 30 天</text>
+<text x="118" y="8196" font-size="22" fill="#5F636B">这句话，他在员工大会上讲了很多年</text>
+<text x="706" y="9098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">09</text>
+<rect x="118" y="9080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="9087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">1999 — 2001</text>
+<text x="118" y="9152" font-size="52" fill="#1E2430" font-weight="900">造出第一块 GPU</text>
+<text x="118" y="9196" font-size="22" fill="#5F636B">上市、拿下 Xbox、收购老对手</text>
+<text x="706" y="10098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">10</text>
+<rect x="118" y="10080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="10087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">2004 — 2007</text>
+<text x="118" y="10152" font-size="52" fill="#1E2430" font-weight="900">让显卡学会计算</text>
+<text x="118" y="10196" font-size="22" fill="#5F636B">为了 CUDA，英伟达前后投入超过 10 亿美元</text>
+<text x="706" y="11098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">11</text>
+<rect x="118" y="11080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="11087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">2010 — 2017</text>
+<text x="118" y="11152" font-size="52" fill="#1E2430" font-weight="900">AI 从两块游戏显卡开始</text>
+<text x="118" y="11196" font-size="22" fill="#5F636B">2017 年，还有人没听说过英伟达</text>
+<text x="706" y="12098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">12</text>
+<rect x="118" y="12080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="12087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">2018 — 2022</text>
+<text x="118" y="12152" font-size="52" fill="#1E2430" font-weight="900">从显卡公司到 AI 平台</text>
+<text x="118" y="12196" font-size="22" fill="#5F636B">收购、扩张，然后等来 ChatGPT</text>
+<text x="706" y="13098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">13</text>
+<rect x="118" y="13080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="13087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">2023</text>
+<text x="118" y="13152" font-size="52" fill="#1E2430" font-weight="900">从卡座到万亿</text>
+<text x="118" y="13196" font-size="22" fill="#5F636B">600 美元起家，30 年后市值破万亿</text>
+<text x="706" y="14098" font-size="104" fill="#2C3446" font-weight="900" text-anchor="end" letter-spacing="-3">14</text>
+<rect x="118" y="14080" width="24" height="5" rx="2.5" fill="#E58A63"/>
+<text x="154" y="14087" font-size="19" fill="#E58A63" font-weight="700" letter-spacing="2">2024 — 2025</text>
+<text x="706" y="15098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">15</text>
+<rect x="118" y="15080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="15087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">2026</text>
+<text x="118" y="15152" font-size="52" fill="#1E2430" font-weight="900">荣誉在这一年到顶</text>
+<text x="118" y="15196" font-size="22" fill="#5F636B">然后，一切急转直下</text>
+<text x="706" y="16098" font-size="104" fill="#E9DFCC" font-weight="900" text-anchor="end" letter-spacing="-3">16</text>
+<rect x="118" y="16080" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="154" y="16087" font-size="19" fill="#C65D3B" font-weight="700" letter-spacing="2">2026.10.29 — 11.12</text>
+<text x="118" y="16152" font-size="52" fill="#1E2430" font-weight="900">最后 14 天</text>
+<text x="118" y="16196" font-size="22" fill="#5F636B">从第一篇报道到辞职</text>
+<path d="M78,1062 V16684.2" fill="none" stroke="#C65D3B" stroke-width="10" stroke-linecap="round"/>
+<path d="M78,1062 V16684.2" fill="none" stroke="#FFF3EA" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="22 218" opacity="0.95"><animate attributeName="stroke-dashoffset" values="0;-240" dur="2.2s" repeatCount="indefinite"/></path>
+<rect x="54" y="1056" width="48" height="11" rx="3" fill="#1E2430"/>
+<rect x="48" y="44" width="654" height="56" rx="28" fill="#1E2430"/>
+<circle cx="80" cy="72" r="7" fill="#D97757"><animate attributeName="opacity" values="1;0.15;1" dur="1.6s" repeatCount="indefinite"/></circle>
+<text x="100" y="79" font-size="18" fill="#F7F3EA" font-weight="700" letter-spacing="0.5" font-family="'SF Mono',Menlo,Consolas,monospace">2026.11.12</text>
+<text x="235" y="79" font-size="19" fill="#F7F3EA" font-weight="600">英伟达官宣：黄仁勋辞去总裁、CEO 及董事职务</text>
+<text x="702" y="198" font-size="20" fill="#5F636B" font-weight="700" text-anchor="end" letter-spacing="3">执掌英伟达</text>
+<text x="656" y="314" font-size="136" fill="#C65D3B" font-weight="900" text-anchor="end" letter-spacing="-4">33</text>
+<text x="702" y="312" font-size="40" fill="#C65D3B" font-weight="800" text-anchor="end">年</text>
+<text x="40" y="314" font-size="140" fill="#1E2430" font-weight="900" letter-spacing="-4">黄仁勋</text>
+<text x="46" y="404" font-size="70" fill="#1E2430" font-weight="700">的人生轨迹</text>
+<text x="702" y="404" font-size="28" fill="#8B877F" font-weight="600" text-anchor="end">1963—2026</text>
+<text x="48" y="458" font-size="22" fill="#5F636B">台南 → 曼谷 → 肯塔基 → 俄勒冈 → 硅谷</text>
+<line x1="48" y1="494" x2="702" y2="494" stroke="#D8CFBF" stroke-width="1.5"/>
+<rect x="48" y="527" width="24" height="5" rx="2.5" fill="#C65D3B"/>
+<text x="84" y="535" font-size="20" fill="#1E2430" font-weight="800" letter-spacing="2">人生线路图</text>
+<text x="702" y="535" font-size="17" fill="#8B877F" font-weight="600" text-anchor="end">15 站 · 63 年</text>
+<path d="M110,612 H620 A65,65 0 0 1 620,742 H110 A65,65 0 0 0 110,872 H620" fill="none" stroke="#C65D3B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="105" y="590" width="10" height="44" rx="3" fill="#1E2430"/>
+<text x="110" y="586" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">1963</text>
+<text x="110" y="652" font-size="18" fill="#5F636B" text-anchor="middle">出生</text>
+<circle cx="237.5" cy="612" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="237.5" y="586" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">1973</text>
+<text x="237.5" y="652" font-size="18" fill="#5F636B" text-anchor="middle">赴美</text>
+<circle cx="365" cy="612" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="365" y="586" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">1984</text>
+<text x="365" y="652" font-size="18" fill="#5F636B" text-anchor="middle">大学毕业</text>
+<circle cx="492.5" cy="612" r="12" fill="#1E2430"/><circle cx="492.5" cy="612" r="5" fill="#D97757"/>
+<text x="492.5" y="586" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">1993</text>
+<text x="492.5" y="652" font-size="18" fill="#5F636B" text-anchor="middle">创立英伟达</text>
+<circle cx="620" cy="612" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="620" y="586" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">1997</text>
+<text x="620" y="652" font-size="18" fill="#5F636B" text-anchor="middle">险些破产</text>
+<circle cx="620" cy="742" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="620" y="716" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">1999</text>
+<text x="620" y="782" font-size="18" fill="#5F636B" text-anchor="middle">GPU 问世</text>
+<circle cx="492.5" cy="742" r="12" fill="#1E2430"/><circle cx="492.5" cy="742" r="5" fill="#D97757"/>
+<text x="492.5" y="716" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2006</text>
+<text x="492.5" y="782" font-size="18" fill="#5F636B" text-anchor="middle">CUDA</text>
+<circle cx="365" cy="742" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="365" y="716" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2012</text>
+<text x="365" y="782" font-size="18" fill="#5F636B" text-anchor="middle">AlexNet</text>
+<circle cx="237.5" cy="742" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="237.5" y="716" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2016</text>
+<text x="237.5" y="782" font-size="18" fill="#5F636B" text-anchor="middle">DGX-1</text>
+<circle cx="110" cy="742" r="12" fill="#1E2430"/><circle cx="110" cy="742" r="5" fill="#D97757"/>
+<text x="110" y="716" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2022</text>
+<text x="110" y="782" font-size="18" fill="#5F636B" text-anchor="middle">ChatGPT</text>
+<circle cx="110" cy="872" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="110" y="846" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2023</text>
+<text x="110" y="912" font-size="18" fill="#5F636B" text-anchor="middle">万亿市值</text>
+<circle cx="237.5" cy="872" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="237.5" y="846" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2024</text>
+<text x="237.5" y="912" font-size="18" fill="#5F636B" text-anchor="middle">全球第一</text>
+<circle cx="365" cy="872" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="365" y="846" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2025</text>
+<text x="365" y="912" font-size="18" fill="#5F636B" text-anchor="middle">5 万亿</text>
+<circle cx="492.5" cy="872" r="8.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.2"/>
+<text x="492.5" y="846" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2026.01</text>
+<text x="492.5" y="912" font-size="18" fill="#5F636B" text-anchor="middle">IEEE 勋章</text>
+<rect x="615" y="850" width="10" height="44" rx="3" fill="#1E2430"/>
+<text x="620" y="846" font-size="20" fill="#1E2430" font-weight="800" text-anchor="middle">2026.11</text>
+<text x="620" y="912" font-size="18" fill="#C65D3B" font-weight="700" text-anchor="middle">辞职</text>
+<g><animateMotion path="M110,612 H620 A65,65 0 0 1 620,742 H110 A65,65 0 0 0 110,872 H620" dur="15.0s" rotate="auto" repeatCount="indefinite"/><rect x="-17" y="-8" width="34" height="16" rx="8" fill="#1E2430"/><rect x="-11" y="-3.5" width="7" height="7" rx="1.5" fill="#F7F3EA"/><rect x="-1" y="-3.5" width="7" height="7" rx="1.5" fill="#F7F3EA"/><circle cx="12" cy="0" r="2.6" fill="#D97757"/></g>
+<text x="650" y="964" font-size="18" fill="#8B877F" text-anchor="end">往下，逐站细看</text>
+<path d="M664,950 l14,12 l14,-12" fill="none" stroke="#C65D3B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><animateTransform attributeName="transform" type="translate" values="0 -4;0 6;0 -4" dur="1.6s" repeatCount="indefinite"/></path>
+<circle cx="78" cy="1250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="1258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1963.02.17</text>
+<text x="118" y="1298" font-size="29" fill="#1E2430" font-weight="800">出生，幼年在台南</text>
+<text x="118" y="1336" font-size="21" fill="#5F636B">家中次子，父亲是炼油厂化学工程师，母亲是老师</text>
+<rect x="118" y="1373.8" width="584" height="140" rx="16" fill="#FFFFFF" stroke="#E2D9C8" stroke-width="1.5"/>
+<g transform="translate(200 1445.8) scale(0.8)"><path d="M0,-28 Q-28,-40 -58,-30 L-58,30 Q-28,20 0,32 Z" fill="#FFFFFF" stroke="#1E2430" stroke-width="3" stroke-linejoin="round"/><path d="M0,-28 Q28,-40 58,-30 L58,30 Q28,20 0,32 Z" fill="#FFFFFF" stroke="#1E2430" stroke-width="3" stroke-linejoin="round"/><line x1="-46" y1="-12" x2="-12" y2="-10" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="-10" x2="46" y2="-12" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="-46" y1="1" x2="-12" y2="3" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="3" x2="46" y2="1" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="-46" y1="14" x2="-12" y2="16" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="16" x2="46" y2="14" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><g><path d="M0,-28 Q28,-40 58,-30 L58,30 Q28,20 0,32 Z" fill="#F7F3EA" stroke="#1E2430" stroke-width="3" stroke-linejoin="round"/><line x1="12" y1="-10" x2="46" y2="-12" stroke="#D97757" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="3" x2="46" y2="1" stroke="#D97757" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="16" x2="46" y2="14" stroke="#D97757" stroke-width="2.5" stroke-linecap="round"/><animateTransform attributeName="transform" type="scale" values="1 1;1 1;-1 1;-1 1;1 1" keyTimes="0;0.3;0.45;0.8;1" dur="4.4s" repeatCount="indefinite"/></g></g>
+<text x="290" y="1415.8" font-size="22" fill="#1E2430" font-weight="800">每天 10 个英文单词</text>
+<text x="290" y="1443.8" font-size="18" fill="#5F636B">母亲从字典里随机挑，教兄弟俩</text>
+<rect x="290" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="307" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">1</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.050;0.070;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="290" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="307" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">1</text></g>
+<rect x="331" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="348" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">2</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.120;0.140;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="331" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="348" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">2</text></g>
+<rect x="372" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="389" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">3</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.190;0.210;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="372" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="389" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">3</text></g>
+<rect x="413" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="430" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">4</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.260;0.280;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="413" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="430" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">4</text></g>
+<rect x="454" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="471" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">5</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.330;0.350;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="454" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="471" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">5</text></g>
+<rect x="495" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="512" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">6</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.400;0.420;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="495" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="512" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">6</text></g>
+<rect x="536" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="553" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">7</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.470;0.490;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="536" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="553" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">7</text></g>
+<rect x="577" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="594" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">8</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.540;0.560;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="577" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="594" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">8</text></g>
+<rect x="618" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="635" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">9</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.610;0.630;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="618" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="635" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">9</text></g>
+<rect x="659" y="1459.75" width="34" height="34" rx="6" fill="#F7F3EA" stroke="#D8CFBF" stroke-width="1.5"/>
+<text x="676" y="1481.8" font-size="13" fill="#A39E94" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">10</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.680;0.700;0.93;1" dur="6s" repeatCount="indefinite"/><rect x="659" y="1459.75" width="34" height="34" rx="6" fill="#C65D3B"/><text x="676" y="1481.8" font-size="13" fill="#FFFFFF" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">10</text></g>
+<circle cx="78" cy="1557.5" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="1565.5" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1968 · 5 岁</text>
+<text x="118" y="1605.5" font-size="29" fill="#1E2430" font-weight="800">随父亲工作迁居泰国</text>
+<text x="118" y="1643.5" font-size="21" fill="#5F636B">在曼谷读国际学校，一住约四年</text>
+<circle cx="78" cy="1695.2" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="1695.2" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="1695.2" r="5.5" fill="#D97757"/>
+<text x="118" y="1703.2" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1973 · 9 岁</text>
+<text x="118" y="1743.2" font-size="29" fill="#1E2430" font-weight="800">和哥哥被送往美国</text>
+<text x="118" y="1781.2" font-size="21" fill="#5F636B">父亲在纽约受训回来，决心让儿子去美国读书</text>
+<text x="118" y="1814.2" font-size="21" fill="#5F636B">投奔华盛顿州塔科马的叔叔，英语还不流利</text>
+<path d="M170,1922.0 C300,1850.0 510,1850.0 640,1922.0" fill="none" stroke="#C65D3B" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 12"/>
+<circle cx="170" cy="1922.0" r="6.5" fill="#1E2430"/>
+<text x="170" y="1954" font-size="17" fill="#5F636B" font-weight="700" text-anchor="middle">亚洲</text>
+<circle cx="640" cy="1922.0" r="6.5" fill="#1E2430"/>
+<text x="640" y="1954" font-size="17" fill="#5F636B" font-weight="700" text-anchor="middle">美国</text>
+<text x="405" y="1907" font-size="15" fill="#8B877F" text-anchor="middle" letter-spacing="2">飞越太平洋</text>
+<path d="M13,0 L4,-3 L-2,-12 L-6,-12 L-3,-3 L-10,-3 L-13,-8 L-16,-8 L-14,0 L-16,8 L-13,8 L-10,3 L-3,3 L-6,12 L-2,12 L4,3 Z" fill="#1E2430" opacity="0"><animateMotion path="M170,1922.0 C300,1850.0 510,1850.0 640,1922.0" dur="3.6s" rotate="auto" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.88;1" dur="3.6s" repeatCount="indefinite"/></path>
+<text x="702" y="1988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">01 / 16</text>
+<circle cx="78" cy="2250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="2258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1973</text>
+<text x="118" y="2298" font-size="29" fill="#1E2430" font-weight="800">和哥哥进了 Oneida 浸信会学院</text>
+<text x="118" y="2336" font-size="21" fill="#5F636B">叔叔婶婶以为这是名校，其实专收问题少年</text>
+<circle cx="78" cy="2407" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="2415" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">10 岁</text>
+<text x="118" y="2455" font-size="29" fill="#1E2430" font-weight="800">年纪太小，只能去读当地小学</text>
+<text x="118" y="2493" font-size="21" fill="#5F636B">常被欺负、挨打，每天都要打扫厕所</text>
+<text x="118" y="2526" font-size="21" fill="#5F636B">也是在这里，学会了打乒乓球、加入游泳队</text>
+<rect x="118" y="2583" width="584" height="200" rx="16" fill="#FFFFFF" stroke="#E2D9C8" stroke-width="1.5"/>
+<g transform="translate(250 2669) scale(0.85)"><path d="M0,-28 Q-28,-40 -58,-30 L-58,30 Q-28,20 0,32 Z" fill="#FFFFFF" stroke="#1E2430" stroke-width="3" stroke-linejoin="round"/><path d="M0,-28 Q28,-40 58,-30 L58,30 Q28,20 0,32 Z" fill="#FFFFFF" stroke="#1E2430" stroke-width="3" stroke-linejoin="round"/><line x1="-46" y1="-12" x2="-12" y2="-10" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="-10" x2="46" y2="-12" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="-46" y1="1" x2="-12" y2="3" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="3" x2="46" y2="1" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="-46" y1="14" x2="-12" y2="16" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="16" x2="46" y2="14" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round"/><g><path d="M0,-28 Q28,-40 58,-30 L58,30 Q28,20 0,32 Z" fill="#F7F3EA" stroke="#1E2430" stroke-width="3" stroke-linejoin="round"/><line x1="12" y1="-10" x2="46" y2="-12" stroke="#D97757" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="3" x2="46" y2="1" stroke="#D97757" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="16" x2="46" y2="14" stroke="#D97757" stroke-width="2.5" stroke-linecap="round"/><animateTransform attributeName="transform" type="scale" values="1 1;1 1;-1 1;-1 1;1 1" keyTimes="0;0.3;0.45;0.8;1" dur="4.4s" repeatCount="indefinite"/></g></g>
+<g transform="translate(570 2669) scale(0.85)"><g><animateTransform attributeName="transform" type="translate" values="0 14;0 -6;0 14" dur="1.8s" repeatCount="indefinite"/><line x1="-60" y1="0" x2="60" y2="0" stroke="#1E2430" stroke-width="5" stroke-linecap="round"/><rect x="-52" y="-29" width="13" height="58" rx="3" fill="#1E2430"/><rect x="-37" y="-20" width="10" height="40" rx="3" fill="#C65D3B"/><rect x="39" y="-29" width="13" height="58" rx="3" fill="#1E2430"/><rect x="27" y="-20" width="10" height="40" rx="3" fill="#C65D3B"/></g><ellipse cx="0" cy="50" rx="44" ry="6" fill="#D8CFBF" opacity="0.7"/></g>
+<path d="M318,2645.0 Q410,2601.0 494,2641.0" fill="none" stroke="#D8CFBF" stroke-width="3" stroke-linecap="round"/>
+<path d="M318,2645.0 Q410,2601.0 494,2641.0" fill="none" stroke="#C65D3B" stroke-width="3" stroke-linecap="round" stroke-dasharray="12 14"><animate attributeName="stroke-dashoffset" values="0;-26" dur="0.9s" repeatCount="indefinite"/></path>
+<path d="M494,2695.0 Q410,2739.0 318,2695.0" fill="none" stroke="#D8CFBF" stroke-width="3" stroke-linecap="round"/>
+<path d="M494,2695.0 Q410,2739.0 318,2695.0" fill="none" stroke="#C65D3B" stroke-width="3" stroke-linecap="round" stroke-dasharray="12 14"><animate attributeName="stroke-dashoffset" values="0;-26" dur="0.9s" repeatCount="indefinite"/></path>
+<path d="M483.4,2642.4 L494.0,2641.0 L488.4,2631.8" fill="none" stroke="#C65D3B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M328.6,2693.6 L318.0,2695.0 L323.6,2704.2" fill="none" stroke="#C65D3B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="406" y="2676" font-size="16" fill="#8B877F" font-weight="700" text-anchor="middle" letter-spacing="2">交换</text>
+<text x="250" y="2757" font-size="18" fill="#1E2430" font-weight="800" text-anchor="middle">他教室友识字</text>
+<text x="570" y="2757" font-size="18" fill="#1E2430" font-weight="800" text-anchor="middle">室友教他卧推</text>
+<text x="144" y="2856" font-size="20" fill="#5F636B" font-weight="600">2002 年，他说肯塔基的日子</text>
+<text x="144" y="2904" font-size="30" fill="#1E2430" font-weight="900">比人生中几乎任何一段</text>
+<text x="144" y="2948" font-size="30" fill="#C65D3B" font-weight="900">都记得清楚</text>
+<rect x="118" y="2832.0" width="5" height="128" rx="2.5" fill="#C65D3B"/>
+<text x="702" y="2988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">02 / 16</text>
+<circle cx="78" cy="3250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="3258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1975</text>
+<text x="118" y="3298" font-size="29" fill="#1E2430" font-weight="800">全家在俄勒冈团聚</text>
+<text x="118" y="3336" font-size="21" fill="#5F636B">他进了 Aloha 高中，连跳两级</text>
+<rect x="118" y="3377.3" width="584" height="262" rx="16" fill="#FFFFFF" stroke="#E2D9C8" stroke-width="1.5"/>
+<rect x="138" y="3399.3333333333335" width="240" height="172" rx="12" fill="#E9DFC9" stroke="#1E2430" stroke-width="3"/>
+<rect x="154" y="3413.3333333333335" width="208" height="140" rx="6" fill="#0F2418"/>
+<text x="162" y="3430.3" font-size="13" fill="#7CE38B" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">SCORE 07</text>
+<path d="M170,3447.3333333333335 L346,3447.3333333333335 L346,3477.3333333333335 L194,3477.3333333333335 L194,3507.3333333333335 L346,3507.3333333333335 L346,3537.3333333333335 L170,3537.3333333333335 L170,3447.3333333333335" fill="none" stroke="#1D3A27" stroke-width="2" stroke-dasharray="2 6"/>
+<rect x="282" y="3503.3333333333335" width="8" height="8" fill="#F2C14E"><animate attributeName="opacity" values="1;0.2;1" dur="0.8s" repeatCount="indefinite"/></rect>
+<path d="M170,3447.3333333333335 L346,3447.3333333333335 L346,3477.3333333333335 L194,3477.3333333333335 L194,3507.3333333333335 L346,3507.3333333333335 L346,3537.3333333333335 L170,3537.3333333333335 L170,3447.3333333333335" fill="none" stroke="#7CE38B" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter" stroke-dasharray="64 772"><animate attributeName="stroke-dashoffset" values="0;-836" dur="7s" repeatCount="indefinite"/></path>
+<rect x="132" y="3581.3333333333335" width="252" height="40" rx="8" fill="#E9DFC9" stroke="#1E2430" stroke-width="3"/>
+<rect x="146" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="167" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="188" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="209" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="230" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="251" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="272" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="293" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="314" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="335" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="356" y="3589.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="146" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="167" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="188" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="209" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="230" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="251" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="272" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="293" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="314" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="335" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<rect x="356" y="3602.3333333333335" width="15" height="8" rx="2" fill="#CDBF9F"/>
+<line x1="88" y1="3508.3" x2="118" y2="3508.3" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="78" cy="3508.3" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="410" y="3443.3" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1977</text>
+<text x="410" y="3483.3" font-size="25" fill="#1E2430" font-weight="800">学校买来一台 Apple II</text>
+<text x="410" y="3527.3" font-size="19" fill="#5F636B">他玩文字游戏《超级星际迷航》</text>
+<text x="410" y="3559.3" font-size="19" fill="#5F636B">还用 BASIC 写了自己的贪吃蛇</text>
+<text x="410" y="3603.3" font-size="17" fill="#8B877F" font-weight="600">那年他 14 岁</text>
+<circle cx="78" cy="3686.7" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="3694.7" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1978 · 15 岁</text>
+<text x="118" y="3734.7" font-size="29" fill="#1E2430" font-weight="800">全美乒乓球公开赛，青少年双打第三名</text>
+<text x="118" y="3772.7" font-size="21" fill="#5F636B">在全国排得上名次，还参加数学、计算机和科学社团</text>
+<rect x="118" y="3814" width="584" height="146" rx="16" fill="#FFFFFF" stroke="#E2D9C8" stroke-width="1.5"/>
+<line x1="236" y1="3926.0000000000005" x2="584" y2="3926.0000000000005" stroke="#1E2430" stroke-width="6" stroke-linecap="round"/>
+<line x1="410" y1="3926.0000000000005" x2="410" y2="3902.0000000000005" stroke="#1E2430" stroke-width="3"/>
+<line x1="262" y1="3926.0000000000005" x2="262" y2="3950.0000000000005" stroke="#1E2430" stroke-width="4" stroke-linecap="round"/>
+<line x1="558" y1="3926.0000000000005" x2="558" y2="3950.0000000000005" stroke="#1E2430" stroke-width="4" stroke-linecap="round"/>
+<ellipse cx="196" cy="3876.0000000000005" rx="12" ry="16" fill="#C65D3B"/><line x1="194" y1="3890.0000000000005" x2="189" y2="3908.0000000000005" stroke="#1E2430" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="624" cy="3876.0000000000005" rx="12" ry="16" fill="#2C6E6A"/><line x1="626" y1="3890.0000000000005" x2="631" y2="3908.0000000000005" stroke="#1E2430" stroke-width="5" stroke-linecap="round"/>
+<path d="M212,3874.0000000000005 Q356,3812.0000000000005 500,3920.0000000000005 Q560,3854.0000000000005 608,3874.0000000000005 Q464,3812.0000000000005 320,3920.0000000000005 Q260,3854.0000000000005 212,3874.0000000000005" fill="none" stroke="#D8CFBF" stroke-width="1.5" stroke-dasharray="2 7"/>
+<circle r="7" fill="#E9A23B" stroke="#1E2430" stroke-width="1.5"><animateMotion path="M212,3874.0000000000005 Q356,3812.0000000000005 500,3920.0000000000005 Q560,3854.0000000000005 608,3874.0000000000005 Q464,3812.0000000000005 320,3920.0000000000005 Q260,3854.0000000000005 212,3874.0000000000005" dur="2.2s" repeatCount="indefinite"/></circle>
+<text x="702" y="3988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">03 / 16</text>
+<rect x="118" y="4236" width="584" height="190.8" rx="16" fill="#FFFFFF" stroke="#E2D9C8" stroke-width="1.5"/>
+<g transform="translate(242 4331.4) scale(1.05)"><ellipse cx="0" cy="52" rx="60" ry="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="3"/><path d="M-18,-20 c-8,-7 8,-12 0,-19 c-8,-7 8,-11 0,-18" fill="none" stroke="#A39E94" stroke-width="3" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="2.4s" begin="0.0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 6;0 -6" dur="2.4s" begin="0.0s" repeatCount="indefinite"/></path><path d="M0,-20 c-8,-7 8,-12 0,-19 c-8,-7 8,-11 0,-18" fill="none" stroke="#A39E94" stroke-width="3" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="2.4s" begin="0.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 6;0 -6" dur="2.4s" begin="0.8s" repeatCount="indefinite"/></path><path d="M18,-20 c-8,-7 8,-12 0,-19 c-8,-7 8,-11 0,-18" fill="none" stroke="#A39E94" stroke-width="3" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="2.4s" begin="1.6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 6;0 -6" dur="2.4s" begin="1.6s" repeatCount="indefinite"/></path><path d="M40,2 h10 a15,15 0 0 1 0,30 h-10" fill="none" stroke="#1E2430" stroke-width="4.5"/><rect x="-40" y="-14" width="80" height="62" rx="12" fill="#FFFFFF" stroke="#1E2430" stroke-width="4.5"/><rect x="-38" y="6" width="76" height="11" fill="#F2DCD0"/></g>
+<text x="350" y="4282.8" font-size="21" fill="#C65D3B" font-weight="800">1978 — 1983</text>
+<text x="350" y="4322.8" font-size="25" fill="#1E2430" font-weight="800">Denny's 通宵夜班</text>
+<text x="350" y="4360.8" font-size="19" fill="#5F636B">洗碗、收桌，后来当服务员</text>
+<text x="350" y="4390.8" font-size="19" fill="#5F636B">这是他人生的第一份工作</text>
+<line x1="88" y1="4331.4" x2="118" y2="4331.4" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="78" cy="4331.4" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<circle cx="78" cy="4467.4" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="4475.4" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">16 岁</text>
+<text x="118" y="4515.4" font-size="29" fill="#1E2430" font-weight="800">高中毕业</text>
+<text x="118" y="4553.4" font-size="21" fill="#5F636B">因为学费便宜，选了俄勒冈州立大学</text>
+<text x="118" y="4586.4" font-size="21" fill="#5F636B">他回忆，自己是班上年纪最小、唯一像个孩子的学生</text>
+<circle cx="78" cy="4634.9" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="4634.9" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="4634.9" r="5.5" fill="#D97757"/>
+<text x="118" y="4642.9" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1984</text>
+<text x="118" y="4682.9" font-size="29" fill="#1E2430" font-weight="800">电子工程学士，以最高荣誉毕业</text>
+<text x="118" y="4720.9" font-size="21" fill="#5F636B">实验课搭档 Lori Mills，后来成了他的妻子</text>
+<circle cx="78" cy="4769.5" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="4777.5" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1984</text>
+<text x="118" y="4817.5" font-size="29" fill="#1E2430" font-weight="800">加入 AMD，设计微处理器</text>
+<text x="118" y="4855.5" font-size="21" fill="#5F636B">德州仪器、AMD、LSI Logic 都给了他录用通知</text>
+<circle cx="78" cy="4904" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="4912" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1985</text>
+<text x="118" y="4952" font-size="29" fill="#1E2430" font-weight="800">和 Lori 结婚</text>
+<text x="702" y="4988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">04 / 16</text>
+<circle cx="78" cy="5250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="5258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1985</text>
+<text x="118" y="5298" font-size="29" fill="#1E2430" font-weight="800">跳槽到 LSI Logic</text>
+<text x="118" y="5336" font-size="21" fill="#5F636B">和 Sun 合作，认识了 Sun 的两位工程师</text>
+<text x="118" y="5369" font-size="21" fill="#5F636B">Chris Malachowsky 和 Curtis Priem</text>
+<rect x="118" y="5449" width="584" height="290" rx="16" fill="#FFFFFF" stroke="#E2D9C8" stroke-width="1.5"/>
+<g transform="translate(249 5581) scale(1.55)"><rect x="-62" y="-58" width="124" height="90" rx="10" fill="#DAD5CC" stroke="#1E2430" stroke-width="3"/><rect x="-51" y="-47" width="102" height="68" rx="6" fill="#151B26"/><path d="M-36.5,-32.1 L-11.1,-39.7 M-36.5,-32.1 L-29.2,13.3 M-36.5,-32.1 L21.0,-26.8 M-11.1,-39.7 L-9.5,-6.8 M-11.1,-39.7 L27.3,-37.6 M-29.2,13.3 L-9.5,-6.8 M-29.2,13.3 L16.0,25.6 M-9.5,-6.8 L23.0,-1.0 M21.0,-26.8 L27.3,-37.6 M21.0,-26.8 L16.0,25.6 M27.3,-37.6 L23.0,-1.0 M16.0,25.6 L23.0,-1.0" fill="none" stroke="#7FD6CF" stroke-width="2.4" stroke-linecap="round"><animate attributeName="d" values="M-36.5,-32.1 L-11.1,-39.7 M-36.5,-32.1 L-29.2,13.3 M-36.5,-32.1 L21.0,-26.8 M-11.1,-39.7 L-9.5,-6.8 M-11.1,-39.7 L27.3,-37.6 M-29.2,13.3 L-9.5,-6.8 M-29.2,13.3 L16.0,25.6 M-9.5,-6.8 L23.0,-1.0 M21.0,-26.8 L27.3,-37.6 M21.0,-26.8 L16.0,25.6 M27.3,-37.6 L23.0,-1.0 M16.0,25.6 L23.0,-1.0;M-36.6,-33.1 L-7.8,-39.9 M-36.6,-33.1 L-29.5,10.8 M-36.6,-33.1 L15.3,-26.1 M-7.8,-39.9 L-6.7,-7.3 M-7.8,-39.9 L29.8,-37.0 M-29.5,10.8 L-6.7,-7.3 M-29.5,10.8 L11.6,27.0 M-6.7,-7.3 L25.0,0.7 M15.3,-26.1 L29.8,-37.0 M15.3,-26.1 L11.6,27.0 M29.8,-37.0 L25.0,0.7 M11.6,27.0 L25.0,0.7;M-36.1,-34.1 L-4.5,-40.0 M-36.1,-34.1 L-29.4,8.3 M-36.1,-34.1 L9.0,-25.7 M-4.5,-40.0 L-3.8,-7.6 M-4.5,-40.0 L32.1,-36.3 M-29.4,8.3 L-3.8,-7.6 M-29.4,8.3 L6.8,28.0 M-3.8,-7.6 L26.6,2.6 M9.0,-25.7 L32.1,-36.3 M9.0,-25.7 L6.8,28.0 M32.1,-36.3 L26.6,2.6 M6.8,28.0 L26.6,2.6;M-34.9,-35.0 L-1.1,-40.1 M-34.9,-35.0 L-28.7,6.0 M-34.9,-35.0 L2.2,-25.4 M-1.1,-40.1 L-0.9,-7.7 M-1.1,-40.1 L33.9,-35.5 M-28.7,6.0 L-0.9,-7.7 M-28.7,6.0 L1.7,28.5 M-0.9,-7.7 L28.0,4.6 M2.2,-25.4 L33.9,-35.5 M2.2,-25.4 L1.7,28.5 M33.9,-35.5 L28.0,4.6 M1.7,28.5 L28.0,4.6;M-33.3,-35.8 L2.3,-40.1 M-33.3,-35.8 L-27.6,3.9 M-33.3,-35.8 L-4.6,-25.5 M2.3,-40.1 L2.0,-7.7 M2.3,-40.1 L35.4,-34.7 M-27.6,3.9 L2.0,-7.7 M-27.6,3.9 L-3.5,28.4 M2.0,-7.7 L29.0,6.8 M-4.6,-25.5 L35.4,-34.7 M-4.6,-25.5 L-3.5,28.4 M35.4,-34.7 L29.0,6.8 M-3.5,28.4 L29.0,6.8;M-31.3,-36.6 L5.6,-40.0 M-31.3,-36.6 L-26.1,1.9 M-31.3,-36.6 L-11.2,-25.8 M5.6,-40.0 L4.8,-7.5 M5.6,-40.0 L36.3,-33.7 M-26.1,1.9 L4.8,-7.5 M-26.1,1.9 L-8.5,27.7 M4.8,-7.5 L29.5,9.2 M-11.2,-25.8 L36.3,-33.7 M-11.2,-25.8 L-8.5,27.7 M36.3,-33.7 L29.5,9.2 M-8.5,27.7 L29.5,9.2;M-29.0,-37.2 L9.0,-39.9 M-29.0,-37.2 L-24.3,0.1 M-29.0,-37.2 L-17.4,-26.3 M9.0,-39.9 L7.7,-7.1 M9.0,-39.9 L36.6,-32.7 M-24.3,0.1 L7.7,-7.1 M-24.3,0.1 L-13.2,26.6 M7.7,-7.1 L29.5,11.6 M-17.4,-26.3 L36.6,-32.7 M-17.4,-26.3 L-13.2,26.6 M36.6,-32.7 L29.5,11.6 M-13.2,26.6 L29.5,11.6;M-26.4,-37.8 L12.2,-39.7 M-26.4,-37.8 L-22.3,-1.5 M-26.4,-37.8 L-22.8,-27.0 M12.2,-39.7 L10.5,-6.5 M12.2,-39.7 L36.3,-31.7 M-22.3,-1.5 L10.5,-6.5 M-22.3,-1.5 L-17.5,25.0 M10.5,-6.5 L28.9,14.2 M-22.8,-27.0 L36.3,-31.7 M-22.8,-27.0 L-17.5,25.0 M36.3,-31.7 L28.9,14.2 M-17.5,25.0 L28.9,14.2;M-23.6,-38.4 L15.5,-39.4 M-23.6,-38.4 L-20.0,-2.9 M-23.6,-38.4 L-27.4,-27.9 M15.5,-39.4 L13.2,-5.8 M15.5,-39.4 L35.1,-30.6 M-20.0,-2.9 L13.2,-5.8 M-20.0,-2.9 L-21.1,23.0 M13.2,-5.8 L27.7,16.7 M-27.4,-27.9 L35.1,-30.6 M-27.4,-27.9 L-21.1,23.0 M35.1,-30.6 L27.7,16.7 M-21.1,23.0 L27.7,16.7;M-20.6,-38.8 L18.6,-39.1 M-20.6,-38.8 L-17.6,-4.2 M-20.6,-38.8 L-31.1,-28.9 M18.6,-39.1 L15.9,-4.9 M18.6,-39.1 L33.0,-29.6 M-17.6,-4.2 L15.9,-4.9 M-17.6,-4.2 L-24.2,20.8 M15.9,-4.9 L25.8,19.2 M-31.1,-28.9 L33.0,-29.6 M-31.1,-28.9 L-24.2,20.8 M33.0,-29.6 L25.8,19.2 M-24.2,20.8 L25.8,19.2;M-17.5,-39.2 L21.7,-38.7 M-17.5,-39.2 L-15.0,-5.2 M-17.5,-39.2 L-33.8,-29.9 M21.7,-38.7 L18.4,-3.8 M21.7,-38.7 L29.9,-28.5 M-15.0,-5.2 L18.4,-3.8 M-15.0,-5.2 L-26.5,18.4 M18.4,-3.8 L23.2,21.6 M-33.8,-29.9 L29.9,-28.5 M-33.8,-29.9 L-26.5,18.4 M29.9,-28.5 L23.2,21.6 M-26.5,18.4 L23.2,21.6;M-14.4,-39.5 L24.6,-38.2 M-14.4,-39.5 L-12.3,-6.1 M-14.4,-39.5 L-35.6,-31.0 M24.6,-38.2 L20.8,-2.5 M24.6,-38.2 L25.9,-27.6 M-12.3,-6.1 L20.8,-2.5 M-12.3,-6.1 L-28.2,15.9 M20.8,-2.5 L19.9,23.8 M-35.6,-31.0 L25.9,-27.6 M-35.6,-31.0 L-28.2,15.9 M25.9,-27.6 L19.9,23.8 M-28.2,15.9 L19.9,23.8;M-11.1,-39.7 L27.3,-37.6 M-11.1,-39.7 L-9.5,-6.8 M-11.1,-39.7 L-36.5,-32.1 M27.3,-37.6 L23.0,-1.0 M27.3,-37.6 L21.0,-26.8 M-9.5,-6.8 L23.0,-1.0 M-9.5,-6.8 L-29.2,13.3 M23.0,-1.0 L16.0,25.6 M-36.5,-32.1 L21.0,-26.8 M-36.5,-32.1 L-29.2,13.3 M21.0,-26.8 L16.0,25.6 M-29.2,13.3 L16.0,25.6" dur="2.6s" repeatCount="indefinite"/></path><path d="M-18,32 L18,32 L24,46 L-24,46 Z" fill="#C9C3B8" stroke="#1E2430" stroke-width="2.5" stroke-linejoin="round"/><rect x="-46" y="46" width="92" height="9" rx="4" fill="#DAD5CC" stroke="#1E2430" stroke-width="2.5"/></g>
+<text x="249" y="5719" font-size="15" fill="#8B877F" font-weight="600" text-anchor="middle">Sun 工作站</text>
+<text x="364" y="5513.4" font-size="21" fill="#C65D3B" font-weight="800">1989</text>
+<text x="364" y="5553.4" font-size="25" fill="#1E2430" font-weight="800">三个人一起做出</text>
+<text x="364" y="5587.4" font-size="25" fill="#1E2430" font-weight="800">GX 图形引擎</text>
+<text x="364" y="5625.4" font-size="19" fill="#5F636B">GX 卖得非常好</text>
+<text x="364" y="5655.4" font-size="19" fill="#5F636B">他升任 CoreWare 部门总监</text>
+<text x="364" y="5685.4" font-size="19" fill="#5F636B">这个部门专为硬件厂商造芯片</text>
+<line x1="88" y1="5594" x2="118" y2="5594" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="78" cy="5594" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<circle cx="78" cy="5825" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="5833" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1992</text>
+<text x="118" y="5873" font-size="29" fill="#1E2430" font-weight="800">斯坦福电子工程硕士</text>
+<text x="118" y="5911" font-size="21" fill="#5F636B">一边上班、一边带两个孩子，用业余时间读完</text>
+<g transform="translate(638 5865) scale(0.85)"><g transform="translate(0 -8)"><path d="M-34,2 L-34,30 Q0,46 34,30 L34,2 Z" fill="#1E2430"/><path d="M0,-34 L62,-8 L0,18 L-62,-8 Z" fill="#1E2430" stroke="#1E2430" stroke-width="3" stroke-linejoin="round"/><path d="M0,-26 L46,-8 L0,10 L-46,-8 Z" fill="#2E3646"/><circle cx="0" cy="-8" r="4" fill="#D97757"/><g><animateTransform attributeName="transform" type="rotate" values="-7 48 -4;9 48 -4;-7 48 -4" dur="2.8s" repeatCount="indefinite"/><path d="M0,-8 L48,-4 L48,34" fill="none" stroke="#D97757" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="43" y="32" width="10" height="18" rx="3" fill="#D97757"/></g></g></g>
+<text x="702" y="5988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">05 / 16</text>
+<circle cx="78" cy="6250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="6258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1992</text>
+<text x="118" y="6298" font-size="29" fill="#1E2430" font-weight="800">三个人常约在 Denny's 碰头</text>
+<text x="118" y="6336" font-size="21" fill="#5F636B">圣何塞东边的一家店，咖啡便宜，比家里安静</text>
+<rect x="150" y="6394.333333333333" width="520" height="46" rx="16" fill="#E8C6B5"/>
+<rect x="150" y="6564.333333333333" width="520" height="46" rx="16" fill="#E8C6B5"/>
+<rect x="176" y="6450.333333333333" width="468" height="104" rx="14" fill="#FFFFFF" stroke="#1E2430" stroke-width="3"/>
+<rect x="314" y="6476.333333333333" width="10" height="8" rx="3" fill="none" stroke="#1E2430" stroke-width="3"/>
+<circle cx="300" cy="6480.333333333333" r="16" fill="#FFFFFF" stroke="#1E2430" stroke-width="3"/><circle cx="300" cy="6480.333333333333" r="10.5" fill="#6E4B3A"/>
+<circle cx="300" cy="6480.333333333333" r="10.5" fill="none" stroke="#D97757" stroke-width="2" opacity="0"><animate attributeName="r" values="10;22" dur="3s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0" dur="3s" begin="0s" repeatCount="indefinite"/></circle>
+<text x="300" y="6424.3" font-size="17" fill="#1E2430" font-weight="600" text-anchor="middle">Chris Malachowsky</text>
+<rect x="534" y="6476.333333333333" width="10" height="8" rx="3" fill="none" stroke="#1E2430" stroke-width="3"/>
+<circle cx="520" cy="6480.333333333333" r="16" fill="#FFFFFF" stroke="#1E2430" stroke-width="3"/><circle cx="520" cy="6480.333333333333" r="10.5" fill="#6E4B3A"/>
+<circle cx="520" cy="6480.333333333333" r="10.5" fill="none" stroke="#D97757" stroke-width="2" opacity="0"><animate attributeName="r" values="10;22" dur="3s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+<text x="520" y="6424.3" font-size="17" fill="#1E2430" font-weight="600" text-anchor="middle">Curtis Priem</text>
+<rect x="424" y="6522.333333333333" width="10" height="8" rx="3" fill="none" stroke="#1E2430" stroke-width="3"/>
+<circle cx="410" cy="6526.333333333333" r="16" fill="#FFFFFF" stroke="#1E2430" stroke-width="3"/><circle cx="410" cy="6526.333333333333" r="10.5" fill="#6E4B3A"/>
+<circle cx="410" cy="6526.333333333333" r="10.5" fill="none" stroke="#D97757" stroke-width="2" opacity="0"><animate attributeName="r" values="10;22" dur="3s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0" dur="3s" begin="2s" repeatCount="indefinite"/></circle>
+<text x="410" y="6594.3" font-size="18" fill="#1E2430" font-weight="800" text-anchor="middle">黄仁勋 · 30 岁 · CEO</text>
+<g transform="rotate(-6 572 6526.333333333333)"><rect x="526" y="6504.333333333333" width="94" height="46" rx="3" fill="#FBF7EE" stroke="#D8CFBF" stroke-width="1.5"/><text x="573" y="6522.3" font-size="14" fill="#8B877F" text-anchor="middle">NVision</text><line x1="546" y1="6517.333333333333" x2="600" y2="6517.333333333333" stroke="#C65D3B" stroke-width="2"/><text x="573" y="6543.3" font-size="16" fill="#1E2430" font-weight="800" text-anchor="middle" letter-spacing="1">NVIDIA</text></g>
+<text x="196" y="6506.3" font-size="14" fill="#8B877F">NVision 已被</text>
+<text x="196" y="6526.3" font-size="14" fill="#8B877F">厕纸厂商注册</text>
+<text x="196" y="6546.3" font-size="14" fill="#C65D3B" font-weight="800">invidia：拉丁语“嫉妒”</text>
+<circle cx="78" cy="6674.7" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="6682.7" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1993.02.17</text>
+<text x="118" y="6722.7" font-size="29" fill="#1E2430" font-weight="800">30 岁生日，正式加入</text>
+<text x="118" y="6760.7" font-size="21" fill="#5F636B">三人在 Priem 弗里蒙特的联排别墅里开工</text>
+<circle cx="78" cy="6833" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="6833" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="6833" r="5.5" fill="#D97757"/>
+<text x="118" y="6841" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1993.04.05</text>
+<text x="118" y="6881" font-size="29" fill="#1E2430" font-weight="800">英伟达成立</text>
+<text x="118" y="6919" font-size="21" fill="#5F636B">律师收走他兜里的 200 美元当注册资本，三人共 600 美元</text>
+<text x="118" y="6952" font-size="21" fill="#5F636B">路演讲砸了，红杉仍凭 LSI 老板的推荐投了钱</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.08;0.12;0.92;1" dur="5s" repeatCount="indefinite"/><rect x="330" y="6850.999999999999" width="70" height="34" rx="5" fill="#E7EFE6" stroke="#2C6E6A" stroke-width="2"/><text x="365" y="6874" font-size="15" fill="#2C6E6A" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">$200</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.20;0.24;0.92;1" dur="5s" repeatCount="indefinite"/><rect x="412" y="6850.999999999999" width="70" height="34" rx="5" fill="#E7EFE6" stroke="#2C6E6A" stroke-width="2"/><text x="447" y="6874" font-size="15" fill="#2C6E6A" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">$200</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.32;0.36;0.92;1" dur="5s" repeatCount="indefinite"/><rect x="494" y="6850.999999999999" width="70" height="34" rx="5" fill="#E7EFE6" stroke="#2C6E6A" stroke-width="2"/><text x="529" y="6874" font-size="15" fill="#2C6E6A" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">$200</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.46;0.50;0.92;1" dur="5s" repeatCount="indefinite"/><text x="582" y="6876" font-size="21" fill="#C65D3B" font-weight="800" font-family="'SF Mono',Menlo,Consolas,monospace">= $600</text></g>
+<text x="702" y="6988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">06 / 16</text>
+<circle cx="78" cy="7250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="7258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1995</text>
+<text x="118" y="7298" font-size="29" fill="#1E2430" font-weight="800">首款芯片 NV1 失败</text>
+<text x="118" y="7336" font-size="21" fill="#5F636B">它押注四边形渲染，微软 Direct3D 却只支持三角形</text>
+<rect x="118" y="7389.7" width="584" height="230" rx="16" fill="#FFFFFF" stroke="#E2D9C8" stroke-width="1.5"/>
+<rect x="178" y="7419.666666666667" width="168" height="126" fill="#F3ECDF"/>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="1.92s" begin="0.00s" repeatCount="indefinite"/><polygon points="178,7419.666666666667 220,7419.666666666667 220,7461.666666666667 178,7461.666666666667" fill="#D97757"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="1.92s" begin="0.32s" repeatCount="indefinite"/><polygon points="220,7419.666666666667 262,7419.666666666667 262,7461.666666666667 220,7461.666666666667" fill="#D97757"/><polygon points="178,7461.666666666667 220,7461.666666666667 220,7503.666666666667 178,7503.666666666667" fill="#D97757"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="1.92s" begin="0.64s" repeatCount="indefinite"/><polygon points="262,7419.666666666667 304,7419.666666666667 304,7461.666666666667 262,7461.666666666667" fill="#D97757"/><polygon points="220,7461.666666666667 262,7461.666666666667 262,7503.666666666667 220,7503.666666666667" fill="#D97757"/><polygon points="178,7503.666666666667 220,7503.666666666667 220,7545.666666666667 178,7545.666666666667" fill="#D97757"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="1.92s" begin="0.96s" repeatCount="indefinite"/><polygon points="304,7419.666666666667 346,7419.666666666667 346,7461.666666666667 304,7461.666666666667" fill="#D97757"/><polygon points="262,7461.666666666667 304,7461.666666666667 304,7503.666666666667 262,7503.666666666667" fill="#D97757"/><polygon points="220,7503.666666666667 262,7503.666666666667 262,7545.666666666667 220,7545.666666666667" fill="#D97757"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="1.92s" begin="1.28s" repeatCount="indefinite"/><polygon points="304,7461.666666666667 346,7461.666666666667 346,7503.666666666667 304,7503.666666666667" fill="#D97757"/><polygon points="262,7503.666666666667 304,7503.666666666667 304,7545.666666666667 262,7545.666666666667" fill="#D97757"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="1.92s" begin="1.60s" repeatCount="indefinite"/><polygon points="304,7503.666666666667 346,7503.666666666667 346,7545.666666666667 304,7545.666666666667" fill="#D97757"/></g>
+<path d="M178,7419.666666666667H346M178,7461.666666666667H346M178,7503.666666666667H346M178,7545.666666666667H346M178,7419.666666666667V7545.666666666667M220,7419.666666666667V7545.666666666667M262,7419.666666666667V7545.666666666667M304,7419.666666666667V7545.666666666667M346,7419.666666666667V7545.666666666667" fill="none" stroke="#1E2430" stroke-width="2.2" stroke-linecap="round"/>
+<rect x="468" y="7419.666666666667" width="168" height="126" fill="#F3ECDF"/>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="2.24s" begin="0.00s" repeatCount="indefinite"/><polygon points="468,7419.666666666667 510,7419.666666666667 510,7461.666666666667" fill="#2C6E6A"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="2.24s" begin="0.32s" repeatCount="indefinite"/><polygon points="468,7419.666666666667 510,7461.666666666667 468,7461.666666666667" fill="#2C6E6A"/><polygon points="510,7419.666666666667 552,7419.666666666667 552,7461.666666666667" fill="#2C6E6A"/><polygon points="468,7461.666666666667 510,7461.666666666667 510,7503.666666666667" fill="#2C6E6A"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="2.24s" begin="0.64s" repeatCount="indefinite"/><polygon points="510,7419.666666666667 552,7461.666666666667 510,7461.666666666667" fill="#2C6E6A"/><polygon points="552,7419.666666666667 594,7419.666666666667 594,7461.666666666667" fill="#2C6E6A"/><polygon points="468,7461.666666666667 510,7503.666666666667 468,7503.666666666667" fill="#2C6E6A"/><polygon points="510,7461.666666666667 552,7461.666666666667 552,7503.666666666667" fill="#2C6E6A"/><polygon points="468,7503.666666666667 510,7503.666666666667 510,7545.666666666667" fill="#2C6E6A"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="2.24s" begin="0.96s" repeatCount="indefinite"/><polygon points="552,7419.666666666667 594,7461.666666666667 552,7461.666666666667" fill="#2C6E6A"/><polygon points="594,7419.666666666667 636,7419.666666666667 636,7461.666666666667" fill="#2C6E6A"/><polygon points="510,7461.666666666667 552,7503.666666666667 510,7503.666666666667" fill="#2C6E6A"/><polygon points="552,7461.666666666667 594,7461.666666666667 594,7503.666666666667" fill="#2C6E6A"/><polygon points="468,7503.666666666667 510,7545.666666666667 468,7545.666666666667" fill="#2C6E6A"/><polygon points="510,7503.666666666667 552,7503.666666666667 552,7545.666666666667" fill="#2C6E6A"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="2.24s" begin="1.28s" repeatCount="indefinite"/><polygon points="594,7419.666666666667 636,7461.666666666667 594,7461.666666666667" fill="#2C6E6A"/><polygon points="552,7461.666666666667 594,7503.666666666667 552,7503.666666666667" fill="#2C6E6A"/><polygon points="594,7461.666666666667 636,7461.666666666667 636,7503.666666666667" fill="#2C6E6A"/><polygon points="510,7503.666666666667 552,7545.666666666667 510,7545.666666666667" fill="#2C6E6A"/><polygon points="552,7503.666666666667 594,7503.666666666667 594,7545.666666666667" fill="#2C6E6A"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="2.24s" begin="1.60s" repeatCount="indefinite"/><polygon points="594,7461.666666666667 636,7503.666666666667 594,7503.666666666667" fill="#2C6E6A"/><polygon points="552,7503.666666666667 594,7545.666666666667 552,7545.666666666667" fill="#2C6E6A"/><polygon points="594,7503.666666666667 636,7503.666666666667 636,7545.666666666667" fill="#2C6E6A"/></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="2.24s" begin="1.92s" repeatCount="indefinite"/><polygon points="594,7503.666666666667 636,7545.666666666667 594,7545.666666666667" fill="#2C6E6A"/></g>
+<path d="M468,7419.666666666667H636M468,7461.666666666667H636M468,7503.666666666667H636M468,7545.666666666667H636M468,7419.666666666667V7545.666666666667M510,7419.666666666667V7545.666666666667M552,7419.666666666667V7545.666666666667M594,7419.666666666667V7545.666666666667M636,7419.666666666667V7545.666666666667M468,7419.666666666667L510,7461.666666666667M510,7419.666666666667L552,7461.666666666667M552,7419.666666666667L594,7461.666666666667M594,7419.666666666667L636,7461.666666666667M468,7461.666666666667L510,7503.666666666667M510,7461.666666666667L552,7503.666666666667M552,7461.666666666667L594,7503.666666666667M594,7461.666666666667L636,7503.666666666667M468,7503.666666666667L510,7545.666666666667M510,7503.666666666667L552,7545.666666666667M552,7503.666666666667L594,7545.666666666667M594,7503.666666666667L636,7545.666666666667" fill="none" stroke="#1E2430" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="346" cy="7419.666666666667" r="15" fill="#C65D3B"/><path d="M340,7413.666666666667 L352,7425.666666666667 M352,7413.666666666667 L340,7425.666666666667" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="636" cy="7419.666666666667" r="15" fill="#2C6E6A"/><path d="M629,7419.666666666667 L634,7424.666666666667 L643,7414.666666666667" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="407" y="7492.7" font-size="18" fill="#A39E94" font-weight="700" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">VS</text>
+<text x="262" y="7581.7" font-size="18" fill="#1E2430" font-weight="800" text-anchor="middle">NV1 · 四边形</text>
+<text x="262" y="7605.7" font-size="15" fill="#5F636B" text-anchor="middle">和主流路线不兼容</text>
+<text x="552" y="7581.7" font-size="18" fill="#1E2430" font-weight="800" text-anchor="middle">Direct3D · 三角形</text>
+<text x="552" y="7605.7" font-size="15" fill="#5F636B" text-anchor="middle">微软只支持这一种</text>
+<circle cx="78" cy="7679.3" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="7687.3" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">绝境中</text>
+<text x="118" y="7727.3" font-size="29" fill="#1E2430" font-weight="800">世嘉没选它，却仍投了 500 万美元</text>
+<text x="118" y="7765.3" font-size="21" fill="#5F636B">世嘉社长入交昭一郎亲自登门，告知换了供应商</text>
+<text x="118" y="7798.3" font-size="21" fill="#5F636B">他后来说：这份理解和慷慨，让我们多活了六个月</text>
+<circle cx="78" cy="7866" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="7874" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1996</text>
+<text x="118" y="7914" font-size="29" fill="#1E2430" font-weight="800">裁员过半：100 人只留下 40</text>
+<text x="118" y="7952" font-size="21" fill="#5F636B">剩下的资源，全押在三角形芯片 RIVA 128 上</text>
+<text x="702" y="7988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">07 / 16</text>
+<circle cx="410" cy="8350" r="100" fill="none" stroke="#E6DDCD" stroke-width="16"/>
+<circle cx="410" cy="8350" r="100" fill="none" stroke="#C65D3B" stroke-width="16" stroke-linecap="round" stroke-dasharray="628.3 628.3" transform="rotate(-90 410 8350)"><animate attributeName="stroke-dashoffset" values="0;576.0;576.0;0;0" keyTimes="0;0.45;0.56;0.65;1" dur="9s" repeatCount="indefinite"/><animate attributeName="stroke" values="#C65D3B;#C65D3B;#2C6E6A;#2C6E6A;#C65D3B" keyTimes="0;0.56;0.58;0.96;1" dur="9s" repeatCount="indefinite"/></circle>
+<text x="410" y="8372" font-size="92" fill="#1E2430" font-weight="900" text-anchor="middle">30<animate attributeName="fill" values="#1E2430;#1E2430;#C65D3B;#1E2430;#C65D3B;#1E2430;#1E2430" keyTimes="0;0.36;0.42;0.46;0.5;0.54;1" dur="9s" repeatCount="indefinite"/></text>
+<text x="410" y="8410" font-size="24" fill="#8B877F" font-weight="700" text-anchor="middle">天</text>
+<text x="118" y="8340" font-size="19" fill="#5F636B">账上的钱</text>
+<text x="118" y="8372" font-size="19" fill="#1E2430" font-weight="800">只够发一个月工资</text>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.57;0.6;0.95;1" dur="9s" repeatCount="indefinite"/><text x="540" y="8340" font-size="22" fill="#2C6E6A" font-weight="800">RIVA 128</text><text x="540" y="8372" font-size="19" fill="#2C6E6A" font-weight="700">公司得救</text></g>
+<circle cx="78" cy="8532.7" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="8532.7" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="8532.7" r="5.5" fill="#D97757"/>
+<text x="118" y="8540.7" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1997.08</text>
+<text x="118" y="8580.7" font-size="29" fill="#1E2430" font-weight="800">RIVA 128 发布，公司得救</text>
+<text x="118" y="8618.7" font-size="21" fill="#5F636B">4 个月卖出约 100 万片</text>
+<circle cx="78" cy="8695.3" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="8703.3" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1998</text>
+<text x="118" y="8743.3" font-size="29" fill="#1E2430" font-weight="800">RIVA TNT 发布</text>
+<text x="118" y="8781.3" font-size="21" fill="#5F636B">巩固了英伟达在图形技术上的领先地位</text>
+<g><animate attributeName="opacity" values="1;1;0.12;0.12;1" keyTimes="0;0.08;0.13;0.9;1" dur="7s" repeatCount="indefinite"/><circle cx="669" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="648" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="690" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="648" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="417" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="564" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="564" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="522" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="669" cy="8853.999999999998" r="6.5" fill="#A39E94"/></g>
+<g><animate attributeName="opacity" values="1;1;0.12;0.12;1" keyTimes="0;0.15;0.20;0.9;1" dur="7s" repeatCount="indefinite"/><circle cx="648" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="543" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="627" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="585" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="501" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="585" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="438" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="459" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="606" cy="8853.999999999998" r="6.5" fill="#A39E94"/></g>
+<g><animate attributeName="opacity" values="1;1;0.12;0.12;1" keyTimes="0;0.22;0.27;0.9;1" dur="7s" repeatCount="indefinite"/><circle cx="417" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="564" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="648" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="480" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="585" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="585" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="585" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="690" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="543" cy="8853.999999999998" r="6.5" fill="#A39E94"/></g>
+<g><animate attributeName="opacity" values="1;1;0.12;0.12;1" keyTimes="0;0.29;0.34;0.9;1" dur="7s" repeatCount="indefinite"/><circle cx="480" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="627" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="669" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="501" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="480" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="501" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="459" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="522" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="627" cy="8916.999999999998" r="6.5" fill="#A39E94"/></g>
+<g><animate attributeName="opacity" values="1;1;0.12;0.12;1" keyTimes="0;0.36;0.41;0.9;1" dur="7s" repeatCount="indefinite"/><circle cx="459" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="606" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="564" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="543" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="522" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="417" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="438" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="501" cy="8937.999999999998" r="6.5" fill="#A39E94"/></g>
+<g><animate attributeName="opacity" values="1;1;0.12;0.12;1" keyTimes="0;0.43;0.48;0.9;1" dur="7s" repeatCount="indefinite"/><circle cx="543" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="522" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="606" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="669" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="438" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="417" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="501" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="480" cy="8853.999999999998" r="6.5" fill="#A39E94"/></g>
+<g><animate attributeName="opacity" values="1;1;0.12;0.12;1" keyTimes="0;0.50;0.55;0.9;1" dur="7s" repeatCount="indefinite"/><circle cx="690" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="606" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="438" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="480" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="669" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="564" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="690" cy="8874.999999999998" r="6.5" fill="#A39E94"/><circle cx="627" cy="8895.999999999998" r="6.5" fill="#A39E94"/></g>
+<g><animate attributeName="opacity" values="1;1;0.12;0.12;1" keyTimes="0;0.57;0.62;0.9;1" dur="7s" repeatCount="indefinite"/><circle cx="627" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="438" cy="8853.999999999998" r="6.5" fill="#A39E94"/><circle cx="459" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="648" cy="8937.999999999998" r="6.5" fill="#A39E94"/><circle cx="459" cy="8916.999999999998" r="6.5" fill="#A39E94"/><circle cx="606" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="417" cy="8895.999999999998" r="6.5" fill="#A39E94"/><circle cx="543" cy="8916.999999999998" r="6.5" fill="#A39E94"/></g>
+<circle cx="690" cy="8896" r="7" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="7;18" dur="2.0s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.0s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="690" cy="8895.999999999998" r="8" fill="#C65D3B"/>
+<circle cx="522" cy="8875" r="7" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="7;18" dur="2.0s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.0s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="522" cy="8874.999999999998" r="8" fill="#C65D3B"/>
+<text x="118" y="8862" font-size="19" fill="#5F636B">90 年代末，约 70 家</text>
+<text x="118" y="8892" font-size="19" fill="#1E2430" font-weight="800">图形芯片创业公司</text>
+<text x="118" y="8922" font-size="19" fill="#5F636B">最后只活下来两家</text>
+<text x="118" y="8952" font-size="19" fill="#C65D3B" font-weight="800">英伟达和 ATI</text>
+<text x="702" y="8988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">08 / 16</text>
+<circle cx="78" cy="9250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="9258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1999.01.22</text>
+<text x="118" y="9298" font-size="29" fill="#1E2430" font-weight="800">英伟达在纳斯达克上市</text>
+<circle cx="78" cy="9352.6" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="9352.6" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="9352.6" r="5.5" fill="#D97757"/>
+<text x="118" y="9360.6" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">1999</text>
+<text x="118" y="9400.6" font-size="29" fill="#1E2430" font-weight="800">GeForce 256 发布</text>
+<text x="118" y="9438.6" font-size="21" fill="#5F636B">英伟达第一款以 GPU 之名推出的产品</text>
+<line x1="176" y1="9479.2" x2="176" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="176" y1="9651.2" x2="176" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="192" y1="9479.2" x2="192" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="192" y1="9651.2" x2="192" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="208" y1="9479.2" x2="208" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="208" y1="9651.2" x2="208" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="224" y1="9479.2" x2="224" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="224" y1="9651.2" x2="224" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="240" y1="9479.2" x2="240" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="240" y1="9651.2" x2="240" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="256" y1="9479.2" x2="256" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="256" y1="9651.2" x2="256" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="272" y1="9479.2" x2="272" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="272" y1="9651.2" x2="272" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="288" y1="9479.2" x2="288" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="288" y1="9651.2" x2="288" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="304" y1="9479.2" x2="304" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="304" y1="9651.2" x2="304" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="416" y1="9479.2" x2="416" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="416" y1="9651.2" x2="416" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="432" y1="9479.2" x2="432" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="432" y1="9651.2" x2="432" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="448" y1="9479.2" x2="448" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="448" y1="9651.2" x2="448" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="464" y1="9479.2" x2="464" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="464" y1="9651.2" x2="464" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="480" y1="9479.2" x2="480" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="480" y1="9651.2" x2="480" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="496" y1="9479.2" x2="496" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="496" y1="9651.2" x2="496" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="512" y1="9479.2" x2="512" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="512" y1="9651.2" x2="512" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="528" y1="9479.2" x2="528" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="528" y1="9651.2" x2="528" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="544" y1="9479.2" x2="544" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="544" y1="9651.2" x2="544" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="560" y1="9479.2" x2="560" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="560" y1="9651.2" x2="560" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="576" y1="9479.2" x2="576" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="576" y1="9651.2" x2="576" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="592" y1="9479.2" x2="592" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="592" y1="9651.2" x2="592" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="608" y1="9479.2" x2="608" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="608" y1="9651.2" x2="608" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="624" y1="9479.2" x2="624" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="624" y1="9651.2" x2="624" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="640" y1="9479.2" x2="640" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="640" y1="9651.2" x2="640" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="656" y1="9479.2" x2="656" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="656" y1="9651.2" x2="656" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<line x1="672" y1="9479.2" x2="672" y2="9491.2" stroke="#A39E94" stroke-width="3"/><line x1="672" y1="9651.2" x2="672" y2="9663.2" stroke="#A39E94" stroke-width="3"/>
+<rect x="160" y="9491.2" width="160" height="160" rx="12" fill="#1E2430"/>
+<rect x="172" y="9503.2" width="62" height="62" rx="6" fill="#3A4252"/>
+<rect x="172" y="9503.2" width="62" height="62" rx="6" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.25;1" dur="2.4s" begin="0.0s" repeatCount="indefinite"/></rect>
+<rect x="246" y="9503.2" width="62" height="62" rx="6" fill="#3A4252"/>
+<rect x="246" y="9503.2" width="62" height="62" rx="6" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.25;1" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></rect>
+<rect x="246" y="9577.2" width="62" height="62" rx="6" fill="#3A4252"/>
+<rect x="246" y="9577.2" width="62" height="62" rx="6" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.25;1" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></rect>
+<rect x="172" y="9577.2" width="62" height="62" rx="6" fill="#3A4252"/>
+<rect x="172" y="9577.2" width="62" height="62" rx="6" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.06;0.25;1" dur="2.4s" begin="1.8s" repeatCount="indefinite"/></rect>
+<rect x="400" y="9491.2" width="290" height="160" rx="12" fill="#1E2430"/>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.00s" repeatCount="indefinite"/><rect x="415.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="415.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="415.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="415.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="415.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="415.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.09s" repeatCount="indefinite"/><rect x="437.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="437.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="437.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="437.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="437.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="437.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.18s" repeatCount="indefinite"/><rect x="459.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="459.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="459.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="459.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="459.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="459.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.27s" repeatCount="indefinite"/><rect x="481.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="481.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="481.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="481.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="481.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="481.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.36s" repeatCount="indefinite"/><rect x="503.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="503.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="503.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="503.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="503.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="503.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.45s" repeatCount="indefinite"/><rect x="525.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="525.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="525.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="525.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="525.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="525.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.54s" repeatCount="indefinite"/><rect x="547.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="547.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="547.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="547.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="547.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="547.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.63s" repeatCount="indefinite"/><rect x="569.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="569.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="569.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="569.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="569.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="569.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.72s" repeatCount="indefinite"/><rect x="591.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="591.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="591.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="591.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="591.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="591.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.81s" repeatCount="indefinite"/><rect x="613.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="613.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="613.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="613.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="613.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="613.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.90s" repeatCount="indefinite"/><rect x="635.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="635.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="635.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="635.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="635.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="635.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<g opacity="0.22"><animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" begin="0.99s" repeatCount="indefinite"/><rect x="657.0" y="9507.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="657.0" y="9529.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="657.0" y="9551.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="657.0" y="9573.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="657.0" y="9595.2" width="18" height="18" rx="3" fill="#D97757"/><rect x="657.0" y="9617.2" width="18" height="18" rx="3" fill="#D97757"/></g>
+<text x="240" y="9705.2" font-size="19" fill="#1E2430" font-weight="800" text-anchor="middle">CPU · 几个大核心</text>
+<text x="240" y="9733.2" font-size="17" fill="#5F636B" text-anchor="middle">一件一件按顺序算</text>
+<text x="545" y="9705.2" font-size="19" fill="#1E2430" font-weight="800" text-anchor="middle">GPU · 成百上千个小核心</text>
+<text x="545" y="9733.2" font-size="17" fill="#5F636B" text-anchor="middle">成千上万份活同时算</text>
+<circle cx="78" cy="9787.8" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="9796.8" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2000</text>
+<text x="238" y="9796.8" font-size="27" fill="#1E2430" font-weight="800">拿下微软 Xbox 订单</text>
+<text x="238" y="9832.8" font-size="21" fill="#5F636B">预付款 2 亿美元</text>
+<circle cx="78" cy="9883.4" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="9892.4" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2000.12</text>
+<text x="238" y="9892.4" font-size="27" fill="#1E2430" font-weight="800">收购昔日对手 3dfx 的资产</text>
+<circle cx="78" cy="9943" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="9952" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2001</text>
+<text x="238" y="9952" font-size="27" fill="#1E2430" font-weight="800">取代安然，进入标普 500</text>
+<text x="702" y="9988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">09 / 16</text>
+<circle cx="78" cy="10250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="10258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2004</text>
+<text x="118" y="10298" font-size="29" fill="#1E2430" font-weight="800">请来斯坦福博士生 Ian Buck</text>
+<text x="118" y="10336" font-size="21" fill="#5F636B">他开发的 Brook 语言，能让 GPU 做通用计算</text>
+<circle cx="78" cy="10397.8" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="10405.8" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2004.12</text>
+<text x="118" y="10445.8" font-size="29" fill="#1E2430" font-weight="800">为索尼 PS3 设计图形芯片</text>
+<rect x="118" y="10516.5" width="270" height="118" rx="12" fill="#1E2430"/>
+<circle cx="138" cy="10534.5" r="4" fill="#E06C5A"/><circle cx="152" cy="10534.5" r="4" fill="#E9A23B"/><circle cx="166" cy="10534.5" r="4" fill="#5FB37A"/>
+<text x="136" y="10570.5" font-size="14" fill="#8B93A6" font-family="'SF Mono',Menlo,Consolas,monospace">__global__ void add(...)</text>
+<text x="136" y="10600.5" font-size="14" fill="#E58A63" font-weight="700" font-family="'SF Mono',Menlo,Consolas,monospace">add&lt;&lt;&lt;4096, 256&gt;&gt;&gt;(...);</text>
+<rect x="346" y="10587.5" width="9" height="16" fill="#E58A63"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></rect>
+<text x="253" y="10662.5" font-size="17" fill="#5F636B" font-weight="600" text-anchor="middle">一次调用</text>
+<path d="M396,10575.5 L548,10498.5 M396,10575.5 L548,10513.0 M396,10575.5 L548,10527.5 M396,10575.5 L548,10542.0 M396,10575.5 L548,10556.5 M396,10575.5 L548,10571.0 M396,10575.5 L548,10585.5 M396,10575.5 L548,10600.0 M396,10575.5 L548,10614.5 M396,10575.5 L548,10629.0 M396,10575.5 L548,10643.5 M396,10575.5 L548,10658.0" fill="none" stroke="#D8CFBF" stroke-width="1.5"/>
+<path d="M396,10575.5 L548,10498.5 M396,10575.5 L548,10513.0 M396,10575.5 L548,10527.5 M396,10575.5 L548,10542.0 M396,10575.5 L548,10556.5 M396,10575.5 L548,10571.0 M396,10575.5 L548,10585.5 M396,10575.5 L548,10600.0 M396,10575.5 L548,10614.5 M396,10575.5 L548,10629.0 M396,10575.5 L548,10643.5 M396,10575.5 L548,10658.0" fill="none" stroke="#D97757" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="8 160"><animate attributeName="stroke-dashoffset" values="0;-168" dur="1.4s" repeatCount="indefinite"/></path>
+<circle cx="396" cy="10575.5" r="6" fill="#1E2430"/>
+<rect x="550" y="10493.5" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10493.5" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.60s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10508.0" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10508.0" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.63s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10522.5" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10522.5" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.66s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10537.0" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10537.0" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.69s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10551.5" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10551.5" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.72s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10566.0" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10566.0" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.75s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10580.5" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10580.5" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.78s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10595.0" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10595.0" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.81s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10609.5" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10609.5" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.84s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10624.0" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10624.0" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.87s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10638.5" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10638.5" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.90s" repeatCount="indefinite"/></rect>
+<rect x="550" y="10653.0" width="10" height="10" rx="2" fill="#1E2430"/>
+<rect x="550" y="10653.0" width="10" height="10" rx="2" fill="#D97757" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.4s" begin="0.93s" repeatCount="indefinite"/></rect>
+<text x="586" y="10578.5" font-size="34" fill="#C65D3B" font-weight="900">105 万</text>
+<text x="586" y="10608.5" font-size="17" fill="#5F636B" font-weight="600">个线程同时跑</text>
+<text x="586" y="10634.5" font-size="13" fill="#8B877F" font-family="'SF Mono',Menlo,Consolas,monospace">4096 × 256</text>
+<circle cx="78" cy="10723.2" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="10723.2" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="10723.2" r="5.5" fill="#D97757"/>
+<text x="118" y="10731.2" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2006.11</text>
+<text x="118" y="10771.2" font-size="29" fill="#1E2430" font-weight="800">推出 CUDA</text>
+<text x="118" y="10809.2" font-size="21" fill="#5F636B">2007 年正式发布</text>
+<text x="118" y="10842.2" font-size="21" fill="#5F636B">开发者从 2018 年的 100 万，涨到 2024 年的 500 万</text>
+<circle cx="78" cy="10904" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="10912" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2007</text>
+<text x="118" y="10952" font-size="29" fill="#1E2430" font-weight="800">《福布斯》年度公司</text>
+<text x="702" y="10988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">10 / 16</text>
+<circle cx="78" cy="11250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="11258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2010</text>
+<text x="118" y="11298" font-size="29" fill="#1E2430" font-weight="800">在 GTC 大会上亮出公司标志纹身</text>
+<text x="118" y="11336" font-size="21" fill="#5F636B">这是公司股价涨破 100 美元时纹的</text>
+<circle cx="78" cy="11386" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="11386" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="11386" r="5.5" fill="#D97757"/>
+<text x="118" y="11394" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2012</text>
+<text x="118" y="11434" font-size="29" fill="#1E2430" font-weight="800">AlexNet 夺得 ImageNet 冠军</text>
+<text x="118" y="11472" font-size="21" fill="#5F636B">多伦多大学团队用两块 GTX 580 训练</text>
+<rect x="118" y="11523.0" width="146" height="54" rx="8" fill="#1E2430"/>
+<rect x="118" y="11569.0" width="146" height="8" rx="2" fill="#3A4252"/>
+<circle cx="158" cy="11546.0" r="18" fill="#2A3140" stroke="#4A5265" stroke-width="2"/>
+<g transform="translate(158 11546.0)"><g><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(0)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(90)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(180)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(270)"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.9s" repeatCount="indefinite"/></g></g>
+<circle cx="158" cy="11546.0" r="3.5" fill="#D97757"/>
+<circle cx="224" cy="11546.0" r="18" fill="#2A3140" stroke="#4A5265" stroke-width="2"/>
+<g transform="translate(224 11546.0)"><g><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(0)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(90)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(180)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(270)"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.9s" repeatCount="indefinite"/></g></g>
+<circle cx="224" cy="11546.0" r="3.5" fill="#D97757"/>
+<rect x="118" y="11589.0" width="146" height="54" rx="8" fill="#1E2430"/>
+<rect x="118" y="11635.0" width="146" height="8" rx="2" fill="#3A4252"/>
+<circle cx="158" cy="11612.0" r="18" fill="#2A3140" stroke="#4A5265" stroke-width="2"/>
+<g transform="translate(158 11612.0)"><g><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(0)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(90)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(180)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(270)"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.1s" repeatCount="indefinite"/></g></g>
+<circle cx="158" cy="11612.0" r="3.5" fill="#D97757"/>
+<circle cx="224" cy="11612.0" r="18" fill="#2A3140" stroke="#4A5265" stroke-width="2"/>
+<g transform="translate(224 11612.0)"><g><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(0)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(90)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(180)"/><path d="M0,0 C4,-6 4,-13 0,-15 C-3,-11 -4,-5 0,0 Z" fill="#8A93A6" transform="rotate(270)"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.1s" repeatCount="indefinite"/></g></g>
+<circle cx="224" cy="11612.0" r="3.5" fill="#D97757"/>
+<text x="191" y="11677" font-size="17" fill="#1E2430" font-weight="800" text-anchor="middle">GTX 580 × 2</text>
+<path d="M274,11589.0 H300 M292,11582.0 L301,11589.0 L292,11596.0" fill="none" stroke="#A39E94" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M328,11535.0 L404,11517.0 M328,11535.0 L404,11553.0 M328,11535.0 L404,11589.0 M328,11535.0 L404,11625.0 M328,11535.0 L404,11661.0 M328,11571.0 L404,11517.0 M328,11571.0 L404,11553.0 M328,11571.0 L404,11589.0 M328,11571.0 L404,11625.0 M328,11571.0 L404,11661.0 M328,11607.0 L404,11517.0 M328,11607.0 L404,11553.0 M328,11607.0 L404,11589.0 M328,11607.0 L404,11625.0 M328,11607.0 L404,11661.0 M328,11643.0 L404,11517.0 M328,11643.0 L404,11553.0 M328,11643.0 L404,11589.0 M328,11643.0 L404,11625.0 M328,11643.0 L404,11661.0 M404,11517.0 L480,11553.0 M404,11517.0 L480,11589.0 M404,11517.0 L480,11625.0 M404,11553.0 L480,11553.0 M404,11553.0 L480,11589.0 M404,11553.0 L480,11625.0 M404,11589.0 L480,11553.0 M404,11589.0 L480,11589.0 M404,11589.0 L480,11625.0 M404,11625.0 L480,11553.0 M404,11625.0 L480,11589.0 M404,11625.0 L480,11625.0 M404,11661.0 L480,11553.0 M404,11661.0 L480,11589.0 M404,11661.0 L480,11625.0" fill="none" stroke="#D8CFBF" stroke-width="1.5"/>
+<path d="M328,11535.0 L404,11517.0 M328,11535.0 L404,11553.0 M328,11535.0 L404,11589.0 M328,11535.0 L404,11625.0 M328,11535.0 L404,11661.0 M328,11571.0 L404,11517.0 M328,11571.0 L404,11553.0 M328,11571.0 L404,11589.0 M328,11571.0 L404,11625.0 M328,11571.0 L404,11661.0 M328,11607.0 L404,11517.0 M328,11607.0 L404,11553.0 M328,11607.0 L404,11589.0 M328,11607.0 L404,11625.0 M328,11607.0 L404,11661.0 M328,11643.0 L404,11517.0 M328,11643.0 L404,11553.0 M328,11643.0 L404,11589.0 M328,11643.0 L404,11625.0 M328,11643.0 L404,11661.0 M404,11517.0 L480,11553.0 M404,11517.0 L480,11589.0 M404,11517.0 L480,11625.0 M404,11553.0 L480,11553.0 M404,11553.0 L480,11589.0 M404,11553.0 L480,11625.0 M404,11589.0 L480,11553.0 M404,11589.0 L480,11589.0 M404,11589.0 L480,11625.0 M404,11625.0 L480,11553.0 M404,11625.0 L480,11589.0 M404,11625.0 L480,11625.0 M404,11661.0 L480,11553.0 M404,11661.0 L480,11589.0 M404,11661.0 L480,11625.0" fill="none" stroke="#D97757" stroke-width="2.2" stroke-dasharray="7 70" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-77" dur="1.6s" repeatCount="indefinite"/></path>
+<circle cx="328" cy="11535.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="328" cy="11571.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="328" cy="11607.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="328" cy="11643.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="404" cy="11517.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="404" cy="11553.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="404" cy="11589.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="404" cy="11625.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="404" cy="11661.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="480" cy="11553.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="480" cy="11589.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="480" cy="11625.0" r="9" fill="#F7F3EA" stroke="#1E2430" stroke-width="2.5"/>
+<circle cx="480" cy="11589.0" r="9" fill="#C65D3B"/>
+<circle cx="480" cy="11589" r="9" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="9;22" dur="1.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="1.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<text x="404" y="11719" font-size="17" fill="#5F636B" text-anchor="middle">神经网络</text>
+<path d="M506,11589.0 H530 M522,11582.0 L531,11589.0 L522,11596.0" fill="none" stroke="#A39E94" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="546" y="11535" font-size="17" fill="#5F636B" font-weight="600">top-5 错误率</text>
+<text x="546" y="11573" font-size="18" fill="#1E2430" font-weight="800">AlexNet</text>
+<rect x="546" y="11583.0" width="50.2" height="24" rx="4" fill="#C65D3B"/>
+<text x="605.2" y="11602" font-size="18" fill="#C65D3B" font-weight="800">15.3%</text>
+<text x="546" y="11647" font-size="18" fill="#5F636B" font-weight="600">第二名</text>
+<rect x="546" y="11657.0" width="86" height="24" rx="4" fill="#A39E94"/>
+<text x="641" y="11676" font-size="18" fill="#5F636B" font-weight="800">26.2%</text>
+<circle cx="78" cy="11768" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="11776" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2016.08</text>
+<text x="118" y="11816" font-size="29" fill="#1E2430" font-weight="800">把第一台 DGX-1 送给 OpenAI</text>
+<text x="118" y="11854" font-size="21" fill="#5F636B">可把处理时间从六天缩短到两小时</text>
+<circle cx="78" cy="11904" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="11912" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2017</text>
+<text x="118" y="11952" font-size="29" fill="#1E2430" font-weight="800">《财富》：没听说过英伟达？情有可原</text>
+<text x="702" y="11988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">11 / 16</text>
+<circle cx="78" cy="12250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="12259" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2018</text>
+<text x="242" y="12259" font-size="27" fill="#1E2430" font-weight="800">发布第一代 RTX 显卡</text>
+<text x="242" y="12295" font-size="21" fill="#5F636B">RTX 2080 上市，主打实时光线追踪</text>
+<circle cx="78" cy="12358" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="12367" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2019</text>
+<text x="242" y="12367" font-size="27" fill="#1E2430" font-weight="800">69 亿美元收购 Mellanox</text>
+<text x="242" y="12403" font-size="21" fill="#5F636B">扩大在高性能计算市场的版图</text>
+<circle cx="78" cy="12466" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="12475" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2020</text>
+<text x="242" y="12475" font-size="27" fill="#1E2430" font-weight="800">发布 A100，GTC 改到线上</text>
+<text x="242" y="12511" font-size="21" fill="#5F636B">约 5.9 万人报名</text>
+<circle cx="78" cy="12574" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="12583" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2020.09</text>
+<text x="242" y="12583" font-size="27" fill="#1E2430" font-weight="800">宣布 400 亿美元收购 Arm</text>
+<text x="242" y="12619" font-size="21" fill="#5F636B">2022 年 2 月，交易告吹</text>
+<circle cx="78" cy="12682" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="12691" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2021</text>
+<text x="242" y="12691" font-size="27" fill="#1E2430" font-weight="800">主题演讲里的他，有一段是 CGI</text>
+<text x="242" y="12727" font-size="21" fill="#5F636B">直到 8 月官方博客揭晓，媒体都没看出来</text>
+<circle cx="78" cy="12790" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="12799" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2022.03</text>
+<text x="242" y="12799" font-size="27" fill="#1E2430" font-weight="800">发布 H100</text>
+<circle cx="78" cy="12866" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="12866" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="12866" r="5.5" fill="#D97757"/>
+<text x="118" y="12874" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2022.11</text>
+<text x="118" y="12914" font-size="29" fill="#1E2430" font-weight="800">ChatGPT 上线</text>
+<text x="118" y="12952" font-size="21" fill="#5F636B">AI 热潮来了，算力开始供不应求</text>
+<g transform="translate(638 12906) scale(0.85)"><path d="M-46,-40 H46 Q62,-40 62,-24 V10 Q62,26 46,26 H-10 L-36,44 L-30,26 H-46 Q-62,26 -62,10 V-24 Q-62,-40 -46,-40 Z" fill="#FFFFFF" stroke="#1E2430" stroke-width="3" stroke-linejoin="round"/><g><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.45;0.5;0.95;1" dur="5s" repeatCount="indefinite"/><circle cx="-22" cy="-7" r="6.5" fill="#A39E94"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 2;0 -4;0 2" dur="1.2s" begin="0.0s" repeatCount="indefinite"/></circle><circle cx="0" cy="-7" r="6.5" fill="#A39E94"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 2;0 -4;0 2" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></circle><circle cx="22" cy="-7" r="6.5" fill="#A39E94"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" begin="0.4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 2;0 -4;0 2" dur="1.2s" begin="0.4s" repeatCount="indefinite"/></circle></g><g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.49;0.5;0.95;1" dur="5s" repeatCount="indefinite"/><rect x="-46" y="-20" width="92" height="9" rx="4.5" fill="#D97757"><animate attributeName="width" values="0;0;92;92" keyTimes="0;0.50;0.62;1" dur="5s" repeatCount="indefinite"/></rect><rect x="-46" y="-2" width="64" height="9" rx="4.5" fill="#F2DCD0"><animate attributeName="width" values="0;0;64;64" keyTimes="0;0.58;0.70;1" dur="5s" repeatCount="indefinite"/></rect></g></g>
+<text x="702" y="12988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">12 / 16</text>
+<circle cx="78" cy="13250" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="13250" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="13250" r="5.5" fill="#D97757"/>
+<text x="118" y="13258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2023.05</text>
+<text x="118" y="13298" font-size="29" fill="#1E2430" font-weight="800">市值突破 1 万亿美元</text>
+<text x="118" y="13336" font-size="21" fill="#5F636B">距离三人凑出的 600 美元，正好 30 年</text>
+<rect x="118" y="13386.3" width="584" height="240" rx="16" fill="#EFE6D6" stroke="#E2D9C8" stroke-width="1.5"/>
+<rect x="170" y="13510.333333333334" width="480" height="84" rx="20" fill="#E8C6B5"/>
+<rect x="170" y="13510.333333333334" width="480" height="16" rx="8" fill="#D9A892"/>
+<rect x="300" y="13544.333333333334" width="220" height="14" rx="4" fill="#1E2430"/>
+<rect x="404" y="13558.333333333334" width="12" height="52" fill="#1E2430"/>
+<rect x="372" y="13608.333333333334" width="76" height="8" rx="4" fill="#1E2430"/>
+<rect x="456" y="13516.333333333334" width="30" height="28" rx="6" fill="#FFFFFF" stroke="#1E2430" stroke-width="2.5"/>
+<path d="M464,13510.333333333334 c-6,-6 6,-10 0,-16 c-6,-6 6,-9 0,-14" fill="none" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="2.4s" begin="0.0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 6;0 -6" dur="2.4s" begin="0.0s" repeatCount="indefinite"/></path>
+<path d="M478,13510.333333333334 c-6,-6 6,-10 0,-16 c-6,-6 6,-9 0,-14" fill="none" stroke="#A39E94" stroke-width="2.5" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0.9;0" dur="2.4s" begin="1.2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 6;0 -6" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></path>
+<rect x="296" y="13412.3" width="228" height="76" rx="6" fill="#1E2430" stroke="#C9A45C" stroke-width="3"/>
+<text x="410" y="13448.3" font-size="20" fill="#F2D9A0" font-weight="800" text-anchor="middle">万亿美元公司诞生地</text>
+<text x="410" y="13474.3" font-size="13" fill="#C9A45C" text-anchor="middle" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">NVIDIA · 1993</text>
+<g transform="translate(526 13414.3)"><path d="M0,-11 L2.6,-2.6 L11,0 L2.6,2.6 L0,11 L-2.6,2.6 L-11,0 L-2.6,-2.6 Z" fill="#F2D9A0"><animateTransform attributeName="transform" type="scale" values="0;1;0;0" keyTimes="0;0.2;0.4;1" dur="2.4s" begin="0.0s" repeatCount="indefinite"/></path></g>
+<g transform="translate(292 13484.3)"><path d="M0,-11 L2.6,-2.6 L11,0 L2.6,2.6 L0,11 L-2.6,2.6 L-11,0 L-2.6,-2.6 Z" fill="#F2D9A0"><animateTransform attributeName="transform" type="scale" values="0;1;0;0" keyTimes="0;0.2;0.4;1" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></path></g>
+<circle cx="78" cy="13682.7" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="13690.7" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2023.09.26</text>
+<text x="118" y="13730.7" font-size="29" fill="#1E2430" font-weight="800">Denny's 卡座挂上纪念牌</text>
+<text x="118" y="13768.7" font-size="21" fill="#5F636B">当年三人碰头的那个卡座，被标为万亿美元公司诞生地</text>
+<circle cx="78" cy="13833" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="13841" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">同月</text>
+<text x="118" y="13881" font-size="29" fill="#1E2430" font-weight="800">H100 一卡难求</text>
+<text x="118" y="13919" font-size="21" fill="#5F636B">甲骨文创始人埃里森说，他和马斯克曾在饭桌上求货</text>
+<text x="118" y="13952" font-size="21" fill="#5F636B">他的原话：一小时的寿司和恳求</text>
+<text x="702" y="13988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">13 / 16</text>
+<text x="118" y="14206.6" font-size="96" fill="#F7F3EA" font-weight="900">5 万亿美元</text>
+<text x="118" y="14255" font-size="22" fill="#A3A7AE">英伟达市值，每突破一个万亿的时间点</text>
+<line x1="150" y1="14784.48" x2="702" y2="14784.48" stroke="#4A5265" stroke-width="2"/>
+<line x1="172" y1="14784.48" x2="172" y2="14794.48" stroke="#4A5265" stroke-width="2"/>
+<text x="178" y="14814.5" font-size="16" fill="#A3A7AE" font-weight="600">2023</text>
+<line x1="354.8" y1="14784.48" x2="354.8" y2="14794.48" stroke="#4A5265" stroke-width="2"/>
+<text x="360.8" y="14814.5" font-size="16" fill="#A3A7AE" font-weight="600">2024</text>
+<line x1="537.6" y1="14784.48" x2="537.6" y2="14794.48" stroke="#4A5265" stroke-width="2"/>
+<text x="543.6" y="14814.5" font-size="16" fill="#A3A7AE" font-weight="600">2025</text>
+<text x="170" y="14362.5" font-size="72" fill="#E58A63" font-weight="900">29</text>
+<text x="269.8" y="14362.5" font-size="26" fill="#F7F3EA" font-weight="800">个月</text>
+<text x="170" y="14398.5" font-size="19" fill="#A3A7AE">从 1 万亿到 5 万亿</text>
+<text x="170" y="14432.5" font-size="17" fill="#A3A7AE">2024.06 一度登顶全球市值第一</text>
+<rect x="216.9" y="14695.3" width="32" height="89.2" fill="#C65D3B" opacity="0.32"/>
+<line x1="232.9" y1="14784.48" x2="232.9" y2="14695.3" stroke="#E58A63" stroke-width="32" stroke-dasharray="89.2 89.2" stroke-dashoffset="89.2"><animate attributeName="stroke-dashoffset" values="89.2;0;0;89.2" keyTimes="0;0.22;0.92;1" dur="7s" begin="0.00s" repeatCount="indefinite"/></line>
+<text x="248.9" y="14661.3" font-size="20" fill="#F7F3EA" font-weight="800" text-anchor="end">1 万亿</text>
+<text x="248.9" y="14683.3" font-size="15" fill="#A3A7AE" font-weight="600" text-anchor="end">2023.05</text>
+<rect x="369.3" y="14606.1" width="32" height="178.4" fill="#C65D3B" opacity="0.32"/>
+<line x1="385.3" y1="14784.48" x2="385.3" y2="14606.1" stroke="#E58A63" stroke-width="32" stroke-dasharray="178.4 178.4" stroke-dashoffset="178.4"><animate attributeName="stroke-dashoffset" values="178.4;0;0;178.4" keyTimes="0;0.22;0.92;1" dur="7s" begin="0.35s" repeatCount="indefinite"/></line>
+<text x="401.3" y="14572.1" font-size="20" fill="#F7F3EA" font-weight="800" text-anchor="end">2 万亿</text>
+<text x="401.3" y="14594.1" font-size="15" fill="#A3A7AE" font-weight="600" text-anchor="end">2024.03</text>
+<rect x="415" y="14516.9" width="32" height="267.6" fill="#C65D3B" opacity="0.32"/>
+<line x1="431" y1="14784.48" x2="431" y2="14516.9" stroke="#E58A63" stroke-width="32" stroke-dasharray="267.6 267.6" stroke-dashoffset="267.6"><animate attributeName="stroke-dashoffset" values="267.6;0;0;267.6" keyTimes="0;0.22;0.92;1" dur="7s" begin="0.70s" repeatCount="indefinite"/></line>
+<text x="447" y="14482.9" font-size="20" fill="#F7F3EA" font-weight="800" text-anchor="end">3 万亿</text>
+<text x="447" y="14504.9" font-size="15" fill="#A3A7AE" font-weight="600" text-anchor="end">2024.06</text>
+<rect x="613.1" y="14427.7" width="32" height="356.8" fill="#C65D3B" opacity="0.32"/>
+<line x1="629.1" y1="14784.48" x2="629.1" y2="14427.7" stroke="#E58A63" stroke-width="32" stroke-dasharray="356.8 356.8" stroke-dashoffset="356.8"><animate attributeName="stroke-dashoffset" values="356.8;0;0;356.8" keyTimes="0;0.22;0.92;1" dur="7s" begin="1.05s" repeatCount="indefinite"/></line>
+<text x="645.1" y="14393.7" font-size="20" fill="#F7F3EA" font-weight="800" text-anchor="end">4 万亿</text>
+<text x="645.1" y="14415.7" font-size="15" fill="#A3A7AE" font-weight="600" text-anchor="end">2025.07</text>
+<rect x="658.8" y="14338.5" width="32" height="446" fill="#C65D3B" opacity="0.32"/>
+<line x1="674.8" y1="14784.48" x2="674.8" y2="14338.5" stroke="#E58A63" stroke-width="32" stroke-dasharray="446.0 446.0" stroke-dashoffset="446.0"><animate attributeName="stroke-dashoffset" values="446.0;0;0;446.0" keyTimes="0;0.22;0.92;1" dur="7s" begin="1.40s" repeatCount="indefinite"/></line>
+<text x="690.8" y="14304.5" font-size="20" fill="#F7F3EA" font-weight="800" text-anchor="end">5 万亿</text>
+<text x="690.8" y="14326.5" font-size="15" fill="#A3A7AE" font-weight="600" text-anchor="end">2025.10</text>
+<circle cx="674.8" cy="14338.5" r="6" fill="none" stroke="#E58A63" stroke-width="2.5" opacity="0"><animate attributeName="r" values="6;17" dur="2.2s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.2s" begin="0.0s" repeatCount="indefinite"/></circle>
+<path d="M254.9,14748.48 V14756.48 H363.3 V14748.48" fill="none" stroke="#E58A63" stroke-width="2"/>
+<text x="309.1" y="14740.5" font-size="16" fill="#E58A63" font-weight="800" text-anchor="middle">180 天</text>
+<line x1="537.6" y1="14638.48" x2="537.6" y2="14784.48" stroke="#A3A7AE" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.7"/>
+<path d="M530.6,14620.48 L544.6,14620.48 L537.6,14632.48 Z" fill="#E58A63"/>
+<text x="537.6" y="14586.5" font-size="14" fill="#A3A7AE" font-weight="600" text-anchor="middle">2025.01 DeepSeek</text>
+<text x="537.6" y="14608.5" font-size="14" fill="#A3A7AE" font-weight="600" text-anchor="middle">单日蒸发约 6000 亿</text>
+<circle cx="78" cy="14866" r="9.5" fill="#1E2430" stroke="#F7F3EA" stroke-width="3.5"/>
+<text x="118" y="14874" font-size="23" fill="#E58A63" font-weight="800" letter-spacing="1">2025</text>
+<text x="118" y="14914" font-size="29" fill="#F7F3EA" font-weight="800">入选《时代》年度人物</text>
+<text x="118" y="14952" font-size="21" fill="#A3A7AE">与多位 AI 领军者以“AI 架构师”之名共同入选</text>
+<text x="702" y="14988" font-size="15" fill="#6E7484" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">14 / 16</text>
+<circle cx="78" cy="15250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="15258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2026.01</text>
+<text x="118" y="15298" font-size="29" fill="#1E2430" font-weight="800">CES 上发布 Vera Rubin 平台</text>
+<circle cx="78" cy="15358.6" r="13" fill="none" stroke="#C65D3B" stroke-width="2.5" opacity="0"><animate attributeName="r" values="13;30" dur="2.6s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.0s" repeatCount="indefinite"/></circle>
+<circle cx="78" cy="15358.6" r="13.5" fill="#1E2430"/>
+<circle cx="78" cy="15358.6" r="5.5" fill="#D97757"/>
+<text x="118" y="15366.6" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2026</text>
+<text x="118" y="15406.6" font-size="29" fill="#1E2430" font-weight="800">获颁 IEEE 荣誉勋章</text>
+<text x="118" y="15444.6" font-size="21" fill="#5F636B">IEEE 最高奖，他是第 106 位得主</text>
+<g transform="translate(638 15406.6)"><g><animateTransform attributeName="transform" type="rotate" values="-6 0 -56;6 0 -56;-6 0 -56" dur="3.2s" repeatCount="indefinite"/><polygon points="-22,-56 -7,-56 7,8 -8,10" fill="#2C6E6A"/><polygon points="7,-56 22,-56 8,10 -7,8" fill="#C65D3B"/><circle cx="0" cy="34" r="30" fill="#D4A24C" stroke="#A87B2C" stroke-width="3"/><circle cx="0" cy="34" r="21" fill="none" stroke="#F0D594" stroke-width="2"/><path d="M0,20 L4,30 L15,30 L6,37 L9,48 L0,41 L-9,48 L-6,37 L-15,30 L-4,30 Z" fill="#FFF3D6"/></g><rect x="-28" y="-62" width="56" height="9" rx="4" fill="#1E2430"/></g>
+<circle cx="78" cy="15521.2" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="15530.2" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2026</text>
+<text x="236" y="15530.2" font-size="27" fill="#1E2430" font-weight="800">受邀加入总统科学技术顾问委员会</text>
+<circle cx="78" cy="15586.8" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="15595.8" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2026</text>
+<text x="236" y="15595.8" font-size="27" fill="#1E2430" font-weight="800">他穿过的一件皮夹克，拍出 96 万美元</text>
+<circle cx="78" cy="15652.4" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="15661.4" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">2026</text>
+<text x="236" y="15661.4" font-size="27" fill="#1E2430" font-weight="800">身家超过 1500 亿美元</text>
+<text x="236" y="15697.4" font-size="21" fill="#5F636B">《福布斯》估算，排名全球第 11</text>
+<text x="118" y="15762" font-size="19" fill="#1E2430" font-weight="800">英伟达年营收（财年，约数）</text>
+<text x="118" y="15804" font-size="15" fill="#8B877F" font-weight="700" font-family="'SF Mono',Menlo,Consolas,monospace">FY23</text>
+<rect x="170" y="15784.000000000002" width="53.7" height="26" rx="3" fill="#C65D3B" opacity="0.16"/>
+<line x1="170" y1="15797" x2="223.7" y2="15797" stroke="#D97757" stroke-width="26" stroke-dasharray="53.7 53.7" stroke-dashoffset="53.7"><animate attributeName="stroke-dashoffset" values="53.7;0;0;53.7" keyTimes="0;0.22;0.92;1" dur="7.0s" begin="0.00s" repeatCount="indefinite"/></line>
+<text x="233.7" y="15804" font-size="16" fill="#5F636B" font-weight="800">269 亿美元</text>
+<text x="118" y="15854" font-size="15" fill="#8B877F" font-weight="700" font-family="'SF Mono',Menlo,Consolas,monospace">FY24</text>
+<rect x="170" y="15834.000000000002" width="121.7" height="26" rx="3" fill="#C65D3B" opacity="0.16"/>
+<line x1="170" y1="15847" x2="291.7" y2="15847" stroke="#D97757" stroke-width="26" stroke-dasharray="121.7 121.7" stroke-dashoffset="121.7"><animate attributeName="stroke-dashoffset" values="121.7;0;0;121.7" keyTimes="0;0.22;0.92;1" dur="7.0s" begin="0.30s" repeatCount="indefinite"/></line>
+<text x="301.7" y="15854" font-size="16" fill="#5F636B" font-weight="800">609 亿美元</text>
+<text x="118" y="15904" font-size="15" fill="#8B877F" font-weight="700" font-family="'SF Mono',Menlo,Consolas,monospace">FY25</text>
+<rect x="170" y="15884.000000000002" width="259.7" height="26" rx="3" fill="#C65D3B" opacity="0.16"/>
+<line x1="170" y1="15897" x2="429.7" y2="15897" stroke="#D97757" stroke-width="26" stroke-dasharray="259.7 259.7" stroke-dashoffset="259.7"><animate attributeName="stroke-dashoffset" values="259.7;0;0;259.7" keyTimes="0;0.22;0.92;1" dur="7.0s" begin="0.60s" repeatCount="indefinite"/></line>
+<text x="439.7" y="15904" font-size="16" fill="#5F636B" font-weight="800">1300 亿美元</text>
+<text x="118" y="15954" font-size="15" fill="#8B877F" font-weight="700" font-family="'SF Mono',Menlo,Consolas,monospace">FY26</text>
+<rect x="170" y="15934.000000000002" width="429.5" height="26" rx="3" fill="#C65D3B" opacity="0.16"/>
+<line x1="170" y1="15947" x2="599.5" y2="15947" stroke="#C65D3B" stroke-width="26" stroke-dasharray="429.5 429.5" stroke-dashoffset="429.5"><animate attributeName="stroke-dashoffset" values="429.5;0;0;429.5" keyTimes="0;0.22;0.92;1" dur="7.0s" begin="0.90s" repeatCount="indefinite"/></line>
+<text x="609.5" y="15954" font-size="16" fill="#C65D3B" font-weight="800">2150 亿美元</text>
+<text x="702" y="15988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">15 / 16</text>
+<circle cx="78" cy="16250" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="16258" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">10.29</text>
+<text x="118" y="16298" font-size="29" fill="#1E2430" font-weight="800">《纽约时报》开始连续报道</text>
+<text x="118" y="16336" font-size="21" fill="#5F636B">围绕他的私人关系与合规问题</text>
+<circle cx="78" cy="16394.8" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="16402.8" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">11.08</text>
+<text x="118" y="16442.8" font-size="29" fill="#1E2430" font-weight="800">董事会启动独立调查</text>
+<text x="118" y="16480.8" font-size="21" fill="#5F636B">他发出全员信，就个人行为公开道歉</text>
+<circle cx="78" cy="16539.5" r="9.5" fill="#F7F3EA" stroke="#1E2430" stroke-width="3.5"/>
+<text x="118" y="16547.5" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">11.11</text>
+<text x="118" y="16587.5" font-size="29" fill="#1E2430" font-weight="800">董事会连夜开会</text>
+<text x="118" y="16625.5" font-size="21" fill="#5F636B">商议他的去留</text>
+<rect x="54" y="16678.8" width="48" height="11" rx="3" fill="#1E2430"/>
+<rect x="54" y="16678.2" width="48" height="11" rx="3" fill="#C65D3B" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/></rect>
+<text x="118" y="16692.2" font-size="23" fill="#C65D3B" font-weight="800" letter-spacing="1">11.12</text>
+<text x="118" y="16732.2" font-size="29" fill="#1E2430" font-weight="800">辞去总裁、CEO 及董事职务，即刻生效</text>
+<text x="118" y="16770.2" font-size="21" fill="#5F636B">CFO 科莱特·克雷斯任临时 CEO，哈维·琼斯任首位董事长</text>
+<text x="118" y="16803.2" font-size="21" fill="#5F636B">消息公布后，股价盘前一度跌超 10%</text>
+<text x="118" y="16866" font-size="24" fill="#1E2430" font-weight="800">63 年人生，33 年是英伟达 CEO</text>
+<rect x="118" y="16904.0" width="90.4" height="24" fill="#E6DCCB"/>
+<text x="163.2" y="16954" font-size="16" fill="#5F636B" font-weight="600" text-anchor="middle">童年</text>
+<rect x="208.4" y="16904.0" width="100.8" height="24" fill="#D9CDB8"/>
+<text x="258.8" y="16954" font-size="16" fill="#5F636B" font-weight="600" text-anchor="middle">求学</text>
+<rect x="309.2" y="16904.0" width="84.8" height="24" fill="#C9BBA3"/>
+<text x="351.6" y="16954" font-size="16" fill="#5F636B" font-weight="600" text-anchor="middle">工程师</text>
+<rect x="394.1" y="16904.0" width="307.9" height="24" fill="#C65D3B"/>
+<text x="548" y="16954" font-size="16" fill="#C65D3B" font-weight="800" text-anchor="middle">英伟达 CEO · 33 年</text>
+<text x="118" y="16894" font-size="14" fill="#8B877F" font-family="'SF Mono',Menlo,Consolas,monospace">1963</text>
+<text x="208.4" y="16894" font-size="14" fill="#8B877F" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">1973</text>
+<text x="309.2" y="16894" font-size="14" fill="#8B877F" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">1984</text>
+<text x="394.1" y="16894" font-size="14" fill="#8B877F" text-anchor="middle" font-family="'SF Mono',Menlo,Consolas,monospace">1993</text>
+<text x="702" y="16894" font-size="14" fill="#8B877F" text-anchor="end" font-family="'SF Mono',Menlo,Consolas,monospace">2026</text>
+<rect x="118" y="16900.0" width="3.5" height="32" fill="#1E2430"><animate attributeName="x" values="118;698.5;698.5" keyTimes="0;0.85;1" dur="8s" repeatCount="indefinite"/></rect>
+<path d="M78,16704.2 V16890 Q78,16916 104,16916 H112" fill="none" stroke="#A39E94" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 11"/>
+<text x="702" y="16988" font-size="15" fill="#A39E94" text-anchor="end" letter-spacing="1" font-family="'SF Mono',Menlo,Consolas,monospace">16 / 16</text>
+<text x="118" y="16990" font-size="14" fill="#A39E94">资料：英伟达官方公告、维基百科、《纽约时报》《连线》等报道</text>
+</svg>
