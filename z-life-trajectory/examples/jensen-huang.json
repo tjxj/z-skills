@@ -1,0 +1,241 @@
+{
+  "person": "黄仁勋",
+  "theme": "terra",
+  "plugins": ["jensen_blocks.py"],
+  "forbid": [],
+  "sources": "资料：英伟达官方公告、维基百科、《纽约时报》《连线》等报道",
+  "cover": {
+    "news": {"date": "2026.11.12", "text": "英伟达官宣：黄仁勋辞去总裁、CEO 及董事职务"},
+    "kicker": "执掌英伟达",
+    "big": "33",
+    "big_unit": "年",
+    "name": "黄仁勋",
+    "subtitle": "的人生轨迹",
+    "years": "1963—2026",
+    "route": "台南 → 曼谷 → 肯塔基 → 俄勒冈 → 硅谷",
+    "map_title": "人生线路图",
+    "map_note": "15 站 · 63 年",
+    "stops": [
+      {"year": "1963", "label": "出生"},
+      {"year": "1973", "label": "赴美"},
+      {"year": "1984", "label": "大学毕业"},
+      {"year": "1993", "label": "创立英伟达", "kind": "major"},
+      {"year": "1997", "label": "险些破产"},
+      {"year": "1999", "label": "GPU 问世"},
+      {"year": "2006", "label": "CUDA", "kind": "major"},
+      {"year": "2012", "label": "AlexNet"},
+      {"year": "2016", "label": "DGX-1"},
+      {"year": "2022", "label": "ChatGPT", "kind": "major"},
+      {"year": "2023", "label": "万亿市值"},
+      {"year": "2024", "label": "全球第一"},
+      {"year": "2025", "label": "5 万亿"},
+      {"year": "2026.01", "label": "IEEE 勋章"},
+      {"year": "2026.11", "label": "辞职"}
+    ]
+  },
+  "screens": [
+    {
+      "era": "1963 — 1973", "title": "在台南和曼谷长大", "sub": "九岁那年，被父母送往美国",
+      "blocks": [
+        {"type": "station", "year": "1963.02.17", "title": "出生，幼年在台南", "lines": ["家中次子，父亲是炼油厂化学工程师，母亲是老师"]},
+        {"type": "counter", "icon": "book", "title": "每天 10 个英文单词", "sub": "母亲从字典里随机挑，教兄弟俩", "count": 10},
+        {"type": "station", "year": "1968 · 5 岁", "title": "随父亲工作迁居泰国", "lines": ["在曼谷读国际学校，一住约四年"]},
+        {"type": "station", "year": "1973 · 9 岁", "title": "和哥哥被送往美国", "kind": "major",
+         "lines": ["父亲在纽约受训回来，决心让儿子去美国读书", "投奔华盛顿州塔科马的叔叔，英语还不流利"]},
+        {"type": "journey", "from": "亚洲", "to": "美国", "label": "飞越太平洋", "vehicle": "plane"}
+      ]
+    },
+    {
+      "era": "1973 — 1975 · 肯塔基", "title": "误入问题少年学校", "sub": "为了凑学费，父母几乎卖掉了全部家当",
+      "blocks": [
+        {"type": "station", "year": "1973", "title": "和哥哥进了 Oneida 浸信会学院", "lines": ["叔叔婶婶以为这是名校，其实专收问题少年"]},
+        {"type": "station", "year": "10 岁", "title": "年纪太小，只能去读当地小学",
+         "lines": ["常被欺负、挨打，每天都要打扫厕所", "也是在这里，学会了打乒乓球、加入游泳队"]},
+        {"type": "exchange", "middle": "交换",
+         "left": {"icon": "book", "label": "他教室友识字"}, "right": {"icon": "dumbbell", "label": "室友教他卧推"}},
+        {"type": "quote", "lead": "2002 年，他说肯塔基的日子", "lines": ["比人生中几乎任何一段", "都记得清楚"]}
+      ]
+    },
+    {
+      "era": "1975 — 1978 · 俄勒冈", "title": "跳级、编程、打乒乓", "sub": "父母赶到美国，一家人终于团聚",
+      "blocks": [
+        {"type": "station", "year": "1975", "title": "全家在俄勒冈团聚", "lines": ["他进了 Aloha 高中，连跳两级"]},
+        {"type": "apple2", "year": "1977", "title": "学校买来一台 Apple II",
+         "lines": ["他玩文字游戏《超级星际迷航》", "还用 BASIC 写了自己的贪吃蛇"], "note": "那年他 14 岁"},
+        {"type": "station", "year": "1978 · 15 岁", "title": "全美乒乓球公开赛，青少年双打第三名",
+         "lines": ["在全国排得上名次，还参加数学、计算机和科学社团"]},
+        {"type": "pingpong"}
+      ]
+    },
+    {
+      "era": "1978 — 1985", "title": "一边洗碗，一边读书", "sub": "Denny's 夜班、俄勒冈州立大学、AMD",
+      "blocks": [
+        {"type": "card", "icon": "coffee", "icon_scale": 1.05, "year": "1978 — 1983", "title": "Denny's 通宵夜班",
+         "lines": ["洗碗、收桌，后来当服务员", "这是他人生的第一份工作"]},
+        {"type": "station", "year": "16 岁", "title": "高中毕业",
+         "lines": ["因为学费便宜，选了俄勒冈州立大学", "他回忆，自己是班上年纪最小、唯一像个孩子的学生"]},
+        {"type": "station", "year": "1984", "title": "电子工程学士，以最高荣誉毕业", "kind": "major",
+         "lines": ["实验课搭档 Lori Mills，后来成了他的妻子"]},
+        {"type": "station", "year": "1984", "title": "加入 AMD，设计微处理器", "lines": ["德州仪器、AMD、LSI Logic 都给了他录用通知"]},
+        {"type": "station", "year": "1985", "title": "和 Lori 结婚"}
+      ]
+    },
+    {
+      "era": "1985 — 1992", "title": "遇见两位合伙人", "sub": "在 LSI Logic 做图形芯片",
+      "blocks": [
+        {"type": "station", "year": "1985", "title": "跳槽到 LSI Logic",
+         "lines": ["和 Sun 合作，认识了 Sun 的两位工程师", "Chris Malachowsky 和 Curtis Priem"]},
+        {"type": "card", "icon": "workstation", "icon_scale": 1.55, "icon_w": 230, "icon_label": "Sun 工作站", "height": 290,
+         "year": "1989", "title": ["三个人一起做出", "GX 图形引擎"],
+         "lines": ["GX 卖得非常好", "他升任 CoreWare 部门总监", "这个部门专为硬件厂商造芯片"]},
+        {"type": "station", "year": "1992", "title": "斯坦福电子工程硕士", "icon": "cap",
+         "lines": ["一边上班、一边带两个孩子，用业余时间读完"]}
+      ]
+    },
+    {
+      "era": "1992 — 1993", "title": "在 Denny's 卡座里创业", "sub": "30 岁生日那天，他正式加入",
+      "blocks": [
+        {"type": "station", "year": "1992", "title": "三个人常约在 Denny's 碰头", "lines": ["圣何塞东边的一家店，咖啡便宜，比家里安静"]},
+        {"type": "team", "names": ["Chris Malachowsky", "Curtis Priem", {"text": "黄仁勋 · 30 岁 · CEO", "style": "bold"}],
+         "rename": {"from": "NVision", "to": "NVIDIA"},
+         "notes": ["NVision 已被", "厕纸厂商注册", {"text": "invidia：拉丁语“嫉妒”", "style": "accent"}]},
+        {"type": "station", "year": "1993.02.17", "title": "30 岁生日，正式加入", "lines": ["三人在 Priem 弗里蒙特的联排别墅里开工"]},
+        {"type": "station", "year": "1993.04.05", "title": "英伟达成立", "kind": "major",
+         "lines": ["律师收走他兜里的 200 美元当注册资本，三人共 600 美元", "路演讲砸了，红杉仍凭 LSI 老板的推荐投了钱"]},
+        {"type": "tokens", "attach": "prev", "dy": 32, "x": 330, "items": ["$200", "$200", "$200"], "total": "= $600"}
+      ]
+    },
+    {
+      "era": "1995 — 1996", "title": "第一款芯片就押错了", "sub": "微软只认三角形，NV1 押的是四边形",
+      "blocks": [
+        {"type": "station", "year": "1995", "title": "首款芯片 NV1 失败", "lines": ["它押注四边形渲染，微软 Direct3D 却只支持三角形"]},
+        {"type": "mesh_compare", "left": {"title": "NV1 · 四边形", "sub": "和主流路线不兼容"},
+         "right": {"title": "Direct3D · 三角形", "sub": "微软只支持这一种"}},
+        {"type": "station", "year": "绝境中", "title": "世嘉没选它，却仍投了 500 万美元",
+         "lines": ["世嘉社长入交昭一郎亲自登门，告知换了供应商", "他后来说：这份理解和慷慨，让我们多活了六个月"]},
+        {"type": "station", "year": "1996", "title": "裁员过半：100 人只留下 40", "lines": ["剩下的资源，全押在三角形芯片 RIVA 128 上"]}
+      ]
+    },
+    {
+      "era": "1997 — 1998", "title": "离破产只有 30 天", "sub": "这句话，他在员工大会上讲了很多年",
+      "blocks": [
+        {"type": "ring", "value": "30", "unit": "天", "drain": 0.9167, "rescue": true,
+         "left": ["账上的钱", {"text": "只够发一个月工资", "style": "bold"}], "right": ["RIVA 128", "公司得救"]},
+        {"type": "station", "year": "1997.08", "title": "RIVA 128 发布，公司得救", "kind": "major", "lines": ["4 个月卖出约 100 万片"]},
+        {"type": "station", "year": "1998", "title": "RIVA TNT 发布", "lines": ["巩固了英伟达在图形技术上的领先地位"]},
+        {"type": "dots", "total": 70, "keep": 2,
+         "lines": ["90 年代末，约 70 家", {"text": "图形芯片创业公司", "style": "bold"}, "最后只活下来两家", {"text": "英伟达和 ATI", "style": "accent"}]}
+      ]
+    },
+    {
+      "era": "1999 — 2001", "title": "造出第一块 GPU", "sub": "上市、拿下 Xbox、收购老对手",
+      "blocks": [
+        {"type": "station", "year": "1999.01.22", "title": "英伟达在纳斯达克上市"},
+        {"type": "station", "year": "1999", "title": "GeForce 256 发布", "kind": "major", "lines": ["英伟达第一款以 GPU 之名推出的产品"]},
+        {"type": "cpu_gpu", "left": {"title": "CPU · 几个大核心", "sub": "一件一件按顺序算"},
+         "right": {"title": "GPU · 成百上千个小核心", "sub": "成千上万份活同时算"}},
+        {"type": "compact", "year": "2000", "title": "拿下微软 Xbox 订单", "lines": ["预付款 2 亿美元"]},
+        {"type": "compact", "year": "2000.12", "title": "收购昔日对手 3dfx 的资产"},
+        {"type": "compact", "year": "2001", "title": "取代安然，进入标普 500"}
+      ]
+    },
+    {
+      "era": "2004 — 2007", "title": "让显卡学会计算", "sub": "为了 CUDA，英伟达前后投入超过 10 亿美元",
+      "blocks": [
+        {"type": "station", "year": "2004", "title": "请来斯坦福博士生 Ian Buck", "lines": ["他开发的 Brook 语言，能让 GPU 做通用计算"]},
+        {"type": "station", "year": "2004.12", "title": "为索尼 PS3 设计图形芯片"},
+        {"type": "cuda_fanout"},
+        {"type": "station", "year": "2006.11", "title": "推出 CUDA", "kind": "major",
+         "lines": ["2007 年正式发布", "开发者从 2018 年的 100 万，涨到 2024 年的 500 万"]},
+        {"type": "station", "year": "2007", "title": "《福布斯》年度公司"}
+      ]
+    },
+    {
+      "era": "2010 — 2017", "title": "AI 从两块游戏显卡开始", "sub": "2017 年，还有人没听说过英伟达",
+      "blocks": [
+        {"type": "station", "year": "2010", "title": "在 GTC 大会上亮出公司标志纹身", "lines": ["这是公司股价涨破 100 美元时纹的"]},
+        {"type": "station", "year": "2012", "title": "AlexNet 夺得 ImageNet 冠军", "kind": "major", "lines": ["多伦多大学团队用两块 GTX 580 训练"]},
+        {"type": "alexnet"},
+        {"type": "station", "year": "2016.08", "title": "把第一台 DGX-1 送给 OpenAI", "lines": ["可把处理时间从六天缩短到两小时"]},
+        {"type": "station", "year": "2017", "title": "《财富》：没听说过英伟达？情有可原"}
+      ]
+    },
+    {
+      "era": "2018 — 2022", "title": "从显卡公司到 AI 平台", "sub": "收购、扩张，然后等来 ChatGPT",
+      "blocks": [
+        {"type": "compact", "year": "2018", "title": "发布第一代 RTX 显卡", "lines": ["RTX 2080 上市，主打实时光线追踪"]},
+        {"type": "compact", "year": "2019", "title": "69 亿美元收购 Mellanox", "lines": ["扩大在高性能计算市场的版图"]},
+        {"type": "compact", "year": "2020", "title": "发布 A100，GTC 改到线上", "lines": ["约 5.9 万人报名"]},
+        {"type": "compact", "year": "2020.09", "title": "宣布 400 亿美元收购 Arm", "lines": ["2022 年 2 月，交易告吹"]},
+        {"type": "compact", "year": "2021", "title": "主题演讲里的他，有一段是 CGI", "lines": ["直到 8 月官方博客揭晓，媒体都没看出来"]},
+        {"type": "compact", "year": "2022.03", "title": "发布 H100"},
+        {"type": "station", "year": "2022.11", "title": "ChatGPT 上线", "kind": "major", "icon": "chat", "lines": ["AI 热潮来了，算力开始供不应求"]}
+      ]
+    },
+    {
+      "era": "2023", "title": "从卡座到万亿", "sub": "600 美元起家，30 年后市值破万亿",
+      "blocks": [
+        {"type": "station", "year": "2023.05", "title": "市值突破 1 万亿美元", "kind": "major", "lines": ["距离三人凑出的 600 美元，正好 30 年"]},
+        {"type": "plaque", "scene": "booth", "title": "万亿美元公司诞生地", "sub": "NVIDIA · 1993"},
+        {"type": "station", "year": "2023.09.26", "title": "Denny's 卡座挂上纪念牌", "lines": ["当年三人碰头的那个卡座，被标为万亿美元公司诞生地"]},
+        {"type": "station", "year": "同月", "title": "H100 一卡难求",
+         "lines": ["甲骨文创始人埃里森说，他和马斯克曾在饭桌上求货", "他的原话：一小时的寿司和恳求"]}
+      ]
+    },
+    {
+      "era": "2024 — 2025", "dark": true,
+      "blocks": [
+        {"type": "bigstat", "value": "5 万亿美元", "size": 96, "lines": ["英伟达市值，每突破一个万亿的时间点"]},
+        {"type": "bars", "height": 546,
+         "axis": {"from": 0, "to": 34, "ticks": [[0, "2023"], [12, "2024"], [24, "2025"]]},
+         "items": [
+           {"t": 4, "v": 1, "label": "1 万亿", "note": "2023.05"},
+           {"t": 14, "v": 2, "label": "2 万亿", "note": "2024.03"},
+           {"t": 17, "v": 3, "label": "3 万亿", "note": "2024.06"},
+           {"t": 30, "v": 4, "label": "4 万亿", "note": "2025.07"},
+           {"t": 33, "v": 5, "label": "5 万亿", "note": "2025.10"}
+         ],
+         "bracket": {"from": 0, "to": 1, "text": "180 天"},
+         "event": {"t": 24, "level": 146, "lines": ["2025.01 DeepSeek", "单日蒸发约 6000 亿"]},
+         "inset": {"value": "29", "unit": "个月", "lines": ["从 1 万亿到 5 万亿", "2024.06 一度登顶全球市值第一"]}},
+        {"type": "station", "year": "2025", "title": "入选《时代》年度人物", "lines": ["与多位 AI 领军者以“AI 架构师”之名共同入选"]}
+      ]
+    },
+    {
+      "era": "2026", "title": "荣誉在这一年到顶", "sub": "然后，一切急转直下",
+      "blocks": [
+        {"type": "station", "year": "2026.01", "title": "CES 上发布 Vera Rubin 平台"},
+        {"type": "station", "year": "2026", "title": "获颁 IEEE 荣誉勋章", "kind": "major", "icon": "medal", "icon_scale": 1.0,
+         "lines": ["IEEE 最高奖，他是第 106 位得主"]},
+        {"type": "compact", "year": "2026", "title": "受邀加入总统科学技术顾问委员会"},
+        {"type": "compact", "year": "2026", "title": "他穿过的一件皮夹克，拍出 96 万美元"},
+        {"type": "compact", "year": "2026", "title": "身家超过 1500 亿美元", "lines": ["《福布斯》估算，排名全球第 11"]},
+        {"type": "hbars", "title": "英伟达年营收（财年，约数）",
+         "items": [
+           {"label": "FY23", "v": 26.9, "text": "269 亿美元"},
+           {"label": "FY24", "v": 60.9, "text": "609 亿美元"},
+           {"label": "FY25", "v": 130, "text": "1300 亿美元"},
+           {"label": "FY26", "v": 215, "text": "2150 亿美元"}
+         ]}
+      ]
+    },
+    {
+      "era": "2026.10.29 — 11.12", "title": "最后 14 天", "sub": "从第一篇报道到辞职",
+      "blocks": [
+        {"type": "station", "year": "10.29", "title": "《纽约时报》开始连续报道", "lines": ["围绕他的私人关系与合规问题"]},
+        {"type": "station", "year": "11.08", "title": "董事会启动独立调查", "lines": ["他发出全员信，就个人行为公开道歉"]},
+        {"type": "station", "year": "11.11", "title": "董事会连夜开会", "lines": ["商议他的去留"]},
+        {"type": "terminus", "year": "11.12", "title": "辞去总裁、CEO 及董事职务，即刻生效",
+         "lines": ["CFO 科莱特·克雷斯任临时 CEO，哈维·琼斯任首位董事长", "消息公布后，股价盘前一度跌超 10%"]},
+        {"type": "lifebar", "title": "63 年人生，33 年是英伟达 CEO", "start": 1963.13, "end": 2026.87,
+         "segments": [
+           {"from": 1963.13, "to": 1973, "label": "童年"},
+           {"from": 1973, "to": 1984, "label": "求学"},
+           {"from": 1984, "to": 1993.26, "label": "工程师"},
+           {"from": 1993.26, "to": 2026.87, "label": "英伟达 CEO · 33 年", "accent": true}
+         ],
+         "ticks": [[1963.13, "1963"], [1973, "1973"], [1984, "1984"], [1993.26, "1993"], [2026.87, "2026"]]}
+      ]
+    }
+  ]
+}
