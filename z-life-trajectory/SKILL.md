@@ -1,6 +1,6 @@
 ---
 name: z-life-trajectory
-description: 人生轨迹长图——把任意一位名人的一生做成一张超长的动态 SVG（每屏 750×1000，3:4，可直接粘进公众号），再录成带配乐的 3:4 竖屏视频。封面是「人生线路图」，一条主线从出生一路走到今天；每屏讲一个时期，用站点、卡片、计数、航线、倒计时圆环、幸存者点阵、市值柱状图、营收横条、人生进度条等 22 种内容块和 50 个会动的小图标把故事演出来，也能给某个人物写定制插画块。自带排版自检（溢出、过挤、过空）、公众号兼容检查、逐屏截图，以及按音乐小节切屏的录屏脚本（可现场合成无版权配乐，也能用自己的音乐自动找拍点）。适合人物辞职、退休、去世、获奖、周年等新闻由头的生平回顾。触发词：人生轨迹、人生回顾、生平回顾、名人生平、人物生平长图、人物时间线、一张动图看完他的一生、XX 的一生、传记长图、人生线路图、生平视频、人生轨迹视频。
+description: 人生轨迹长图——把任意一位名人的一生做成一张超长的动态 SVG（每屏 750×1000，3:4，可直接粘进公众号），再录成 3:4 竖屏视频。封面是「人生线路图」，一条主线从出生一路走到今天；每屏讲一个时期，用站点、卡片、计数、航线、倒计时圆环、幸存者点阵、市值柱状图、营收横条、人生进度条等 22 种内容块和 50 个会动的小图标把故事演出来，也能给某个人物写定制插画块。自带排版自检（溢出、过挤、过空）、公众号兼容检查、逐屏截图，以及录屏脚本（按文字量估算每屏停多久，录成无声的 3:4 竖屏视频，配乐在剪辑时加）。适合人物辞职、退休、去世、获奖、周年等新闻由头的生平回顾。触发词：人生轨迹、人生回顾、生平回顾、名人生平、人物生平长图、人物时间线、一张动图看完他的一生、XX 的一生、传记长图、人生线路图、生平视频、人生轨迹视频。
 ---
 
 # 人生轨迹长图
@@ -8,7 +8,7 @@ description: 人生轨迹长图——把任意一位名人的一生做成一张�
 输入一个人名（最好再加一个新闻由头），输出：
 
 - 一张超长动态 SVG：封面 + 12~18 屏，每屏 750×1000，公众号里一屏一屏往下滑
-- 一段 3:4 竖屏视频（1080×1440，带配乐），屏与屏之间跟着音乐小节缓动切换
+- 一段 3:4 竖屏视频（1080×1440，无声），每屏停一会再缓动滑到下一屏；配乐、配音在剪辑软件里加
 
 ## 工作流（照做，不要跳步）
 
@@ -83,11 +83,10 @@ python3 scripts/lifeline.py embed person.svg 文章.md
 ```bash
 python3 scripts/record.py person.json --plan                         # 看每屏停多久
 python3 scripts/record.py person.json -o person.mp4 --test 1,8,40     # 抽几帧看
-python3 scripts/record.py person.json -o person.mp4                   # 现场合成配乐
-python3 scripts/record.py person.json -o person.mp4 --bgm song.mp3    # 用自己的音乐
+python3 scripts/record.py person.json -o person.mp4                   # 录视频
 ```
 
-录完用 ffmpeg 抽 3~4 帧看看（开头、某次切屏中间、深色屏、结尾），再用 `ffprobe` 确认时长和音轨。
+录完用 ffmpeg 抽 3~4 帧看看（开头、某次切屏中间、深色屏、结尾），再用 `ffprobe` 确认时长和分辨率。
 
 ## 现成的块不够用时
 
@@ -108,13 +107,12 @@ python3 scripts/record.py person.json -o person.mp4 --bgm song.mp3    # 用自�
 scripts/lifeline.py      引擎：build 生成长图，lint 查公众号兼容，icons 出图标总览，embed 放进文章
 scripts/icons.py         50 个会动的小图标
 scripts/preview.py       定格截图：每屏一张 PNG + 总览
-scripts/record.py        录成 3:4 视频，切屏对齐音乐小节
-scripts/bgm.py           现场合成配乐（warm / bright / calm）
+scripts/record.py        录成 3:4 竖屏视频（无声）
 references/spec.md       spec 字段和 22 种块
 references/design.md     分屏和版面
 references/research.md   查资料和事实核对
 references/custom-blocks.md  写定制插画块
 references/icons.md      图标清单
-references/video.md      录屏、配乐、对拍
+references/video.md      录视频
 examples/                黄仁勋示例：spec、定制插画块、生成的长图
 ```

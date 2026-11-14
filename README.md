@@ -64,7 +64,7 @@ cp -R z-* "/path/to/your/.agent/skills/"
 | [`z-dongxi`](z-dongxi/README.md) | 「动」悉万物：一段内容变一张会动的解析图，35 种图型 × 27 种风格 × 5 种画幅（3:4 公众号默认），单行 SVG 直接粘进公众号，可导出 PNG/GIF/MP4 | 动态图、动态流程图、动态SVG、动图解释、让这张图动起来、mermaid动起来、excalidraw风动图、动态甘特图、动态桑基图、层级状态机、等距图 |
 | [`z-xiaohongshu-cards`](z-xiaohongshu-cards/README.md) | 小红书 3:4 风格库：12 种可复现的命名风格，文章直接出 1080×1440 PNG，新风格持续沉淀 | 小红书卡片、小红书图文、3:4 图文、小绿书配图、做成卡片、沉淀这个风格 |
 | [`z-handwriting-font`](z-handwriting-font/README.md) | 把自己或家人的手写字做成可安装的 OpenType 字体：打印模板拍照自动切字，或从旧信件按抄录切出现有的字 | 手写字体、把字迹做成字体、家人字迹字体、手写体 otf |
-| [`z-life-trajectory`](z-life-trajectory/README.md) | 把任意名人的一生做成可粘进公众号的超长动态 SVG（3:4 分屏、蛇形人生线路图、22 种内容块、50 个动态图标），还能录成切屏对齐音乐强拍的 3:4 配乐视频 | 人生轨迹、人生回顾、生平回顾、名人生平、人物时间线、XX 的一生、人生轨迹视频 |
+| [`z-life-trajectory`](z-life-trajectory/README.md) | 把任意名人的一生做成可粘进公众号的超长动态 SVG（3:4 分屏、蛇形人生线路图、22 种内容块、50 个动态图标），还能录成 3:4 竖屏视频 | 人生轨迹、人生回顾、生平回顾、名人生平、人物时间线、XX 的一生、人生轨迹视频 |
 
 ## 「动」悉万物：会动的解析图
 
@@ -83,7 +83,7 @@ python3 z-dongxi/scripts/render.py --spec z-dongxi/demos/specs/rag.json --style 
 
 ## 人生轨迹长图
 
-[z-life-trajectory](z-life-trajectory/README.md) 把一个人的一生排成一张超长的动态 SVG：封面是蛇形人生线路图，往下每屏一个时期，用站点、计数、航线、倒计时圆环、市值柱状图、人生进度条等 22 种块把故事演出来。每屏 3:4，可以直接粘进公众号；也能录成 1080×1440 的配乐视频，每屏都在音乐强拍上停稳。
+[z-life-trajectory](z-life-trajectory/README.md) 把一个人的一生排成一张超长的动态 SVG：封面是蛇形人生线路图，往下每屏一个时期，用站点、计数、航线、倒计时圆环、市值柱状图、人生进度条等 22 种块把故事演出来。每屏 3:4，可以直接粘进公众号；也能录成 1080×1440 的竖屏视频，配乐在剪辑时加。
 
 <img src="z-life-trajectory/docs/preview.jpg" width="100%">
 

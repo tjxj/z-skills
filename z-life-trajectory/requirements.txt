@@ -1,7 +1,4 @@
-numpy>=1.24
 Pillow>=10.0
 playwright>=1.40
-# optional: beat detection for your own music (record.py --bgm song.mp3)
-# librosa>=0.10
 # after installing playwright: python3 -m playwright install chromium
 # system tool, not pip: ffmpeg  (brew install ffmpeg / apt install ffmpeg)
