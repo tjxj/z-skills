@@ -1,0 +1,61 @@
+<!-- 节点画布：每页是画布上的一组节点。端口用 .pin，连线由样式按页面类型画出。 -->
+<template data-page="cover">
+  <svg class="graph" data-bleed viewBox="0 0 936 320" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><path class="w" d="M468 112V320"/><path class="w" d="M808 150C808 252 468 218 468 320"/><path class="w hot" d="M128 150C128 252 468 218 468 320"/><circle class="pkt" cx="298" cy="235" r="11"/><g class="gn" transform="translate(10 40)"><rect class="b" width="236" height="110" rx="18"/><path class="hd" d="M1.5 46V18A16.5 16.5 0 0 1 18 1.5H218A16.5 16.5 0 0 1 234.5 18V46Z"/><path class="sep" d="M0 46H236"/><rect class="ic hot" x="16" y="11" width="25" height="25" rx="7"/><path class="bolt" d="M31 14 22 26h6l-2 8 9-12h-6z"/><text x="54" y="32">TRIGGER</text><rect class="bar" x="18" y="64" width="150" height="10" rx="5"/><rect class="bar" x="18" y="84" width="92" height="10" rx="5"/><circle class="gp" cx="118" cy="110" r="11"/></g><g class="gn" transform="translate(350 2)"><rect class="b" width="236" height="110" rx="18"/><path class="hd" d="M1.5 46V18A16.5 16.5 0 0 1 18 1.5H218A16.5 16.5 0 0 1 234.5 18V46Z"/><path class="sep" d="M0 46H236"/><rect class="ic" x="16" y="11" width="25" height="25" rx="7"/><path class="clk" d="M28.5 17v7l4 3"/><text x="54" y="32">SCHEDULE</text><rect class="bar" x="18" y="64" width="170" height="10" rx="5"/><rect class="bar" x="18" y="84" width="110" height="10" rx="5"/><circle class="gp" cx="118" cy="110" r="11"/></g><g class="gn" transform="translate(690 40)"><rect class="b" width="236" height="110" rx="18"/><path class="hd" d="M1.5 46V18A16.5 16.5 0 0 1 18 1.5H218A16.5 16.5 0 0 1 234.5 18V46Z"/><path class="sep" d="M0 46H236"/><rect class="ic ok" x="16" y="11" width="25" height="25" rx="7"/><text x="54" y="32">WEBHOOK</text><rect class="bar" x="18" y="64" width="128" height="10" rx="5"/><rect class="bar" x="18" y="84" width="160" height="10" rx="5"/><circle class="gp" cx="118" cy="110" r="11"/></g><path class="cur" d="M662 196v40l10-9 8 18 9-4-8-17h14z"/></svg>
+  <div class="node hero"><i class="pin i" data-bleed></i><i class="pin o" data-bleed></i>
+    <div class="nbar"><i class="nico"></i>{{#kicker}}<p class="kicker">{{kicker}}</p>{{/kicker}}<i class="nok"></i></div>
+    <div class="nbody">
+      <h1 class="title">{{title}}</h1>
+      {{#sub}}<p class="sub">{{sub}}</p>{{/sub}}
+      {{#image}}<figure class="shot"><img src="{{image}}" alt=""></figure>{{/image}}
+      {{#hasTags}}<ul class="tags">{{#tags}}<li>{{.}}</li>{{/tags}}</ul>{{/hasTags}}
+    </div>
+  </div>
+</template>
+
+<template data-page="points">
+  <h2 class="title">{{title}}</h2>
+  <ol class="list">{{#items}}<li class="item node"><i class="pin i" data-bleed></i><div class="nbar"><span class="idx">{{i}}</span><h3 class="ihead">{{head}}</h3></div>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ol>
+</template>
+
+<template data-page="steps">
+  <h2 class="title">{{title}}</h2>
+  <ol class="list">{{#items}}<li class="item"><div class="node"><i class="pin i" data-bleed></i><i class="pin o" data-bleed></i><div class="nbar"><span class="idx">{{i}}</span><h3 class="ihead">{{head}}</h3></div>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div><i class="wire" data-bleed></i></li>{{/items}}</ol>
+</template>
+
+<template data-page="compare">
+  <h2 class="title">{{title}}</h2>
+  <div class="fork" data-bleed><span class="ifn">IF</span></div>
+  <div class="cols">
+    <section class="col a node"><i class="pin i" data-bleed></i><i class="pin o" data-bleed></i><div class="nbar"><i class="mk"></i><h3 class="clabel">{{left.label}}</h3></div><ul>{{#left.items}}<li>{{.}}</li>{{/left.items}}</ul></section>
+    <section class="col b node"><i class="pin i" data-bleed></i><i class="pin o" data-bleed></i><div class="nbar"><i class="mk"></i><h3 class="clabel">{{right.label}}</h3></div><ul>{{#right.items}}<li>{{.}}</li>{{/right.items}}</ul></section>
+  </div>
+  {{#verdict}}<i class="merge" data-bleed></i><p class="verdict">{{verdict}}</p>{{/verdict}}
+</template>
+
+<template data-page="quote">
+  <div class="memo node"><i class="pin i" data-bleed></i><i class="pin o" data-bleed></i><span class="qmark" data-bleed>“</span>
+    <blockquote class="qtext">{{text}}</blockquote>
+    {{#source}}<p class="qsrc">{{source}}</p>{{/source}}
+  </div>
+</template>
+
+<template data-page="stat">
+  <h2 class="title">{{title}}</h2>
+  <div class="meter node"><i class="pin o" data-bleed></i>
+    <div class="big"><span class="value">{{value}}</span>{{#unit}}<span class="unit">{{unit}}</span>{{/unit}}</div>
+    {{#text}}<p class="bnote">{{text}}</p>{{/text}}
+  </div>
+  {{#hasItems}}<ul class="list">{{#items}}<li class="item node"><i class="pin i" data-bleed></i><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</li>{{/items}}</ul>{{/hasItems}}
+</template>
+
+<template data-page="image">
+  <h2 class="title">{{title}}</h2>
+  <div class="frame node"><div class="nbar"><i class="nico"></i><span class="nlab">PREVIEW</span><i class="nok"></i></div><figure class="shot"><img src="{{image}}" alt=""></figure></div>
+  {{#caption}}<p class="caption">{{caption}}</p>{{/caption}}
+</template>
+
+<template data-page="end">
+  <h2 class="title">{{title}}</h2>
+  {{#hasItems}}<div class="out node"><i class="pin i" data-bleed></i><i class="pin o" data-bleed></i><div class="nbar"><i class="nico"></i><span class="nlab">OUTPUT</span><i class="nok"></i></div><ol class="list">{{#items}}<li class="item"><i class="chk"></i><div class="ibody"><h3 class="ihead">{{head}}</h3>{{#text}}<p class="itext">{{text}}</p>{{/text}}</div></li>{{/items}}</ol></div>{{/hasItems}}
+  {{#cta}}<i class="link" data-bleed></i><p class="cta">{{cta}}</p>{{/cta}}
+</template>

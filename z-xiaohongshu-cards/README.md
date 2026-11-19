@@ -2,7 +2,7 @@
 
 一个持续生长的小红书 3:4 风格库。把文章交给 Agent，选一种风格，得到一组 1080×1440 PNG；做出新风格后，再把它沉淀回来。
 
-![12 种风格](docs/styles-grid.jpg)
+![13 种风格](docs/styles-grid.jpg)
 
 ## 安装
 
@@ -51,12 +51,13 @@ node scripts/render.cjs cards.html --out ./output --sheet ./output/sheet.jpg
 | <img src="styles/almanac/samples/01.jpg" width="150"> | **老黄历**<br>`almanac` | 撕页挂历，大字直排，红绿双色油墨 | 节气养生、生活习惯、日常宜忌 |
 | <img src="styles/night-terminal/samples/01.jpg" width="150"> | **深夜终端**<br>`night-terminal` | 黑底绿字的命令行窗口，提示符串起全页 | 开发教程、命令速查、AI 工具 |
 | <img src="styles/ticket-stub/samples/01.jpg" width="150"> | **票根旅程**<br>`ticket-stub` | 硬纸车票、打孔缺口和撕票线，每页都是一站 | 旅行攻略、探店路线、周末计划 |
+| <img src="styles/node-canvas/samples/01.jpg" width="150"> | **节点画布**<br>`node-canvas` | 点阵画布上的工作流节点，端口和连线串起全页 | 工作流、自动化、AI Agent 教程 |
 | <img src="styles/warm-paper/samples/01.jpg" width="150"> | **暖纸蓝橙**<br>`warm-paper` | 暖米色点阵纸上的产品手册，亲和、清楚 | 产品上手、App 教程、功能清单、对比选型 |
 | <img src="styles/legal-pad/samples/01.jpg" width="150"> | **黄便签手写**<br>`legal-pad` | 黄色法律便签上贴图批注，像人亲手整理的笔记 | 教程、方法论、作品展示、学术与工具测评 |
 | <img src="styles/rice-seal/samples/01.jpg" width="150"> | **宣纸朱印**<br>`rice-seal` | 装裱宣纸、远山、朱红印章，人文书卷气 | 诗词、历史、读书、人文项目 |
 | <img src="styles/field-manual/samples/01.jpg" width="150"> | **现场手册**<br>`field-manual` | 象牙纸、海军蓝、信号红的工业手册台账 | 架构解释、SOP、决策清单、方法论 |
 
-前 8 种是 JSON 风格：目录里有 `style.css`、`pages.html`、`sample.json`、`STYLE.md`、`preview.jpg` 和 `samples/`，样图文案都是虚构示例。后 4 种是模板风格：复制 `template.html` 后手改，`samples/` 是原作样图，模板示例用斜纹占位块代替原始截图。
+前 9 种是 JSON 风格：目录里有 `style.css`、`pages.html`、`sample.json`、`STYLE.md`、`preview.jpg` 和 `samples/`，样图文案都是虚构示例。后 4 种是模板风格：复制 `template.html` 后手改，`samples/` 是原作样图，模板示例用斜纹占位块代替原始截图。
 
 ## 复现
 
