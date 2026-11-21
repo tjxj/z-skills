@@ -1,0 +1,3 @@
+Pillow>=10.0
+playwright>=1.40
+# after installing playwright: python3 -m playwright install chromium

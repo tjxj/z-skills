@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>夯到拉排行榜</title>
+<style>
+@font-face{font-family:"TLSerif";src:url("__FONT_URL__");font-weight:250 900;font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--u:1;--lw:184px;--pad:56px;--rowmin:120px;--W:1080px;--H:1440px}
+html,body{width:var(--W);height:var(--H);overflow:hidden}
+body{font-family:"TLSerif","Source Han Serif SC VF","Source Han Serif SC","Noto Serif CJK SC","Songti SC",serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+
+/* ---------- 主题 ---------- */
+body.ink{
+  --bg:#15120F;--ink:#F4EDE2;--muted:rgba(244,237,226,.58);--faint:rgba(244,237,226,.30);
+  --line:rgba(244,224,196,.12);--board:rgba(255,246,232,.022);
+  --chip:rgba(255,246,232,.062);--chip2:rgba(255,246,232,.032);--chipline:rgba(255,236,208,.12);
+  --gold:#D6B072;--seal:#C4412B;--sealink:#FBEDE3;--grain:.11;--blend:overlay;--wash:9%;
+}
+body.paper{
+  --bg:#F1EADD;--ink:#1F1A14;--muted:rgba(31,26,20,.60);--faint:rgba(31,26,20,.34);
+  --line:rgba(70,50,25,.16);--board:rgba(255,253,248,.42);
+  --chip:#FDFAF5;--chip2:#F6F0E6;--chipline:rgba(70,50,25,.14);
+  --gold:#94692A;--seal:#B4371F;--sealink:#FCEFE6;--grain:.18;--blend:multiply;--wash:11%;
+}
+
+/* ---------- 画布 ---------- */
+.canvas{position:relative;width:var(--W);height:var(--H);display:flex;flex-direction:column;padding:calc(var(--pad)*1.1) var(--pad) calc(var(--pad)*.8);isolation:isolate;overflow:hidden}
+body.ink .canvas{background:
+  radial-gradient(1100px 760px at 94% -10%,rgba(214,158,88,.20),transparent 62%),
+  radial-gradient(900px 720px at -14% 110%,rgba(196,65,43,.14),transparent 60%),
+  linear-gradient(180deg,#1A1612,#110E0B)}
+body.paper .canvas{background:
+  radial-gradient(1000px 700px at 6% -8%,rgba(255,255,255,.78),transparent 60%),
+  radial-gradient(900px 700px at 106% 112%,rgba(178,118,58,.13),transparent 60%),
+  linear-gradient(180deg,#F4EEE3,#ECE3D3)}
+.canvas::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:50;opacity:var(--grain);mix-blend-mode:var(--blend);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n' x='0' y='0'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='320' height='320' filter='url(%23n)'/></svg>")}
+
+/* ---------- 页眉 ---------- */
+.head{position:relative;display:flex;align-items:flex-start;gap:28px;padding-bottom:24px;margin-bottom:26px;flex:0 0 auto}
+.head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,var(--gold),transparent 78%);opacity:.6}
+.htext{flex:1 1 auto;min-width:0}
+.kicker{font-size:18px;font-weight:600;letter-spacing:.34em;color:var(--gold);line-height:1.2;white-space:nowrap}
+.title{font-weight:900;font-size:84px;line-height:1.1;letter-spacing:.012em;margin-top:16px;white-space:nowrap;text-wrap:balance}
+.sub{font-size:24px;font-weight:450;color:var(--muted);margin-top:14px;letter-spacing:.05em;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seal{position:relative;flex:0 0 auto;width:104px;height:104px;margin-top:4px;border-radius:9px;background:var(--seal);color:var(--sealink);
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;place-items:center;padding:13px 12px 12px;
+  font-weight:900;font-size:35px;line-height:1;transform:rotate(-4deg);filter:url(#rough)}
+.seal::before{content:"";position:absolute;inset:7px;border:2px solid rgba(252,237,227,.78);border-radius:4px}
+body.ink .seal{box-shadow:0 12px 30px -14px rgba(196,65,43,.75)}
+.seal.s2{grid-template-columns:1fr;font-size:40px}
+
+/* ---------- 榜单 ---------- */
+.board{position:relative;flex:1 1 auto;min-height:0;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--board)}
+body.ink .board{box-shadow:0 30px 80px -40px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,240,220,.05)}
+body.paper .board{box-shadow:0 24px 60px -38px rgba(80,50,20,.38)}
+.row{position:relative;display:flex;flex:1 0 auto;min-height:var(--rowmin)}
+.row+.row{border-top:1px solid var(--line)}
+.label{position:relative;flex:0 0 var(--lw);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(155deg,var(--c1),var(--c2));color:var(--tx);overflow:hidden}
+.label::before{content:"";position:absolute;inset:0;background:radial-gradient(130% 85% at 18% 0%,rgba(255,255,255,.30),transparent 56%);mix-blend-mode:soft-light}
+.label::after{content:"";position:absolute;top:0;bottom:0;right:0;width:1px;background:rgba(0,0,0,.16)}
+.ln{position:relative;font-weight:900;line-height:1;letter-spacing:.03em;white-space:nowrap}
+.lnote{position:relative;font-size:16px;font-weight:600;letter-spacing:.38em;margin-right:-.38em;opacity:.82;white-space:nowrap}
+
+.row.t0{--c1:#E25A3E;--c2:#A32B1D;--tx:#FFF3EA;--acc:#F2826A}
+.row.t1{--c1:#EFA048;--c2:#C0661E;--tx:#FFF6EB;--acc:#F3AA63}
+.row.t2{--c1:#F1D06A;--c2:#CBA036;--tx:#3A2A0F;--acc:#EBCB6B}
+.row.t3{--c1:#A6B9AD;--c2:#6C8477;--tx:#F5FAF6;--acc:#AFC6B8}
+.row.t4{--c1:#958F9B;--c2:#59555F;--tx:#F1EDF4;--acc:#B1ABB7}
+body.paper .row.t0{--acc:#B5361F}
+body.paper .row.t1{--acc:#AD5A14}
+body.paper .row.t2{--acc:#8F6B10}
+body.paper .row.t3{--acc:#4C6759}
+body.paper .row.t4{--acc:#5D5864}
+
+.items{position:relative;flex:1 1 auto;min-width:0;display:flex;flex-wrap:wrap;align-content:center;align-items:stretch;
+  gap:calc(var(--u)*12px);padding:calc(var(--u)*16px) calc(var(--u)*20px);
+  background:linear-gradient(90deg,color-mix(in srgb,var(--c1) var(--wash),transparent),transparent 46%)}
+.empty{align-self:center;font-size:19px;letter-spacing:.4em;color:var(--faint);padding-left:6px}
+.ghost{position:absolute;right:-.06em;bottom:-.2em;font-weight:900;line-height:1;color:var(--c1);opacity:.07;pointer-events:none;white-space:nowrap}
+body.paper .ghost{opacity:.08}
+
+/* ---------- 条目：横条（pill） ---------- */
+.chip{position:relative;display:flex;align-items:center;gap:calc(var(--u)*12px);min-width:0;max-width:100%;
+  padding:calc(var(--u)*9px) calc(var(--u)*18px) calc(var(--u)*9px) calc(var(--u)*9px);border-radius:calc(var(--u)*16px);
+  background:linear-gradient(180deg,var(--chip),var(--chip2));border:1px solid var(--chipline)}
+body.ink .chip{box-shadow:inset 0 1px 0 rgba(255,245,230,.05),0 6px 18px -10px rgba(0,0,0,.6)}
+body.paper .chip{box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 6px 16px -12px rgba(80,50,20,.35)}
+.row.t0 .chip{border-color:color-mix(in srgb,var(--c1) 58%,transparent);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--c1) 14%,transparent),0 12px 30px -14px color-mix(in srgb,var(--c1) 75%,transparent)}
+.ic{position:relative;flex:0 0 auto;width:calc(var(--u)*46px);height:calc(var(--u)*46px);border-radius:calc(var(--u)*12px);display:grid;place-items:center;overflow:hidden}
+.ic.emo{background:color-mix(in srgb,var(--acc) 17%,transparent);font-size:calc(var(--u)*27px);font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;line-height:1}
+.ic.mono{background:linear-gradient(150deg,color-mix(in srgb,var(--mc) 86%,#fff),color-mix(in srgb,var(--mc) 84%,#000));color:#fff;font-weight:900;font-size:calc(var(--u)*24px);line-height:1;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.ic.mono.m2{font-size:calc(var(--u)*17px);letter-spacing:-.01em}
+.ic.img{background:#fff}
+.ic.img img{width:74%;height:74%;object-fit:contain;display:block}
+.ic.img.cover img{width:100%;height:100%;object-fit:cover}
+.tx{display:flex;flex-direction:column;min-width:0}
+.nm{font-size:calc(var(--u)*24px);font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.01em}
+.vd{font-size:calc(var(--u)*15px);font-weight:500;line-height:1.32;color:var(--muted);margin-top:calc(var(--u)*5px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.02em}
+.sc{color:var(--acc);font-weight:800;font-variant-numeric:tabular-nums;margin-right:.5em;letter-spacing:.02em}
+.nsc{display:none;margin-left:.42em;font-size:.7em;color:var(--acc);font-weight:800;font-variant-numeric:tabular-nums}
+.badge{display:none}
+
+/* ---------- 条目：方块（tile） ---------- */
+.m-tile .chip{flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;width:calc(var(--u)*152px);
+  padding:calc(var(--u)*18px) calc(var(--u)*11px) calc(var(--u)*14px);gap:calc(var(--u)*11px);border-radius:calc(var(--u)*18px)}
+.m-tile .ic{width:calc(var(--u)*62px);height:calc(var(--u)*62px);border-radius:calc(var(--u)*17px)}
+.m-tile .ic.emo{font-size:calc(var(--u)*36px)}
+.m-tile .ic.mono{font-size:calc(var(--u)*31px)}
+.m-tile .ic.mono.m2{font-size:calc(var(--u)*23px)}
+.m-tile .tx{align-items:center;width:100%}
+.w{white-space:nowrap}
+.m-tile .nm{font-size:calc(var(--u)*20.5px);white-space:normal;overflow-wrap:normal;text-overflow:clip;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:1.22}
+.m-tile .vd{font-size:calc(var(--u)*13.5px);white-space:normal;text-overflow:clip;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:calc(var(--u)*7px);line-height:1.38;letter-spacing:.01em}
+.m-tile .vd .sc{display:none}
+.m-tile .badge{display:block;position:absolute;top:calc(var(--u)*9px);right:calc(var(--u)*11px);font-size:calc(var(--u)*13.5px);font-weight:800;color:var(--acc);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+
+/* ---------- 条目：紧凑（compact） ---------- */
+.m-compact .vd{display:none}
+.m-compact .nsc{display:inline}
+.m-compact .chip{padding:calc(var(--u)*7px) calc(var(--u)*16px) calc(var(--u)*7px) calc(var(--u)*7px);gap:calc(var(--u)*10px);border-radius:calc(var(--u)*13px)}
+.m-compact .ic{width:calc(var(--u)*36px);height:calc(var(--u)*36px);border-radius:calc(var(--u)*10px)}
+.m-compact .ic.emo{font-size:calc(var(--u)*21px)}
+.m-compact .ic.mono{font-size:calc(var(--u)*19px)}
+.m-compact .ic.mono.m2{font-size:calc(var(--u)*14px)}
+.m-compact .nm{font-size:calc(var(--u)*22px)}
+
+/* ---------- 页脚 ---------- */
+.foot{flex:0 0 auto;margin-top:22px;font-size:16.5px;color:var(--muted);line-height:1.75;letter-spacing:.03em}
+.frow{display:flex;align-items:baseline;gap:18px;min-width:0}
+.frow .k{flex:0 0 auto;color:var(--gold);font-weight:700;letter-spacing:.3em}
+.frow .v{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frow .r{flex:0 0 auto;color:var(--faint);white-space:nowrap}
+
+/* ---------- 横版：左侧栏 + 右榜单 ---------- */
+.canvas.land{flex-direction:row;gap:calc(var(--pad)*.95);padding:calc(var(--pad)*1.05) var(--pad)}
+.land .side{flex:0 0 var(--sidew);min-width:0;display:flex;flex-direction:column}
+.land .head{flex-direction:column-reverse;align-items:flex-start;gap:34px;margin:0;padding:0 0 30px}
+.land .head::after{right:8%}
+.land .htext{width:100%}
+.land .title{white-space:normal;line-height:1.12;margin-top:18px}
+.land .sub{white-space:normal;font-size:22px;line-height:1.55;margin-top:18px}
+.land .seal{margin:2px 0 0 4px}
+.land .foot{margin-top:auto;font-size:16px;line-height:1.6}
+.land .frow{display:block;margin-top:14px}
+.land .frow .k{display:block;margin-bottom:3px}
+.land .frow .v{display:block;white-space:normal}
+.land .frow .r{display:block;margin-top:2px}
+.dimbox{margin-top:14px}
+.dimbox .k{color:var(--gold);font-weight:700;letter-spacing:.3em;margin-bottom:10px}
+.dimbox .r{color:var(--faint);margin-top:6px}
+.dims{display:grid;grid-template-columns:max-content 1fr max-content;align-items:center;gap:9px 14px}
+.dn{color:var(--ink);opacity:.82;white-space:nowrap}
+.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--gold),color-mix(in srgb,var(--gold) 45%,transparent))}
+.dw{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="11" result="t"/>
+    <feDisplacementMap in="SourceGraphic" in2="t" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+<div class="canvas" id="canvas"></div>
+<script>
+const D = /*__DATA__*/null;
+(async function main(){
+  const root = document.documentElement;
+  const W = D.canvas.w, H = D.canvas.h, S = Math.min(W, H);
+  root.style.setProperty('--W', W + 'px');
+  root.style.setProperty('--H', H + 'px');
+  root.style.setProperty('--pad', Math.round(S * 0.052) + 'px');
+  root.style.setProperty('--lw', Math.round(Math.min(220, Math.max(150, W * 0.17))) + 'px');
+  document.body.className = D.theme === 'paper' ? 'paper' : 'ink';
+
+  const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+  const vlen = s => { let n = 0; for (const ch of String(s)) { const c = ch.codePointAt(0); n += c > 0x2E80 ? 1 : /[A-Z0-9]/.test(ch) ? 0.68 : ch === ' ' ? 0.3 : 0.55; } return n; };
+  const PAL = ['#5B7DB1','#B5654A','#5E8C6A','#8A6BB0','#BF8A3D','#4F8E95','#A65A78','#6D7A8C','#9C7F5B','#4C6E5A','#7A5C9E','#3F7FA6'];
+  const hashColor = s => { let h = 0; for (const ch of String(s)) h = (h * 31 + ch.codePointAt(0)) >>> 0; return PAL[h % PAL.length]; };
+  const firstGlyph = name => { const m = String(name).match(/[⺀-鿿]|[A-Za-z0-9]/); return m ? m[0].toUpperCase() : String(name).slice(0, 1); };
+
+  function mono(it){
+    const ic = it.icon || {};
+    const t = ic.mono || firstGlyph(it.name);
+    const d = el('div', 'ic mono' + ([...t].length > 1 ? ' m2' : ''), t);
+    d.style.setProperty('--mc', ic.color || hashColor(it.name));
+    return d;
+  }
+  const pending = [];
+  function icon(it){
+    const ic = it.icon || {};
+    if (ic.image) {
+      const d = el('div', 'ic img' + (ic.fit === 'cover' ? ' cover' : ''));
+      if (ic.bg) d.style.background = ic.bg;
+      const im = new Image();
+      pending.push(new Promise(res => {
+        const t = setTimeout(() => { if (d.isConnected) d.replaceWith(mono(it)); res(); }, 8000);
+        im.onload = () => { clearTimeout(t); res(); };
+        im.onerror = () => { clearTimeout(t); if (d.isConnected) d.replaceWith(mono(it)); res(); };
+      }));
+      im.src = ic.image;
+      d.appendChild(im);
+      return d;
+    }
+    if (ic.emoji) return el('div', 'ic emo', ic.emoji);
+    return mono(it);
+  }
+
+  // ---------- 搭结构 ----------
+  const cv = document.getElementById('canvas');
+  const head = el('header', 'head');
+  const ht = el('div', 'htext');
+  if (D.kicker) ht.append(el('div', 'kicker', D.kicker));
+  const title = el('h1', 'title', D.title);
+  ht.append(title);
+  if (D.subtitle) ht.append(el('div', 'sub', D.subtitle));
+  head.append(ht);
+  const sealText = [...(D.seal || '')];
+  if (sealText.length === 4 || sealText.length === 2) {
+    const seal = el('div', 'seal' + (sealText.length === 2 ? ' s2' : ''));
+    sealText.forEach(c => seal.append(el('span', null, c)));
+    head.append(seal);
+  }
+  const land = W / H >= 1.25;
+  let side = null;
+  if (land) {
+    cv.classList.add('land');
+    root.style.setProperty('--sidew', Math.round(Math.min(460, Math.max(340, W * 0.225))) + 'px');
+    side = el('aside', 'side');
+    side.append(head);
+    cv.append(side);
+  } else {
+    cv.append(head);
+  }
+
+  const board = el('main', 'board');
+  D.tiers.forEach((t, i) => {
+    const row = el('section', 'row ' + t.key);
+    const lab = el('div', 'label');
+    lab.append(el('div', 'ln', t.name));
+    if (D.showNotes && t.note) lab.append(el('div', 'lnote', t.note));
+    row.append(lab);
+    const items = el('div', 'items');
+    if (!t.items.length) items.append(el('div', 'empty', D.emptyText || '虚位以待'));
+    if (i === 0 && D.ghost && t.items.length) items.append(el('div', 'ghost', t.name));
+    for (const it of t.items) {
+      const c = el('div', 'chip');
+      c.dataset.name = it.name;
+      c.append(icon(it));
+      const tx = el('div', 'tx');
+      const nm = el('div', 'nm');
+      // 英文/数字词整体不拆行（Yi-3 不会断成 Yi- / 3），汉字之间照常换行
+      String(it.name).split(/([A-Za-z0-9][A-Za-z0-9.\-+_/'’]*)/).forEach((part, k) => {
+        if (!part) return;
+        nm.append(k % 2 ? el('span', 'w', part) : document.createTextNode(part));
+      });
+      if (D.showScore) nm.append(el('span', 'nsc', it.scoreText));
+      tx.append(nm);
+      if (it.verdict || D.showScore) {
+        const vd = el('div', 'vd');
+        if (D.showScore) vd.append(el('span', 'sc', it.scoreText));
+        if (it.verdict) vd.append(document.createTextNode(it.verdict));
+        tx.append(vd);
+      }
+      c.append(tx);
+      if (D.showScore) c.append(el('div', 'badge', it.scoreText));
+      items.append(c);
+    }
+    row.append(items);
+    board.append(row);
+  });
+  cv.append(board);
+
+  const foot = el('footer', 'foot');
+  for (const f of (D.footer || [])) {
+    if (land && f.kind === 'dims' && (D.dims || []).length) {
+      // 横版侧栏空间大，维度权重画成横条
+      const box = el('div', 'dimbox');
+      box.append(el('div', 'k', f.k));
+      const g = el('div', 'dims');
+      const maxW = Math.max(...D.dims.map(d => d.weight));
+      for (const d of D.dims) {
+        g.append(el('span', 'dn', d.name));
+        const bar = el('span', 'bar');
+        const fill = el('i');
+        fill.style.width = (d.weight / maxW * 100).toFixed(1) + '%';
+        bar.append(fill);
+        g.append(bar);
+        g.append(el('span', 'dw', d.weight + '%'));
+      }
+      box.append(g);
+      if (f.r) box.append(el('div', 'r', f.r));
+      foot.append(box);
+      continue;
+    }
+    const r = el('div', 'frow');
+    r.append(el('span', 'k', f.k));
+    r.append(el('span', 'v', f.v));
+    if (f.r) r.append(el('span', 'r', f.r));
+    foot.append(r);
+  }
+  if ((D.footer || []).length) (land ? side : cv).append(foot);
+
+  // ---------- 等字体和图片 ----------
+  try { await Promise.all([document.fonts.load('900 64px TLSerif'), document.fonts.load('500 20px TLSerif'), document.fonts.load('700 24px TLSerif')]); } catch (e) {}
+  await document.fonts.ready;
+  await Promise.all(pending);
+
+  // ---------- 标题自适应 ----------
+  let tfs, titleWrapped = false;
+  if (land) {
+    // 侧栏标题：允许折行，最多 3 行
+    tfs = 80;
+    title.style.whiteSpace = 'normal';
+    title.style.fontSize = tfs + 'px';
+    const lines = () => Math.round(title.clientHeight / (tfs * 1.1));
+    while ((lines() > 3 || title.scrollWidth > ht.clientWidth) && tfs > 44) { tfs -= 2; title.style.fontSize = tfs + 'px'; }
+    titleWrapped = lines() > 1;
+  } else {
+    tfs = Math.round(Math.min(88, H * 0.062));
+    title.style.fontSize = tfs + 'px';
+    const tAvail = () => ht.clientWidth;
+    while (title.scrollWidth > tAvail() && tfs > 50) { tfs -= 2; title.style.fontSize = tfs + 'px'; }
+    if (title.scrollWidth > tAvail()) { title.style.whiteSpace = 'normal'; titleWrapped = true; }
+  }
+
+  // ---------- 榜单自适应 ----------
+  const bh = board.clientHeight;
+  root.style.setProperty('--rowmin', Math.max(92, Math.round(bh * 0.118)) + 'px');
+  const fits = () => board.scrollHeight <= board.clientHeight + 1;
+  const setU = u => root.style.setProperty('--u', u.toFixed(4));
+  const setMode = m => { board.classList.remove('m-tile', 'm-pill', 'm-compact'); board.classList.add('m-' + m); };
+  const R = { tile: [0.86, 1.32], pill: [0.80, 1.32], compact: [0.56, 1.2] };
+  const order = D.layout === 'tile' ? ['tile', 'compact'] : D.layout === 'pill' ? ['pill', 'compact'] : D.layout === 'compact' ? ['compact'] : ['tile', 'pill', 'compact'];
+  let chosen = null;
+  for (const m of order) {
+    setMode(m);
+    let [lo, hi] = R[m];
+    setU(lo);
+    if (!fits()) continue;
+    setU(hi);
+    if (fits()) lo = hi;
+    else for (let k = 0; k < 16; k++) { const mid = (lo + hi) / 2; setU(mid); if (fits()) lo = mid; else hi = mid; }
+    setU(lo);
+    chosen = { mode: m, u: +lo.toFixed(3), overflow: false };
+    break;
+  }
+  if (!chosen) { setMode('compact'); setU(R.compact[0]); chosen = { mode: 'compact', u: R.compact[0], overflow: !fits() }; }
+
+  // ---------- 档位字号 ----------
+  const rows = [...board.querySelectorAll('.row')];
+  const lw = rows[0].querySelector('.label').clientWidth;
+  const pad = lw * 0.12;
+  const minH = Math.min(...rows.map(r => r.clientHeight));
+  const multi = D.tiers.filter(t => vlen(t.name) > 1.05);
+  const maxLen = Math.max(1, ...multi.map(t => vlen(t.name)));
+  const noteH = D.showNotes ? 30 : 0;
+  const common = Math.min((lw - 2 * pad) / maxLen, (minH - noteH) * 0.5, 66);
+  rows.forEach((r, i) => {
+    const t = D.tiers[i];
+    const ln = r.querySelector('.ln');
+    const fs = vlen(t.name) <= 1.05 ? Math.min(lw * 0.6, (r.clientHeight - noteH) * 0.62, 120) : common;
+    ln.style.fontSize = fs.toFixed(1) + 'px';
+    const note = r.querySelector('.lnote');
+    if (note) note.style.fontSize = Math.max(14, Math.min(18, fs * 0.3)).toFixed(1) + 'px';
+    const g = r.querySelector('.ghost');
+    if (g) g.style.fontSize = Math.round(r.clientHeight * 1.15) + 'px';
+  });
+
+  // ---------- 自检 ----------
+  // 宋体的字身比行高大，单行元素 scrollHeight 天然多出几像素；多出半个字高才算真被截（多行截断会多出一整行）
+  const cut = e => e.scrollWidth > e.clientWidth + 1 || e.scrollHeight > e.clientHeight + parseFloat(getComputedStyle(e).fontSize) * 0.6;
+  const truncName = [], truncVerdict = [];
+  board.querySelectorAll('.chip').forEach(c => {
+    const nm = c.querySelector('.nm');
+    if (cut(nm)) truncName.push(c.dataset.name);
+    const vd = c.querySelector('.vd');
+    if (vd && getComputedStyle(vd).display !== 'none' && cut(vd)) truncVerdict.push(c.dataset.name);
+  });
+  const truncFoot = [...foot.querySelectorAll('.v')].filter(v => v.scrollWidth > v.clientWidth + 1).map(v => v.textContent.slice(0, 24));
+  const sub = document.querySelector('.sub');
+  window.__layout = {
+    mode: chosen.mode, u: chosen.u, overflow: chosen.overflow || !fits(),
+    titleSize: tfs, titleWrapped,
+    subtitleCut: !!(sub && sub.scrollWidth > sub.clientWidth + 1),
+    truncName, truncVerdict, truncFoot,
+    boardH: bh, rowH: rows.map(r => r.clientHeight),
+  };
+  window.__done = true;
+})().catch(e => { window.__layout = { error: String(e && e.stack || e) }; window.__done = true; });
+</script>
+</body>
+</html>
