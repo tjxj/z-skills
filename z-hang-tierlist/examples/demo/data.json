@@ -1,0 +1,189 @@
+{
+  "topic": "虚构茶饮品牌",
+  "scope": "演示数据：榜上 16 个品牌、全部数字和来源都是虚构的，只用来展示版式和流程，不对应任何真实品牌。收录规则（示意）：2026 年 11 月仍在营业、门店 100 家以上的连锁茶饮品牌。",
+  "asof": "2026-11-22",
+  "title": "茶饮品牌夯到拉",
+  "kicker": "DEMO · 示例数据 · 全部虚构",
+  "byline": "品牌与数字均为虚构，仅作演示",
+  "file_stem": "demo",
+  "dimensions": [
+    {"key": "taste", "name": "产品力", "weight": 30, "rubric": "10=爆品多、复购高、口味评分最高；7=稳定好喝；4=一般；1=难喝"},
+    {"key": "scale", "name": "规模增长", "weight": 20, "rubric": "10=门店数行业前 3 且仍在增长；7=规模大或增速快；4=停滞；1=大面积闭店"},
+    {"key": "price", "name": "性价比", "weight": 20, "rubric": "10=同品质最便宜；7=价格合理；4=偏贵；1=又贵又不好"},
+    {"key": "safety", "name": "食安口碑", "weight": 20, "rubric": "10=几乎无通报、评分最高；7=偶有投诉；4=投诉较多；1=有监管通报或重大安全事件"},
+    {"key": "brand", "name": "品牌创新", "weight": 10, "rubric": "10=联名和新品频频出圈；7=有亮点；4=跟风；1=老化"}
+  ],
+  "items": [
+    {
+      "name": "山海茶铺",
+      "icon": {"mono": "山", "color": "#2F6B4F"},
+      "scores": {"taste": 9.5, "scale": 9.0, "price": 9.5, "safety": 10, "brand": 8.5},
+      "verdict": "鲜果茶天花板",
+      "evidence": [
+        {"text": "2026 年 9 月门店 3,180 家，近 12 个月净增 410 家（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/shanhai", "date": "2026-09", "type": "市场"},
+        {"text": "消费者评分 4.8 / 5，21 万条评价，同榜第一（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/shanhai", "date": "2026-10", "type": "口碑"},
+        {"text": "近 12 个月无食安通报，抽检合格率 100%（虚构）", "source": "示例·食安通报", "url": "https://safety.example/2026/shanhai", "date": "2026-10", "type": "官方"},
+        {"text": "鲜果茶系列月销破 1,000 万杯，入选年度十大饮品（虚构）", "source": "示例·年度榜单", "url": "https://annual-rank.example/2026/shanhai", "date": "2026-10", "type": "榜单"}
+      ]
+    },
+    {
+      "name": "云栈茶舍",
+      "icon": {"mono": "云", "color": "#3B5BA9"},
+      "scores": {"taste": 9.5, "scale": 9.5, "price": 8.5, "safety": 9.0, "brand": 9.5},
+      "verdict": "开店最快口碑稳",
+      "evidence": [
+        {"text": "门店 4,060 家，行业第二，近 12 个月净增 720 家（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/yunzhan", "date": "2026-09", "type": "市场"},
+        {"text": "2026 年三季度营收 38 亿元，同比增长 24%（虚构）", "source": "示例·财报摘要", "url": "https://finance.example/2026q3/yunzhan", "date": "2026-10", "type": "官方"},
+        {"text": "新品「桂花云顶」上市 30 天卖出 900 万杯（虚构）", "source": "示例·茶饮周刊", "url": "https://weekly.example/2026/yunzhan-osmanthus", "date": "2026-10", "type": "媒体"}
+      ]
+    },
+    {
+      "name": "盏中岛",
+      "icon": {"mono": "盏", "color": "#B04A3A"},
+      "scores": {"taste": 9.0, "scale": 8.0, "price": 8.0, "safety": 8.5, "brand": 8.5},
+      "verdict": "颜值味道双在线",
+      "evidence": [
+        {"text": "联名杯套带动周边销售，联名款占销售额 31%（虚构）", "source": "示例·茶饮周刊", "url": "https://weekly.example/2026/zhanzhongdao-collab", "date": "2026-10", "type": "媒体"},
+        {"text": "评分 4.6 / 5，「颜值高」在好评关键词里排第 1（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/zhanzhongdao", "date": "2026-10", "type": "口碑"}
+      ]
+    },
+    {
+      "name": "青禾集",
+      "icon": {"mono": "禾", "color": "#6A9A3A"},
+      "scores": {"taste": 8.5, "scale": 8.0, "price": 8.5, "safety": 8.5, "brand": 7.5},
+      "verdict": "原叶茶里最稳",
+      "evidence": [
+        {"text": "原叶茶底盲测第一，口味得分 8.9 / 10（虚构）", "source": "示例·新品评测", "url": "https://review.example/blind-test/qinghe", "date": "2026-09", "type": "评测"},
+        {"text": "门店 1,420 家，覆盖 61 个城市（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/qinghe", "date": "2026-09", "type": "市场"}
+      ]
+    },
+    {
+      "name": "栗子灯",
+      "icon": {"emoji": "🌰"},
+      "scores": {"taste": 8.5, "scale": 7.0, "price": 9.0, "safety": 8.5, "brand": 8.0},
+      "verdict": "秋冬限定杀手",
+      "evidence": [
+        {"text": "秋冬限定款 6 周卖出 1,100 万杯，复购率 46%（虚构）", "source": "示例·茶饮周刊", "url": "https://weekly.example/2026/lizideng-autumn", "date": "2026-11", "type": "媒体"},
+        {"text": "评分 4.6 / 5，主力价位 14-18 元（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/lizideng", "date": "2026-10", "type": "口碑"}
+      ]
+    },
+    {
+      "name": "檐下茶",
+      "icon": {"mono": "檐", "color": "#8A5A2B"},
+      "scores": {"taste": 8.0, "scale": 9.0, "price": 8.0, "safety": 8.0, "brand": 8.0},
+      "verdict": "老字号焕新成功",
+      "summary": "门店数两处口径不同（直营加加盟 / 仅直营），取低值",
+      "evidence": [
+        {"text": "创立 28 年，焕新后门店从 900 家增至 2,300 家（虚构）", "source": "示例·财报摘要", "url": "https://finance.example/2026q3/yanxia", "date": "2026-10", "type": "官方"},
+        {"text": "评分 4.5 / 5，老客复购占 58%（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/yanxia", "date": "2026-10", "type": "口碑"}
+      ]
+    },
+    {
+      "name": "白鹭湾",
+      "icon": {"mono": "鹭", "color": "#4A8FA8"},
+      "scores": {"taste": 7.5, "scale": 7.0, "price": 7.5, "safety": 8.0, "brand": 7.0},
+      "verdict": "清爽但寡淡",
+      "evidence": [
+        {"text": "评分 4.3 / 5，好评集中在「清爽」，差评集中在「寡淡」（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/bailuwan", "date": "2026-10", "type": "口碑"},
+        {"text": "门店 860 家，近 12 个月净增 90 家（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/bailuwan", "date": "2026-09", "type": "市场"}
+      ]
+    },
+    {
+      "name": "松间月",
+      "icon": {"emoji": "🌙"},
+      "scores": {"taste": 8.0, "scale": 5.5, "price": 7.5, "safety": 8.0, "brand": 8.0},
+      "verdict": "小而有灵气",
+      "summary": "评价数只有 1.2 万条，口碑分的样本偏小，给分偏保守",
+      "evidence": [
+        {"text": "仅 140 家店，坪效是行业均值的 1.8 倍（虚构）", "source": "示例·财报摘要", "url": "https://finance.example/2026q3/songjianyue", "date": "2026-10", "type": "官方"},
+        {"text": "评分 4.7 / 5，评价数 1.2 万条（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/songjianyue", "date": "2026-10", "type": "口碑"}
+      ]
+    },
+    {
+      "name": "朝暮茶事",
+      "icon": {"mono": "朝", "color": "#A85C32"},
+      "scores": {"taste": 7.5, "scale": 7.5, "price": 7.5, "safety": 7.0, "brand": 7.0},
+      "verdict": "早餐搭子",
+      "evidence": [
+        {"text": "门店 1,900 家，早餐时段订单占 35%（虚构）", "source": "示例·财报摘要", "url": "https://finance.example/2026q3/zhaomu", "date": "2026-10", "type": "官方"},
+        {"text": "同价位盲测排第 4 / 10（虚构）", "source": "示例·新品评测", "url": "https://review.example/blind-test/zhaomu", "date": "2026-09", "type": "评测"}
+      ]
+    },
+    {
+      "name": "北岸茶行",
+      "icon": {"mono": "北", "color": "#2D3E50"},
+      "scores": {"taste": 7.0, "scale": 8.0, "price": 7.0, "safety": 7.5, "brand": 6.5},
+      "verdict": "靠门店撑中游",
+      "evidence": [
+        {"text": "门店 2,700 家，三线以下城市占 64%（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/beian", "date": "2026-09", "type": "市场"},
+        {"text": "同价位盲测排第 6 / 10（虚构）", "source": "示例·新品评测", "url": "https://review.example/blind-test/beian", "date": "2026-09", "type": "评测"}
+      ]
+    },
+    {
+      "name": "雾里青",
+      "icon": {"mono": "雾", "color": "#5A6E7F"},
+      "scores": {"taste": 7.5, "scale": 6.5, "price": 7.0, "safety": 7.5, "brand": 7.5},
+      "verdict": "回甘是亮点",
+      "evidence": [
+        {"text": "门店 640 家，近 12 个月净增 55 家（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/wuliqing", "date": "2026-09", "type": "市场"},
+        {"text": "评分 4.2 / 5，好评集中在「回甘」（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/wuliqing", "date": "2026-10", "type": "口碑"}
+      ]
+    },
+    {
+      "name": "小满铺子",
+      "icon": {"mono": "满", "color": "#C58B2A"},
+      "scores": {"taste": 6.0, "scale": 6.5, "price": 6.5, "safety": 6.5, "brand": 6.0},
+      "verdict": "没功也没过",
+      "evidence": [
+        {"text": "门店 1,050 家，一年净增 12 家，基本持平（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/xiaoman", "date": "2026-09", "type": "市场"},
+        {"text": "评分 4.0 / 5，评价集中在「还行」（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/xiaoman", "date": "2026-10", "type": "口碑"}
+      ]
+    },
+    {
+      "name": "夜航茶社",
+      "icon": {"emoji": "🌃"},
+      "scores": {"taste": 6.0, "scale": 5.0, "price": 6.0, "safety": 7.0, "brand": 7.0},
+      "verdict": "深夜才有人",
+      "evidence": [
+        {"text": "营业时间 18:00 至次日 02:00，白天门店空置率 71%（虚构）", "source": "示例·茶饮周刊", "url": "https://weekly.example/2026/yehang-hours", "date": "2026-09", "type": "媒体"},
+        {"text": "评分 4.1 / 5，夜间订单占 83%（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/yehang", "date": "2026-10", "type": "口碑"}
+      ]
+    },
+    {
+      "name": "三两茶",
+      "icon": {"mono": "三", "color": "#7C8A5A"},
+      "scores": {"taste": 5.5, "scale": 6.0, "price": 6.5, "safety": 6.0, "brand": 5.0},
+      "verdict": "慢慢变小",
+      "evidence": [
+        {"text": "门店 520 家，近 12 个月净减 8 家（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/sanliang", "date": "2026-09", "type": "市场"},
+        {"text": "评分 3.9 / 5，评价量 3.4 万条（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/sanliang", "date": "2026-10", "type": "口碑"}
+      ]
+    },
+    {
+      "name": "蜜语茶坊",
+      "icon": {"emoji": "🍯"},
+      "scores": {"taste": 3.5, "scale": 7.0, "price": 4.0, "safety": 2.5, "brand": 5.0},
+      "verdict": "甜度失控",
+      "evidence": [
+        {"text": "近 3 个月被投诉 1,280 次，主要是甜度失控和出杯慢（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/complaints/miyu", "date": "2026-10", "type": "口碑", "neg": true},
+        {"text": "抽检 3 次不合格，糖分标注与实测相差 2.3 倍（虚构）", "source": "示例·食安通报", "url": "https://safety.example/2026/miyu-sugar", "date": "2026-09", "type": "官方", "neg": true},
+        {"text": "门店 3,300 家，靠低价快速扩张（虚构）", "source": "示例·门店月报", "url": "https://store-report.example/2026-09/miyu", "date": "2026-09", "type": "市场"}
+      ]
+    },
+    {
+      "name": "河灯饮品",
+      "icon": {"mono": "河", "color": "#8E5B6B"},
+      "scores": {"taste": 4.0, "scale": 6.0, "price": 3.5, "safety": 3.0, "brand": 4.0},
+      "verdict": "又贵又淡",
+      "evidence": [
+        {"text": "2026 年 8 月因原料过期被通报，涉及 36 家门店（虚构）", "source": "示例·食安通报", "url": "https://safety.example/2026/hedeng-expired", "date": "2026-08", "type": "官方", "neg": true},
+        {"text": "评分 3.1 / 5，「味道淡」「奶茶像糖水」是高频差评（虚构）", "source": "示例·消费者评分", "url": "https://rating.example/brands/hedeng", "date": "2026-10", "type": "口碑", "neg": true},
+        {"text": "同价位盲测倒数第 2 / 10（虚构）", "source": "示例·新品评测", "url": "https://review.example/blind-test/hedeng", "date": "2026-09", "type": "评测"}
+      ]
+    }
+  ],
+  "sources": [
+    {"name": "示例·年度榜单", "url": "https://annual-rank.example/2026", "type": "榜单", "date": "2026-10", "note": "年度十大饮品（虚构）"},
+    {"name": "示例·门店月报", "url": "https://store-report.example/", "type": "市场", "date": "2026-09", "note": "门店数口径：营业中的直营加加盟（虚构）"}
+  ]
+}

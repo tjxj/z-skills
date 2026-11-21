@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 # 时间轴版独立目录，仅保留在本地，不推送
 z-wanghong-handwritten-timeline/
+# 各 skill 的本机私有配置，不推送
+forbid.local.txt

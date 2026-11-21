@@ -1,10 +1,10 @@
 # z-skills
 
-`z-skills` 是一组可复用的本地 Agent Skills，用来把常见工作流沉淀成稳定能力：网页素材采集、手写字体制作、视频下载、视频学习网页、全景音频生成、文档解析、邮件读取、表格处理、Markdown 转 Word/PDF、诗词与技术文章成书、互动科普网页、证据型资料问答、docx 模板格式刷、手写幻灯片、手写 HTML 动画、会动的解析图、名人人生轨迹长图，以及文章四格漫画配图
+`z-skills` 是一组可复用的本地 Agent Skills，用来把常见工作流沉淀成稳定能力：网页素材采集、手写字体制作、视频下载、视频学习网页、全景音频生成、文档解析、邮件读取、表格处理、Markdown 转 Word/PDF、诗词与技术文章成书、互动科普网页、证据型资料问答、docx 模板格式刷、手写幻灯片、手写 HTML 动画、会动的解析图、名人人生轨迹长图、夯到拉排行榜，以及文章四格漫画配图
 
-这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **22 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
+这些 Skill 面向中文创作、知识管理和自动化任务，可按需安装到支持 Agent Skills 的环境中。当前共 **23 个 Skill**，另有 [`z-life-hub`](z-life-hub/README.md) 家庭生活管理后台技能组（日记、读书笔记、健康档案、凭证、电脑管理），具体能力、依赖与执行流程以各目录的 `SKILL.md` 为准。
 
-[快速安装](#快速安装) · [Skills 一览](#skills-一览) · [「动」悉万物](#动悉万物会动的解析图) · [人生轨迹长图](#人生轨迹长图) · [诗词与技术文章成书](#诗词与技术文章成书) · [使用建议](#使用建议)
+[快速安装](#快速安装) · [Skills 一览](#skills-一览) · [「动」悉万物](#动悉万物会动的解析图) · [人生轨迹长图](#人生轨迹长图) · [夯到拉排行榜](#夯到拉排行榜) · [诗词与技术文章成书](#诗词与技术文章成书) · [使用建议](#使用建议)
 
 ## 快速安装
 
@@ -65,6 +65,7 @@ cp -R z-* "/path/to/your/.agent/skills/"
 | [`z-xiaohongshu-cards`](z-xiaohongshu-cards/README.md) | 小红书 3:4 风格库：12 种可复现的命名风格，文章直接出 1080×1440 PNG，新风格持续沉淀 | 小红书卡片、小红书图文、3:4 图文、小绿书配图、做成卡片、沉淀这个风格 |
 | [`z-handwriting-font`](z-handwriting-font/README.md) | 把自己或家人的手写字做成可安装的 OpenType 字体：打印模板拍照自动切字，或从旧信件按抄录切出现有的字 | 手写字体、把字迹做成字体、家人字迹字体、手写体 otf |
 | [`z-life-trajectory`](z-life-trajectory/README.md) | 把任意名人的一生做成可粘进公众号的超长动态 SVG（3:4 分屏、蛇形人生线路图、22 种内容块、50 个动态图标），还能录成 3:4 竖屏视频 | 人生轨迹、人生回顾、生平回顾、名人生平、人物时间线、XX 的一生、人生轨迹视频 |
+| [`z-hang-tierlist`](z-hang-tierlist/README.md) | 给任意主题做「夯 / 顶级 / 人上人 / NPC / 拉完了」梯度榜 PNG：先广泛查资料，按加权维度打分并自动分档，每条锐评有出处；暗金、宣纸两种风格，3:4 到 16:9 多种尺寸，附逐条带链接的评分依据表 | 夯到拉、从夯到拉、夯拉排行榜、梯度榜、tier list、锐评排行、给XX排个榜 |
 
 ## 「动」悉万物：会动的解析图
 
@@ -91,6 +92,20 @@ python3 z-dongxi/scripts/render.py --spec z-dongxi/demos/specs/rag.json --style 
 npx skills add tjxj/z-skills --skill z-life-trajectory
 python3 z-life-trajectory/scripts/lifeline.py build z-life-trajectory/examples/jensen-huang.json -o jensen.svg --strict
 python3 z-life-trajectory/scripts/record.py z-life-trajectory/examples/jensen-huang.json -o jensen.mp4
+```
+
+## 夯到拉排行榜
+
+[z-hang-tierlist](z-hang-tierlist/README.md) 给任意主题做一张「夯 / 顶级 / 人上人 / NPC / 拉完了」五档梯度榜 PNG。先广泛查资料（榜单、官方数据、市场数据、评测、口碑、负面实锤），按加权维度给每个候选打分，脚本复算并自动分档，每条锐评都有出处，同时生成逐条带链接的评分依据表。默认 3:4，也支持 4:5、1:1、9:16、2:3、4:3、16:9 和任意像素，有暗金、宣纸两种风格。
+
+<img src="z-hang-tierlist/docs/preview.jpg" width="100%">
+
+<sub>图中的品牌、数字、来源全部虚构，只用来演示版式。</sub>
+
+```bash
+npx skills add tjxj/z-skills --skill z-hang-tierlist
+pip install -r z-hang-tierlist/requirements.txt && python3 -m playwright install chromium
+python3 z-hang-tierlist/scripts/tierlist.py build z-hang-tierlist/examples/demo/data.json --size 3:4,16:9 --out out
 ```
 
 ## 小红书 3:4 风格库
@@ -353,6 +368,14 @@ z-skills/
     scripts/
     assets/
     tests/
+  z-hang-tierlist/
+    SKILL.md
+    README.md
+    scripts/
+    assets/
+    references/
+    examples/
+    docs/
   z-life-trajectory/
     SKILL.md
     README.md
